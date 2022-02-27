@@ -1,5 +1,10 @@
 module.exports = {
-  content: ["./pages/**/*.{ts,tsx,mdx}", "./components/**/*.{ts,tsx,mdx}"],
+  content: [
+    "./pages/**/*.{ts,tsx,mdx}",
+    "./components/**/*.{ts,tsx,mdx}",
+    "./icons/**/*.{ts,tsx,mdx}",
+  ],
+  darkMode: "class",
   theme: {
     fontFamily: {
       metro: ["Metro Sans", "sans-serif"],
