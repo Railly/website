@@ -7,6 +7,7 @@ import { pick } from "@contentlayer/client";
 import { format } from "date-fns";
 import Arrow from "icons/Arrow";
 import { useRouter } from "next/router";
+import { Icon } from "icons";
 
 export default function Home({
   blogPosts,
@@ -80,7 +81,7 @@ export default function Home({
         <Link href="/blog">
           <a className="flex items-center font-bold text-indigo-500 dark:text-indigo-300 text-md sm:text-lg">
             <span>See all posts</span>
-            <Arrow className="ml-2 fill-current" />
+            <Icon.Arrow className="ml-2 fill-current" />
           </a>
         </Link>
       </section>
@@ -108,7 +109,7 @@ export default function Home({
           <Link href="/portfolio">
             <a className="flex items-center font-bold text-amber-500 dark:text-amber-300 text-md sm:text-lg">
               <span>See all projects</span>
-              <Arrow className="ml-2 fill-current" />
+              <Icon.Arrow className="ml-2 fill-current" />
             </a>
           </Link>
         </div>

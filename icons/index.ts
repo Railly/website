@@ -12,6 +12,7 @@ import DarkMode from "./DarkMode";
 import LightMode from "./LightMode";
 import OpenMenu from "./OpenMenu";
 import CloseMenu from "./CloseMenu";
+import Arrow from "./Arrow";
 
 export const Icon = {
   Apollo,
@@ -28,4 +29,5 @@ export const Icon = {
   LightMode,
   OpenMenu,
   CloseMenu,
+  Arrow,
 };

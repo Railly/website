@@ -3,6 +3,7 @@ module.exports = {
     "./pages/**/*.{ts,tsx,mdx}",
     "./components/**/*.{ts,tsx,mdx}",
     "./icons/**/*.{ts,tsx,mdx}",
+    "./utils/**/*.{ts,tsx,mdx}",
   ],
   darkMode: "class",
   theme: {

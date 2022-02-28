@@ -130,7 +130,7 @@ const Header = () => {
       </header>
       <div
         onClick={handleCloseMenu}
-        className={`absolute top-0 z-10 h-full w-screen transition-all duration-500 bg-zinc-500/40 backdrop-blur-sm ${
+        className={`absolute top-0 z-10 h-full w-full transition-all duration-500 bg-zinc-500/40 backdrop-blur-sm ${
           isOpen ? "opacity-100" : "opacity-0"
         } ${isHidden ? "invisible" : "visible"}`}
       ></div>
