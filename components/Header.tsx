@@ -1,6 +1,7 @@
 import { Icon } from "icons";
 import { useTheme } from "next-themes";
-import { ReactNode, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import Link from "./Link";
 
 const Header = () => {
@@ -8,6 +9,7 @@ const Header = () => {
   const [isHidden, setIsHidden] = useState(true);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { pathname } = useRouter();
 
   const handleCloseMenu = () => {
     setIsOpen(false);
@@ -36,27 +38,47 @@ const Header = () => {
           </button>
           <ul className="flex flex-col items-center justify-between h-full py-6 ">
             <li>
-              <Link to="/" onNavigate={handleCloseMenu}>
+              <Link
+                to="/"
+                active={pathname === "/"}
+                onNavigate={handleCloseMenu}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" onNavigate={handleCloseMenu}>
+              <Link
+                to="/about"
+                active={pathname === "/about"}
+                onNavigate={handleCloseMenu}
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link to="/portfolio" onNavigate={handleCloseMenu}>
+              <Link
+                to="/portfolio"
+                active={pathname === "/portfolio"}
+                onNavigate={handleCloseMenu}
+              >
                 Portfolio
               </Link>
             </li>
             <li>
-              <Link to="/blog" onNavigate={handleCloseMenu}>
+              <Link
+                to="/blog"
+                active={pathname === "/blog"}
+                onNavigate={handleCloseMenu}
+              >
                 Blog
               </Link>
             </li>
             <li>
-              <Link to="/stack" onNavigate={handleCloseMenu}>
+              <Link
+                to="/stack"
+                active={pathname === "/stack"}
+                onNavigate={handleCloseMenu}
+              >
                 Stack
               </Link>
             </li>
@@ -70,19 +92,29 @@ const Header = () => {
         <ul className="justify-between hidden md:flex">
           <div className="flex items-center">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" active={pathname === "/"}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about" active={pathname === "/about"}>
+                About
+              </Link>
             </li>
             <li>
-              <Link to="/portfolio">Portfolio</Link>
+              <Link to="/portfolio" active={pathname === "/portfolio"}>
+                Portfolio
+              </Link>
             </li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <Link to="/blog" active={pathname === "/blog"}>
+                Blog
+              </Link>
             </li>
             <li>
-              <Link to="/stack">Stack</Link>
+              <Link to="/stack" active={pathname === "/stack"}>
+                Stack
+              </Link>
             </li>
           </div>
         </ul>

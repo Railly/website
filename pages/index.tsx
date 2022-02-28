@@ -41,8 +41,8 @@ export default function Home({
             in tech 🚀
           </span>
         </div>
-        <div className="flex justify-center p-2 rounded-full from-indigo-500 to-cyan-600 bg-gradient-to-tr w-max">
-          <div className="flex justify-center p-1 rounded-full bg-zinc-50 dark:bg-zinc-900">
+        <div className="flex justify-center p-2 rounded-full from-stone-500/80 dark:from-stone-300 to-stone-800/80 dark:to-stone-500 bg-gradient-to-b w-max">
+          <div className="flex justify-center p-1.5 rounded-full bg-zinc-50/70 dark:bg-zinc-900/70">
             <Image
               className="rounded-full"
               src="/images/profile.png"
@@ -64,9 +64,9 @@ export default function Home({
             <div
               key={blog.slug}
               onClick={() => router.push(`/blog/${blog.slug}`)}
-              className="flex flex-col p-1 transition cursor-pointer hover:scale-[1.02] duration-300 bg-gradient-to-tl from-rose-500 to-indigo-500 rounded-xl"
+              className="flex flex-col p-1 transition cursor-pointer hover:scale-[1.02] duration-300 bg-gradient-to-tl from-cyan-500 to-indigo-500 rounded-xl"
             >
-              <div className="h-full p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800">
+              <div className="h-full p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
                 <h3 className="mb-2 font-bold text-md sm:text-lg font-gilmer">
                   {blog.title}
                 </h3>
@@ -78,7 +78,7 @@ export default function Home({
           ))}
         </div>
         <Link href="/blog">
-          <a className="flex items-center font-bold text-amber-300 text-md sm:text-lg">
+          <a className="flex items-center font-bold text-indigo-500 dark:text-indigo-300 text-md sm:text-lg">
             <span>See all posts</span>
             <Arrow className="ml-2 fill-current" />
           </a>
@@ -95,7 +95,7 @@ export default function Home({
               onClick={() => router.push(`/portfolio/${project.slug}`)}
               className="flex cursor-pointer flex-col p-1 bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
             >
-              <div className="h-full p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800">
+              <div className="h-full p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
                 <h3 className="mb-2 font-bold text-md sm:text-lg font-gilmer">
                   {project.title}
                 </h3>
@@ -106,7 +106,7 @@ export default function Home({
             </div>
           ))}
           <Link href="/portfolio">
-            <a className="flex items-center font-bold text-amber-300 text-md sm:text-lg">
+            <a className="flex items-center font-bold text-amber-500 dark:text-amber-300 text-md sm:text-lg">
               <span>See all projects</span>
               <Arrow className="ml-2 fill-current" />
             </a>
