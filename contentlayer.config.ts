@@ -5,6 +5,7 @@ import {
 } from "contentlayer/source-files";
 
 import readingTime from "reading-time";
+import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 
 const computedFields: ComputedFields = {
@@ -22,7 +23,7 @@ const computedFields: ComputedFields = {
 const Blog = defineDocumentType(() => ({
   name: "Blog",
   filePathPattern: "blog/*.mdx",
-  bodyType: "mdx",
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     publishedAt: { type: "string", required: true },
@@ -35,7 +36,7 @@ const Blog = defineDocumentType(() => ({
 const Project = defineDocumentType(() => ({
   name: "Project",
   filePathPattern: "project/*.mdx",
-  bodyType: "mdx",
+  contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
     publishedAt: { type: "string", required: true },
@@ -50,7 +51,7 @@ const contentLayerConfig = makeSource({
   contentDirPath: "posts",
   documentTypes: [Blog, Project],
   mdx: {
-    rehypePlugins: [rehypePrism],
+    rehypePlugins: [rehypeCodeTitles, rehypePrism],
   },
 });
 
