@@ -1,13 +1,21 @@
-import type { NextPage } from "next";
 import Image from "next/image";
-import TechCard from "components/TechCard";
-import { learningInProgress, myCurrentSkills } from "utils/data";
-import { useState } from "react";
+import Link from "next/link";
+import { allProjects } from ".contentlayer/generated";
+import { allBlogs } from ".contentlayer/generated";
+import type { Project, Blog } from ".contentlayer/generated";
+import { pick } from "@contentlayer/client";
+import { format } from "date-fns";
+import Arrow from "icons/Arrow";
+import { useRouter } from "next/router";
 
-const Home: NextPage = () => {
-  const [showAllCurrentStack, setShowAllCurrentStack] = useState(false);
-  const [showAllInProgress, setShowAllInProgress] = useState(false);
-
+export default function Home({
+  blogPosts,
+  projects,
+}: {
+  blogPosts: Blog[];
+  projects: Project[];
+}) {
+  const router = useRouter();
   return (
     <>
       <section className="flex flex-col-reverse items-center sm:flex-row">
@@ -34,69 +42,107 @@ const Home: NextPage = () => {
           </span>
         </div>
         <div className="flex justify-center p-2 rounded-full from-indigo-500 to-cyan-600 bg-gradient-to-tr w-max">
-          <div className="flex justify-center p-0.5 bg-white rounded-full">
+          <div className="flex justify-center p-1 rounded-full bg-zinc-50 dark:bg-zinc-900">
             <Image
               className="rounded-full"
               src="/images/profile.png"
               alt="A profile photo of Railly Hugo"
+              blurDataURL="/images/profile.png"
+              placeholder="blur"
               width={150}
               height={150}
             />
           </div>
         </div>
       </section>
-      <section className="mt-4">
-        <div className="flex items-center mb-4">
-          <h1 className="text-3xl font-bold font-gilmer">My Stack</h1>
-          <button
-            className="ml-4"
-            onClick={() => setShowAllCurrentStack(!showAllCurrentStack)}
-          >
-            <span>
-              {showAllCurrentStack
-                ? "Show less"
-                : `Show ${myCurrentSkills.length - 4} more`}
-            </span>
-          </button>
-        </div>
-        <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-4">
-          {myCurrentSkills
-            .map((skill, index) => (
-              <li key={index}>
-                <TechCard key={index} tech={skill.tech} icon={skill.icon} />
-              </li>
-            ))
-            .slice(0, showAllCurrentStack ? myCurrentSkills.length : 4)}
-        </ul>
-      </section>
-      <section className="mt-4">
-        <div className="flex items-center mb-4">
-          <h1 className="text-3xl font-bold font-gilmer">In progress</h1>
-          {!showAllInProgress && myCurrentSkills.length > 4 && (
-            <button
-              className="ml-4"
-              onClick={() => setShowAllInProgress(!showAllInProgress)}
+      <section className="mt-6 md:mt-8">
+        <h2 className="mb-6 text-xl font-bold sm:text-3xl font-gilmer">
+          Latest posts
+        </h2>
+        <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-3">
+          {blogPosts.map((blog) => (
+            <div
+              key={blog.slug}
+              onClick={() => router.push(`/blog/${blog.slug}`)}
+              className="flex flex-col p-1 transition cursor-pointer hover:scale-[1.02] duration-300 bg-gradient-to-tl from-rose-500 to-indigo-500 rounded-xl"
             >
-              <span>
-                {showAllInProgress
-                  ? "Show less"
-                  : `Show (${myCurrentSkills.length - 4}) more`}
-              </span>
-            </button>
-          )}
+              <div className="h-full p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800">
+                <h3 className="mb-2 font-bold text-md sm:text-lg font-gilmer">
+                  {blog.title}
+                </h3>
+                <p className="mb-2 dark:text-white">
+                  {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-        <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-4">
-          {learningInProgress
-            .map((skill, index) => (
-              <li key={index}>
-                <TechCard key={index} tech={skill.tech} icon={skill.icon} />
-              </li>
-            ))
-            .slice(0, showAllInProgress ? learningInProgress.length : 4)}
-        </ul>
+        <Link href="/blog">
+          <a className="flex items-center font-bold text-amber-300 text-md sm:text-lg">
+            <span>See all posts</span>
+            <Arrow className="ml-2 fill-current" />
+          </a>
+        </Link>
+      </section>
+      <section className="mt-6 md:mt-8">
+        <h2 className="mb-6 text-xl font-bold sm:text-3xl font-gilmer">
+          Latest projects
+        </h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {projects.map((project) => (
+            <div
+              key={project.slug}
+              onClick={() => router.push(`/portfolio/${project.slug}`)}
+              className="flex cursor-pointer flex-col p-1 bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
+            >
+              <div className="h-full p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800">
+                <h3 className="mb-2 font-bold text-md sm:text-lg font-gilmer">
+                  {project.title}
+                </h3>
+                <p className="mb-2 dark:text-white">
+                  {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
+                </p>
+              </div>
+            </div>
+          ))}
+          <Link href="/portfolio">
+            <a className="flex items-center font-bold text-amber-300 text-md sm:text-lg">
+              <span>See all projects</span>
+              <Arrow className="ml-2 fill-current" />
+            </a>
+          </Link>
+        </div>
       </section>
     </>
   );
-};
+}
 
-export default Home;
+export async function getStaticProps() {
+  const projects = allProjects
+    .map((post) =>
+      pick(post, [
+        "title",
+        "slug",
+        "summary",
+        "publishedAt",
+        "readingTime",
+        "tag",
+      ])
+    )
+    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
+    .slice(0, 3);
+
+  const blogPosts = allBlogs
+    .map((post) =>
+      pick(post, ["title", "slug", "summary", "publishedAt", "readingTime"])
+    )
+    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
+    .slice(0, 3);
+
+  return {
+    props: {
+      projects,
+      blogPosts,
+    },
+  };
+}

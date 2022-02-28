@@ -4,8 +4,8 @@ import { ReactNode, useEffect, useState } from "react";
 import Link from "./Link";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  const [isHidden, setIsHidden] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -21,12 +21,10 @@ const Header = () => {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return null;
-
   return (
     <>
       <div
-        className={`absolute z-20 w-screen h-1/5 bg-zinc-500/400 ${
+        className={`absolute z-20 w-screen h-2/5 bg-zinc-500/400 ${
           isOpen
             ? "translate-y-0 ease-out duration-500"
             : "-translate-y-full ease-in duration-500"
@@ -43,6 +41,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
+              <Link to="/about" onNavigate={handleCloseMenu}>
+                About
+              </Link>
+            </li>
+            <li>
               <Link to="/portfolio" onNavigate={handleCloseMenu}>
                 Portfolio
               </Link>
@@ -53,21 +56,24 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/about" onNavigate={handleCloseMenu}>
-                About
+              <Link to="/stack" onNavigate={handleCloseMenu}>
+                Stack
               </Link>
             </li>
           </ul>
         </header>
       </div>
-      <header className="container flex justify-between max-w-2xl p-10 mx-auto">
-        <ul className="flex justify-between invisible md:visible">
+      <header className="container flex justify-between max-w-3xl py-10 mx-auto px-7 md:pr-10 md:pl-7">
+        <button className="flex md:hidden" onClick={handleOpenMenu}>
+          <Icon.OpenMenu />
+        </button>
+        <ul className="justify-between hidden md:flex">
           <div className="flex items-center">
-            <button className="visible md:hidden" onClick={handleOpenMenu}>
-              <Icon.OpenMenu />
-            </button>
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
             </li>
             <li>
               <Link to="/portfolio">Portfolio</Link>
@@ -76,17 +82,19 @@ const Header = () => {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/stack">Stack</Link>
             </li>
           </div>
         </ul>
-        <div className="flex items-center visible">
-          <button
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          >
-            {theme === "light" ? <Icon.DarkMode /> : <Icon.LightMode />}
-          </button>
-        </div>
+        {mounted && (
+          <div className="flex items-center visible">
+            <button
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              {theme === "light" ? <Icon.DarkMode /> : <Icon.LightMode />}
+            </button>
+          </div>
+        )}
       </header>
       <div
         onClick={handleCloseMenu}

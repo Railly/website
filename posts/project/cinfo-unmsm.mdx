@@ -1,0 +1,80 @@
+---
+title: "Sistema de Gestión Académica"
+summary: "Una aplicación construida con Next.js para el Centro de Informática de la Universidad Nacional Mayor de San Marcos"
+publishedAt: "2021-12-20"
+image: "cinfo.png"
+tag: "Proyecto laboral"
+---
+
+Desarrollé el frontend del Sistema de Gestion Académica para el **Centro de Informática de la Universidad Nacional Mayor de San Marcos**.
+
+Decidí usar el framework Next.js debido a que se iba a adaptar a las necesidades de la Universidad y quería usar un stack moderno de tecnologías.
+
+Este proyecto resultó tener **más de 30 vistas**.
+
+| Stack                                                                                       | Código                                                       | Demo                                                         |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| - Next.js<br /><br />- TailwindCSS<br /><br />- React Hook Form + Yup<br /><br />- Chart.js | <Anchor href="#" target="_self">Repositorio privado</Anchor> | <Anchor href="http://167.114.50.85/login">Ver Sitio</Anchor> |
+
+<Image src="/cinfo.png" width={1764} height={1131} />
+
+---
+
+## Propósito del proyecto
+
+En Octubre del 2021, fui recomendado por un contacto de mi universidad para desarrollar el frontend de un sistema de gestión académica.
+
+Este proyecto buscaba automatizar los procesos de 5 áreas clave de la institución llamada **CINFO UNMSM** (<Anchor href="https://cinfo.unmsm.edu.pe/">Centro de Informática</Anchor>).
+
+Finalmente, desarrollé los siguientes módulos:
+
+- **Gestión de matrículas**
+- **Gestión de asignaturas**
+- **Gestión de salones**
+- **Gestión de docentes**
+- **Gestión de calificaciones**
+- **Gestión de certificados**
+- **Supervisión de pagos**
+- **Dashboard de estadísticas**
+
+---
+
+## Explicación del Stack
+
+- **Next.js** : Framework de React que permite crear páginas dinámicas y estáticas de manera rápida y simple.
+- **TailwindCSS** : Bibioteca de estilos de CSS que trabaja mediante clases y facilita la creación de componentes.
+- **React Hook Form** : Librería de React que permite crear formularios y manipular los campos.
+- **Yup** : Librería de validación de datos que se integra con React Hook Form.
+
+---
+
+<Image src="/cinfo-browser.png" width={1792} height={977} />
+
+---
+
+## Problemas y Proceso Creativo
+
+Antes de comenzar el desarrollo, tuve que diseñar <Anchor href="https://www.figma.com/file/PzdHzJ29K5D487oPZsCvuy/Cinfo?node-id=5%3A6">los prototipos de la aplicación en Figma</Anchor> desde cero.
+
+Luego de varios días de **investigacion, prototipado y diseño**, decidí empezar el desarrollo, con datos de prueba.
+
+Dado que era la primera vez que iba a construir software para usuarios reales, tuve que crear **mi propia biblioteca de componentes, servicios y hooks** para tener una base de código mantenible.
+
+Dediqué mucho esfuerzo al inicio para tener una aplicación **modularizada, legible y mantenible**. De esta manera, cada vez que me pedían un cambio o una nueva feature, me costaba muy poco tiempo y esfuerzo.
+
+Esta fue la estructura del proyecto:
+
+```
+/components
+/context
+/hooks
+/pages
+/services
+/ui
+/utils
+/validations
+```
+
+---
+
+<Image src="/cinfo-browser2.png" width={1792} height={977} />

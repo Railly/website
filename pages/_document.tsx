@@ -40,7 +40,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
       </Head>
-      <body className="text-base leading-7 text-zinc-800 dark:text-zinc-100 font-metro">
+      <body className="text-base leading-7 bg-zinc-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 font-metro">
         <Main />
         <NextScript />
       </body>
