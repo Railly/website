@@ -13,7 +13,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
         {blogPosts.map((blogPost) => (
           <article
             key={blogPost.slug}
-            onClick={() => router.push(`/portfolio/${blogPost.slug}`)}
+            onClick={() => router.push(`/blog/${blogPost.slug}`)}
             className="flex flex-col transition cursor-pointer hover:scale-[1.02] duration-300 bg-gradient-to-tl from-cyan-500 to-indigo-500 rounded-xl"
           >
             <div className="grid h-full grid-cols-2 p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">

@@ -19,16 +19,17 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
             onClick={() => router.push(`/portfolio/${project.slug}`)}
             className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
           >
-            <div className="grid h-full grid-cols-2 p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
+            <div className="grid h-full grid-cols-1 p-4 rounded-lg sm:grid-cols-2 bg-zinc-50/95 dark:bg-zinc-800/95">
               <Image
                 src={`/images/${project.image}`}
                 blurDataURL={`/images/${project.image}`}
                 placeholder="blur"
                 alt={project.title}
+                objectFit="cover"
                 width={1764 / 5.5}
                 height={1131 / 5.5}
               />
-              <div className="ml-4 ">
+              <div className="mt-4 ml-4 sm:mt-0">
                 <h3 className="mb-2 text-lg font-bold sm:text-xl font-gilmer">
                   {project.title}
                 </h3>

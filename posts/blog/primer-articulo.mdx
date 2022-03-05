@@ -13,12 +13,27 @@ Lorem ipsum dolor sit met, consectetur adipiscing elit. Pellentesque bibendum ri
 
 Maecenas semper interdum turpis, sit amet lacinia arcu lacinia eget. Integer sit amet erat in neque iaculis varius. Donec tortor dolor, iaculis eu vulputate et, interdum ut sapien. Etiam eu sem nisl. Sed ullamcorper sem ut enim volutpat, sit amet viverra magna consectetur. Fusce convallis elit et nunc vestibulum placerat. Integer leo libero, pharetra sed rutrum nec, dictum a enim. [Eslint](https://www.google.com). ornare maximus. Etiam sagittis sollicitudin ultrices. Sed convallis condimentum magna. Praesent eget nunc in nisi pulvinar rutrum. Suspendisse pulvinar, sem blandit sollicitudin blandit, turpis mi elementum felis, non rhoncus turpis nulla vel dui. Mauris rhoncus ligula eget augue vehicula finibus. In ullamcorper finibus ante, non auctor massa ultrices nec.
 
-```js:pages/api/index.ts {1,3-4} showLineNumbers
-function fancyAlert(arg) {
-  if (arg) {
-    $.facebox({ div: "#foo" });
-  }
+```tsx:pages/api/index.tsx {1,3-4} showLineNumbers
+import "../styles/globals.css";
+import "../styles/fonts.css";
+import type { AppProps } from "next/app";
+import { MDXProvider } from "@mdx-js/react";
+import { ThemeProvider } from "next-themes";
+import Layout from "components/Layout";
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <MDXProvider components={{}}>
+      <ThemeProvider attribute="class">
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </MDXProvider>
+  );
 }
+
+export default MyApp;
 ```
 
 --- aaoetnuosneu
@@ -27,12 +42,75 @@ function fancyAlert(arg) {
 
 aetushaoetn
 
-```js:lib/spotify.js showLineNumbers
-function fancyAlert(arg) {
-  if (arg) {
-    $.facebox({ div: "#foo" });
-  }
+```tsx:lib/index.tsx showLineNumbers
+// a
+import { allProjects } from ".contentlayer/generated";
+import type { Project } from ".contentlayer/generated";
+import { format } from "date-fns";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { tagColors } from "utils/styles";
+
+export default function Portfolio({ projects }: { projects: Project[] }) {
+  const router = useRouter();
+  return (
+    <section>
+      <h1 className="mb-4 text-xl font-bold sm:text-3xl font-gilmer">
+        Portfolio
+      </h1>
+      <div className="grid grid-cols-1 gap-4">
+        {projects.map((project) => (
+          <article
+            key={project.slug}
+            onClick={() => router.push(`/portfolio/${project.slug}`)}
+            className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
+          >
+            <div className="grid h-full grid-cols-2 p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
+              <Image
+                src={`/images/${project.image}`}
+                blurDataURL={`/images/${project.image}`}
+                placeholder="blur"
+                alt={project.title}
+                width={1764 / 5.5}
+                height={1131 / 5.5}
+              />
+              <div className="ml-4 ">
+                <h3 className="mb-2 text-lg font-bold sm:text-xl font-gilmer">
+                  {project.title}
+                </h3>
+                <p className="mb-2 dark:text-white">{project.summary}</p>
+                <p
+                  className={`mb-2 px-3 py-1 w-max rounded-lg font-medium text-zinc-50 ${
+                    tagColors[project.tag]
+                  }`}
+                >
+                  {project.tag}
+                </p>
+                <span className="mb-2 dark:text-white">
+                  {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
+                </span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }
+
+export async function getStaticProps() {
+  const projects = allProjects.sort(
+    (a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt)
+  );
+
+  return {
+    props: {
+      projects,
+    },
+  };
+}
+
+
 ```
 
 - **Lorem** - Lorem ipsum dolor sit amet, consectetur adipiscing elit.

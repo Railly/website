@@ -3,7 +3,7 @@ import NextLink from "next/link";
 
 type Props = {
   to: string;
-  active: boolean;
+  active?: boolean;
   onNavigate?: () => void;
   children: ReactNode;
 };

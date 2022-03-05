@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 pre {
-  @apply p-4 border dark:border-zinc-600 bg-zinc-50 border-gray-300 dark:bg-gray-900;
+  @apply p-4 border overflow-x-auto bg-scroll dark:border-zinc-600 bg-zinc-50 border-gray-300 dark:bg-[#23272E];
 }
 
 code {
-  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-lg bg-zinc-50 dark:bg-gray-900;
+  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-lg bg-zinc-50 dark:bg-[#23272E];
 }
 
 pre code {
@@ -19,7 +19,7 @@ pre code {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-gray-700 dark:text-gray-300;
+  @apply text-gray-700 dark:text-gray-400;
 }
 
 .token.punctuation {
@@ -33,16 +33,21 @@ pre code {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-green-500;
+  @apply text-green-500 dark:text-[#EF657C];
 }
 
 .token.selector,
-.token.attr-name,
 .token.string,
+.token.attr-value,
+.token.attr-value .punctuation:not(.attr-equals),
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-purple-500;
+  @apply text-purple-500 dark:text-[#95e083];
+}
+
+.token.attr-name {
+  @apply text-orange-500 dark:text-[#FB9E73];
 }
 
 .token.operator,
@@ -54,14 +59,19 @@ pre code {
 }
 
 .token.atrule,
-.token.attr-value,
 .token.keyword {
-  @apply text-blue-500;
+  @apply text-blue-500 dark:text-fuchsia-500;
 }
 
-.token.function,
+.token.function {
+  @apply text-pink-500 dark:text-blue-400 font-semibold;
+}
 .token.class-name {
-  @apply text-pink-500;
+  @apply text-pink-500 dark:text-[#ffc861];
+}
+
+.token + .maybe-class-name {
+  @apply text-pink-500 dark:text-blue-400 font-semibold;
 }
 
 .token.regex,
@@ -93,11 +103,11 @@ pre {
 }
 
 .highlight-line {
-  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-gray-800;
+  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-[#36383f];
 }
 
 .code-line:not(.highlight-line) {
-  @apply px-1 bg-zinc-50;
+  @apply px-1 bg-zinc-50 dark:bg-[#23272E];
 }
 
 .line-number::before {
@@ -108,4 +118,17 @@ pre {
   margin-left: -8px;
   color: rgb(156, 163, 175); /* Line number color */
   content: attr(line);
+}
+
+pre::-webkit-scrollbar {
+  width: 1em;
+}
+
+pre::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+pre::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
