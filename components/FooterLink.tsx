@@ -14,7 +14,7 @@ const FooterLink = ({ to, external = false, children }: Props) => {
         href={to}
         target="_blank"
         rel="noopener noreferrer"
-        className="px-3 py-2 transition rounded-lg hover:text-zinc-400 dark:hover:text-zinc-600"
+        className="px-3 py-2 transition rounded-lg dark:text-zinc-400 hover:text-indigo-700 dark:hover:text-zinc-600"
       >
         {children}
       </a>
@@ -22,7 +22,7 @@ const FooterLink = ({ to, external = false, children }: Props) => {
   } else {
     return (
       <NextLink href={to}>
-        <a className="px-3 py-2 transition rounded-lg hover:text-zinc-400 dark:hover:text-zinc-600">
+        <a className="px-3 py-2 transition rounded-lg dark:text-zinc-400 hover:text-indigo-700 dark:hover:text-zinc-600">
           {children}
         </a>
       </NextLink>

@@ -1,14 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
-// import ProsCard from 'components/ProsCard';
-// import ConsCard from 'components/ConsCard';
-// import Gumroad from 'components/metrics/Gumroad';
-// import Unsplash from 'components/metrics/Unsplash';
-// import Analytics from 'components/metrics/Analytics';
-// import YouTube from 'components/metrics/Youtube';
-// import Step from 'components/Step';
-// import ImageWithTheme from 'components/ImageWithTheme';
+import Md from "components/Markdown";
 
 const CustomLink = (props: any) => {
   const href = props.href;
@@ -22,24 +14,48 @@ const CustomLink = (props: any) => {
     );
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return (
+    <a
+      className="font-bold text-blue-400 underline transition underline-offset-2 hover:text-blue-600"
+      target="_blank"
+      rel="noopener noreferrer"
+      {...props}
+    >
+      {props.children}
+    </a>
+  );
 };
 
 function RoundedImage(props: any) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+  return (
+    <Image
+      blurDataURL={props.src}
+      placeholder="blur"
+      alt={props.alt}
+      className="rounded-lg"
+      {...props}
+    />
+  );
 }
 
 const MDXComponents = {
+  Anchor: Md.Anchor,
   Image: RoundedImage,
-  // ImageWithTheme,
   a: CustomLink,
-  // Analytics,
-  // ConsCard,
-  // Gumroad,
-  // ProsCard,
-  // Step,
-  // Unsplash,
-  // YouTube
+  hr: Md.Hr,
+  blockquote: Md.Quote,
+  h1: Md.Heading.H1,
+  h2: Md.Heading.H2,
+  h3: Md.Heading.H3,
+  li: Md.List.Li,
+  ol: Md.List.Ol,
+  p: Md.Text,
+  strong: Md.Strong,
+  table: Md.Table,
+  td: Md.TableCell,
+  th: (props: any) => <Md.TableCell bold {...props} />,
+  tr: Md.TableRow,
+  ul: Md.List.Ul,
 };
 
 export default MDXComponents;

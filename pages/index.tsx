@@ -5,7 +5,6 @@ import { allBlogs } from ".contentlayer/generated";
 import type { Project, Blog } from ".contentlayer/generated";
 import { pick } from "@contentlayer/client";
 import { format } from "date-fns";
-import Arrow from "icons/Arrow";
 import { useRouter } from "next/router";
 import { Icon } from "icons";
 
@@ -79,7 +78,7 @@ export default function Home({
           ))}
         </div>
         <Link href="/blog">
-          <a className="flex items-center font-bold text-indigo-500 dark:text-indigo-300 text-md sm:text-lg">
+          <a className="flex items-center pl-2 font-bold transition hover:text-indigo-500 dark:hover:text-cyan-500 text-md sm:text-lg">
             <span>See all posts</span>
             <Icon.Arrow className="ml-2 fill-current" />
           </a>
@@ -107,7 +106,7 @@ export default function Home({
             </div>
           ))}
           <Link href="/portfolio">
-            <a className="flex items-center font-bold text-amber-500 dark:text-amber-300 text-md sm:text-lg">
+            <a className="flex items-center pl-2 font-bold transition hover:text-amber-500 dark:hover:text-rose-400 text-md sm:text-lg">
               <span>See all projects</span>
               <Icon.Arrow className="ml-2 fill-current" />
             </a>

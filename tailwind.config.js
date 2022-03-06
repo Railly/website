@@ -1,9 +1,10 @@
 module.exports = {
   content: [
-    "./pages/**/*.{ts,tsx,mdx}",
-    "./components/**/*.{ts,tsx,mdx}",
-    "./icons/**/*.{ts,tsx,mdx}",
-    "./utils/**/*.{ts,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{js,ts,tsx}",
+    "./icons/**/*.{ts,tsx}",
+    "./utils/**/*.{ts,tsx}",
+    "./posts/**/*.{ts,tsx}",
   ],
   darkMode: "class",
   theme: {

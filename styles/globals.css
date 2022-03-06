@@ -7,7 +7,7 @@ pre {
 }
 
 code {
-  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-lg bg-zinc-50 dark:bg-[#23272E];
+  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-lg bg-zinc-100 dark:bg-[#23272E];
 }
 
 pre code {
@@ -33,7 +33,7 @@ pre code {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-green-500 dark:text-[#EF657C];
+  @apply text-indigo-500 dark:text-[#EF657C];
 }
 
 .token.selector,
@@ -43,7 +43,7 @@ pre code {
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-purple-500 dark:text-[#95e083];
+  @apply text-emerald-500 dark:text-[#95e083];
 }
 
 .token.attr-name {
@@ -67,7 +67,7 @@ pre code {
   @apply text-pink-500 dark:text-blue-400 font-semibold;
 }
 .token.class-name {
-  @apply text-pink-500 dark:text-[#ffc861];
+  @apply text-amber-500 dark:text-[#ffc861];
 }
 
 .token + .maybe-class-name {
@@ -85,13 +85,21 @@ pre[class*="language-"] {
   @apply text-gray-800 dark:text-gray-50;
 }
 
-pre::-webkit-scrollbar {
-  display: none;
-}
-
 pre {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+pre::-webkit-scrollbar {
+  @apply w-5 h-5 bg-zinc-200 dark:bg-gray-600;
+}
+
+pre::-webkit-scrollbar-track {
+  @apply bg-zinc-400 dark:bg-gray-800;
+}
+
+pre::-webkit-scrollbar-thumb {
+  @apply bg-zinc-200 dark:bg-gray-600;
 }
 
 .rehype-code-title {
@@ -118,17 +126,4 @@ pre {
   margin-left: -8px;
   color: rgb(156, 163, 175); /* Line number color */
   content: attr(line);
-}
-
-pre::-webkit-scrollbar {
-  width: 1em;
-}
-
-pre::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-pre::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
 }
