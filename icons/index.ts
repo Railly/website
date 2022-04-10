@@ -1,4 +1,3 @@
-import Apollo from "./Apollo";
 import GraphQL from "./GraphQL";
 import MongoDB from "./MongoDB";
 import NextJS from "./NextJS";
@@ -13,9 +12,10 @@ import LightMode from "./LightMode";
 import OpenMenu from "./OpenMenu";
 import CloseMenu from "./CloseMenu";
 import Arrow from "./Arrow";
+import Golang from "./Golang";
+import Rust from "./Rust";
 
 export const Icon = {
-  Apollo,
   GraphQL,
   MongoDB,
   NextJS,
@@ -30,4 +30,6 @@ export const Icon = {
   OpenMenu,
   CloseMenu,
   Arrow,
+  Golang,
+  Rust,
 };

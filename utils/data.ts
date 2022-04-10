@@ -6,6 +6,10 @@ export const myCurrentSkills = [
     icon: Icon.NextJS,
   },
   {
+    tech: "React",
+    icon: Icon.ReactJS,
+  },
+  {
     tech: "TypeScript",
     icon: Icon.TypeScript,
   },
@@ -16,10 +20,6 @@ export const myCurrentSkills = [
   {
     tech: "Node.js",
     icon: Icon.NodeJS,
-  },
-  {
-    tech: "React",
-    icon: Icon.ReactJS,
   },
   {
     tech: "Redux",
@@ -37,15 +37,22 @@ export const learningInProgress = [
     icon: Icon.ReactJS,
   },
   {
-    tech: "MongoDB",
-    icon: Icon.MongoDB,
-  },
-  {
     tech: "GraphQL",
     icon: Icon.GraphQL,
   },
   {
-    tech: "Apollo",
-    icon: Icon.Apollo,
+    tech: "MongoDB",
+    icon: Icon.MongoDB,
+  },
+];
+
+export const learningSomeday = [
+  {
+    tech: "Golang",
+    icon: Icon.Golang,
+  },
+  {
+    tech: "Rust",
+    icon: Icon.Rust,
   },
 ];

@@ -3,7 +3,6 @@ const GraphQL = (props: any) => (
     width={256}
     height={288}
     viewBox="0 0 256 288"
-    xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
     {...props}
   >

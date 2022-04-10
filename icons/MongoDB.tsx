@@ -1,12 +1,5 @@
 const MongoDB = (props: any) => (
-  <svg
-    width={143}
-    height={144}
-    viewBox="0 0 143 144"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+  <svg width={143} height={144} viewBox="0 0 143 144" fill="none" {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
