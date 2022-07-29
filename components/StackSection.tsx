@@ -18,7 +18,7 @@ const StackSection = ({ title, skills }: StackSectionProps) => {
   return (
     <section className="mt-4">
       <div className="flex items-center mb-4">
-        <h1 className="text-3xl font-bold font-gilmer">{title}</h1>
+        <h1 className="text-3xl font-bold ">{title}</h1>
       </div>
       <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-4">
         {skills.map((skill, index) => (

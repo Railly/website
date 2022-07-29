@@ -23,9 +23,7 @@ export default function ProjectLayout({
           >
             {project.tag}
           </p>
-          <h1 className="text-3xl font-bold md:text-4xl font-gilmer">
-            {project.title}
-          </h1>
+          <h1 className="text-3xl font-bold md:text-4xl ">{project.title}</h1>
           <div className="flex items-center mt-4">
             <div className="flex">
               <Image

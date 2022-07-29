@@ -20,9 +20,7 @@ export default function Home({
     <>
       <section className="flex flex-col-reverse items-center sm:flex-row">
         <div className="grid flex-1 mt-4 sm:mr-4 grid-row-3 sm:mt-0">
-          <h1 className="mb-4 text-3xl font-bold sm:text-5xl font-gilmer">
-            Railly Hugo
-          </h1>
+          <h1 className="mb-4 text-3xl font-bold sm:text-5xl ">Railly Hugo</h1>
           <p className="flex items-center">
             <span className="mr-2 text-lg font-bold">
               Frontend Developer at ID BI
@@ -56,9 +54,7 @@ export default function Home({
         </div>
       </section>
       <section className="mt-6 md:mt-8">
-        <h2 className="mb-6 text-xl font-bold sm:text-3xl font-gilmer">
-          Latest posts
-        </h2>
+        <h2 className="mb-6 text-xl font-bold sm:text-3xl ">Latest posts</h2>
         <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-3">
           {blogPosts.map((blog) => (
             <div
@@ -67,7 +63,7 @@ export default function Home({
               className="flex flex-col p-1 transition cursor-pointer hover:scale-[1.02] duration-300 bg-gradient-to-tl from-cyan-500 to-indigo-500 rounded-xl"
             >
               <div className="h-full p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
-                <h3 className="mb-2 font-bold text-md sm:text-lg font-gilmer">
+                <h3 className="mb-2 font-bold text-md sm:text-lg ">
                   {blog.title}
                 </h3>
                 <p className="mb-2 dark:text-white">
@@ -85,9 +81,7 @@ export default function Home({
         </Link>
       </section>
       <section className="mt-6 md:mt-8">
-        <h2 className="mb-6 text-xl font-bold sm:text-3xl font-gilmer">
-          Latest projects
-        </h2>
+        <h2 className="mb-6 text-xl font-bold sm:text-3xl ">Latest projects</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {projects.map((project) => (
             <div
@@ -96,7 +90,7 @@ export default function Home({
               className="flex cursor-pointer flex-col p-1 bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
             >
               <div className="h-full p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
-                <h3 className="mb-2 font-bold text-md sm:text-lg font-gilmer">
+                <h3 className="mb-2 font-bold text-md sm:text-lg ">
                   {project.title}
                 </h3>
                 <p className="mb-2 dark:text-white">

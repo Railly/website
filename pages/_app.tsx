@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import "../styles/fonts.css";
 import type { AppProps } from "next/app";
 import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider } from "next-themes";

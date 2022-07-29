@@ -9,9 +9,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
   const router = useRouter();
   return (
     <section>
-      <h1 className="mb-4 text-xl font-bold sm:text-3xl font-gilmer">
-        Portfolio
-      </h1>
+      <h1 className="mb-4 text-xl font-bold sm:text-3xl ">Portfolio</h1>
       <div className="grid grid-cols-1 gap-4">
         {projects.map((project) => (
           <article
@@ -30,7 +28,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                 height={1131 / 5.5}
               />
               <div className="mt-4 ml-4 sm:mt-0">
-                <h3 className="mb-2 text-lg font-bold sm:text-xl font-gilmer">
+                <h3 className="mb-2 text-lg font-bold sm:text-xl ">
                   {project.title}
                 </h3>
                 <p className="mb-2 dark:text-white">{project.summary}</p>

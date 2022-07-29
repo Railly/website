@@ -1,8 +1,8 @@
 ---
-title: "Primer articulo"
+title: "Migrate React Context to Redux, without the tears"
 summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum risus est, et rutrum elit lobortis vel."
-publishedAt: "2021-07-16"
-image: "post-1.jpg"
+publishedAt: "2022-02-24"
+tag: "React"
 ---
 
 > Hello World uwu
@@ -55,7 +55,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
   const router = useRouter();
   return (
     <section>
-      <h1 className="mb-4 text-xl font-bold sm:text-3xl font-gilmer">
+      <h1 className="mb-4 text-xl font-bold sm:text-3xl ">
         Portfolio
       </h1>
       <div className="grid grid-cols-1 gap-4">
@@ -75,7 +75,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                 height={1131 / 5.5}
               />
               <div className="ml-4 ">
-                <h3 className="mb-2 text-lg font-bold sm:text-xl font-gilmer">
+                <h3 className="mb-2 text-lg font-bold sm:text-xl ">
                   {project.title}
                 </h3>
                 <p className="mb-2 dark:text-white">{project.summary}</p>
