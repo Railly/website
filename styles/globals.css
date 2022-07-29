@@ -14,7 +14,7 @@
 }
 
 pre {
-  @apply p-4 border overflow-x-auto bg-scroll dark:border-zinc-600 bg-zinc-50 border-gray-300 dark:bg-[#23272E] text-base;
+  @apply p-4 border overflow-x-auto bg-scroll dark:border-zinc-600 bg-zinc-50 border-gray-300 dark:bg-[#23272E] text-sm sm:text-base;
 }
 
 code {

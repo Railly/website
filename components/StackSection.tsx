@@ -20,7 +20,7 @@ const StackSection = ({ title, skills }: StackSectionProps) => {
       <div className="flex items-center mb-4">
         <h1 className="text-2xl font-semibold sm:text-3xl">{title}</h1>
       </div>
-      <ul className="grid grid-cols-3 gap-6 sm:grid-cols-4 md:grid-cols-4">
+      <ul className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
         {skills.map((skill, index) => (
           <li key={index}>
             <TechCard
@@ -51,7 +51,12 @@ const TechCard = ({ tech, icon: Icon, type }: TechCardProps) => {
       className={`p-1 bg-gradient-to-r rounded-xl hover:scale-[1.02] hover:shadow-lg dark:shadow-gray-200/40 transition ${styles[type]}`}
     >
       <div className="flex flex-col items-center py-1 font-medium transition bg-white rounded-lg dark:bg-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-600">
-        <span>{tech}</span>
+        <span
+          title={tech}
+          className="max-w-full overflow-hidden select-none whitespace-nowrap text-ellipsis"
+        >
+          {tech}
+        </span>
         <Icon className="w-8 h-8 m-1" />
       </div>
     </div>
