@@ -85,11 +85,6 @@ const Header = () => {
           </ul>
         </header>
       </div>
-      <div className="sticky top-0 z-40 w-full text-center bg-indigo-500 h-7">
-        <span className="font-bold text-white">
-          This website is under development 🚧
-        </span>
-      </div>
       <header className="container flex justify-between max-w-3xl py-10 mx-auto px-7 md:pr-10 md:pl-7">
         <button className="flex md:hidden" onClick={handleOpenMenu}>
           <Icon.OpenMenu />

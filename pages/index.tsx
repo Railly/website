@@ -77,7 +77,7 @@ export default function Home({
           <Link href="/blog">
             <a className="flex items-center pl-2 font-medium transition w-fit hover:text-indigo-500 dark:hover:text-cyan-500 text-md sm:text-lg group">
               <span>See all posts</span>
-              <Icon.Arrow className="ml-2 transition duration-300 fill-indigo-500 group-hover:translate-x-2" />
+              <Icon.Arrow className="ml-2 transition duration-300 fill-indigo-500 dark:fill-cyan-500 group-hover:translate-x-2" />
             </a>
           </Link>
         </div>
@@ -106,7 +106,7 @@ export default function Home({
           <Link href="/portfolio">
             <a className="flex items-center pl-2 font-medium transition w-fit hover:text-amber-500 dark:hover:text-rose-400 text-md sm:text-lg group">
               <span>See all projects</span>
-              <Icon.Arrow className="ml-2 transition duration-300 fill-amber-500 group-hover:translate-x-2" />
+              <Icon.Arrow className="ml-2 transition duration-300 fill-amber-500 dark:fill-rose-400 group-hover:translate-x-2" />
             </a>
           </Link>
         </div>
