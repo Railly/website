@@ -16,15 +16,15 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
             onClick={() => router.push(`/blog/${blogPost.slug}`)}
             className="flex flex-col transition cursor-pointer hover:scale-[1.02] hover:-rotate-1 duration-300 shadow-md shadow-slate-600/10 rounded-2xl dark:shadow-gray-400/10"
           >
-            <div className="grid h-full grid-cols-1 p-4 bg-zinc-50/95 dark:bg-zinc-800/95 rounded-2xl">
+            <div className="grid grid-cols-1 p-4 bg-zinc-50/95 dark:bg-zinc-800/95 rounded-2xl">
               <div className="grid ml-4">
                 <h3 className="mb-2 text-lg font-medium sm:text-xl ">
                   {blogPost.title}
                 </h3>
                 <div className="flex flex-wrap gap-4">
-                  {blogPost?.tags?.map((tag) => (
+                  {blogPost?.tags?.map((tag, index) => (
                     <p
-                      key={tag}
+                      key={`${tag}-${index}`}
                       className={`mb-2 w-max px-2 py-0.5 rounded-lg text-sm font-medium ${tagColors["Blog"]}`}
                     >
                       {tag}

@@ -17,13 +17,13 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
             onClick={() => router.push(`/portfolio/${project.slug}`)}
             className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 shadow-md shadow-slate-600/10 rounded-2xl dark:shadow-gray-400/10"
           >
-            <div className="grid h-full grid-cols-1 p-4 rounded-lg sm:grid-cols-2 bg-zinc-50/95 dark:bg-zinc-800/95">
+            <div className="grid grid-cols-1 p-4 rounded-lg sm:grid-cols-2 bg-zinc-50/95 dark:bg-zinc-800/95">
               <Image
+                className="object-cover"
                 src={`/images/${project.image}`}
                 blurDataURL={`/images/${project.image}`}
                 placeholder="blur"
                 alt={project.title}
-                objectFit="cover"
                 width={1764 / 5.5}
                 height={1131 / 5.5}
               />
