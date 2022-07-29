@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <section>
-      <h1 className="mb-4 text-xl font-bold sm:text-3xl ">About</h1>
+      <h1 className="mb-4 text-xl font-semibold sm:text-3xl">About</h1>
       <p className="text-xl">
         Hi, I&apos;m Railly Hugo, <br />
       </p>
