@@ -10,12 +10,12 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
   return (
     <section>
       <h1 className="mb-4 text-xl font-semibold sm:text-3xl">Portfolio</h1>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-6">
         {projects.map((project) => (
           <article
             key={project.slug}
             onClick={() => router.push(`/portfolio/${project.slug}`)}
-            className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
+            className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 shadow-md shadow-slate-600/10 rounded-2xl dark:shadow-gray-400/10"
           >
             <div className="grid h-full grid-cols-1 p-4 rounded-lg sm:grid-cols-2 bg-zinc-50/95 dark:bg-zinc-800/95">
               <Image
@@ -27,19 +27,21 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                 width={1764 / 5.5}
                 height={1131 / 5.5}
               />
-              <div className="mt-4 ml-4 sm:mt-0">
-                <h3 className="mb-2 text-lg font-bold sm:text-xl ">
+              <div className="grid mt-4 ml-4 sm:mt-0">
+                <h3 className="mb-2 text-lg font-medium sm:text-xl ">
                   {project.title}
                 </h3>
                 <p className="mb-2 dark:text-white">{project.summary}</p>
-                <p
-                  className={`mb-2 px-3 py-1 w-max rounded-lg font-medium text-zinc-50 ${
-                    tagColors[project.tag]
-                  }`}
-                >
-                  {project.tag}
-                </p>
-                <span className="mb-2 dark:text-white">
+                <div>
+                  <p
+                    className={`mb-2 px-2 py-0.5 w-max rounded-lg font-medium text-sm ${
+                      tagColors[project.tag]
+                    }`}
+                  >
+                    {project.tag}
+                  </p>
+                </div>
+                <span className="mb-2 text-sm place-self-end dark:text-white">
                   {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
                 </span>
               </div>

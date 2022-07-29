@@ -22,7 +22,6 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
                   {blogPost.title}
                 </h3>
                 <p className="mb-2 dark:text-white">{blogPost.summary}</p>
-                {console.log(blogPost, "blogPost")}
                 <div className="flex flex-wrap gap-4">
                   {blogPost?.tags?.map((tag) => (
                     <p
@@ -33,7 +32,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
                     </p>
                   ))}
                 </div>
-                <span className="mb-2 place-self-end dark:text-white">
+                <span className="mb-2 text-sm place-self-end dark:text-white">
                   {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
                 </span>
               </div>
