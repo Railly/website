@@ -20,7 +20,9 @@ export default function Home({
     <>
       <section className="flex flex-col-reverse items-center sm:flex-row">
         <div className="grid flex-1 mt-4 sm:mr-4 grid-row-3 sm:mt-0">
-          <h1 className="mb-4 text-3xl font-bold sm:text-5xl ">Railly Hugo</h1>
+          <h1 className="mb-4 text-3xl font-semibold sm:text-5xl ">
+            Railly Hugo
+          </h1>
           <p className="flex items-center">
             <span className="mr-2 text-lg font-bold">
               Frontend Developer at ID BI
@@ -54,7 +56,7 @@ export default function Home({
         </div>
       </section>
       <section className="mt-6 md:mt-8">
-        <h2 className="mb-6 text-xl font-semibold sm:text-3xl">Latest posts</h2>
+        <h2 className="mb-6 text-xl font-medium sm:text-3xl">Latest posts</h2>
         <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-3">
           {blogPosts.map((blog) => (
             <div
@@ -72,16 +74,16 @@ export default function Home({
               </div>
             </div>
           ))}
+          <Link href="/blog">
+            <a className="flex items-center pl-2 font-medium transition w-fit hover:text-indigo-500 dark:hover:text-cyan-500 text-md sm:text-lg group">
+              <span>See all posts</span>
+              <Icon.Arrow className="ml-2 transition duration-300 fill-indigo-500 group-hover:translate-x-2" />
+            </a>
+          </Link>
         </div>
-        <Link href="/blog">
-          <a className="flex items-center pl-2 font-bold transition hover:text-indigo-500 dark:hover:text-cyan-500 text-md sm:text-lg">
-            <span>See all posts</span>
-            <Icon.Arrow className="ml-2 fill-current" />
-          </a>
-        </Link>
       </section>
       <section className="mt-6 md:mt-8">
-        <h2 className="mb-6 text-xl font-semibold sm:text-3xl">
+        <h2 className="mb-6 text-xl font-medium sm:text-3xl">
           Latest projects
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -102,9 +104,9 @@ export default function Home({
             </div>
           ))}
           <Link href="/portfolio">
-            <a className="flex items-center pl-2 font-bold transition hover:text-amber-500 dark:hover:text-rose-400 text-md sm:text-lg">
+            <a className="flex items-center pl-2 font-medium transition w-fit hover:text-amber-500 dark:hover:text-rose-400 text-md sm:text-lg group">
               <span>See all projects</span>
-              <Icon.Arrow className="ml-2 fill-current" />
+              <Icon.Arrow className="ml-2 transition duration-300 fill-amber-500 group-hover:translate-x-2" />
             </a>
           </Link>
         </div>

@@ -33,26 +33,34 @@ export const myCurrentSkills = [
 
 export const learningInProgress = [
   {
-    tech: "React Native",
-    icon: Icon.ReactJS,
+    tech: "Golang",
+    icon: Icon.Golang,
   },
   {
-    tech: "GraphQL",
-    icon: Icon.GraphQL,
+    tech: "Laravel",
+    icon: Icon.Laravel,
   },
   {
-    tech: "MongoDB",
-    icon: Icon.MongoDB,
+    tech: "Storybook",
+    icon: Icon.Storybook,
   },
 ];
 
 export const learningSomeday = [
   {
-    tech: "Golang",
-    icon: Icon.Golang,
-  },
-  {
     tech: "Rust",
     icon: Icon.Rust,
+  },
+  {
+    tech: "React Native",
+    icon: Icon.ReactJS,
+  },
+  {
+    tech: "MongoDB",
+    icon: Icon.MongoDB,
+  },
+  {
+    tech: "GraphQL",
+    icon: Icon.GraphQL,
   },
 ];

@@ -16,11 +16,11 @@ type TechCardProps = {
 
 const StackSection = ({ title, skills }: StackSectionProps) => {
   return (
-    <section className="mt-4">
+    <section className="mt-8">
       <div className="flex items-center mb-4">
-        <h1 className="text-3xl font-bold ">{title}</h1>
+        <h1 className="text-2xl font-semibold sm:text-3xl">{title}</h1>
       </div>
-      <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-4">
+      <ul className="grid grid-cols-3 gap-6 sm:grid-cols-4 md:grid-cols-4">
         {skills.map((skill, index) => (
           <li key={index}>
             <TechCard

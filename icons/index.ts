@@ -14,6 +14,8 @@ import CloseMenu from "./CloseMenu";
 import Arrow from "./Arrow";
 import Golang from "./Golang";
 import Rust from "./Rust";
+import Storybook from "./Storybook";
+import Laravel from "./Laravel";
 
 export const Icon = {
   GraphQL,
@@ -32,4 +34,6 @@ export const Icon = {
   Arrow,
   Golang,
   Rust,
+  Storybook,
+  Laravel,
 };

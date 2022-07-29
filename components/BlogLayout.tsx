@@ -8,7 +8,6 @@ type BlogLayoutProps = {
 };
 
 export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
-  console.log("BlogLayout", blogPost);
   return (
     <>
       <main>
@@ -33,10 +32,11 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
           </div>
           <p className="mt-4">
             Posted on{" "}
-            <span className="underline underline-offset-2 decoration-dotted">
+            <span className="underline underline-offset-4 decoration-dotted">
               {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
             </span>
-            • {blogPost.readingTime.text}
+            {" • "}
+            {blogPost.readingTime.text}
           </p>
         </section>
         <hr className="mt-6 dark:opacity-10" />

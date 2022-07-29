@@ -14,7 +14,7 @@
 }
 
 pre {
-  @apply p-4 border overflow-x-auto bg-scroll dark:border-zinc-600 bg-zinc-50 border-gray-300 dark:bg-[#23272E];
+  @apply p-4 border overflow-x-auto bg-scroll dark:border-zinc-600 bg-zinc-50 border-gray-300 dark:bg-[#23272E] text-base;
 }
 
 code {
@@ -49,7 +49,7 @@ pre code {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-indigo-500 dark:text-[#EF657C];
+  @apply text-indigo-500 dark:text-[#ef657c] font-medium;
 }
 
 .token.selector,

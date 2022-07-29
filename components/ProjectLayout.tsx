@@ -17,13 +17,15 @@ export default function ProjectLayout({
       <main>
         <section>
           <p
-            className={`mb-2 px-3 py-1 w-max rounded-lg font-medium text-zinc-50 ${
+            className={`mb-4 px-3 py-1 w-max rounded-lg font-medium text-zinc-50 ${
               tagColors[project.tag]
             }`}
           >
             {project.tag}
           </p>
-          <h1 className="text-3xl font-bold md:text-4xl ">{project.title}</h1>
+          <h1 className="text-3xl font-semibold md:text-4xl">
+            {project.title}
+          </h1>
           <div className="flex items-center mt-4">
             <div className="flex">
               <Image
@@ -43,10 +45,11 @@ export default function ProjectLayout({
           </div>
           <p className="mt-4">
             Posted on{" "}
-            <span className="underline underline-offset-2 decoration-dotted">
+            <span className="underline underline-offset-4 decoration-dotted">
               {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
             </span>
-            • {project.readingTime.text}
+            {" • "}
+            {project.readingTime.text}
           </p>
         </section>
         <hr className="mt-6 dark:opacity-10" />

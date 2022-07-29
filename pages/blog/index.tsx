@@ -8,7 +8,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
   const router = useRouter();
   return (
     <section>
-      <h1 className="mb-4 text-xl font-semibold sm:text-3xl">Blog</h1>
+      <h1 className="mb-4 text-2xl font-semibold sm:text-3xl">Blog</h1>
       <div className="grid grid-cols-1 gap-6">
         {blogPosts.map((blogPost) => (
           <article
@@ -21,7 +21,6 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
                 <h3 className="mb-2 text-lg font-medium sm:text-xl ">
                   {blogPost.title}
                 </h3>
-                <p className="mb-2 dark:text-white">{blogPost.summary}</p>
                 <div className="flex flex-wrap gap-4">
                   {blogPost?.tags?.map((tag) => (
                     <p
@@ -32,6 +31,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
                     </p>
                   ))}
                 </div>
+                <p className="mb-2 dark:text-white">{blogPost.summary}</p>
                 <span className="mb-2 text-sm place-self-end dark:text-white">
                   {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
                 </span>
