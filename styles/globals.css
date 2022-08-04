@@ -18,7 +18,7 @@ pre {
 }
 
 code {
-  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-lg bg-zinc-100 dark:bg-[#23272E];
+  @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-200 dark:border-gray-800 rounded-lg bg-zinc-200 dark:bg-[#23272E];
 }
 
 pre code {

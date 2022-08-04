@@ -2,6 +2,7 @@ import type { Project } from ".contentlayer/generated";
 import Image from "next/image";
 import { format } from "date-fns";
 import { tagColors } from "utils/styles";
+import Head from "next/head";
 
 type ProjectLayoutProps = {
   children: JSX.Element;
@@ -14,6 +15,19 @@ export default function ProjectLayout({
 }: ProjectLayoutProps) {
   return (
     <>
+      <Head>
+        <title>{project.title}</title>
+        <meta name="description" content={project.summary} />
+        <meta property="og:title" content={project.title} />
+        <meta property="og:description" content={project.summary} />
+        <meta property="og:image" content={project.image} />
+        <meta
+          property="og:url"
+          content={`https://raillyhugo.com/portfolio/${project.slug}`}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Railly Hugo" />
+      </Head>
       <main>
         <section>
           <p

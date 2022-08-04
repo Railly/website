@@ -1,5 +1,6 @@
 import type { Blog } from ".contentlayer/generated";
 import { format } from "date-fns";
+import Head from "next/head";
 import Image from "next/image";
 
 type BlogLayoutProps = {
@@ -10,6 +11,19 @@ type BlogLayoutProps = {
 export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
   return (
     <>
+      <Head>
+        <title>{blogPost.title}</title>
+        <meta name="description" content={blogPost.summary} />
+        <meta property="og:title" content={blogPost.title} />
+        <meta property="og:description" content={blogPost.summary} />
+        <meta property="og:image" content={blogPost.image} />
+        <meta
+          property="og:url"
+          content={`https://raillyhugo.com/blog/${blogPost.slug}`}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Railly Hugo" />
+      </Head>
       <main>
         <section>
           <h1 className="text-3xl font-bold md:text-4xl ">{blogPost.title}</h1>
