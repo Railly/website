@@ -62,7 +62,7 @@ const PRE = "overflow-x-auto py-2 text-[13px] [color-scheme:dark] bg-[#23272e]";
 const CODE =
   "grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3";
 const INLINE_BLOCK =
-  "whitespace-nowrap border border-indigo-200/10 px-1.5 py-px text-[12px] rounded-full bg-white/5 whitespace-nowrap text-indigo-300/90";
+  "whitespace-nowrap border border-indigo-200 dark:border-indigo-400/10 px-1.5 py-px text-[12px] rounded-full bg-white/5 whitespace-nowrap text-indigo-600 dark:text-indigo-300/80";
 const INLINE_CODE = "";
 const NUMBERED_LINES =
   "[counter-reset:line] before:[&>span]:mr-3 before:[&>span]:inline-block before:[&>span]:w-4 before:[&>span]:text-right before:[&>span]:text-white/20 before:[&>span]:![content:counter(line)] before:[&>span]:[counter-increment:line]";

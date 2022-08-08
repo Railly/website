@@ -2,7 +2,7 @@ import FooterLink from "./FooterLink";
 
 export default function Footer() {
   return (
-    <footer className="container max-w-3xl mx-auto mt-10">
+    <footer className="container max-w-3xl mx-auto mt-10 text-sm">
       <hr className="dark:opacity-10" />
       <section className="grid grid-cols-2 gap-4 p-4 mb:10 sm:mb-20 md:grid-cols-3 sm:grid-cols-2 place-items-center">
         <FooterLink to="/">Home</FooterLink>
