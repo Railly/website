@@ -68,7 +68,7 @@ export default function Home({
                 <h3 className="mb-2 font-medium text-md sm:text-lg ">
                   {blog.title}
                 </h3>
-                <p className="mb-2 dark:text-white">
+                <p className="mb-2 text-base dark:text-white">
                   {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
                 </p>
               </div>
@@ -97,7 +97,7 @@ export default function Home({
                 <h3 className="mb-2 font-medium text-md sm:text-lg ">
                   {project.title}
                 </h3>
-                <p className="mb-2 dark:text-white">
+                <p className="mb-2 text-base dark:text-white">
                   {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
                 </p>
               </div>

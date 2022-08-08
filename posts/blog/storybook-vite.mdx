@@ -1,134 +1,160 @@
 ---
-title: "How To Setup Storybook with Vite + Architecture"
-summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum risus est, et rutrum elit lobortis vel."
-publishedAt: "2022-07-30"
+title: "How To Setup Storybook with Vite + Example"
+summary: "An overwiew of how I set up Storybook in a Vite project, all challenges I faced, and the solutions I found."
+publishedAt: "2022-08-3"
 tags:
   - Storybook
   - Vite
 ---
 
-> Hello World uwu
-> Separator
-> NOOOOOOOOOOOOOOOO
+Storybook is a library that allows you to document your UI components to help you maintain them.
 
-Lorem ipsum dolor sit met, consectetur adipiscing elit. Pellentesque bibendum risus est, et rutrum elit lobortis vel. Integer ac leo vel lectus pellentesque aliquet ut vitae velit. Nam tincidunt non ex quis pulvinar. Fusce venenatis purus eu metus vehicula, ornare eleifend leo dictum. Ut faucibus tristique arcu in vehicula. Pellentesque gravida a mi ut scelerisque. Nulla facilisi. Ut cursus laoreet ligula, vitae malesuada sem rutrum id.
+Regardless of the framework of your choice, documenting your UI is a crucial part of your workflow.
+It will give you a better understanding of how your components work and what they do.
 
-Maecenas semper interdum turpis, sit amet lacinia arcu lacinia eget. Integer sit amet erat in neque iaculis varius. Donec tortor dolor, iaculis eu vulputate et, interdum ut sapien. Etiam eu sem nisl. Sed ullamcorper sem ut enim volutpat, sit amet viverra magna consectetur. Fusce convallis elit et nunc vestibulum placerat. Integer leo libero, pharetra sed rutrum nec, dictum a enim. [Eslint](https://www.google.com). ornare maximus. Etiam sagittis sollicitudin ultrices. Sed convallis condimentum magna. Praesent eget nunc in nisi pulvinar rutrum. Suspendisse pulvinar, sem blandit sollicitudin blandit, turpis mi elementum felis, non rhoncus turpis nulla vel dui. Mauris rhoncus ligula eget augue vehicula finibus. In ullamcorper finibus ante, non auctor massa ultrices nec.
+If you choose to use Storybook, you will need to install and configure it. So let's get started.
 
-```tsx:pages/api/index.tsx {1,3-4} showLineNumbers
-import "../styles/globals.css";
-import "../styles/fonts.css";
-import type { AppProps } from "next/app";
-import { MDXProvider } from "@mdx-js/react";
-import { ThemeProvider } from "next-themes";
-import Layout from "components/Layout";
+## Install and Configure Storybook
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <MDXProvider components={{}}>
-      <ThemeProvider attribute="class">
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
-    </MDXProvider>
-  );
-}
+Run the following command inside your Vite Project
 
-export default MyApp;
+```bash title="Terminal"
+npx sb init --builder @storybook/builder-vite
 ```
 
---- aaoetnuosneu
+After installing all Storybook packages, it will create a default configuration folder for us:
 
-## ---aaaaaaaaaaa
+```bash showLineNumbers title="Working Directory"
+...
+📂.storybook
+ ┣ 📄main.js
+ ┣ 📄preview-head.html
+ ┗ 📄preview.js
+...
+```
 
-aetushaoetn
+Let's explain a little bit about these files
 
-```tsx:lib/index.tsx showLineNumbers
-// a
-import { allProjects } from ".contentlayer/generated";
-import type { Project } from ".contentlayer/generated";
-import { format } from "date-fns";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import { tagColors } from "utils/styles";
+### main.js
 
-export default function Portfolio({ projects }: { projects: Project[] }) {
-  const router = useRouter();
-  return (
-    <section>
-      <h1 className="mb-4 text-xl font-bold sm:text-3xl ">
-        Portfolio
-      </h1>
-      <div className="grid grid-cols-1 gap-4">
-        {projects.map((project) => (
-          <article
-            key={project.slug}
-            onClick={() => router.push(`/portfolio/${project.slug}`)}
-            className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
-          >
-            <div className="grid h-full grid-cols-2 p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
-              <Image
-                src={`/images/${project.image}`}
-                blurDataURL={`/images/${project.image}`}
-                placeholder="blur"
-                alt={project.title}
-                width={1764 / 5.5}
-                height={1131 / 5.5}
-              />
-              <div className="ml-4 ">
-                <h3 className="mb-2 text-lg font-bold sm:text-xl ">
-                  {project.title}
-                </h3>
-                <p className="mb-2 dark:text-white">{project.summary}</p>
-                <p
-                  className={`mb-2 px-3 py-1 w-max rounded-lg font-medium text-zinc-50 ${
-                    tagColors[project.tag]
-                  }`}
-                >
-                  {project.tag}
-                </p>
-                <span className="mb-2 dark:text-white">
-                  {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
-                </span>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
+Here you can customize the Storybook configuration:
 
-export async function getStaticProps() {
-  const projects = allProjects.sort(
-    (a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt)
-  );
+- Set the path to the stories
+- Set the core-builder
+- Set the final custom vite configuration
 
-  return {
-    props: {
-      projects,
+_Note:_ `--builder @storybook/builder-vite` allows us to use the vite core builder
+
+```js showLineNumbers {10} title=".storybook/main.js"
+module.exports = {
+  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+  ],
+  framework: "@storybook/react",
+  core: {
+    builder: "@storybook/builder-vite",
+  },
+  features: {
+    storyStoreV7: true,
+  },
+};
+```
+
+### preview-head.html
+
+Here you can inject your styles and scripts.
+
+```html title=".storybook/preview-head.html"
+<script>
+  window.global = window;
+</script>
+```
+
+### preview.js
+
+Here you can set global configuration for your stories interactions.
+
+```js title=".storybook/preview.js"
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
     },
-  };
-}
-
-
+  },
+};
 ```
 
-- **Lorem** - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- **Ipsum** - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- **Dolor** - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum risus est, et rutrum elit lobortis vel. Integer ac leo vel lectus pellentesque aliquet ut vitae velit..
+## Create a Storybook Story
 
-In the end, I settled for Next.js, MDX, Tailwind, Prisma and Typescript.
+Next, I'm going to show you an arbitrary way to manage your stories.
 
-## Lorem Ipsum
+Let's imagine that you have a component `BaseTemplate` that you want to document.
 
-Maecenas semper interdum turpis, sit amet lacinia arcu lacinia eget. Integer sit amet erat in neque iaculis varius. Donec tortor dolor, iaculis eu vulputate et, interdum ut [Eslint](https://www.google.com) Etiam eu sem nisl. Sed ullamcorper sem ut enim volutpat, sit amet viverra magna consectetur. Fusce convallis elit et nunc vestibulum placerat. Integer leo libero, pharetra sed rutrum nec, dictum a enim. [Eslint](https://www.google.com). ornare maximus. Etiam sagittis sollicitudin ultrices. Sed convallis condimentum magna. Praesent eget nunc in nisi pulvinar rutrum. Suspendisse pulvinar, sem blandit sollicitudin blandit, turpis mi elementum felis, non rhoncus turpis nulla vel dui. [Eslint](https://www.google.com) eget augue vehicula finibus. In ullamcorper finibus ante, non auctor massa ultrices nec.
+```tsx showLineNumbers {4} title="components/BaseTemplate/index.tsx"
+import React from "react";
 
-- **Lorem** - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- **Ipsum** - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- **Dolor** - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum risus est, et rutrum elit lobortis vel. Integer ac leo vel lectus pellentesque aliquet ut vitae velit..
+export interface IBaseTemplateProps {
+  text: string;
+}
 
-## The Future
+const BaseTemplate = ({ text }) => <div>{text}</div>;
+```
 
-`--root-mode upward`
+First, we create a `BaseTemplate.mock.ts` to mock all component props:
+
+```ts showLineNumbers {5} title="components/BaseTemplate/BaseTemplate.mock.ts"
+import React from "react";
+import { IBaseTemplateProps } from ".";
+
+const base: IBaseTemplateProps = {
+  text: "Hello World",
+};
+
+export const mockBaseTemplateProps = {
+  base,
+};
+```
+
+Next, create a `BaseTemplate.stories.tsx` where we are going to put our boilerplate code:
+
+```tsx showLineNumbers {3,4} title="components/BaseTemplate/BaseTemplate.stories.mdx"
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+import BaseTemplate, { IBaseTemplateProps } from ".";
+import { mockBaseTemplateProps } from "./BaseTemplate.mock";
+
+export default {
+  title: "template/BaseTemplate",
+  component: BaseTemplate,
+  argTypes: {},
+} as ComponentMeta<typeof BaseTemplate>;
+
+const Template: ComponentStory<typeof BaseTemplate> = (args) => (
+  <BaseTemplate {...args} />
+);
+
+export const Base = Template.bind({});
+
+Base.args = {
+  ...mockBaseTemplateProps.base,
+} as IBaseTemplateProps;
+```
+
+Now, if we run `npm run storybook` you will notice that Storybook will automatically open the preview page.
+
+And that's all. You have your first story ready!
+
+<Image src="/images/storybook-1.webp" width={1904} height={856} />
+
+## Closing Remarks
+
+Storybook is a powerful tool for documenting the UI visually. This way, you can have a snapshot of the current state of your components.
+
+How we can see this not only benefits the development team but also provides an overview to the design team that can improve their decision making
+
+Finally, we create a `BaseTemplate` story that will help us to "automatically" create our stories as we will see in a following post.

@@ -4,13 +4,15 @@ module.exports = {
     "./components/**/*.{js,ts,tsx}",
     "./icons/**/*.{ts,tsx}",
     "./utils/**/*.{ts,tsx}",
-    "./posts/**/*.{ts,tsx}",
+    "./posts/**/*.mdx",
+    "./contentlayer.config.ts",
   ],
   darkMode: "class",
   theme: {
     fontFamily: {
       lexend: ["Lexend", "sans-serif"],
       dm: ["DM Sans", "sans-serif"],
+      mono: ["Fira Code", "monospace"],
     },
     extend: {
       // custom animation for underline from left to right

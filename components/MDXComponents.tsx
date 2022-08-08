@@ -28,13 +28,15 @@ const CustomLink = (props: any) => {
 
 function RoundedImage(props: any) {
   return (
-    <Image
-      blurDataURL={props.src}
-      placeholder="blur"
-      alt={props.alt}
-      className="rounded-lg"
-      {...props}
-    />
+    <div className="rounded-lg shadow-xl">
+      <Image
+        className="rounded-lg shadow-xl"
+        blurDataURL={props.src}
+        placeholder="blur"
+        alt={props.alt}
+        {...props}
+      />
+    </div>
   );
 }
 

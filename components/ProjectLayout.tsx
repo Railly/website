@@ -57,7 +57,7 @@ export default function ProjectLayout({
               <span className="text-sm">Frontend Developer</span>
             </div>
           </div>
-          <p className="mt-4">
+          <p className="mt-4 text-sm">
             Posted on{" "}
             <span className="underline underline-offset-4 decoration-dotted">
               {format(new Date(project.publishedAt), "MMMM dd, yyyy")}

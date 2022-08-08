@@ -31,7 +31,9 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
                     </p>
                   ))}
                 </div>
-                <p className="mb-2 dark:text-white">{blogPost.summary}</p>
+                <p className="mb-2 text-base dark:text-white">
+                  {blogPost.summary}
+                </p>
                 <span className="mb-2 text-sm place-self-end dark:text-white">
                   {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
                 </span>

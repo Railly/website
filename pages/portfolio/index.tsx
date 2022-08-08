@@ -38,7 +38,9 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                 >
                   {project.tag}
                 </p>
-                <p className="mb-2 dark:text-white">{project.summary}</p>
+                <p className="mb-2 text-base dark:text-white">
+                  {project.summary}
+                </p>
                 <span className="mb-2 text-sm place-self-end dark:text-white">
                   {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
                 </span>

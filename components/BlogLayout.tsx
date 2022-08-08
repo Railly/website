@@ -44,7 +44,7 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
               <span className="text-sm">Frontend Developer</span>
             </div>
           </div>
-          <p className="mt-4">
+          <p className="mt-4 text-sm">
             Posted on{" "}
             <span className="underline underline-offset-4 decoration-dotted">
               {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}

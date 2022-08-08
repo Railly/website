@@ -15,7 +15,25 @@ Lorem ipsum dolor sit met, consectetur adipiscing elit. Pellentesque bibendum ri
 
 Maecenas semper interdum turpis, sit amet lacinia arcu lacinia eget. Integer sit amet erat in neque iaculis varius. Donec tortor dolor, iaculis eu vulputate et, interdum ut sapien. Etiam eu sem nisl. Sed ullamcorper sem ut enim volutpat, sit amet viverra magna consectetur. Fusce convallis elit et nunc vestibulum placerat. Integer leo libero, pharetra sed rutrum nec, dictum a enim. [Eslint](https://www.google.com). ornare maximus. Etiam sagittis sollicitudin ultrices. Sed convallis condimentum magna. Praesent eget nunc in nisi pulvinar rutrum. Suspendisse pulvinar, sem blandit sollicitudin blandit, turpis mi elementum felis, non rhoncus turpis nulla vel dui. Mauris rhoncus ligula eget augue vehicula finibus. In ullamcorper finibus ante, non auctor massa ultrices nec.
 
-```tsx:pages/api/index.tsx {1,3-4} showLineNumbers
+```json showLineNumbers title="tsconfig.json" {5,13}
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    }
+  },
+  // prettier-ignore
+  "include": [
+    "next-env.d.ts", 
+    "**/*.ts", 
+    "**/*.tsx", 
+    ".contentlayer/generated",
+  ]
+}
+```
+
+```tsx showLineNumbers title="pages/api/index.tsx"
 import "../styles/globals.css";
 import "../styles/fonts.css";
 import type { AppProps } from "next/app";
@@ -44,7 +62,7 @@ export default MyApp;
 
 aetushaoetn
 
-```tsx:lib/index.tsx showLineNumbers
+```tsx showLineNumbers title="lib/index.tsx"
 // a
 import { allProjects } from ".contentlayer/generated";
 import type { Project } from ".contentlayer/generated";
@@ -57,9 +75,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
   const router = useRouter();
   return (
     <section>
-      <h1 className="mb-4 text-xl font-bold sm:text-3xl ">
-        Portfolio
-      </h1>
+      <h1 className="mb-4 text-xl font-bold sm:text-3xl ">Portfolio</h1>
       <div className="grid grid-cols-1 gap-4">
         {projects.map((project) => (
           <article
@@ -111,8 +127,6 @@ export async function getStaticProps() {
     },
   };
 }
-
-
 ```
 
 - **Lorem** - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
