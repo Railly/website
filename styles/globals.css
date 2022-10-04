@@ -12,3 +12,22 @@
     @apply font-lexend;
   }
 }
+@layer components {
+  .bg-dotted-pattern-dark {
+    background-image: radial-gradient(circle at 50% 50%, #222 0, #00000000 15%);
+    background-size: 20px 20px;
+  }
+
+  .bg-dotted-pattern-light {
+    background-image: radial-gradient(
+      circle at 50% 50%,
+      #22222222 0,
+      #00000000 15%
+    );
+    background-size: 20px 20px;
+  }
+
+  .bg-dotted-pattern {
+    @apply bg-dotted-pattern-light dark:bg-dotted-pattern-dark;
+  }
+}
