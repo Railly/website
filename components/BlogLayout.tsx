@@ -24,9 +24,9 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Railly Hugo" />
       </Head>
-      <main>
-        <section>
-          <h1 className="text-3xl font-bold md:text-4xl ">{blogPost.title}</h1>
+      <main className="p-2 pb-10 bg-white dark:bg-black">
+        <section className="pb-3 mb-3 border-b border-white/30">
+          <h1 className="text-2xl font-bold md:text-3xl ">{blogPost.title}</h1>
           <div className="flex items-center mt-4">
             <div className="flex">
               <Image
@@ -53,8 +53,8 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
             {blogPost.readingTime.text}
           </p>
         </section>
-        <hr className="mt-6 dark:opacity-10" />
-        <div className="mt-6">{children}</div>
+        <hr className="dark:opacity-10" />
+        <div className="text-base">{children}</div>
       </main>
     </>
   );

@@ -85,7 +85,7 @@ const Header = () => {
           </ul>
         </header>
       </div>
-      <header className="container flex justify-between max-w-3xl py-10 mx-auto px-7 md:pr-10 md:pl-7">
+      <header className="container flex justify-between max-w-3xl pt-6 pb-3 mx-auto sm:py-6 md:py-10 px-7 md:pr-10 md:pl-7">
         <button className="flex md:hidden" onClick={handleOpenMenu}>
           <Icon.OpenMenu />
         </button>

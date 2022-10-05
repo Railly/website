@@ -7,6 +7,7 @@ import { pick } from "@contentlayer/client";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
 import { Icon } from "icons";
+import RHProfile from "components/RHProfile";
 
 export default function Home({
   blogPosts,
@@ -18,9 +19,9 @@ export default function Home({
   const router = useRouter();
   return (
     <>
-      <section className="flex flex-col-reverse items-center sm:flex-row">
+      <section className="flex flex-col-reverse items-center p-2 sm:flex-row">
         <div className="grid flex-1 mt-4 sm:mr-4 grid-row-3 sm:mt-0">
-          <h1 className="mb-4 text-3xl font-semibold sm:text-5xl ">
+          <h1 className="mb-3 text-3xl font-semibold sm:text-4xl ">
             Railly Hugo
           </h1>
           <p className="flex items-center">
@@ -35,28 +36,16 @@ export default function Home({
               height={20}
             />
           </p>
-          <span className="mt-4">
+          <p className="mt-3 text-base bg-white dark:bg-black ">
             Hi, welcome to my digital space. Here I share my side projects,
             tutorials & what I learn over time. I am looking to grow my career
             in tech 🚀
-          </span>
+          </p>
         </div>
-        <div className="flex justify-center p-2 rounded-full from-stone-500/80 dark:from-stone-300 to-stone-800/80 dark:to-stone-500 bg-gradient-to-b w-max">
-          <div className="flex justify-center p-1.5 rounded-full bg-zinc-50/70 dark:bg-zinc-900/70">
-            <Image
-              className="rounded-full"
-              src="/images/profile.png"
-              alt="A profile photo of Railly Hugo"
-              blurDataURL="/images/profile.png"
-              placeholder="blur"
-              width={150}
-              height={150}
-            />
-          </div>
-        </div>
+        <RHProfile />
       </section>
       <section className="mt-6 md:mt-8">
-        <h2 className="mb-6 text-xl font-medium sm:text-3xl">Latest posts</h2>
+        <h2 className="mb-6 text-xl font-medium sm:text-2xl">Latest posts</h2>
         <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-3">
           {blogPosts.map((blog) => (
             <div
@@ -75,7 +64,7 @@ export default function Home({
             </div>
           ))}
           <Link href="/blog">
-            <a className="flex items-center pl-2 font-medium transition w-fit hover:text-indigo-500 dark:hover:text-cyan-500 text-md sm:text-lg group">
+            <a className="flex items-center pl-2 text-base font-medium transition w-fit hover:text-indigo-500 dark:hover:text-cyan-500 group">
               <span>See all posts</span>
               <Icon.Arrow className="ml-2 transition duration-300 fill-indigo-500 dark:fill-cyan-500 group-hover:translate-x-2" />
             </a>
@@ -83,7 +72,7 @@ export default function Home({
         </div>
       </section>
       <section className="mt-6 md:mt-8">
-        <h2 className="mb-6 text-xl font-medium sm:text-3xl">
+        <h2 className="mb-6 text-xl font-medium sm:text-2xl">
           Latest projects
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -104,7 +93,7 @@ export default function Home({
             </div>
           ))}
           <Link href="/portfolio">
-            <a className="flex items-center pl-2 font-medium transition w-fit hover:text-amber-500 dark:hover:text-rose-400 text-md sm:text-lg group">
+            <a className="flex items-center pl-2 text-base font-medium transition w-fit hover:text-amber-500 dark:hover:text-rose-400 group">
               <span>See all projects</span>
               <Icon.Arrow className="ml-2 transition duration-300 fill-amber-500 dark:fill-rose-400 group-hover:translate-x-2" />
             </a>

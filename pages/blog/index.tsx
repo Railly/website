@@ -18,10 +18,13 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
           >
             <div className="grid grid-cols-1 p-4 bg-zinc-50/95 dark:bg-zinc-800/95 rounded-2xl">
               <div className="grid ml-4">
-                <h3 className="mb-2 text-lg font-medium sm:text-xl ">
+                <h3 className="pb-1.5 mb-2 text-base font-bold border-b border-black/20 dark:border-white/30 sm:text-lg ">
                   {blogPost.title}
                 </h3>
-                <div className="flex flex-wrap gap-4">
+                <p className="mb-2 text-base dark:text-white">
+                  {blogPost.summary}
+                </p>
+                <div className="flex flex-wrap gap-4 mt-2">
                   {blogPost?.tags?.map((tag, index) => (
                     <p
                       key={`${tag}-${index}`}
@@ -30,13 +33,10 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
                       {tag}
                     </p>
                   ))}
+                  <span className="mb-2 text-sm place-self-end dark:text-white/70">
+                    {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
+                  </span>
                 </div>
-                <p className="mb-2 text-base dark:text-white">
-                  {blogPost.summary}
-                </p>
-                <span className="mb-2 text-sm place-self-end dark:text-white">
-                  {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
-                </span>
               </div>
             </div>
           </article>

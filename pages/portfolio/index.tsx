@@ -17,33 +17,39 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
             onClick={() => router.push(`/portfolio/${project.slug}`)}
             className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 shadow-md shadow-slate-600/10 rounded-2xl dark:shadow-gray-400/10"
           >
-            <div className="grid grid-cols-1 p-4 rounded-2xl sm:grid-cols-2 bg-zinc-50/95 dark:bg-zinc-800/95">
-              <Image
-                className="object-cover"
-                src={`/images/${project.image}`}
-                blurDataURL={`/images/${project.image}`}
-                placeholder="blur"
-                alt={project.title}
-                width={1764 / 5.5}
-                height={1131 / 5.5}
-              />
-              <div className="flex flex-col justify-between mt-4 ml-4 sm:mt-0">
-                <h3 className="mb-2 text-lg font-medium h-fit sm:text-xl ">
-                  {project.title}
-                </h3>
-                <p
-                  className={`mb-2 px-2 py-0.5 w-max rounded-lg font-medium text-sm ${
-                    tagColors[project.tag]
-                  }`}
-                >
-                  {project.tag}
-                </p>
-                <p className="mb-2 text-base dark:text-white">
-                  {project.summary}
-                </p>
-                <span className="mb-2 text-sm place-self-end dark:text-white">
-                  {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
-                </span>
+            <div className="grid p-4 rounded-2xl grid-cols1-1 bg-zinc-50/95 dark:bg-zinc-800/95 grid-cols-[1fr_2fr]">
+              <div>
+                <Image
+                  className="object-cover"
+                  src={`/images/${project.image}`}
+                  blurDataURL={`/images/${project.image}`}
+                  placeholder="blur"
+                  alt={project.title}
+                  width={1764 / 5.5}
+                  height={1131 / 5.5}
+                />
+              </div>
+              <div className="flex flex-col justify-between pb-2 mt-4 ml-4 sm:mt-0">
+                <div>
+                  <h3 className="mb-2 pb-1.5 text-base font-bold border-b border-black/20 dark:border-white/30 h-fit sm:text-lg ">
+                    {project.title}
+                  </h3>
+                  <p className="mb-2 text-base dark:text-white">
+                    {project.summary}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <p
+                    className={`px-2 py-0.5 w-max rounded-lg font-medium text-sm ${
+                      tagColors[project.tag]
+                    }`}
+                  >
+                    {project.tag}
+                  </p>
+                  <span className="text-sm place-self-end dark:text-white">
+                    {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
+                  </span>
+                </div>
               </div>
             </div>
           </article>
