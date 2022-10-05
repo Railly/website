@@ -18,7 +18,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
           >
             <div className="grid grid-cols-1 p-4 bg-zinc-50/95 dark:bg-zinc-800/95 rounded-2xl">
               <div className="grid ml-4">
-                <h3 className="mb-2 text-lg font-medium sm:text-xl ">
+                <h3 className="pb-1.5 mb-2 text-base font-bold border-b border-black/20 dark:border-white/30 sm:text-lg ">
                   {blogPost.title}
                 </h3>
                 <p className="mb-2 text-base dark:text-white">

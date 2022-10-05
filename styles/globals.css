@@ -12,9 +12,18 @@
     @apply font-lexend;
   }
 }
+
 @layer components {
+  .no-drag {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+
   .bg-dotted-pattern-dark {
-    background-image: radial-gradient(circle at 50% 50%, #222 0, #00000000 15%);
+    background-image: radial-gradient(circle at 50% 50%, #222 0, #000000 15%);
     background-size: 20px 20px;
   }
 

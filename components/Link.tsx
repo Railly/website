@@ -13,7 +13,7 @@ const Link = ({ to, active, onNavigate = () => {}, children }: Props) => {
     <NextLink href={to}>
       <a
         onClick={onNavigate}
-        className={`px-3 py-2 transition rounded-lg dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600
+        className={`px-3 py-2 text-base transition rounded-lg dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600
         ${
           active
             ? "underline font-bold underline-offset-2 dark:text-zinc-50"
