@@ -54,7 +54,7 @@ const About = () => {
                 clipRule="evenodd"
               ></path>
             </svg>{" "}
-            Download PDF (CV)
+            Download CV
           </a>
         </div>
         <ol className="relative border-l border-gray-200 dark:border-gray-700">
