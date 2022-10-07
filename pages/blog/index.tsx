@@ -1,5 +1,5 @@
-import { allBlogs } from ".contentlayer/generated";
-import type { Blog } from ".contentlayer/generated";
+import { allBlogs } from "contentlayer/generated";
+import type { Blog } from "contentlayer/generated";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
 import { tagColors } from "utils/styles";

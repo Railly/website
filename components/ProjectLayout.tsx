@@ -1,4 +1,4 @@
-import type { Project } from ".contentlayer/generated";
+import type { Project } from "contentlayer/generated";
 import Image from "next/image";
 import { format } from "date-fns";
 import { tagColors } from "utils/styles";

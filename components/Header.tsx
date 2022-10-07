@@ -89,7 +89,7 @@ const Header = () => {
         <button className="flex md:hidden" onClick={handleOpenMenu}>
           <Icon.OpenMenu />
         </button>
-        <ul className="justify-between hidden md:flex">
+        <ul className="justify-between hidden bg-white/10 dark:bg-black/10 backdrop-blur-sm md:flex">
           <div className="flex items-center">
             <li>
               <Link to="/" active={pathname === "/"}>
