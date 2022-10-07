@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { allProjects } from ".contentlayer/generated";
-import { allBlogs } from ".contentlayer/generated";
-import type { Project, Blog } from ".contentlayer/generated";
+import { allProjects } from "contentlayer/generated";
+import { allBlogs } from "contentlayer/generated";
+import type { Project, Blog } from "contentlayer/generated";
 import { pick } from "@contentlayer/client";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
@@ -36,7 +36,7 @@ export default function Home({
               height={20}
             />
           </p>
-          <p className="mt-3 text-base bg-white dark:bg-black ">
+          <p className="mt-3 text-base bg-white dark:bg-[#121116] ">
             Hi, welcome to my digital space. Here I share my side projects,
             tutorials & what I learn over time. I am looking to grow my career
             in tech 🚀

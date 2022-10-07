@@ -1,7 +1,9 @@
-import type { Blog } from ".contentlayer/generated";
+import type { Blog } from "contentlayer/generated";
 import { format } from "date-fns";
 import Head from "next/head";
 import Image from "next/image";
+import { links } from "pages/about";
+import Dropdown from "./Dropdown";
 
 type BlogLayoutProps = {
   children: JSX.Element;
@@ -24,9 +26,21 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Railly Hugo" />
       </Head>
-      <main className="p-2 pb-10 bg-white dark:bg-black">
-        <section className="pb-3 mb-3 border-b border-white/30">
-          <h1 className="text-2xl font-bold md:text-3xl ">{blogPost.title}</h1>
+      <main className="p-2 pb-10 bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+        <section className="pb-6 mb-6 border-b border-white/30">
+          <p className="mt-4 mb-2 text-sm text-center">
+            <span>
+              {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
+            </span>
+            {" • "}
+            {blogPost.readingTime.text}
+          </p>
+          <h1 className="text-3xl font-bold text-center md:text-4xl ">
+            {blogPost.title}
+          </h1>
+          <p className="pb-4 mt-2 text-base text-center border-b text-zinc-800/60 dark:text-white/60 font-dm border-black/10">
+            {blogPost.summary}
+          </p>
           <div className="flex items-center mt-4">
             <div className="flex">
               <Image
@@ -39,22 +53,16 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
                 height={40}
               />
             </div>
-            <div className="flex flex-col ml-2">
-              <span className="text-base">Railly Hugo</span>
-              <span className="text-sm">Frontend Developer</span>
+            <div className="flex items-center gap-4">
+              <div className="flex flex-col ml-2">
+                <span className="text-base">Railly Hugo</span>
+                <span className="text-sm">Frontend Developer</span>
+              </div>
+              <Dropdown options={links} />
             </div>
           </div>
-          <p className="mt-4 text-sm">
-            Posted on{" "}
-            <span className="underline underline-offset-4 decoration-dotted">
-              {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
-            </span>
-            {" • "}
-            {blogPost.readingTime.text}
-          </p>
         </section>
-        <hr className="dark:opacity-10" />
-        <div className="text-base">{children}</div>
+        <div className="text-base dark:text-white/80">{children}</div>
       </main>
     </>
   );

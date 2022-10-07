@@ -1,5 +1,5 @@
-import { allProjects } from ".contentlayer/generated";
-import type { Project } from ".contentlayer/generated";
+import { allProjects } from "contentlayer/generated";
+import type { Project } from "contentlayer/generated";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
 import Image from "next/image";

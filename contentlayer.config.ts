@@ -68,7 +68,7 @@ const NUMBERED_LINES =
   "[counter-reset:line] before:[&>span]:mr-3 before:[&>span]:inline-block before:[&>span]:w-4 before:[&>span]:text-right before:[&>span]:text-white/20 before:[&>span]:![content:counter(line)] before:[&>span]:[counter-increment:line]";
 
 const HIGHLIGHTED_LINE =
-  "!border-l-indigo-300/70 bg-indigo-200/10 before:!text-white/70";
+  "!border-l-cyan-300/70 bg-cyan-200/10 before:!text-white/70";
 
 function transformer(tree: any) {
   visit(

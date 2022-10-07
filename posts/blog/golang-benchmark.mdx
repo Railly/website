@@ -20,7 +20,7 @@ Maecenas semper interdum turpis, sit amet lacinia arcu lacinia eget. Integer sit
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "contentlayer/generated": ["./contentlayer/generated"]
     }
   },
   // prettier-ignore
@@ -28,7 +28,7 @@ Maecenas semper interdum turpis, sit amet lacinia arcu lacinia eget. Integer sit
     "next-env.d.ts", 
     "**/*.ts", 
     "**/*.tsx", 
-    ".contentlayer/generated",
+    "contentlayer/generated",
   ]
 }
 ```
@@ -64,8 +64,8 @@ aetushaoetn
 
 ```tsx showLineNumbers title="lib/index.tsx"
 // a
-import { allProjects } from ".contentlayer/generated";
-import type { Project } from ".contentlayer/generated";
+import { allProjects } from "contentlayer/generated";
+import type { Project } from "contentlayer/generated";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
 import Image from "next/image";
