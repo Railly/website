@@ -28,7 +28,9 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
                   {blogPost?.tags?.map((tag, index) => (
                     <p
                       key={`${tag}-${index}`}
-                      className={`mb-2 w-max px-2 py-0.5 rounded-lg text-sm font-medium ${tagColors["Blog"]}`}
+                      className={`mb-2 w-max px-2 py-0.5 rounded-lg text-sm font-medium ${
+                        tagColors[blogPost.type]
+                      }`}
                     >
                       {tag}
                     </p>

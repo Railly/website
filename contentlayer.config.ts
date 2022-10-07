@@ -9,51 +9,6 @@ import { visit } from "unist-util-visit";
 import rehypePrettyCode, { Options } from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
 
-const computedFields: ComputedFields = {
-  readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
-  wordCount: {
-    type: "number",
-    resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
-  },
-  slug: {
-    type: "string",
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
-  },
-};
-
-const Blog = defineDocumentType(() => ({
-  name: "Blog",
-  filePathPattern: "blog/*.mdx",
-  contentType: "mdx",
-  fields: {
-    title: { type: "string", required: true },
-    publishedAt: { type: "string", required: true },
-    summary: { type: "string", required: true },
-    image: { type: "string", required: false },
-    tags: {
-      type: "list",
-      of: {
-        type: "string",
-      },
-    },
-  },
-  computedFields,
-}));
-
-const Project = defineDocumentType(() => ({
-  name: "Project",
-  filePathPattern: "project/*.mdx",
-  contentType: "mdx",
-  fields: {
-    title: { type: "string", required: true },
-    publishedAt: { type: "string", required: true },
-    summary: { type: "string", required: true },
-    image: { type: "string", required: true },
-    tag: { type: "string", required: true },
-  },
-  computedFields,
-}));
-
 // div.BLOCK > pre.PRE > code.CODE
 const BLOCK = "overflow-hidden rounded-lg leading-6 shadow-lg mb-5";
 const TITLE =
@@ -176,6 +131,49 @@ const rehypePrettyCodeOptions: Partial<Options> = {
     node.properties.className.push(HIGHLIGHTED_LINE);
   },
 };
+
+const computedFields: ComputedFields = {
+  readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
+  wordCount: {
+    type: "number",
+    resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
+  },
+  slug: {
+    type: "string",
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
+  },
+};
+
+const Blog = defineDocumentType(() => ({
+  name: "Blog",
+  filePathPattern: "blog/*.mdx",
+  contentType: "mdx",
+  fields: {
+    title: { type: "string", required: true },
+    publishedAt: { type: "string", required: true },
+    summary: { type: "string", required: true },
+    image: { type: "string", required: false },
+    tags: {
+      type: "list",
+      of: { type: "string" },
+    },
+  },
+  computedFields,
+}));
+
+const Project = defineDocumentType(() => ({
+  name: "Project",
+  filePathPattern: "project/*.mdx",
+  contentType: "mdx",
+  fields: {
+    title: { type: "string", required: true },
+    publishedAt: { type: "string", required: true },
+    summary: { type: "string", required: true },
+    image: { type: "string", required: true },
+    tag: { type: "string", required: true },
+  },
+  computedFields,
+}));
 
 const contentLayerConfig = makeSource({
   contentDirPath: "posts",
