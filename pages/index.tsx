@@ -9,7 +9,13 @@ import { useRouter } from "next/router";
 import { Icon } from "icons";
 import RHProfile from "components/RHProfile";
 
-export default function Home({}) {
+export default function Home({
+  blogPosts,
+  projects,
+}: {
+  blogPosts: Blog[];
+  projects: Project[];
+}) {
   const router = useRouter();
   return (
     <>
@@ -41,7 +47,7 @@ export default function Home({}) {
       <section className="mt-6 md:mt-8">
         <h2 className="mb-6 text-xl font-medium sm:text-2xl">Latest posts</h2>
         <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-3">
-          {/* {blogPosts.map((blog) => (
+          {blogPosts.map((blog) => (
             <div
               key={blog.slug}
               onClick={() => router.push(`/blog/${blog.slug}`)}
@@ -56,7 +62,7 @@ export default function Home({}) {
                 </p>
               </div>
             </div>
-          ))} */}
+          ))}
           <Link href="/blog">
             <a className="flex items-center pl-2 text-base font-medium transition w-fit hover:text-indigo-500 dark:hover:text-cyan-500 group">
               <span>See all posts</span>
@@ -70,7 +76,7 @@ export default function Home({}) {
           Latest projects
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {/* {projects.map((project) => (
+          {projects.map((project) => (
             <div
               key={project.slug}
               onClick={() => router.push(`/portfolio/${project.slug}`)}
@@ -85,7 +91,7 @@ export default function Home({}) {
                 </p>
               </div>
             </div>
-          ))} */}
+          ))}
           <Link href="/portfolio">
             <a className="flex items-center pl-2 text-base font-medium transition w-fit hover:text-amber-500 dark:hover:text-rose-400 group">
               <span>See all projects</span>
@@ -96,4 +102,34 @@ export default function Home({}) {
       </section>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const projects = allProjects
+    .map((post) =>
+      pick(post, [
+        "title",
+        "slug",
+        "summary",
+        "publishedAt",
+        "readingTime",
+        "tag",
+      ])
+    )
+    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
+    .slice(0, 3);
+
+  const blogPosts = allBlogs
+    .map((post) =>
+      pick(post, ["title", "slug", "summary", "publishedAt", "readingTime"])
+    )
+    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
+    .slice(0, 3);
+
+  return {
+    props: {
+      projects,
+      blogPosts,
+    },
+  };
 }
