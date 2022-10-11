@@ -19,7 +19,7 @@ If you choose to use Storybook, you will need to install and configure it. So le
 Run the following command inside your Vite Project
 
 ```bash title="Terminal"
-npx sb init --builder @storybook/builder-vite
+npx sb init --builder=vite
 ```
 
 After installing all Storybook packages, it will create a default configuration folder for us:
@@ -43,7 +43,7 @@ Here you can customize the Storybook configuration:
 - Set the core-builder
 - Set the final custom vite configuration
 
-_Note:_ `--builder @storybook/builder-vite` allows us to use the vite core builder
+_Note:_ `--builder=vite` or `--builder @storybook/builder-vite` allow us to use the vite core builder
 
 ```js showLineNumbers {10} title=".storybook/main.js"
 module.exports = {
@@ -151,7 +151,7 @@ And that's all. You have your first story ready!
 
 <Image src="/images/storybook-1.webp" width={1904} height={856} />
 
-## Closing Remarks
+## Final Thoughts
 
 Storybook is a powerful tool for documenting the UI visually. This way, you can have a snapshot of the current state of your components.
 

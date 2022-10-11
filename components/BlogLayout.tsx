@@ -26,7 +26,7 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Railly Hugo" />
       </Head>
-      <main className="p-2 pb-10 bg-white/10 dark:bg-black/10 backdrop-blur-sm">
+      <main className="p-2 pb-10 bg-white/10 dark:bg-[#141318] backdrop-blur-sm">
         <section className="pb-6 mb-6 border-b border-white/30">
           <p className="mt-4 mb-2 text-sm text-center">
             <span>

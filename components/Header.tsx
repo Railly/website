@@ -32,7 +32,7 @@ const Header = () => {
             : "-translate-y-full ease-in duration-500"
         }`}
       >
-        <header className="relative w-screen h-full transition blur-none bg-zinc-50 dark:bg-zinc-800">
+        <header className="relative w-screen h-full transition blur-none bg-white/10 dark:bg-[#141318]">
           <button className="absolute left-6 top-6" onClick={handleCloseMenu}>
             <Icon.CloseMenu />
           </button>
@@ -89,7 +89,7 @@ const Header = () => {
         <button className="flex md:hidden" onClick={handleOpenMenu}>
           <Icon.OpenMenu />
         </button>
-        <ul className="justify-between hidden bg-white/10 dark:bg-black/10 backdrop-blur-sm md:flex">
+        <ul className="justify-between hidden bg-white/10 dark:bg-[#141318] backdrop-blur-sm md:flex">
           <div className="flex items-center">
             <li>
               <Link to="/" active={pathname === "/"}>
