@@ -29,7 +29,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                   height={1131}
                 />
               </div>
-              <div className="flex flex-col justify-between pb-2 mt-2 ml-2 sm:mt-0">
+              <div className="flex flex-col justify-between pb-2 mt-2 ml-4 sm:mt-0">
                 <div>
                   <h3 className="mb-2 pb-1.5 text-lg font-bold border-b border-black/20 dark:border-white/30 h-fit">
                     {project.title}
