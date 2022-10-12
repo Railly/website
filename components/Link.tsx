@@ -32,7 +32,7 @@ const Link = ({
         }
         ${start ? "rounded-tl-lg rounded-bl-lg" : "rounded-none"}
         ${end ? "rounded-tr-lg rounded-br-lg" : "rounded-none"}
-        ${full ? "w-full py-5" : "w-24"}
+        ${full ? "w-full py-3" : "w-24"}
         `}
       >
         {children}

@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       <div
-        className={`absolute z-20 w-screen h-max bg-zinc-500/400 ${
+        className={`absolute z-20 w-screen h-2/5 bg-zinc-500/400 ${
           isOpen
             ? "translate-y-0 ease-out duration-500"
             : "-translate-y-full ease-in duration-500"
@@ -36,7 +36,7 @@ const Header = () => {
           <button className="absolute left-6 top-6" onClick={handleCloseMenu}>
             <Icon.CloseMenu />
           </button>
-          <ul className="flex flex-col items-center  h-full pt-6 [&>li]:w-full">
+          <ul className="flex flex-col items-center justify-between h-full pt-6 [&>li]:w-full">
             <li>
               <Link
                 to="/"
