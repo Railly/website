@@ -11,6 +11,7 @@ type BlogLayoutProps = {
 };
 
 export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
+  const date = format(new Date(blogPost.publishedAt), "MMMM dd, y");
   return (
     <>
       <Head>
@@ -18,7 +19,10 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
         <meta name="description" content={blogPost.summary} />
         <meta property="og:title" content={blogPost.title} />
         <meta property="og:description" content={blogPost.summary} />
-        <meta property="og:image" content={blogPost.image} />
+        <meta
+          property="og:image"
+          content={`https://raillyhugo.com/api/og?title=${blogPost.title}&date=${date}`}
+        />
         <meta
           property="og:url"
           content={`https://raillyhugo.com/blog/${blogPost.slug}`}
@@ -38,10 +42,10 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
           <h1 className="text-3xl font-bold text-center md:text-4xl ">
             {blogPost.title}
           </h1>
-          <p className="pb-4 mt-2 text-base text-center border-b text-zinc-800/60 dark:text-white/60 font-dm border-black/10">
+          <p className="pb-4 mt-3 text-base text-center border-b text-zinc-800/60 dark:text-white/60 font-dm border-black/10">
             {blogPost.summary}
           </p>
-          <div className="flex items-center mt-4">
+          <div className="flex items-center">
             <div className="flex">
               <Image
                 className="rounded-full"

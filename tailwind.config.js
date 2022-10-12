@@ -31,6 +31,10 @@ module.exports = {
           underline: "under 1s ease-in-out infinite",
         },
       },
+      backgroundImage: {
+        "bg-dotted":
+          "radial-gradient(circle at 50% 50%,#605e6755 0,#141318 15%)",
+      },
     },
   },
   plugins: [],
