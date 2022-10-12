@@ -11,11 +11,11 @@ export const config = {
 };
 
 const boldFont = fetch(
-  new URL("../../public/fonts/DMSans-Bold.ttf", import.meta.url)
+  new URL("../../public/fonts/DMSans-Bold.ttf", import.meta.url).toString()
 ).then((res) => res.arrayBuffer());
 
 const mediumFont = fetch(
-  new URL("../../public/fonts/DMSans-Medium.ttf", import.meta.url)
+  new URL("../../public/fonts/DMSans-Medium.ttf", import.meta.url).toString()
 ).then((res) => res.arrayBuffer());
 
 export default async function ImageHandler(req: NextRequest) {
