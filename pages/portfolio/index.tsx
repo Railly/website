@@ -17,7 +17,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
             onClick={() => router.push(`/portfolio/${project.slug}`)}
             className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 shadow-md shadow-slate-600/10 rounded-2xl dark:shadow-gray-400/10"
           >
-            <div className="grid p-4 rounded-2xl grid-cols1-1 bg-zinc-50/95 dark:bg-zinc-800/95 sm:grid-cols-[1fr_2fr]">
+            <div className="grid px-4 pt-4 pb-2 rounded-2xl grid-cols1-1 bg-zinc-50/95 dark:bg-zinc-800/95 sm:grid-cols-[1fr_2fr]">
               <div>
                 <Image
                   className="object-cover rounded-md"
@@ -29,12 +29,12 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                   height={1131}
                 />
               </div>
-              <div className="flex flex-col justify-between pb-2 mt-4 ml-4 sm:mt-0">
+              <div className="flex flex-col justify-between pb-2 mt-2 ml-2 sm:mt-0">
                 <div>
-                  <h3 className="mb-2 pb-1.5 text-base font-bold border-b border-black/20 dark:border-white/30 h-fit sm:text-lg ">
+                  <h3 className="mb-2 pb-1.5 text-lg font-bold border-b border-black/20 dark:border-white/30 h-fit">
                     {project.title}
                   </h3>
-                  <p className="mb-2 text-base dark:text-white">
+                  <p className="mb-4 text-base dark:text-white">
                     {project.summary}
                   </p>
                 </div>

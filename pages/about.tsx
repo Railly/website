@@ -14,7 +14,7 @@ export const links = [
 
 const About = () => {
   return (
-    <section className="p-4 rounded-lg backdrop-blur-sm bg-white/30 dark:bg-[#121116]">
+    <section className="p-4 rounded-lg backdrop-blur-sm bg-white/30 dark:bg-[#141318]">
       <header className="flex w-full gap-6">
         <div>
           <div className="flex items-center w-full gap-4 mb-2">

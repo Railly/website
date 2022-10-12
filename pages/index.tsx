@@ -36,7 +36,7 @@ export default function Home({
               height={20}
             />
           </p>
-          <p className="mt-3 text-base bg-white dark:bg-[#121116] ">
+          <p className="mt-3 text-base bg-white dark:bg-[#141318]">
             Hi, welcome to my digital space. Here I share my side projects,
             tutorials & what I learn over time. I am looking to grow my career
             in tech 🚀

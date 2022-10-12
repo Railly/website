@@ -14,7 +14,7 @@ const Dropdown: React.FC<{
       <button
         id="dropdownDefault"
         data-dropdown-toggle="dropdown"
-        className="inline-flex items-center px-4 py-1 text-sm font-semibold text-center transition-colors bg-white border rounded-lg text-cyan-700 dark:text-white dark:border-white hover:bg-cyan-700 dark:bg-[#121116] dark:hover:bg-cyan-700 border-cyan-700 hover:text-white"
+        className="inline-flex items-center px-4 py-1 text-sm font-semibold text-center transition-colors bg-white border rounded-lg text-cyan-700 dark:text-white dark:border-white hover:bg-cyan-700 dark:bg-[#141318] dark:hover:bg-cyan-700 border-cyan-700 hover:text-white"
         type="button"
         onClick={() => setDropdownOpen(!dropdownOpen)}
       >

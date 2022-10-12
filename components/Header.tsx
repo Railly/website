@@ -26,22 +26,23 @@ const Header = () => {
   return (
     <>
       <div
-        className={`absolute z-20 w-screen h-2/5 bg-zinc-500/400 ${
+        className={`absolute z-20 w-screen h-max bg-zinc-500/400 ${
           isOpen
             ? "translate-y-0 ease-out duration-500"
             : "-translate-y-full ease-in duration-500"
         }`}
       >
-        <header className="relative w-screen h-full transition blur-none bg-zinc-50 dark:bg-zinc-800">
+        <header className="relative w-screen h-full transition blur-none bg-white dark:bg-[#141318]">
           <button className="absolute left-6 top-6" onClick={handleCloseMenu}>
             <Icon.CloseMenu />
           </button>
-          <ul className="flex flex-col items-center justify-between h-full py-6 ">
+          <ul className="flex flex-col items-center  h-full pt-6 [&>li]:w-full">
             <li>
               <Link
                 to="/"
                 active={pathname === "/"}
                 onNavigate={handleCloseMenu}
+                full
               >
                 Home
               </Link>
@@ -51,6 +52,7 @@ const Header = () => {
                 to="/about"
                 active={pathname === "/about"}
                 onNavigate={handleCloseMenu}
+                full
               >
                 About
               </Link>
@@ -60,6 +62,7 @@ const Header = () => {
                 to="/portfolio"
                 active={pathname === "/portfolio"}
                 onNavigate={handleCloseMenu}
+                full
               >
                 Portfolio
               </Link>
@@ -69,6 +72,7 @@ const Header = () => {
                 to="/blog"
                 active={pathname === "/blog"}
                 onNavigate={handleCloseMenu}
+                full
               >
                 Blog
               </Link>
@@ -78,6 +82,7 @@ const Header = () => {
                 to="/stack"
                 active={pathname === "/stack"}
                 onNavigate={handleCloseMenu}
+                full
               >
                 Stack
               </Link>
@@ -89,10 +94,10 @@ const Header = () => {
         <button className="flex md:hidden" onClick={handleOpenMenu}>
           <Icon.OpenMenu />
         </button>
-        <ul className="justify-between hidden bg-white/10 dark:bg-black/10 backdrop-blur-sm md:flex">
-          <div className="flex items-center">
+        <ul className="justify-between ring-1 ring-black/10 dark:ring-white/10 hover:ring-2 transition duration-100 hover:ring-cyan-600 dark:hover:ring-cyan-400 rounded-lg hidden bg-white/10 dark:bg-[#141318] backdrop-blur-sm md:flex">
+          <div className="flex items-center [&>li]:h-full">
             <li>
-              <Link to="/" active={pathname === "/"}>
+              <Link start to="/" active={pathname === "/"}>
                 Home
               </Link>
             </li>
@@ -112,7 +117,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/stack" active={pathname === "/stack"}>
+              <Link end to="/stack" active={pathname === "/stack"}>
                 Stack
               </Link>
             </li>

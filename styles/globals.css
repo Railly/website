@@ -43,4 +43,26 @@
   .bg-dotted-pattern {
     @apply bg-dotted-pattern-light dark:bg-dotted-pattern-dark;
   }
+
+  .dark pre[data-theme="dark"],
+  .dark div[data-rehype-pretty-code-title] {
+    color-scheme: dark;
+  }
+
+  .dark pre[data-theme="light"],
+  .dark div[data-rehype-pretty-code-title][data-theme="light"] {
+    display: none;
+  }
+
+  .light pre[data-theme="dark"],
+  .light div[data-rehype-pretty-code-title][data-theme="dark"] {
+    display: none;
+  }
+
+  .dark code span::before {
+    @apply text-white/20;
+  }
+  .light code span::before {
+    @apply text-black/30;
+  }
 }
