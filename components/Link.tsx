@@ -6,19 +6,33 @@ type Props = {
   active?: boolean;
   onNavigate?: () => void;
   children: ReactNode;
+  start?: boolean;
+  end?: boolean;
+  full?: boolean;
 };
 
-const Link = ({ to, active, onNavigate = () => {}, children }: Props) => {
+const Link = ({
+  to,
+  active,
+  onNavigate = () => {},
+  start,
+  end,
+  full,
+  children,
+}: Props) => {
   return (
     <NextLink href={to}>
       <a
         onClick={onNavigate}
-        className={`px-3 py-2 text-base transition rounded-lg dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-600
+        className={`h-full flex px-4 justify-center items-center text-base transition hover:bg-cyan-100 dark:hover:bg-cyan-700
         ${
           active
-            ? "underline font-bold underline-offset-2 dark:text-zinc-50"
-            : "underline-none"
+            ? "font-semibold underline-offset-2 text-cyan-500 dark:text-cyan-400"
+            : "underline-none dark:text-zinc-200"
         }
+        ${start && "rounded-tl-lg rounded-bl-lg"}
+        ${end && "rounded-tr-lg rounded-br-lg"}
+        ${full ? "w-full py-5" : "w-24"}
         `}
       >
         {children}

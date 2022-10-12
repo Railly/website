@@ -6,7 +6,7 @@ import {
 
 import readingTime from "reading-time";
 import { visit } from "unist-util-visit";
-import rehypePrettyCode, { Options } from "rehype-pretty-code";
+import rehypePrettyCode, { type Options } from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
 
 const computedFields: ComputedFields = {
@@ -57,8 +57,8 @@ const Project = defineDocumentType(() => ({
 // div.BLOCK > pre.PRE > code.CODE
 const BLOCK = "overflow-hidden rounded-lg leading-6 shadow-lg mb-5";
 const TITLE =
-  "rounded-t-md bg-[#23272e] px-3 py-1 font-mono text-xs !text-white/70";
-const PRE = "overflow-x-auto py-2 text-[13px] [color-scheme:dark] bg-[#23272e]";
+  "rounded-t-md bg-zinc-200 dark:bg-[#23272e] px-3 py-1 font-mono text-xs dark:!text-white/70 !text-black/70";
+const PRE = "overflow-x-auto py-2 text-[13px] bg-zinc-100 dark:bg-[#23272e]";
 const CODE =
   "grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3";
 const INLINE_BLOCK =
@@ -68,7 +68,7 @@ const NUMBERED_LINES =
   "[counter-reset:line] before:[&>span]:mr-3 before:[&>span]:inline-block before:[&>span]:w-4 before:[&>span]:text-right before:[&>span]:text-white/20 before:[&>span]:![content:counter(line)] before:[&>span]:[counter-increment:line]";
 
 const HIGHLIGHTED_LINE =
-  "!border-l-cyan-300/70 bg-cyan-200/10 before:!text-white/70";
+  "!border-l-indigo-800/70 bg-indigo-200/50 dark:!border-l-cyan-300/70 dark:bg-cyan-200/10 before:!text-indigo-700 dark:before:!text-white/70";
 
 function transformer(tree: any) {
   visit(
@@ -157,7 +157,10 @@ function rehypePrettyCodeClasses() {
 }
 
 const rehypePrettyCodeOptions: Partial<Options> = {
-  theme: "one-dark-pro",
+  theme: {
+    dark: "one-dark-pro",
+    light: "min-light",
+  },
   tokensMap: {
     // VScode command palette: Inspect Editor Tokens and Scopes
     // https://github.com/Binaryify/OneDark-Pro/blob/47c66a2f2d3e5c85490e1aaad96f5fab3293b091/themes/OneDark-Pro.json
