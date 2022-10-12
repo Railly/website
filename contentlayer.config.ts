@@ -30,6 +30,7 @@ const Blog = defineDocumentType(() => ({
     publishedAt: { type: "string", required: true },
     summary: { type: "string", required: true },
     image: { type: "string", required: false },
+    disabled: { type: "boolean", default: false },
     tags: {
       type: "list",
       of: {
