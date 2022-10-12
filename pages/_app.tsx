@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               property="og:description"
               content="Hi, welcome to my digital space. Here I share my side projects, tutorials & what I learn over time. I am looking to grow my career in tech 🚀"
             />
-            <meta property="og:image" content="/images/profile.png" />
             <meta property="og:url" content="https://raillyhugo.com" />
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="Railly Hugo" />

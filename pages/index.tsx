@@ -8,6 +8,7 @@ import { format } from "date-fns";
 import { useRouter } from "next/router";
 import { Icon } from "icons";
 import RHProfile from "components/RHProfile";
+import Head from "next/head";
 
 export default function Home({
   blogPosts,
@@ -17,8 +18,15 @@ export default function Home({
   projects: Project[];
 }) {
   const router = useRouter();
+  const date = format(new Date(), "MMMM dd, y");
   return (
     <>
+      <Head>
+        <meta
+          property="og:image"
+          content={`https://raillyhugo.com/api/og?title=Railly Hugo - Home&date=${date}`}
+        />
+      </Head>
       <section className="flex flex-col-reverse items-center p-2 sm:flex-row">
         <div className="grid flex-1 mt-4 sm:mr-4 grid-row-3 sm:mt-0">
           <h1 className="mb-3 text-3xl font-semibold sm:text-4xl ">
