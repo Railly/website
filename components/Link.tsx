@@ -30,8 +30,8 @@ const Link = ({
             ? "font-semibold underline-offset-2 text-cyan-500 dark:text-cyan-400"
             : "underline-none dark:text-zinc-200"
         }
-        ${start && "rounded-tl-lg rounded-bl-lg"}
-        ${end && "rounded-tr-lg rounded-br-lg"}
+        ${start ? "rounded-tl-lg rounded-bl-lg" : "rounded-none"}
+        ${end ? "rounded-tr-lg rounded-br-lg" : "rounded-none"}
         ${full ? "w-full py-5" : "w-24"}
         `}
       >
