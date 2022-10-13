@@ -49,9 +49,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
         <div className="grid grid-cols-1 gap-6">
           {blogPosts
             .filter((blogPost) =>
-              search.length > 0
-                ? blogPost.title.toLowerCase().includes(search.toLowerCase())
-                : true
+              blogPost.title.toLowerCase().includes(search.toLowerCase())
             )
             .map((blogPost) => (
               <ArticleCard key={blogPost.slug} blogPost={blogPost} />
