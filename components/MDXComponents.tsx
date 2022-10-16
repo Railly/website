@@ -16,7 +16,7 @@ const CustomLink = (props: any) => {
 
   return (
     <a
-      className="font-bold text-blue-400 underline transition underline-offset-2 hover:text-blue-600"
+      className="font-medium underline transition text-cyan-600 dark:text-cyan-500 underline-offset-2 dark:hover:text-cyan-400 hover:text-cyan-500"
       target="_blank"
       rel="noopener noreferrer"
       {...props}
@@ -28,7 +28,7 @@ const CustomLink = (props: any) => {
 
 function RoundedImage(props: any) {
   return (
-    <div className="rounded-lg shadow-xl">
+    <div className="mb-4 rounded-lg shadow-xl">
       <Image
         className="rounded-lg shadow-xl"
         blurDataURL={props.src}

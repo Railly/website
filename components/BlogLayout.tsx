@@ -31,7 +31,7 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
         <meta property="og:site_name" content="Railly Hugo" />
       </Head>
       <main className="pb-10 bg-white/10 dark:bg-[#141318] backdrop-blur-sm">
-        <section className="pb-6 mb-2 border-b border-white/30">
+        <section className="pb-6 mb-2 border-b border-black/10 dark:border-white/30">
           <p className="mt-2 mb-2 text-sm text-center">
             <span>
               {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
@@ -42,7 +42,7 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
           <h1 className="text-3xl font-bold text-center md:text-4xl ">
             {blogPost.title}
           </h1>
-          <p className="pb-4 mt-3 text-base text-center border-b text-zinc-800/60 dark:text-white/60 font-dm border-black/10">
+          <p className="pb-4 mt-3 text-base text-center text-zinc-800/60 dark:text-white/60 font-dm">
             {blogPost.summary}
           </p>
           <div className="flex items-center">

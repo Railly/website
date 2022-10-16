@@ -58,12 +58,12 @@ const Project = defineDocumentType(() => ({
 // div.BLOCK > pre.PRE > code.CODE
 const BLOCK = "overflow-hidden rounded-lg leading-6 shadow-lg mb-5";
 const TITLE =
-  "rounded-t-md bg-zinc-200 dark:bg-[#23272e] px-3 py-1 font-mono text-xs dark:!text-white/70 !text-black/70";
+  "rounded-t-md bg-zinc-200 dark:bg-[#313740] px-3 py-1 font-mono text-xs dark:!text-white/70 !text-black/70";
 const PRE = "overflow-x-auto py-2 text-[13px] bg-zinc-100 dark:bg-[#23272e]";
 const CODE =
   "grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3";
 const INLINE_BLOCK =
-  "whitespace-nowrap border border-indigo-200 dark:border-indigo-400/10 px-1.5 py-px text-[12px] rounded-full bg-white/5 whitespace-nowrap text-indigo-500 dark:text-indigo-200/80";
+  "whitespace-nowrap border border-zinc-200 dark:border-zinc-100/10 px-1.5 py-px text-[14px] rounded-full bg-zinc-800/5 dark:bg-zinc-700 text-black dark:text-white before:content-['`'] after:content-['`']";
 const INLINE_CODE = "";
 const NUMBERED_LINES =
   "[counter-reset:line] before:[&>span]:mr-3 before:[&>span]:inline-block before:[&>span]:w-4 before:[&>span]:text-right before:[&>span]:text-white/20 before:[&>span]:![content:counter(line)] before:[&>span]:[counter-increment:line]";
