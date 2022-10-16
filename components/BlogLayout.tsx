@@ -29,6 +29,15 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
         />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Railly Hugo" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content="@raillyhugo" />
+        <meta property="twitter:creator" content="@raillyhugo" />
+        <meta property="twitter:title" content={blogPost.title} />
+        <meta property="twitter:description" content={blogPost.summary} />
+        <meta
+          property="twitter:image"
+          content={`https://raillyhugo.com/api/og?title=${blogPost.title}&date=${date}`}
+        />
       </Head>
       <main className="pb-10 bg-white/10 dark:bg-[#141318] backdrop-blur-sm">
         <section className="pb-6 mb-2 border-b border-black/10 dark:border-white/30">
