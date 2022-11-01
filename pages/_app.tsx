@@ -4,6 +4,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { ThemeProvider } from "next-themes";
 import Layout from "components/Layout";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <meta property="og:site_name" content="Railly Hugo" />
           </Head>
           <Component {...pageProps} />
+          <Analytics />
         </Layout>
       </ThemeProvider>
     </MDXProvider>
