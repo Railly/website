@@ -1,6 +1,4 @@
-/* eslint-disable @next/next/no-server-import-in-page */
 /* eslint-disable @next/next/no-img-element */
-// /pages/api/og.tsx
 
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
