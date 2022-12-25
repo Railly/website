@@ -65,9 +65,9 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
           <article
             key={project.slug}
             onClick={() => router.push(`/portfolio/${project.slug}`)}
-            className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
+            className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 from-hunter-rose-500 to-hunter-yellow-500 rounded-xl"
           >
-            <div className="grid h-full grid-cols-2 p-4 rounded-lg bg-zinc-50/95 bg-zinc-800/95">
+            <div className="grid h-full grid-cols-2 p-4 rounded-lg bg-hunter-black-50/95 bg-hunter-black-800/95">
               <Image
                 src={`/images/${project.image}`}
                 blurDataURL={`/images/${project.image}`}
@@ -82,7 +82,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                 </h3>
                 <p className="mb-2 text-white">{project.summary}</p>
                 <p
-                  className={`mb-2 px-3 py-1 w-max rounded-lg font-medium text-zinc-50 ${
+                  className={`mb-2 px-3 py-1 w-max rounded-lg font-medium text-hunter-black-50 ${
                     tagColors[project.tag]
                   }`}
                 >

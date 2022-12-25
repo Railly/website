@@ -38,19 +38,19 @@ const StackSection = ({ title, skills }: StackSectionProps) => {
 
 const styles = {
   [SectionTypes.Stack]:
-    "from-emerald-300 to-emerald-500 hover:shadow-emerald-500/30",
+    "from-hunter-green-300 to-hunter-green-500 hover:shadow-hunter-green-500/30",
   [SectionTypes.Learning]:
-    "from-amber-300 to-amber-500 hover:shadow-amber-500/30",
+    "from-hunter-yellow-300 to-hunter-yellow-500 hover:shadow-hunter-yellow-500/30",
   [SectionTypes.Planning]:
-    "from-indigo-300 to-indigo-500 hover:shadow-indigo-500/30",
+    "from-hunter-blue-300 to-hunter-blue-500 hover:shadow-hunter-blue-500/30",
 };
 
 const TechCard = ({ tech, icon: Icon, type }: TechCardProps) => {
   return (
     <div
-      className={`p-1 bg-gradient-to-r rounded-xl hover:scale-[1.02] hover:shadow-lg shadow-gray-200/40 transition ${styles[type]}`}
+      className={`p-1 bg-gradient-to-r rounded-xl hover:scale-[1.02] hover:shadow-lg shadow-hunter-black-200/40 transition ${styles[type]}`}
     >
-      <div className="flex flex-col items-center py-1 font-medium transition rounded-lg bg-zinc-700 hover:bg-zinc-600">
+      <div className="flex flex-col items-center py-1 font-medium transition rounded-lg bg-hunter-black-700 hover:bg-hunter-black-600">
         <span
           title={tech}
           className="max-w-full overflow-hidden select-none whitespace-nowrap text-ellipsis"

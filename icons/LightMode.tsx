@@ -1,6 +1,6 @@
 const LightMode = (props: any) => (
   <svg
-    className="w-8 h-8 p-1 transition rounded-md fill-zinc-100 hover:bg-zinc-600"
+    className="w-8 h-8 p-1 transition rounded-md fill-hunter-black-100 hover:bg-hunter-black-600"
     height={24}
     width={24}
     {...props}

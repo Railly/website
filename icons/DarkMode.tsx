@@ -1,6 +1,6 @@
 const DarkMode = (props: any) => (
   <svg
-    className="w-8 h-8 p-1 transition rounded-md hover:bg-zinc-300"
+    className="w-8 h-8 p-1 transition rounded-md hover:bg-hunter-black-300"
     height={24}
     width={24}
     viewBox="0 0 24 24"

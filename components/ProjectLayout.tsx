@@ -31,7 +31,7 @@ export default function ProjectLayout({
       <main>
         <section>
           <p
-            className={`mb-4 px-3 py-1 w-max rounded-lg font-medium text-zinc-50 ${
+            className={`mb-4 px-3 py-1 w-max rounded-lg font-medium text-hunter-black-50 ${
               tagColors[project.tag]
             }`}
           >

@@ -26,7 +26,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
-              className="w-5 h-5 text-gray-400"
+              className="w-5 h-5 text-hunter-black-400"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
           </div>
           <input
             type="text"
-            className="border text-sm rounded-lg block w-full pl-10 p-2.5  bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white"
+            className="border text-sm rounded-lg block w-full pl-10 p-2.5  bg-hunter-black-700 border-hunter-black-600 placeholder-hunter-black-400 text-white"
             placeholder="Search..."
             id="exampleFormControlInput1"
             onChange={(e) => setSearch(e.target.value)}

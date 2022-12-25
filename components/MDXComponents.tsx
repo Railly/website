@@ -8,15 +8,15 @@ const CustomLink = (props: any) => {
 
   if (isInternalLink) {
     return (
-      <Link href={href}>
-        <a {...props}>{props.children}</a>
+      <Link href={href} {...props}>
+        {props.children}
       </Link>
     );
   }
 
   return (
     <a
-      className="font-medium underline transition text-cyan-500 underline-offset-2 hover:text-cyan-500"
+      className="font-medium underline transition text-hunter-rose-500 underline-offset-2 hover:text-hunter-rose-500"
       target="_blank"
       rel="noopener noreferrer"
       {...props}

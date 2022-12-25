@@ -14,11 +14,11 @@ const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
     <article
       key={blogPost.slug}
       onClick={() => router.push(`/blog/${blogPost.slug}`)}
-      className={`flex flex-col transition cursor-pointer hover:scale-[1.02] hover:-rotate-1 duration-300 shadow-md rounded-2xl shadow-gray-400/10 ${
-        blogPost.disabled ? "filter opacity-[0.5]  grayscale " : ""
+      className={`flex flex-col transition cursor-pointer hover:scale-[1.02] hover:-rotate-1 duration-300 shadow-md rounded-2xl shadow-hunter-black-400/10 ${
+        blogPost.disabled ? "opacity-25" : ""
       }`}
     >
-      <div className="grid grid-cols-1 px-4 pt-4 pb-2 bg-zinc-800/95 rounded-2xl">
+      <div className="grid grid-cols-1 px-4 pt-4 pb-2 bg-hunter-black-800/95 rounded-2xl">
         <div className="grid">
           <h3 className="pb-1.5 mb-2 text-base font-bold border-b border-white/30">
             {blogPost.title}

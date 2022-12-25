@@ -39,7 +39,7 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
           content={`https://raillyhugo.com/api/og?title=${blogPost.title}&date=${date}`}
         />
       </Head>
-      <main className="pb-10 bg-white/10 bg-[#191d21] backdrop-blur-sm">
+      <main className="pb-10 backdrop-blur-sm">
         <section className="pb-6 mb-2 border-b border-white/30">
           <p className="mt-2 mb-2 text-sm text-center">
             <span>

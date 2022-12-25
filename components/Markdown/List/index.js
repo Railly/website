@@ -5,7 +5,7 @@ const Ul = ({ children }) => <ul className="mb-6 list-disc">{children}</ul>;
 const Li = ({ children }) => {
   return (
     <div className="ml-4">
-      <li className="my-3 text-gray-200">{children}</li>
+      <li className="my-3 text-hunter-black-200">{children}</li>
       <style jsx>{`
         li::marker {
           color: #999;

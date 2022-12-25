@@ -25,9 +25,9 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
             <article
               key={project.slug}
               onClick={() => router.push(`/portfolio/${project.slug}`)}
-              className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 shadow-md rounded-2xl shadow-gray-400/10"
+              className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 shadow-md rounded-2xl shadow-hunter-black-400/10"
             >
-              <div className="grid px-4 pt-4 pb-2 rounded-2xl grid-cols-1 bg-zinc-800/95 sm:grid-cols-[1fr_2fr]">
+              <div className="grid px-4 pt-4 pb-2 rounded-2xl grid-cols-1 bg-hunter-black-800/95 sm:grid-cols-[1fr_2fr]">
                 <div>
                   <Image
                     className="object-cover rounded-md"

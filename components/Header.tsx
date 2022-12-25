@@ -83,7 +83,7 @@ const Header = () => {
         <button className="flex md:hidden" onClick={handleOpenMenu}>
           <Icon.OpenMenu />
         </button>
-        <ul className="justify-between ring-1 ring-white/10 hover:ring-2 transition duration-100 hover:ring-cyan-400 rounded-lg hidden bg-white/10 bg-[#191d21] backdrop-blur-sm md:flex">
+        <ul className="justify-between hidden transition duration-100 rounded-lg ring-1 ring-white/10 hover:ring-2 hover:ring-hunter-blue-500 bg-white/10 bg-hunter-black-900 backdrop-blur-sm md:flex">
           <div className="flex items-center [&>li]:h-full">
             <li>
               <Link start to="/" active={pathname === "/"}>
@@ -115,7 +115,7 @@ const Header = () => {
       </header>
       {/* <div
         onClick={handleCloseMenu}
-        className={`absolute top-0 z-10 h-full w-full transition-all duration-500 bg-zinc-500/40 backdrop-blur-sm ${
+        className={`absolute top-0 z-10 h-full w-full transition-all duration-500 bg-hunter-black-500/40 backdrop-blur-sm ${
           isOpen ? "opacity-100" : "opacity-0"
         } ${isHidden ? "invisible" : "visible"}`}
       ></div> */}

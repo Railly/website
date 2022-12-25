@@ -14,17 +14,18 @@ const FooterLink = ({ to, external = false, children }: Props) => {
         href={to}
         target="_blank"
         rel="noopener noreferrer"
-        className="px-3 py-2 transition rounded-lg text-zinc-400 hover:text-cyan-600"
+        className="px-3 py-2 transition rounded-lg text-hunter-black-400 hover:text-hunter-rose-600"
       >
         {children}
       </a>
     );
   } else {
     return (
-      <NextLink href={to}>
-        <a className="px-3 py-2 transition rounded-lg text-zinc-400 hover:text-cyan-600">
-          {children}
-        </a>
+      <NextLink
+        href={to}
+        className="px-3 py-2 transition rounded-lg text-hunter-black-400 hover:text-hunter-rose-600"
+      >
+        {children}
       </NextLink>
     );
   }

@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html className="dark">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -33,7 +33,7 @@ export default function Document() {
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </Head>
-      <body className="text-lg leading-7 bg-dotted-pattern text-zinc-100 font-dm selection:bg-white/90 selection:text-black">
+      <body className="text-lg leading-7 bg-squared-pattern text-hunter-black-100 font-dm selection:bg-white/90 selection:text-black">
         <Main />
         <NextScript />
       </body>

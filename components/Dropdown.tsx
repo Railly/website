@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import useOnClickOutside from "../hooks/use-on-click-outside";
+
 const Dropdown: React.FC<{
   options: { to: string; external: boolean; text: string }[];
 }> = ({ options }) => {
@@ -14,7 +15,7 @@ const Dropdown: React.FC<{
       <button
         id="dropdownDefault"
         data-dropdown-toggle="dropdown"
-        className="inline-flex items-center px-4 py-1 text-sm font-semibold text-center transition-colors border rounded-lg text-white bg-[#191d21] hover:bg-cyan-700 border-cyan-700 hover:text-white"
+        className="inline-flex items-center px-4 py-1 text-sm font-semibold text-center transition-colors border rounded-lg text-white bg-[#191d21] hover:bg-hunter-blue-700 border-hunter-blue-700 hover:text-white"
         type="button"
         onClick={() => setDropdownOpen(!dropdownOpen)}
       >
@@ -22,12 +23,12 @@ const Dropdown: React.FC<{
       </button>
       <div
         id="dropdown"
-        className={`z-10 absolute mt-2 divide-y divide-gray-100 rounded shadow w-28 sm:w-36 bg-gray-700 ${
+        className={`z-10 absolute mt-2 divide-y divide-hunter-black-100 rounded shadow w-28 sm:w-36 bg-hunter-black-800 ${
           dropdownOpen ? "block" : "hidden"
         }`}
       >
         <ul
-          className="py-1 text-sm text-gray-200"
+          className="text-sm text-hunter-black-200"
           aria-labelledby="dropdownDefault"
         >
           {options.map((option) => (
@@ -48,6 +49,7 @@ const Dropdown: React.FC<{
 const DropdownItem: React.FC<{
   to: string;
   external?: boolean;
+  children: React.ReactNode;
 }> = (props) => {
   return (
     <li>
@@ -55,7 +57,7 @@ const DropdownItem: React.FC<{
         href={props.to}
         target={props.external ? "_blank" : "_self"}
         rel="noopener noreferrer"
-        className="block px-4 py-2 hover:bg-gray-600 hover:text-white"
+        className="block px-4 py-2 transition-colors hover:bg-hunter-blue-900 hover:text-white"
       >
         {props.children}
       </a>
