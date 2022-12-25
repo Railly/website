@@ -1,14 +1,11 @@
 import { Icon } from "icons";
-import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "./Link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const { pathname } = useRouter();
 
   const handleCloseMenu = () => {
@@ -21,18 +18,10 @@ const Header = () => {
     setIsHidden(false);
   };
 
-  useEffect(() => setMounted(true), []);
-
   return (
     <>
-      <div
-        className={`absolute z-20 w-screen h-2/5 bg-zinc-500/400 ${
-          isOpen
-            ? "translate-y-0 ease-out duration-500"
-            : "-translate-y-full ease-in duration-500"
-        }`}
-      >
-        <header className="relative w-screen h-full transition blur-none bg-white dark:bg-[#141318]">
+      {/* <div */}
+      {/* <header className="relative w-screen h-full transition blur-none bg-[#191d21]">
           <button className="absolute left-6 top-6" onClick={handleCloseMenu}>
             <Icon.CloseMenu />
           </button>
@@ -88,13 +77,13 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-        </header>
-      </div>
-      <header className="container flex justify-between max-w-3xl pt-6 pb-3 mx-auto sm:py-6 md:py-10 px-7 md:pr-10 md:pl-7">
+        </header> */}
+      {/* </div> */}
+      <header className="container flex justify-center max-w-3xl pt-6 pb-3 mx-auto sm:py-6 md:py-10 px-7 md:pr-10 md:pl-7">
         <button className="flex md:hidden" onClick={handleOpenMenu}>
           <Icon.OpenMenu />
         </button>
-        <ul className="justify-between ring-1 ring-black/10 dark:ring-white/10 hover:ring-2 transition duration-100 hover:ring-cyan-600 dark:hover:ring-cyan-400 rounded-lg hidden bg-white/10 dark:bg-[#141318] backdrop-blur-sm md:flex">
+        <ul className="justify-between ring-1 ring-white/10 hover:ring-2 transition duration-100 hover:ring-cyan-400 rounded-lg hidden bg-white/10 bg-[#191d21] backdrop-blur-sm md:flex">
           <div className="flex items-center [&>li]:h-full">
             <li>
               <Link start to="/" active={pathname === "/"}>
@@ -123,22 +112,13 @@ const Header = () => {
             </li>
           </div>
         </ul>
-        {mounted && (
-          <div className="flex items-center visible">
-            <button
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-              {theme === "light" ? <Icon.DarkMode /> : <Icon.LightMode />}
-            </button>
-          </div>
-        )}
       </header>
-      <div
+      {/* <div
         onClick={handleCloseMenu}
         className={`absolute top-0 z-10 h-full w-full transition-all duration-500 bg-zinc-500/40 backdrop-blur-sm ${
           isOpen ? "opacity-100" : "opacity-0"
         } ${isHidden ? "invisible" : "visible"}`}
-      ></div>
+      ></div> */}
     </>
   );
 };

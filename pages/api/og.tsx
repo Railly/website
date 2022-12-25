@@ -45,7 +45,7 @@ export default async function ImageHandler(req: NextRequest) {
         tw="text-[128px] w-full h-full flex flex-col text-center items-center justify-between py-11"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 25% 25%, #141318 0%, #605e6755 15%)",
+            "radial-gradient(circle at 25% 25%, #191d21 0%, #605e6755 15%)",
           backgroundSize: "50px 50px",
         }}
       >

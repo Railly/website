@@ -24,11 +24,11 @@ const Link = ({
     <NextLink href={to}>
       <a
         onClick={onNavigate}
-        className={`h-full flex px-4 justify-center items-center text-base transition hover:bg-cyan-100 dark:hover:bg-cyan-700
+        className={`h-full flex px-4 justify-center items-center text-base transition hover:bg-cyan-700
         ${
           active
-            ? "font-semibold underline-offset-2 text-cyan-500 dark:text-cyan-400"
-            : "underline-none dark:text-zinc-200"
+            ? "font-semibold underline-offset-2 text-cyan-400"
+            : "underline-none text-zinc-200"
         }
         ${start ? "rounded-tl-lg rounded-bl-lg" : "rounded-none"}
         ${end ? "rounded-tr-lg rounded-br-lg" : "rounded-none"}

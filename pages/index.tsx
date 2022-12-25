@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { allProjects } from "contentlayer/generated";
-import { allBlogs } from "contentlayer/generated";
-import type { Project, Blog } from "contentlayer/generated";
+import { allProjects } from "@/contentlayer/generated";
+import { allBlogs } from "@/contentlayer/generated";
+import type { Project, Blog } from "@/contentlayer/generated";
 import { pick } from "@contentlayer/client";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
@@ -44,7 +44,7 @@ export default function Home({
               height={20}
             />
           </p>
-          <p className="mt-3 text-base bg-white dark:bg-[#141318]">
+          <p className="mt-3 text-base bg-[#191d21]">
             Hi, welcome to my digital space. Here I share my side projects,
             tutorials & what I learn over time. I am looking to grow my career
             in tech 🚀
@@ -61,20 +61,20 @@ export default function Home({
               onClick={() => router.push(`/blog/${blog.slug}`)}
               className="flex flex-col p-1 transition cursor-pointer hover:scale-[1.02] duration-300 bg-gradient-to-tl from-cyan-500 to-indigo-500 rounded-xl"
             >
-              <div className="h-full p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
+              <div className="h-full p-4 rounded-lg bg-zinc-800/95">
                 <h3 className="mb-2 font-medium text-md sm:text-lg ">
                   {blog.title}
                 </h3>
-                <p className="mb-2 text-base dark:text-white">
+                <p className="mb-2 text-base text-white">
                   {format(new Date(blog.publishedAt), "MMMM dd, yyyy")}
                 </p>
               </div>
             </div>
           ))}
           <Link href="/blog">
-            <a className="flex items-center pl-2 text-base font-medium transition w-fit hover:text-indigo-500 dark:hover:text-cyan-500 group">
+            <a className="flex items-center pl-2 text-base font-medium transition w-fit hover:text-cyan-500 group">
               <span>See all posts</span>
-              <Icon.Arrow className="ml-2 transition duration-300 fill-indigo-500 dark:fill-cyan-500 group-hover:translate-x-2" />
+              <Icon.Arrow className="ml-2 transition duration-300 fill-cyan-500 group-hover:translate-x-2" />
             </a>
           </Link>
         </div>
@@ -90,20 +90,20 @@ export default function Home({
               onClick={() => router.push(`/portfolio/${project.slug}`)}
               className="flex cursor-pointer flex-col p-1 bg-gradient-to-tl hover:scale-[1.02] duration-300 from-rose-500 to-amber-500 rounded-xl"
             >
-              <div className="h-full p-4 rounded-lg bg-zinc-50/95 dark:bg-zinc-800/95">
+              <div className="h-full p-4 rounded-lg bg-zinc-800/95">
                 <h3 className="mb-2 font-medium text-md sm:text-lg ">
                   {project.title}
                 </h3>
-                <p className="mb-2 text-base dark:text-white">
+                <p className="mb-2 text-base text-white">
                   {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
                 </p>
               </div>
             </div>
           ))}
           <Link href="/portfolio">
-            <a className="flex items-center pl-2 text-base font-medium transition w-fit hover:text-amber-500 dark:hover:text-rose-400 group">
+            <a className="flex items-center pl-2 text-base font-medium transition w-fit hover:text-rose-400 group">
               <span>See all projects</span>
-              <Icon.Arrow className="ml-2 transition duration-300 fill-amber-500 dark:fill-rose-400 group-hover:translate-x-2" />
+              <Icon.Arrow className="ml-2 transition duration-300 fill-rose-400 group-hover:translate-x-2" />
             </a>
           </Link>
         </div>

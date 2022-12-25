@@ -33,7 +33,7 @@ export default function Document() {
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </Head>
-      <body className="text-lg leading-7 bg-dotted-pattern text-zinc-800 dark:text-zinc-100 font-dm selection:bg-black/80 selection:text-white dark:selection:bg-white/90 dark:selection:text-black">
+      <body className="text-lg leading-7 bg-dotted-pattern text-zinc-100 font-dm selection:bg-white/90 selection:text-black">
         <Main />
         <NextScript />
       </body>

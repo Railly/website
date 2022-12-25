@@ -33,7 +33,7 @@ module.exports = {
       },
       backgroundImage: {
         "bg-dotted":
-          "radial-gradient(circle at 50% 50%,#605e6755 0,#141318 15%)",
+          "radial-gradient(circle at 50% 50%,#605e6755 0,#191d21 15%)",
       },
     },
   },

@@ -23,7 +23,7 @@ const About = () => {
           content={`https://raillyhugo.com/api/og?title=Railly Hugo - About&date=${date}`}
         />
       </Head>
-      <section className="p-4 rounded-lg backdrop-blur-sm bg-white/30 dark:bg-[#141318]">
+      <section className="p-4 rounded-lg backdrop-blur-sm bg-white/30 bg-[#191d21]">
         <header className="flex w-full gap-6">
           <div>
             <div className="flex items-center w-full gap-4 mb-2">
@@ -33,7 +33,7 @@ const About = () => {
               <h1 className="text-lg font-bold">Railly Hugo</h1>
               <Dropdown options={links} />
             </div>
-            <p className="text-sm text-black/70 dark:text-white/70">
+            <p className="text-sm text-white/70">
               <b>Frontend Developer </b>
               and student of <b>Software Engineering </b>
               at Faculty of Systems Engineering and Informatics of San Marcos
@@ -49,7 +49,7 @@ const About = () => {
               href="/pdf/RH-CV-2022.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center h-full px-4 py-2 text-sm font-medium transition-colors bg-white border border-gray-200 rounded-lg text-zinc-900 hover:bg-gray-100 hover:text-cyan-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-cyan-700 dark:bg-gray-800 dark:text-zinc-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              className="flex items-center h-full px-4 py-2 text-sm font-medium transition-colors bg-gray-800 border border-gray-600 rounded-lg focus:z-10 focus:ring-4 focus:outline-none focus:text-cyan-700 text-zinc-400 hover:text-white hover:bg-gray-700 focus:ring-gray-700"
             >
               <svg
                 className="w-4 h-4 mr-2"
@@ -66,12 +66,12 @@ const About = () => {
               Download CV
             </a>
           </div>
-          <ol className="relative border-l border-gray-200 dark:border-gray-700">
+          <ol className="relative border-l border-gray-700">
             <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full bg-cyan-100 -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-cyan-900">
+              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-gray-900 bg-cyan-900">
                 <svg
                   aria-hidden="true"
-                  className="w-3 h-3 text-cyan-600 dark:text-cyan-400"
+                  className="w-3 h-3 text-cyan-400"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -83,16 +83,16 @@ const About = () => {
                   ></path>
                 </svg>
               </span>
-              <h3 className="flex items-center mb-1 text-lg font-semibold text-zinc-900 dark:text-white">
+              <h3 className="flex items-center mb-1 text-lg font-semibold text-white">
                 Mid Frontend Developer{" "}
-                <span className="bg-cyan-100 shadow-lg shadow-cyan-400/20 text-cyan-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-cyan-200 dark:text-cyan-800 ml-3">
+                <span className="shadow-lg shadow-cyan-400/20 text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-cyan-200 text-cyan-800 ml-3">
                   Latest
                 </span>
               </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-zinc-500 dark:text-zinc-500">
+              <time className="block mb-2 text-sm font-normal leading-none text-zinc-500">
                 January 2022 - Present
               </time>
-              <ul className="mb-4 text-base font-normal text-zinc-800 dark:text-zinc-400">
+              <ul className="mb-4 text-base font-normal text-zinc-400">
                 <li className="mb-2 ml-6 list-disc">
                   Design and develop medium to large size features from scratch
                   using React, TypeScript, Styled Components, and Redux.
@@ -113,10 +113,10 @@ const About = () => {
               </ul>
             </li>
             <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full bg-cyan-100 -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-cyan-900">
+              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-gray-900 bg-cyan-900">
                 <svg
                   aria-hidden="true"
-                  className="w-3 h-3 text-cyan-600 dark:text-cyan-400"
+                  className="w-3 h-3 text-cyan-400"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,13 +128,13 @@ const About = () => {
                   ></path>
                 </svg>
               </span>
-              <h3 className="mb-1 text-lg font-semibold text-zinc-900 dark:text-white">
+              <h3 className="mb-1 text-lg font-semibold text-white">
                 Jr. Frontend Developer
               </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-zinc-500 dark:text-zinc-500">
+              <time className="block mb-2 text-sm font-normal leading-none text-zinc-500">
                 June 2021 - December 2021
               </time>
-              <p className="text-base font-normal text-zinc-800 dark:text-zinc-400">
+              <p className="text-base font-normal text-zinc-400">
                 <li className="mb-2 ml-6 list-disc">
                   Design the UX/UI of the entire application with Figma (+30
                   screens), while interviewing real users.

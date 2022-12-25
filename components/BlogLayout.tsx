@@ -1,4 +1,4 @@
-import type { Blog } from "contentlayer/generated";
+import type { Blog } from "@/contentlayer/generated";
 import { format } from "date-fns";
 import Head from "next/head";
 import Image from "next/image";
@@ -39,8 +39,8 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
           content={`https://raillyhugo.com/api/og?title=${blogPost.title}&date=${date}`}
         />
       </Head>
-      <main className="pb-10 bg-white/10 dark:bg-[#141318] backdrop-blur-sm">
-        <section className="pb-6 mb-2 border-b border-black/10 dark:border-white/30">
+      <main className="pb-10 bg-white/10 bg-[#191d21] backdrop-blur-sm">
+        <section className="pb-6 mb-2 border-b border-white/30">
           <p className="mt-2 mb-2 text-sm text-center">
             <span>
               {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
@@ -51,7 +51,7 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
           <h1 className="text-3xl font-bold text-center md:text-4xl ">
             {blogPost.title}
           </h1>
-          <p className="pb-4 mt-3 text-base text-center text-zinc-800/60 dark:text-white/60 font-dm">
+          <p className="pb-4 mt-3 text-base text-center text-white/60 font-dm">
             {blogPost.summary}
           </p>
           <div className="flex items-center">
@@ -75,7 +75,7 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
             </div>
           </div>
         </section>
-        <div className="text-base dark:text-white/80">{children}</div>
+        <div className="text-base text-white/80">{children}</div>
       </main>
     </>
   );

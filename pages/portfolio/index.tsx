@@ -1,5 +1,5 @@
-import { allProjects } from "contentlayer/generated";
-import type { Project } from "contentlayer/generated";
+import { allProjects } from "@/contentlayer/generated";
+import type { Project } from "@/contentlayer/generated";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -25,9 +25,9 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
             <article
               key={project.slug}
               onClick={() => router.push(`/portfolio/${project.slug}`)}
-              className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 shadow-md shadow-slate-600/10 rounded-2xl dark:shadow-gray-400/10"
+              className="flex cursor-pointer flex-col  bg-gradient-to-tl hover:scale-[1.02] duration-300 shadow-md rounded-2xl shadow-gray-400/10"
             >
-              <div className="grid px-4 pt-4 pb-2 rounded-2xl grid-cols1-1 bg-zinc-50/95 dark:bg-zinc-800/95 sm:grid-cols-[1fr_2fr]">
+              <div className="grid px-4 pt-4 pb-2 rounded-2xl grid-cols-1 bg-zinc-800/95 sm:grid-cols-[1fr_2fr]">
                 <div>
                   <Image
                     className="object-cover rounded-md"
@@ -41,10 +41,10 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                 </div>
                 <div className="flex flex-col justify-between pb-2 mt-2 ml-4 sm:mt-0">
                   <div>
-                    <h3 className="mb-2 pb-1.5 text-lg font-bold border-b border-black/20 dark:border-white/30 h-fit">
+                    <h3 className="mb-2 pb-1.5 text-lg font-bold border-b border-white/30 h-fit">
                       {project.title}
                     </h3>
-                    <p className="mb-4 text-base dark:text-white">
+                    <p className="mb-4 text-base text-white">
                       {project.summary}
                     </p>
                   </div>
@@ -56,7 +56,7 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                     >
                       {project.tag}
                     </p>
-                    <span className="text-sm place-self-end dark:text-white">
+                    <span className="text-sm text-white place-self-end">
                       {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
                     </span>
                   </div>

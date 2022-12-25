@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
-import { allBlogs } from "contentlayer/generated";
-import type { Blog } from "contentlayer/generated";
+import { allBlogs } from "@/contentlayer/generated";
+import type { Blog } from "@/contentlayer/generated";
 import { format } from "date-fns";
 import ArticleCard from "components/ArticleCard";
 
@@ -26,7 +26,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
-              className="w-5 h-5 text-gray-500 dark:text-gray-400"
+              className="w-5 h-5 text-gray-400"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
           </div>
           <input
             type="text"
-            className="bg-zinc-50 border border-zinc-300 text-zinc-900 text-sm rounded-lg block w-full pl-10 p-2.5  dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white"
+            className="border text-sm rounded-lg block w-full pl-10 p-2.5  bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white"
             placeholder="Search..."
             id="exampleFormControlInput1"
             onChange={(e) => setSearch(e.target.value)}
