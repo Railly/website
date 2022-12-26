@@ -58,6 +58,6 @@ const MDXComponents = {
   th: (props: any) => <Md.TableCell bold {...props} />,
   tr: Md.TableRow,
   ul: Md.List.Ul,
-};
+} as any;
 
 export default MDXComponents;
