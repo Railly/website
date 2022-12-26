@@ -31,7 +31,6 @@ const About = () => {
                 <RHProfile size={40} />
               </div>
               <h1 className="text-lg font-bold">Railly Hugo</h1>
-              <Dropdown options={links} />
             </div>
             <p className="text-sm text-hunter-black/60">
               <b>Frontend Developer </b>
@@ -49,7 +48,7 @@ const About = () => {
               href="/pdf/RH-CV-2022.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center h-full px-4 py-2 text-sm font-medium transition-colors border rounded-lg bg-hunter-black-800 border-hunter-black-600 focus:z-10 focus:ring-4 focus:outline-none focus:text-hunter-rose-700 text-hunter-black-100 hover:text-white hover:bg-hunter-black-700 focus:ring-hunter-black-700"
+              className="flex items-center h-full px-4 py-2 text-sm font-medium transition-colors border rounded-lg bg-hunter-black-800 border-hunter-black-600 focus:z-10 focus:ring-4 focus:outline-none focus:text-hunter-yellow-700 text-hunter-black-100 hover:text-white hover:bg-hunter-black-700 focus:ring-hunter-black-700"
             >
               <svg
                 className="w-4 h-4 mr-2"
@@ -63,15 +62,16 @@ const About = () => {
                   clipRule="evenodd"
                 ></path>
               </svg>{" "}
-              Download CV
+              <span className="hidden md:inline-block">Download CV</span>
+              <span className="inline-block md:hidden">CV</span>
             </a>
           </div>
           <ol className="relative border-l border-hunter-black-700">
             <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-hunter-black-800 bg-hunter-rose-500">
+              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-hunter-yellow-800/40 bg-hunter-yellow-300">
                 <svg
                   aria-hidden="true"
-                  className="w-3 h-3 text-hunter-rose-800"
+                  className="w-3 h-3 text-hunter-yellow-600"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const About = () => {
               </span>
               <h3 className="flex items-center mb-1 text-lg font-semibold text-white">
                 Mid Frontend Developer{" "}
-                <span className="shadow-lg shadow-hunter-rose-400/20 text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-hunter-rose-200 text-hunter-rose-800 ml-3">
+                <span className="shadow-lg shadow-hunter-yellow-400/20 text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-hunter-yellow-200 text-hunter-yellow-800 ml-3">
                   Latest
                 </span>
               </h3>
@@ -113,10 +113,10 @@ const About = () => {
               </ul>
             </li>
             <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-hunter-black-800 bg-hunter-rose-500">
+              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-hunter-yellow-800/40 bg-hunter-yellow-300">
                 <svg
                   aria-hidden="true"
-                  className="w-3 h-3 text-hunter-rose-800"
+                  className="w-3 h-3 text-hunter-yellow-600"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"

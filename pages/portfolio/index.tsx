@@ -3,7 +3,6 @@ import type { Project } from "@/contentlayer/generated";
 import { format } from "date-fns";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { tagColors } from "utils/styles";
 import Head from "next/head";
 
 export default function Portfolio({ projects }: { projects: Project[] }) {
@@ -39,9 +38,9 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                     height={1131}
                   />
                 </div>
-                <div className="flex flex-col justify-between pb-2 mt-2 ml-4 sm:mt-0">
+                <div className="flex flex-col justify-between pb-2 mt-2 sm:ml-4 sm:mt-0">
                   <div>
-                    <h3 className="mb-2 pb-1.5 text-lg font-bold border-b border-white/30 h-fit">
+                    <h3 className="mb-2 pb-1.5 text-lg font-bold border-b text-hunter-blue-400 border-white/30 h-fit">
                       {project.title}
                     </h3>
                     <p className="mb-4 text-base text-white">
@@ -49,13 +48,6 @@ export default function Portfolio({ projects }: { projects: Project[] }) {
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <p
-                      className={`px-2 py-0.5 w-max rounded-lg font-medium text-sm ${
-                        tagColors[project.tag]
-                      }`}
-                    >
-                      {project.tag}
-                    </p>
                     <span className="text-sm text-white place-self-end">
                       {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
                     </span>

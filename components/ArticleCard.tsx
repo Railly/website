@@ -20,7 +20,7 @@ const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
     >
       <div className="grid grid-cols-1 px-4 pt-4 pb-2 bg-hunter-black-800/95 rounded-2xl">
         <div className="grid">
-          <h3 className="pb-1.5 mb-2 text-base font-bold border-b border-white/30">
+          <h3 className="pb-1.5 mb-2 text-base font-bold border-b text-hunter-yellow-300 border-white/30">
             {blogPost.title}
           </h3>
           <p className="mb-2 text-base text-white">{blogPost.summary}</p>
@@ -33,7 +33,7 @@ const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
                 {tag}
               </p>
             ))}
-            <span className="mb-2 text-sm place-self-end text-white/70">
+            <span className="mb-2 text-sm place-self-end">
               {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
             </span>
           </div>
