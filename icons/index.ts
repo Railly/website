@@ -16,6 +16,7 @@ import Golang from "./Golang";
 import Rust from "./Rust";
 import Storybook from "./Storybook";
 import Laravel from "./Laravel";
+import VSCode from "./VSCode";
 
 export const Icon = {
   GraphQL,
@@ -36,4 +37,5 @@ export const Icon = {
   Rust,
   Storybook,
   Laravel,
+  VSCode,
 };
