@@ -1,5 +1,5 @@
-import { allProjects } from "@/contentlayer/generated";
-import type { Project } from "@/contentlayer/generated";
+import { allProjects } from "contentlayer/generated";
+import type { Project } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import MDXComponents from "components/MDXComponents";
 import ProjectLayout from "components/ProjectLayout";

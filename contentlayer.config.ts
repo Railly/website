@@ -59,18 +59,18 @@ const Project = defineDocumentType(() => ({
 const BLOCK =
   "overflow-hidden rounded-lg leading-6 shadow-lg mb-5 border border-hunter-black-100/20";
 const TITLE =
-  "rounded-t-md bg-hunter-black-900 bg-[#313740] px-3 py-1 font-mono text-xs !text-white/70 border-b border-hunter-black-100/20";
-const PRE = "overflow-x-auto py-2 text-[13px] bg-hunter-black-900";
+  "rounded-t-md bg-zinc-200 dark:bg-[#313740] px-3 py-1 font-mono text-xs dark:!text-white/70 !text-black/70";
+const PRE = "overflow-x-auto py-2 text-[13px] bg-zinc-100 dark:bg-[#23272e]";
 const CODE =
   "grid [&>span]:border-l-4 [&>span]:border-l-transparent [&>span]:pl-2 [&>span]:pr-3";
 const INLINE_BLOCK =
-  "whitespace-nowrap border border-hunter-black-100/10 px-1.5 py-px text-[14px] rounded-full bg-hunter-black-800 text-black text-white before:content-['`'] after:content-['`']";
+  "whitespace-nowrap border border-zinc-200 dark:border-zinc-100/10 px-1.5 py-px text-[14px] rounded-full bg-zinc-800/5 dark:bg-zinc-700 text-black dark:text-white before:content-['`'] after:content-['`']";
 const INLINE_CODE = "";
 const NUMBERED_LINES =
   "[counter-reset:line] before:[&>span]:mr-3 before:[&>span]:inline-block before:[&>span]:w-4 before:[&>span]:text-right before:[&>span]:text-white/20 before:[&>span]:![content:counter(line)] before:[&>span]:[counter-increment:line]";
 
 const HIGHLIGHTED_LINE =
-  "!border-l-hunter-blue-800/70 bg-hunter-blue-200/50 !border-l-hunter-rose-300/70 bg-hunter-rose-200/10 before:!text-hunter-blue-700 before:!text-white/70";
+  "!border-l-indigo-800/70 bg-indigo-200/50 dark:!border-l-cyan-300/70 dark:bg-cyan-200/10 before:!text-indigo-700 dark:before:!text-white/70";
 
 function transformer(tree: any) {
   visit(

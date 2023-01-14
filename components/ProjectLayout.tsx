@@ -1,4 +1,4 @@
-import type { Project } from "@/contentlayer/generated";
+import type { Project } from "contentlayer/generated";
 import Image from "next/image";
 import { format } from "date-fns";
 import { tagColors } from "utils/styles";
@@ -66,7 +66,7 @@ export default function ProjectLayout({
             {project.readingTime.text}
           </p>
         </section>
-        <hr className="mt-6 opacity-10" />
+        <hr className="mt-6 dark:opacity-10" />
         <div className="mt-6">{children}</div>
       </main>
     </>

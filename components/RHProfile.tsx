@@ -24,12 +24,12 @@ const RHProfile: React.FC<IProps> = ({
 }) => {
   return (
     <div
-      className={`flex justify-center rounded-full from-hunter-black-300 to-hunter-black-500 bg-gradient-to-b w-max ${
+      className={`flex justify-center  rounded-full from-stone-500/80 dark:from-stone-300 to-stone-800/80 dark:to-stone-500 bg-gradient-to-b w-max ${
         getClassNames(size).parent
       }`}
     >
       <div
-        className={`flex justify-center p-0.5 rounded-full bg-hunter-black-900/50
+        className={`flex justify-center p-0.5 rounded-full bg-zinc-50/70 dark:bg-zinc-900/70
       ${getClassNames(size).child}`}
       >
         <Image

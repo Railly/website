@@ -48,9 +48,9 @@ const styles = {
 const TechCard = ({ tech, icon: Icon, type }: TechCardProps) => {
   return (
     <div
-      className={`p-1 bg-gradient-to-r rounded-xl hover:scale-[1.02] hover:shadow-lg shadow-hunter-black-200/40 transition ${styles[type]}`}
+      className={`p-1 bg-gradient-to-r rounded-xl hover:scale-[1.02] hover:shadow-lg dark:shadow-gray-200/40 transition ${styles[type]}`}
     >
-      <div className="flex flex-col items-center py-1 font-medium transition rounded-lg bg-hunter-black-700 hover:bg-hunter-black-600">
+      <div className="flex flex-col items-center py-1 font-medium transition bg-white rounded-lg dark:bg-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-600">
         <span
           title={tech}
           className="max-w-full overflow-hidden select-none whitespace-nowrap text-ellipsis"

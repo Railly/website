@@ -1,5 +1,5 @@
-import { allBlogs } from "@/contentlayer/generated";
-import type { Blog } from "@/contentlayer/generated";
+import { allBlogs } from "contentlayer/generated";
+import type { Blog } from "contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import MDXComponents from "components/MDXComponents";
 import BlogLayout from "components/BlogLayout";
