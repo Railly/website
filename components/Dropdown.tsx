@@ -15,7 +15,7 @@ const Dropdown: React.FC<{
       <button
         id="dropdownDefault"
         data-dropdown-toggle="dropdown"
-        className="inline-flex items-center px-4 py-1 text-sm font-semibold text-center transition-colors bg-white border rounded-lg text-cyan-700 dark:text-white dark:border-white hover:bg-cyan-700 dark:bg-[#141318] dark:hover:bg-cyan-700 border-cyan-700 hover:text-white"
+        className="inline-flex items-center px-4 py-1 text-sm font-semibold text-center transition-colors border rounded-lg text-hunter-blue-600 dark:text-white dark:border-white hover:bg-hunter-blue-600 dark:bg-[#141318] dark:hover:bg-hunter-blue-700 border-hunter-blue-700 hover:text-white"
         type="button"
         onClick={() => setDropdownOpen(!dropdownOpen)}
       >
@@ -23,7 +23,7 @@ const Dropdown: React.FC<{
       </button>
       <div
         id="dropdown"
-        className={`z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded shadow w-28 sm:w-36 dark:bg-gray-700 ${
+        className={`z-10 absolute mt-2 bg-white divide-y divide-gray-100 rounded shadow w-24 sm:w-36 dark:bg-gray-700 ${
           dropdownOpen ? "block" : "hidden"
         }`}
       >

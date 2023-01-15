@@ -26,6 +26,10 @@ export const myCurrentSkills = [
     icon: Icon.Redux,
   },
   {
+    tech: "Turborepo",
+    icon: Icon.Turborepo,
+  },
+  {
     tech: "PostgreSQL",
     icon: Icon.PostgreSQL,
   },

@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Head from "next/head";
+import { tagColors } from "utils/styles";
 
 export default function Portfolio({ projects }: { projects: Project[] }) {
   const router = useRouter();

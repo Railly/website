@@ -23,7 +23,7 @@ const About = () => {
           content={`https://raillyhugo.com/api/og?title=Railly Hugo - About&date=${date}`}
         />
       </Head>
-      <section className="p-4 rounded-lg backdrop-blur-sm bg-white/30 dark:bg-[#141318]">
+      <section className="p-4 rounded-lg backdrop-blur-sm">
         <header className="flex w-full gap-6">
           <div>
             <div className="flex items-center w-full gap-4 mb-2">
@@ -48,7 +48,7 @@ const About = () => {
               href="/pdf/RH-CV-2022.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center h-full px-4 py-2 text-sm font-medium transition-colors bg-white border border-gray-200 rounded-lg text-zinc-900 hover:bg-gray-100 hover:text-cyan-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-cyan-700 dark:bg-gray-800 dark:text-zinc-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              className="flex items-center h-full px-4 py-2 text-sm font-medium transition-colors bg-white border border-gray-200 rounded-lg text-zinc-900 hover:bg-gray-100 hover:text-hunter-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-hunter-blue-700 dark:bg-gray-800 dark:text-zinc-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
             >
               <svg
                 className="w-4 h-4 mr-2"
@@ -68,10 +68,10 @@ const About = () => {
           </div>
           <ol className="relative border-l border-gray-200 dark:border-gray-700">
             <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full bg-cyan-100 -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-cyan-900">
+              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full bg-hunter-blue-100 -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-hunter-blue-900">
                 <svg
                   aria-hidden="true"
-                  className="w-3 h-3 text-cyan-600 dark:text-cyan-400"
+                  className="w-3 h-3 text-hunter-blue-600 dark:text-hunter-blue-400"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const About = () => {
               </span>
               <h3 className="flex items-center mb-1 text-lg font-semibold text-zinc-900 dark:text-white">
                 Mid Frontend Developer{" "}
-                <span className="bg-cyan-100 shadow-lg shadow-cyan-400/20 text-cyan-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-cyan-200 dark:text-cyan-800 ml-3">
+                <span className="bg-hunter-blue-100 shadow-lg shadow-hunter-blue-400/20 text-hunter-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-hunter-blue-200 dark:text-hunter-blue-800 ml-3">
                   Latest
                 </span>
               </h3>
@@ -113,10 +113,10 @@ const About = () => {
               </ul>
             </li>
             <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full bg-cyan-100 -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-cyan-900">
+              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full bg-hunter-blue-100 -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-hunter-blue-900">
                 <svg
                   aria-hidden="true"
-                  className="w-3 h-3 text-cyan-600 dark:text-cyan-400"
+                  className="w-3 h-3 text-hunter-blue-600 dark:text-hunter-blue-400"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"

@@ -20,6 +20,11 @@
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
+    user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
   }
 
   .bg-dotted-pattern-dark {
@@ -34,8 +39,8 @@
   .bg-dotted-pattern-light {
     background-image: radial-gradient(
       circle at 50% 50%,
-      #22222222 0,
-      #00000000 15%
+      #22222233 0,
+      #17171711 15%
     );
     background-size: 20px 20px;
   }
