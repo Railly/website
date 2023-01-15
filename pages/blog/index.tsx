@@ -7,15 +7,23 @@ import ArticleCard from "components/ArticleCard";
 
 export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
   const [search, setSearch] = useState("");
-  const date = format(new Date(), "MMMM dd, y");
 
   return (
     <>
       <Head>
         <meta
           property="og:image"
-          content={`https://raillyhugo.com/api/og?title=Railly Hugo - Blog&date=${date}`}
+          content="https://raillyhugo.com/api/og?title=Railly Hugo - Blog"
         />
+        <title>Railly Hugo</title>
+        <meta property="og:title" content="Blog" />
+        <meta
+          property="og:description"
+          content="Welcome to my blog. Here I share my thoughts, tutorials & what I learn over time as a software engineer."
+        />
+        <meta property="og:url" content="https://raillyhugo.com/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Blog" />
       </Head>
       <section>
         <h1 className="mb-4 text-2xl font-semibold sm:text-3xl">Blog</h1>

@@ -27,26 +27,16 @@
    -ms-user-select: none;
   }
 
-  .bg-dotted-pattern-dark {
-    background-image: radial-gradient(
-      circle at 50% 50%,
-      #605e6755 0,
-      #141318 15%
-    );
-    background-size: 20px 20px;
+  .bg-custom-dark {
+    background-color: #605e6711
   }
 
-  .bg-dotted-pattern-light {
-    background-image: radial-gradient(
-      circle at 50% 50%,
-      #22222233 0,
-      #17171711 15%
-    );
-    background-size: 20px 20px;
+  .bg-custom-light {
+    background-color: #22222211;
   }
 
-  .bg-dotted-pattern {
-    @apply bg-dotted-pattern-light dark:bg-dotted-pattern-dark;
+  .bg-custom {
+    @apply bg-custom-light dark:bg-custom-dark;
   }
 
   .dark pre[data-theme="dark"],

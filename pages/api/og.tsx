@@ -87,7 +87,7 @@ export default async function ImageHandler(req: NextRequest) {
             fontFamily: "DM Sans Medium",
           }}
         >
-          raillyhugo.com · {date}
+          {date ? `raillyhugo.com · ${date}` : "raillyhugo.com"}
         </div>
       </div>
     ),

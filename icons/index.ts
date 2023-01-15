@@ -18,6 +18,8 @@ import Storybook from "./Storybook";
 import Laravel from "./Laravel";
 import VSCode from "./VSCode";
 import Turborepo from "./Turborepo";
+import Electron from "./Electron";
+import Arduino from "./Arduino";
 
 export const Icon = {
   GraphQL,
@@ -40,4 +42,6 @@ export const Icon = {
   Laravel,
   VSCode,
   Turborepo,
+  Electron,
+  Arduino,
 };

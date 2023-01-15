@@ -26,6 +26,15 @@ export default function Home({
           property="og:image"
           content={`https://raillyhugo.com/api/og?title=Railly Hugo - Home&date=${date}`}
         />
+        <title>Railly Hugo</title>
+        <meta property="og:title" content="Railly Hugo" />
+        <meta
+          property="og:description"
+          content="Hi, welcome to my digital space. Here I share my side projects, tutorials & what I learn over time. I am looking to grow my career in tech 🚀"
+        />
+        <meta property="og:url" content="https://raillyhugo.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Railly Hugo" />
       </Head>
       <section className="flex flex-col-reverse items-center p-4 mt-2 border rounded-lg sm:flex-row border-hunter-blue-700 bg-hunter-blue-100/80 dark:bg-hunter-blue-900/30">
         <RHProfile />
@@ -44,9 +53,9 @@ export default function Home({
             />
           </p>
           <p className="mt-3 ml-1 text-base">
-            Hi, welcome to my digital space. Here I share my side projects,
-            tutorials & what I learn over time. I am looking to grow my career
-            in tech 🚀
+            Hi, welcome to my digital space. Here I share about my professional
+            life, side projects, tutorials & what I learn over time. Hope you
+            enjoy your stay 🚀.
           </p>
         </div>
       </section>

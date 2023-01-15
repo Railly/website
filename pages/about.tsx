@@ -1,7 +1,9 @@
 import Dropdown from "components/Dropdown";
 import RHProfile from "components/RHProfile";
+import WorkExperience from "components/WorkExperience";
 import { format } from "date-fns";
 import Head from "next/head";
+import { WORK_EXPERIENCE } from "utils/data";
 
 export const links = [
   {
@@ -14,14 +16,22 @@ export const links = [
 ];
 
 const About = () => {
-  const date = format(new Date(), "MMMM dd, y");
   return (
     <>
       <Head>
         <meta
           property="og:image"
-          content={`https://raillyhugo.com/api/og?title=Railly Hugo - About&date=${date}`}
+          content="https://raillyhugo.com/api/og?title=Railly Hugo - About"
         />
+        <title>Railly Hugo</title>
+        <meta property="og:title" content="About" />
+        <meta
+          property="og:description"
+          content="Frontend Developer and student of Software Engineering at Faculty of Systems Engineering and Informatics of San Marcos University in Lima, Peru. Planning to study a MS in Computer Science in the future."
+        />
+        <meta property="og:url" content="https://raillyhugo.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="About" />
       </Head>
       <section className="p-4 rounded-lg backdrop-blur-sm">
         <header className="flex w-full gap-6">
@@ -32,7 +42,7 @@ const About = () => {
               </div>
               <h1 className="text-lg font-bold">Railly Hugo</h1>
             </div>
-            <p className="text-sm text-black/70 dark:text-white/70">
+            <p className="text-sm text-hunter-black-900 dark:text-hunter-black-100/90">
               <b>Frontend Developer </b>
               and student of <b>Software Engineering </b>
               at Faculty of Systems Engineering and Informatics of San Marcos
@@ -67,91 +77,18 @@ const About = () => {
             </a>
           </div>
           <ol className="relative border-l border-gray-200 dark:border-gray-700">
-            <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full bg-hunter-blue-100 -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-hunter-blue-900">
-                <svg
-                  aria-hidden="true"
-                  className="w-3 h-3 text-hunter-blue-600 dark:text-hunter-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </span>
-              <h3 className="flex items-center mb-1 text-lg font-semibold text-zinc-900 dark:text-white">
-                Mid Frontend Developer{" "}
-                <span className="bg-hunter-blue-100 shadow-lg shadow-hunter-blue-400/20 text-hunter-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-hunter-blue-200 dark:text-hunter-blue-800 ml-3">
-                  Latest
-                </span>
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-zinc-500 dark:text-zinc-500">
-                January 2022 - Present
-              </time>
-              <ul className="mb-4 text-base font-normal text-zinc-800 dark:text-zinc-400">
-                <li className="mb-2 ml-6 list-disc">
-                  Design and develop medium to large size features from scratch
-                  using React, TypeScript, Styled Components, and Redux.
-                </li>
-                <li className="mb-2 ml-6 list-disc">
-                  Challenge the development workflow, which involved project
-                  documentation, testing, commit messages, PR structure, new
-                  libraries, etc.
-                </li>
-                <li className="mb-2 ml-6 list-disc">
-                  Seek continuous improvement of frontend micro-interactions and
-                  overall UX.
-                </li>
-                <li className="mb-2 ml-6 list-disc">
-                  Support other team members by attending to their technical
-                  questions and sharing my viewpoints when needed
-                </li>
-              </ul>
-            </li>
-            <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 rounded-full bg-hunter-blue-100 -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-hunter-blue-900">
-                <svg
-                  aria-hidden="true"
-                  className="w-3 h-3 text-hunter-blue-600 dark:text-hunter-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </span>
-              <h3 className="mb-1 text-lg font-semibold text-zinc-900 dark:text-white">
-                Jr. Frontend Developer
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-zinc-500 dark:text-zinc-500">
-                June 2021 - December 2021
-              </time>
-              <p className="text-base font-normal text-zinc-800 dark:text-zinc-400">
-                <li className="mb-2 ml-6 list-disc">
-                  Design the UX/UI of the entire application with Figma (+30
-                  screens), while interviewing real users.
-                </li>
-                <li className="mb-2 ml-6 list-disc">
-                  Develop an educational management system with 7 modules
-                  (administrator, professor, reports, supervisor, academic
-                  management, enrollment), using Next.js, TailwindCSS, and
-                  JavaScript.
-                </li>
-
-                <li className="mb-2 ml-6 list-disc">
-                  Deliver daily features based on continuous feedback received
-                  from the product owner.
-                </li>
-              </p>
-            </li>
+            {WORK_EXPERIENCE.map((workExperience, index) => (
+              <li key={workExperience.id} className="mb-10 ml-6">
+                <WorkExperience
+                  position={workExperience.position}
+                  company={workExperience.company}
+                  startDate={workExperience.startDate}
+                  endDate={workExperience.endDate}
+                  responsibilities={workExperience.responsibilities}
+                  isLatest={index === 0}
+                />
+              </li>
+            ))}
           </ol>
         </main>
       </section>

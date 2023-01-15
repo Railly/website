@@ -8,15 +8,23 @@ import { tagColors } from "utils/styles";
 
 export default function Portfolio({ projects }: { projects: Project[] }) {
   const router = useRouter();
-  const date = format(new Date(), "MMMM dd, y");
 
   return (
     <>
       <Head>
         <meta
           property="og:image"
-          content={`https://raillyhugo.com/api/og?title=Railly Hugo - Portfolio&date=${date}`}
+          content="https://raillyhugo.com/api/og?title=Railly Hugo - Portfolio"
         />
+        <title>Railly Hugo</title>
+        <meta property="og:title" content="Portfolio" />
+        <meta
+          property="og:description"
+          content="Projects I've build along my journey as a university student and a self-taught software developer."
+        />
+        <meta property="og:url" content="https://raillyhugo.com/portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Portfolio" />
       </Head>
       <section>
         <h1 className="mb-4 text-2xl font-semibold sm:text-3xl">Portfolio</h1>
