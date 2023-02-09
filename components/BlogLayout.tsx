@@ -41,17 +41,10 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
       </Head>
       <main className="pb-10 backdrop-blur-sm">
         <section className="pb-6 mb-2 border-b border-black/10 dark:border-white/30">
-          <p className="mt-2 mb-2 text-sm text-center">
-            <span>
-              {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
-            </span>
-            {" • "}
-            {blogPost.readingTime.text}
-          </p>
           <h1 className="text-3xl font-bold text-center md:text-4xl ">
             {blogPost.title}
           </h1>
-          <p className="pb-4 mt-3 text-base text-center text-zinc-800/60 dark:text-white/60 font-dm">
+          <p className="pb-4 mt-3 text-base text-center text-hunter-black-500 dark:text-hunter-black-300 font-dm">
             {blogPost.summary}
           </p>
           <div className="flex items-center">
@@ -66,12 +59,14 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
                 height={40}
               />
             </div>
-            <div className="flex items-center gap-4">
-              <div className="flex flex-col ml-2">
-                <span className="text-base">Railly Hugo</span>
-                <span className="text-sm">Frontend Developer</span>
-              </div>
-              <Dropdown options={links} />
+            <div className="flex items-center gap-3 ml-3 text-base">
+              <span>Railly Hugo</span>
+              <span className="text-lg opacity-50">/</span>
+              <span>
+                {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
+              </span>
+              <span className="text-lg opacity-50">/</span>
+              <span>{blogPost.readingTime.text}</span>
             </div>
           </div>
         </section>

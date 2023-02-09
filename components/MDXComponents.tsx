@@ -16,7 +16,7 @@ const CustomLink = (props: any) => {
 
   return (
     <a
-      className="font-medium underline transition text-hunter-blue-600 dark:text-hunter-blue-500 underline-offset-2 dark:hover:text-hunter-blue-400 hover:text-hunter-blue-500"
+      className="font-medium underline transition text-hunter-blue-700 dark:text-hunter-blue-500 underline-offset-2 dark:hover:text-hunter-blue-400 hover:text-hunter-blue-600"
       target="_blank"
       rel="noopener noreferrer"
       {...props}

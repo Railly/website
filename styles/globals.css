@@ -41,11 +41,4 @@
   .light div[data-rehype-pretty-code-title][data-theme="dark"] {
     display: none;
   }
-
-  .dark code span::before {
-    @apply text-white/20;
-  }
-  .light code span::before {
-    @apply text-black/30;
-  }
 }
