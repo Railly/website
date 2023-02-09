@@ -8,6 +8,8 @@ import readingTime from "reading-time";
 import { visit } from "unist-util-visit";
 import rehypePrettyCode, { type Options } from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
+import { getHighlighter, loadTheme } from "shiki";
+import path from "path";
 
 const computedFields: ComputedFields = {
   readingTime: { type: "json", resolve: (doc) => readingTime(doc.body.raw) },
@@ -158,9 +160,17 @@ function rehypePrettyCodeClasses() {
 }
 
 const rehypePrettyCodeOptions: Partial<Options> = {
-  theme: {
-    dark: "one-dark-pro",
-    light: "min-light",
+  // theme: {
+  //   dark: "one-dark-pro",
+  //   light: "min-light",
+  // },
+  getHighlighter: async () => {
+    const theme = await loadTheme(
+      path.join(process.cwd(), "lib/one-hunter-theme.json")
+    );
+    return await getHighlighter({
+      theme,
+    });
   },
   tokensMap: {
     // VScode command palette: Inspect Editor Tokens and Scopes

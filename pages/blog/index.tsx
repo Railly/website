@@ -48,7 +48,7 @@ export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
           </div>
           <input
             type="text"
-            className="bg-zinc-50 border border-zinc-300 text-zinc-900 text-sm rounded-lg block w-full pl-10 p-2.5  dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white"
+            className="bg-hunter-blue-50 dark:bg-hunter-black-800 border border-zinc-300 text-zinc-900 text-sm rounded-lg block w-full pl-10 p-2.5 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white"
             placeholder="Search..."
             id="exampleFormControlInput1"
             onChange={(e) => setSearch(e.target.value)}

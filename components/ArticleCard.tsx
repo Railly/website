@@ -18,7 +18,7 @@ const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
         blogPost.disabled ? "filter opacity-[0.5]  grayscale " : ""
       }`}
     >
-      <div className="grid grid-cols-1 px-4 pt-4 pb-2 bg-zinc-50/95 dark:bg-zinc-800/95 rounded-2xl">
+      <div className="grid grid-cols-1 px-4 pt-4 pb-2 bg-hunter-blue-50 dark:bg-hunter-black-800 rounded-2xl">
         <div className="grid">
           <h3 className="pb-1.5 mb-2 text-base font-bold border-b border-black/20 dark:border-white/30">
             {blogPost.title}

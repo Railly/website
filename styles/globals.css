@@ -27,18 +27,6 @@
    -ms-user-select: none;
   }
 
-  .bg-custom-dark {
-    background-color: #605e6711
-  }
-
-  .bg-custom-light {
-    background-color: #22222211;
-  }
-
-  .bg-custom {
-    @apply bg-custom-light dark:bg-custom-dark;
-  }
-
   .dark pre[data-theme="dark"],
   .dark div[data-rehype-pretty-code-title] {
     color-scheme: dark;
