@@ -58,7 +58,7 @@ export default function Quote({ children }) {
   const childrenWithoutFlavor = hasFlavor ? childrenToEval.slice(1) : childrenToEval
   
   return (
-    <blockquote className={`flex flex-col gap-2 p-4 my-10 text-sm border border-l-8 rounded-md bg-zinc-100 dark:bg-zinc-800 ${colors}`}>
+    <blockquote className={`flex flex-col gap-2 p-4 my-10 shadow-md text-sm border border-l-8 rounded-md bg-zinc-100 dark:bg-zinc-800 ${colors}`}>
       {hasFlavor &&
         <div className={`flex justify-between font-medium text-[16px] ${getFlavorTitleColor(colorName)}`}>
           <span>

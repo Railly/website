@@ -1,0 +1,126 @@
+---
+title: "How I Built a Viral VSCode Theme From Scratch"
+summary: "A story of how I built One Hunter Theme from scratch and how I got 2,000+ downloads in 2 months."
+publishedAt: "2023-02-09"
+tags:
+  - VSCode
+  - Theme
+---
+
+# Inspiration
+
+## Vercel Theme
+
+I have to say I'm a [Vercel](https://www.vercel.com) supporter since their name was ZEIT, so as you can imagine, I'm very familiar with Next.js.
+One thing that catch me up was the **syntax highlighting** used in [Vercel documentation](https://vercel.com/docs). It is minimal, but it has a very nice color palette so I decided to replicate it on VSCode.
+
+## One Dark Pro
+
+At this point, you should already know [this theme](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme), but if not, it is **one of the most downloaded color theme in VSCode Marketplace**.
+I've been using it since I started in web development.
+I love the colors, the contrast, the bolded functions, and the overall look of the theme.
+But I wanted to make it a little bit more minimal, because I felt that it lacked a little bit of white color.
+
+# The Process
+
+At the beginning, **I created this theme for my personal use**, but I started showing it to some friends, then to some people on Twitter, since I noticed hat people were interested in the theme, I started to move my hands a little bit faster.
+
+So, I was thinking about using [Theme Studio for VSCode](https://themes.vscode.one/) to create the theme, but I decided to do it manually because I wanted to learn more about VSCode extensions.
+
+So I started by installing [vsce](https://code.visualstudio.com/api/working-with-extensions/publishing-extension), the official CLI for scaffolding VSCode extensions.
+Then I only needed to create a json file with the correct schema and I was ready to go. 
+
+However, I wanted to create a theme that supports multiple variants, so I took a look at the [One Dark Pro repository](https://github.com/Binaryify/OneDark-Pro).
+I decided to use a similar pattern, because it was very easy to understand and it was already working, so why not?
+
+```bash showLineNumbers title="Working Directory"
+...
+📂src
+  ┣ 📂Theme
+     ┗ 📂config
+        ┣ 📄defaultConfig.json
+        ┣ 📄lightConfig.json
+        ┣ 📄materialConfig.json
+        ┗ 📄vercelConfig.json
+     ┣ 📄index.ts
+     ┣ 📄types.ts
+     ┗ 📄types.ts
+  ┣ 📄generator.ts
+  ┣ 📄themes.ts
+  ┗ 📄tsconfig.json
+...
+```
+
+To keep things simple, I created a `generator.ts` file to generate the theme based on the config files.
+To be honest the json files inside config folder are not really necessary, but I wanted to keep the same pattern as One Dark Pro.
+
+Finally, but most importantly, I created a `themes.ts` file to export the theme depending on each variant.
+It's worth mentioning that I used TypeScript enums to define the color names of the theme, so I could create more variants easily.
+
+```typescript title="src/themes.ts"
+export default {
+  textColors: {
+    classic: {
+      white: "#E0E0E0",
+      black0: "#101315",
+      black1: "#14181b",
+      frenchRose: "#F4457D",
+      frenchRoseActive: "#EE808B",
+      cornflowerBlue: "#53A1FA",
+      // ... and so on
+      woodBark: "#664E4D",
+      outerSpace: "#34393E",
+      info: "#6796E6",
+      warn: "#CD9731",
+      error: "#F44747",
+      debug: "#B267E6",
+    },
+  }
+}
+```
+
+> **Tip**
+> In order to create your own variant, you need to create a new object with the same structure as the `classic` object.
+> Then run `npm run build` and you will have a new variant ready for testing and publishing.
+> [Clone the repo]() and try it out!
+ 
+## Publishing on VSCode Marketplace
+
+After I finished the theme, I decided to publish it to the VSCode Marketplace.
+I followed the [official documentation](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) and that's all I needed to do.
+
+```bash title="Terminal"
+vsce package
+vsce publish
+```
+
+## But, How do I get 2,000+ downloads in 2 months?
+
+Well, apart from the fact that I'm a very smart developer, I'm joking, I'm not that good.
+I just used the power of social media and I shared the theme with the correct people, and I got lucky.
+Some people were interested in the custom theme I had so I decided to share it with the community.
+
+However, I strongly believe that [@shadcn](https://twitter.com/shadcn) was the first one to share the theme, and then it started to spread like wildfire.
+So, I'm very grateful to him and to all the people that shared the theme.
+
+It's important to note that he is currently using it for the documentation of [shadcn/ui](https://ui.shadcn.com/docs/installation), a very cool
+UI library built with Radix and Tailwind CSS. All of this is open source, and built with Next.js 13.
+
+
+<Image src="/images/shadcnui.png" width={2233} height={1112} alt="shadcn/ui landing page" />
+
+<Image src="/images/shadcnuidocs.png" width={2233} height={1112} alt="shadcn/ui documentation" />
+
+## What's next?
+
+To be honest, there is no a clear roadmap for this project, since we have four variants already, but I'm open to suggestions.
+Also if you want to contribute, you can do it by opening a PR. I will be very happy to review it.
+
+
+# Final Thoughts
+
+This was the first project I showed to the community, and I'm very happy with the results. I didn't expect to get so many downloads in such a short period of time.
+So this is definitely an **unlocked achievement** for me, and of course I'll continue working on new applications and extensions, so stay tuned.
+
+If you reach this point, thank you for reading this article, I hope you enjoyed it, and don't forget to star the repo on
+ [GitHub](https://github.com/Railly/one-hunter-vscode), and follow me on [Twitter](https://twitter.com/raillyhugo), I'll be very happy to hear from you.
