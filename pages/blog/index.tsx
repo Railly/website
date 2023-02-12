@@ -2,10 +2,9 @@ import { useState } from "react";
 import Head from "next/head";
 import { allBlogs } from "contentlayer/generated";
 import type { Blog } from "contentlayer/generated";
-import { format } from "date-fns";
 import ArticleCard from "components/ArticleCard";
 
-export default function Blog({ blogPosts }: { blogPosts: Blog[] }) {
+export default function BlogPage({ blogPosts }: { blogPosts: Blog[] }) {
   const [search, setSearch] = useState("");
 
   return (
