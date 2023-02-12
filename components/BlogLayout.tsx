@@ -2,8 +2,9 @@ import type { Blog } from "contentlayer/generated";
 import { format } from "date-fns";
 import Head from "next/head";
 import Image from "next/image";
-import { links } from "pages/about";
-import Dropdown from "./Dropdown";
+import { usePostViews } from "hooks/use-get-post-views";
+import { useEffect } from "react";
+import EyeIcon from "icons/Eye";
 
 type BlogLayoutProps = {
   children: JSX.Element;
@@ -12,6 +13,13 @@ type BlogLayoutProps = {
 
 export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
   const date = format(new Date(blogPost.publishedAt), "MMMM dd, y");
+  const { views, increment, error, isLoading } = usePostViews(blogPost.slug);
+
+  useEffect(() => {
+    increment();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Head>
@@ -47,26 +55,33 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
           <p className="pb-4 mt-3 text-base text-center text-hunter-black-500 dark:text-hunter-black-300 font-dm">
             {blogPost.summary}
           </p>
-          <div className="flex items-center">
-            <div className="flex">
-              <Image
-                className="rounded-full"
-                src="/images/profile.png"
-                alt="A profile photo of Railly Hugo"
-                blurDataURL="/images/profile.png"
-                placeholder="blur"
-                width={40}
-                height={40}
-              />
-            </div>
-            <div className="flex items-center gap-3 ml-3 text-base">
-              <span>Railly Hugo</span>
-              <span className="text-lg opacity-50">/</span>
+          <div className="flex justify-center pb-4 text-base text-center font-dm">
+            <div className="flex items-center gap-2">
+              <EyeIcon />
               <span>
-                {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
+                {isLoading && "Loading..."}
+                {!isLoading && error && "Error"}
+                {!isLoading && !error && `${views} views`}
               </span>
-              <span className="text-lg opacity-50">/</span>
-              <span>{blogPost.readingTime.text}</span>
+            </div>
+            <span className="mx-3">•</span>
+            <span>{blogPost.readingTime.text}</span>
+          </div>
+          <div className="flex items-center gap-3 text-base">
+            <Image
+              className="rounded-full"
+              src="/images/profile.png"
+              alt="A profile photo of Railly Hugo"
+              blurDataURL="/images/profile.png"
+              placeholder="blur"
+              width={55}
+              height={55}
+            />
+            <div className="flex flex-col gap-1">
+              <span>By Railly Hugo</span>
+              <span className="text-sm font-dm">
+                On {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
+              </span>
             </div>
           </div>
         </section>

@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import { tagColors } from "utils/styles";
 import type { Blog } from "contentlayer/generated";
 import { format } from "date-fns";
+import { usePostViews } from "hooks/use-get-post-views";
+import EyeIcon from "icons/Eye";
 
 interface IProps {
   blogPost: Blog;
@@ -10,6 +12,8 @@ interface IProps {
 
 const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
   const router = useRouter();
+  const { views, error, isLoading } = usePostViews(blogPost.slug);
+
   return (
     <article
       key={blogPost.slug}
@@ -36,6 +40,14 @@ const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
             <span className="mb-2 text-sm place-self-end dark:text-white/70">
               {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
             </span>
+            {error && <p className="text-sm text-red-500">Error: {error}</p>}
+            {isLoading && <p className="text-sm text-gray-500">Loading...</p>}
+            {!isLoading && !error && (
+              <div className="flex items-center gap-1 mb-2 text-sm place-self-end dark:text-white/70">
+                <EyeIcon />
+                <span>{views}</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
