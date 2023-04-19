@@ -1,41 +1,67 @@
-import Image from "next/image";
-import Link from "next/link";
-import { allProjects } from "contentlayer/generated";
-import { allBlogs } from "contentlayer/generated";
-import type { Project, Blog } from "contentlayer/generated";
-import { pick } from "@contentlayer/client";
+import { Metadata } from "next";
 import { format } from "date-fns";
-import { useRouter } from "next/router";
-import { Icon } from "icons";
+import { allProjects, allBlogs } from "contentlayer/generated";
+import { pick } from "@contentlayer/client";
 import RHProfile from "components/RHProfile";
-import Head from "next/head";
+import Image from "next/image";
+import { Icon } from "icons";
+import Link from "next/link";
 
-export default function Home({
-  blogPosts,
-  projects,
-}: {
-  blogPosts: Blog[];
-  projects: Project[];
-}) {
-  const router = useRouter();
+export async function generateMetadata(): Promise<Metadata> {
   const date = format(new Date(), "MMMM dd, y");
+  return {
+    title: "Railly Hugo",
+    openGraph: {
+      url: "https://raillyhugo.com",
+      title: "Railly Hugo",
+      description:
+        "Hi, welcome to my digital space. Here I share my side projects, tutorials & what I learn over time. I am looking to grow my career in tech 🚀",
+      siteName: "Railly Hugo",
+      type: "website",
+      images: [
+        {
+          url: `https://raillyhugo.com/api/og?title=Railly Hugo - Home&date=${date}`,
+        },
+      ],
+    },
+  };
+}
+
+async function getAllProjects() {
+  const projects = allProjects
+    .map((post) =>
+      pick(post, [
+        "title",
+        "slug",
+        "summary",
+        "publishedAt",
+        "readingTime",
+        "tag",
+      ])
+    )
+    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
+    .slice(0, 3);
+
+  return projects;
+}
+
+async function getAllBlogs() {
+  const blogPosts = allBlogs
+    .map((post) =>
+      pick(post, ["title", "slug", "summary", "publishedAt", "readingTime"])
+    )
+    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
+    .slice(0, 3);
+
+  return blogPosts;
+}
+
+export default async function Home() {
+  const projects = await getAllProjects();
+  const blogPosts = await getAllBlogs();
+
   return (
     <>
-      <Head>
-        <meta
-          property="og:image"
-          content={`https://raillyhugo.com/api/og?title=Railly Hugo - Home&date=${date}`}
-        />
-        <title>Railly Hugo</title>
-        <meta property="og:title" content="Railly Hugo" />
-        <meta
-          property="og:description"
-          content="Hi, welcome to my digital space. Here I share my side projects, tutorials & what I learn over time. I am looking to grow my career in tech 🚀"
-        />
-        <meta property="og:url" content="https://raillyhugo.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Railly Hugo" />
-      </Head>
       <section className="flex flex-col-reverse items-center p-4 mt-2 border rounded-lg sm:flex-row border-hunter-blue-700 bg-hunter-blue-100/80 dark:bg-hunter-blue-900/30">
         <RHProfile />
         <div className="grid flex-1 mt-2 sm:ml-4 grid-row-3 sm:mt-0">
@@ -44,7 +70,7 @@ export default function Home({
           </h1>
           <p className="flex items-center gap-2 ml-1">
             <span className="text-lg font-bold ">UI Developer at PCI</span>
-            <img
+            <Image
               className="rounded-lg no-drag"
               src="/images/pci-logo.png"
               alt="PCI Energy Solutions Logo"
@@ -113,7 +139,6 @@ export default function Home({
           {blogPosts.map((blog) => (
             <div
               key={blog.slug}
-              onClick={() => router.push(`/blog/${blog.slug}`)}
               className="flex flex-col p-1 transition cursor-pointer hover:scale-[1.02] duration-300 bg-hunter-green-100/80 dark:bg-hunter-green-900/30 border rounded-lg border-hunter-green-700"
             >
               <div className="h-full p-4 rounded-lg">
@@ -143,7 +168,6 @@ export default function Home({
           {projects.map((project) => (
             <div
               key={project.slug}
-              onClick={() => router.push(`/portfolio/${project.slug}`)}
               className="flex cursor-pointer flex-col p-1 hover:scale-[1.02] duration-300 bg-hunter-yellow-100/80 dark:bg-hunter-yellow-900/30 border rounded-lg border-hunter-yellow-700"
             >
               <div className="h-full p-4 rounded-lg">
@@ -167,34 +191,4 @@ export default function Home({
       </section>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const projects = allProjects
-    .map((post) =>
-      pick(post, [
-        "title",
-        "slug",
-        "summary",
-        "publishedAt",
-        "readingTime",
-        "tag",
-      ])
-    )
-    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
-    .slice(0, 3);
-
-  const blogPosts = allBlogs
-    .map((post) =>
-      pick(post, ["title", "slug", "summary", "publishedAt", "readingTime"])
-    )
-    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
-    .slice(0, 3);
-
-  return {
-    props: {
-      projects,
-      blogPosts,
-    },
-  };
 }

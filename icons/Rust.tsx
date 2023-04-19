@@ -1,3 +1,4 @@
+"use client";
 import { useTheme } from "next-themes";
 
 const Rust = (props: any) => {

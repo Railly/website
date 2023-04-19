@@ -2,6 +2,7 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: [
+    "./app/**/*.{ts,tsx}",
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{js,ts,tsx}",
     "./icons/**/*.{ts,tsx}",
@@ -12,8 +13,8 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     fontFamily: {
-      lexend: ["Lexend", "sans-serif"],
-      dm: ["DM Sans", "sans-serif"],
+      lexend: ["var(--font-lexend)", "sans-serif"],
+      outfit: ["var(--font-outfit)", "sans-serif"],
       mono: ["Fira Code", "monospace"],
     },
     extend: {

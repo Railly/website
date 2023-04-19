@@ -1,17 +1,18 @@
+"use client";
+import { useTheme } from "next-themes";
 import { Icon } from "icons";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Link from "./Link";
 import { motion } from "framer-motion";
 import Dropdown from "./Dropdown";
 import { links } from "pages/about";
-import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   const handleCloseMenu = () => {
     setIsOpen(false);

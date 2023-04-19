@@ -8,5 +8,8 @@ module.exports = withContentlayer({
   reactStrictMode: true,
   images: {
     domains: ["api.producthunt.com"],
-  }
+  },
+  experimental: {
+    appDir: true,
+  },
 });

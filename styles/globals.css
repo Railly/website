@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply font-outfit;
+  }
+
   h1,
   h2,
   h3,
