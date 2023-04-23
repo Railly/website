@@ -130,14 +130,16 @@
 
   .animated-blue-gradient {
     @apply text-transparent bg-clip-text bg-gradient-to-r;
-    @apply from-hunter-blue-600 to-hunter-blue-300;
+    @apply dark:from-hunter-blue-600 dark:to-hunter-blue-300;
+    @apply from-hunter-blue-700 to-hunter-blue-400;
     background-size: 200% 100%;
     animation: continuous-gradient 4s ease infinite;
   }
 
   .animated-yellow-gradient {
     @apply text-transparent bg-clip-text bg-gradient-to-r;
-    @apply from-hunter-yellow-300 to-hunter-rose-500;
+    @apply dark:from-hunter-yellow-300 dark:to-hunter-rose-500;
+    @apply from-hunter-yellow-400 to-hunter-rose-600;
     background-size: 200% 100%;
     animation: continuous-gradient 4s ease infinite;
   }

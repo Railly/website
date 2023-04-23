@@ -13,9 +13,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  console.log({
-    theme,
-  });
   const pathname = usePathname();
 
   const handleCloseMenu = () => {
@@ -132,7 +129,7 @@ const Header = () => {
           initial="closed"
           animate={isOpen ? "open" : "closed"}
         > */}
-        <IconLogo name={Other.OpenMenu} />
+        {/* <IconLogo name={Other.OpenMenu} /> */}
         {/* </motion.button> */}
         <ul className="justify-between hidden transition duration-100 rounded-lg ring-1 ring-black/20 dark:ring-white/20 hover:ring-2 hover:ring-hunter-blue-500 bg-white/10 dark:bg-hunter-black-900 backdrop-blur-sm md:flex">
           <div className="flex items-center [&>li]:h-full">
@@ -163,7 +160,7 @@ const Header = () => {
             </li>
           </div>
         </ul>
-        <Dropdown options={links} />
+        {/* <Dropdown options={links} /> */}
         {mounted && (
           <>
             {theme === "light" ? (

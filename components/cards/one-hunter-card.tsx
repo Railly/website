@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-import FramerCard from "../FramerCard";
+import FramerCard from "./framer-card";
 import IconLogo from "@/icons";
 import { Tech } from "@/types/enums";
 

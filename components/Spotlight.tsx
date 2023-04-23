@@ -4,6 +4,7 @@ import useMousePosition from "hooks/use-mouse-position";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@wits/next-themes";
 
 const Spotlight = ({
   children,
@@ -11,8 +12,12 @@ const Spotlight = ({
 }: React.PropsWithChildren<{
   className?: string;
 }>) => {
+  const { theme } = useTheme();
   const mousePosition = useMousePosition();
   const [isHovered, setIsHovered] = useState(false);
+  const spotlightColor =
+    theme === "dark" ? "hsla(220,50%,80%,0.35)" : "hsla(220, 20%, 10%, 0.20)";
+
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
@@ -28,7 +33,7 @@ const Spotlight = ({
             layoutId="spotlight"
             className="absolute inset-0 z-0 overflow-hidden bg-fixed"
             style={{
-              background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, hsla(220,50%,80%,0.15) 0%,transparent 10%,transparent) fixed`,
+              background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, ${spotlightColor} -5%,transparent 10%,transparent) fixed`,
             }}
           />
         )}

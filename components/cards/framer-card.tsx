@@ -5,12 +5,12 @@ import Spotlight from "@/components/Spotlight";
 
 const colorClassNames = {
   default:
-    "bg-hunter-black-100/80 border-hunter-black-700 dark:bg-hunter-black-900/30",
-  blue: "bg-hunter-blue-100/80 border-hunter-blue-700 dark:bg-hunter-blue-900/30",
-  rose: "bg-rose-100/80 border-rose-900 dark:bg-rose-900/30",
-  teal: "bg-hunter-green-100/80 border-hunter-green-700 dark:bg-hunter-green-900/30",
+    "bg-hunter-black-100/30 border-hunter-black-700 dark:bg-hunter-black-900/30",
+  blue: "bg-hunter-blue-100/30 border-hunter-blue-700 dark:border-hunter-blue-500/40 dark:bg-hunter-blue-900/20",
+  rose: "bg-rose-100/30 border-hunter-rose-700 dark:border-hunter-rose-500/40 dark:bga-hunter-rose-900/20",
+  teal: "bg-hunter-green-100/30 border-hunter-green-500/40 dark:bg-hunter-green-900/20",
   yellow:
-    "bg-hunter-yellow-100/80 border-hunter-yellow-700 dark:bg-hunter-yellow-900/30",
+    "bg-hunter-yellow-100/30 border-hunter-yellow-600 dark:border-hunter-yellow-500/40 dark:bg-hunter-yellow-500/10",
 };
 
 interface IFramerCardProps {
