@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Md from "components/Markdown";
+import Md from "components/markdown";
 
 const CustomLink = (props: any) => {
   const href = props.href;

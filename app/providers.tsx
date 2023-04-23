@@ -1,12 +1,14 @@
 "use client";
-
 import { MDXProvider } from "@mdx-js/react";
-import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/react";
 
-export function Providers({ children }: { children: React.ReactNode }) {
+const Providers = ({ children }: React.PropsWithChildren) => {
   return (
     <MDXProvider components={{}}>
-      <ThemeProvider attribute="class">{children}</ThemeProvider>
+      {children}
+      <Analytics />
     </MDXProvider>
   );
-}
+};
+
+export default Providers;

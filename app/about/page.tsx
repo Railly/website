@@ -1,38 +1,29 @@
-import Dropdown from "components/Dropdown";
+import { format } from "date-fns";
+import { Metadata } from "next";
 import RHProfile from "components/RHProfile";
 import WorkExperience from "components/WorkExperience";
-import { format } from "date-fns";
-import Head from "next/head";
 import { WORK_EXPERIENCE } from "utils/data";
 
-export const links = [
-  {
-    to: "https://www.linkedin.com/in/railly-hugo",
-    external: true,
-    text: "LinkedIn",
-  },
-  { to: "https://www.github.com/Railly", external: true, text: "Github" },
-  { to: "https://www.twitter.com/RaillyHugo", external: true, text: "Twitter" },
-];
+export async function generateMetadata(): Promise<Metadata> {
+  const date = format(new Date(), "MMMM dd, y");
+  return {
+    title: "About",
+    description:
+      "Frontend Developer and student of Software Engineering at Faculty of Systems Engineering and Informatics of San Marcos University in Lima, Peru. Planning to study a MS in Computer Science in the future.",
+    openGraph: {
+      siteName: "Railly Hugo - About",
+      images: [
+        {
+          url: `https://raillyhugo.com/api/og?title=Railly Hugo - About&date=${date}`,
+        },
+      ],
+    },
+  };
+}
 
-const About = () => {
+export default async function About() {
   return (
     <>
-      <Head>
-        <meta
-          property="og:image"
-          content="https://raillyhugo.com/api/og?title=Railly Hugo - About"
-        />
-        <title>Railly Hugo</title>
-        <meta property="og:title" content="About" />
-        <meta
-          property="og:description"
-          content="Frontend Developer and student of Software Engineering at Faculty of Systems Engineering and Informatics of San Marcos University in Lima, Peru. Planning to study a MS in Computer Science in the future."
-        />
-        <meta property="og:url" content="https://raillyhugo.com/about" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="About" />
-      </Head>
       <section className="p-4 rounded-lg backdrop-blur-sm">
         <header className="flex w-full gap-6">
           <div>
@@ -94,6 +85,4 @@ const About = () => {
       </section>
     </>
   );
-};
-
-export default About;
+}

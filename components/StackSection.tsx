@@ -1,17 +1,11 @@
-import { SectionTypes } from "utils/types";
+import { SectionTypes } from "@/types/enums";
 
-type StackSectionProps = {
+export type StackSectionProps = {
   title: SectionTypes;
   skills: Array<{
     tech: string;
     icon: (props: any) => JSX.Element;
   }>;
-};
-
-type TechCardProps = {
-  tech: string;
-  icon: (props: any) => JSX.Element;
-  type: SectionTypes;
 };
 
 const StackSection = ({ title, skills }: StackSectionProps) => {
@@ -44,6 +38,12 @@ const styles = {
   [SectionTypes.Planning]:
     "from-hunter-blue-300 to-hunter-blue-500 hover:shadow-hunter-blue-500/30",
 };
+
+interface TechCardProps {
+  tech: string;
+  icon: (props: any) => JSX.Element;
+  type: SectionTypes;
+}
 
 const TechCard = ({ tech, icon: Icon, type }: TechCardProps) => {
   return (

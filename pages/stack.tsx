@@ -4,9 +4,8 @@ import {
   learningSomeday,
   myCurrentSkills,
 } from "utils/data";
-import { SectionTypes } from "utils/types";
 import Head from "next/head";
-import { format } from "date-fns";
+import { SectionTypes } from "@/types/enums";
 
 const Stack = () => {
   return (

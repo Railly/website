@@ -1,17 +1,21 @@
 "use client";
-import { useTheme } from "next-themes";
-import { Icon } from "icons";
+import { useTheme } from "@wits/next-themes";
 import { useEffect, useState } from "react";
 import Link from "./Link";
 import { motion } from "framer-motion";
 import Dropdown from "./Dropdown";
-import { links } from "pages/about";
 import { usePathname } from "next/navigation";
+import { links } from "@/utils/data";
+import IconLogo from "@/icons";
+import { Other, Scheme } from "@/types/enums";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  console.log({
+    theme,
+  });
   const pathname = usePathname();
 
   const handleCloseMenu = () => {
@@ -58,15 +62,15 @@ const Header = () => {
         initial="closed"
         animate={isOpen ? "open" : "closed"}
       >
-        <motion.button
+        {/* <motion.button
           className="fixed menu-button left-6 top-6"
           onClick={handleCloseMenu}
           variants={menuButtonVariants}
           initial="closed"
           animate={isOpen ? "open" : "closed"}
-        >
-          <Icon.CloseMenu />
-        </motion.button>
+        > */}
+        <IconLogo name={Other.CloseMenu} />
+        {/* </motion.button> */}
         <ul className="flex sm:hidden flex-col items-center justify-between py-2 h-full [&>li]:w-full">
           <motion.li variants={menuVariants}>
             <Link
@@ -120,16 +124,16 @@ const Header = () => {
           </motion.li>
         </ul>
       </motion.div>
-      <header className="container flex items-center justify-between max-w-3xl pt-6 pb-3 mx-auto sm:py-6 md:py-10 px-7 md:pr-10 md:pl-7">
-        <motion.button
+      <header className="container flex items-center justify-between w-full pt-6 pb-3 mx-auto sm:py-6 md:py-10 px-7 md:pr-10 md:pl-7">
+        {/* <motion.button
           className="flex menu-button md:hidden"
           onClick={handleOpenMenu}
           variants={menuButtonVariants}
           initial="closed"
           animate={isOpen ? "open" : "closed"}
-        >
-          <Icon.OpenMenu />
-        </motion.button>
+        > */}
+        <IconLogo name={Other.OpenMenu} />
+        {/* </motion.button> */}
         <ul className="justify-between hidden transition duration-100 rounded-lg ring-1 ring-black/20 dark:ring-white/20 hover:ring-2 hover:ring-hunter-blue-500 bg-white/10 dark:bg-hunter-black-900 backdrop-blur-sm md:flex">
           <div className="flex items-center [&>li]:h-full">
             <li>
@@ -161,13 +165,19 @@ const Header = () => {
         </ul>
         <Dropdown options={links} />
         {mounted && (
-          <div className="flex items-center visible">
-            <button
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-              {theme === "light" ? <Icon.DarkMode /> : <Icon.LightMode />}
-            </button>
-          </div>
+          <>
+            {theme === "light" ? (
+              <IconLogo
+                onClick={() => setTheme("dark")}
+                name={Scheme.DarkMode}
+              />
+            ) : (
+              <IconLogo
+                onClick={() => setTheme("light")}
+                name={Scheme.LightMode}
+              />
+            )}
+          </>
         )}
       </header>
       <motion.div

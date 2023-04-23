@@ -1,6 +1,6 @@
-const colors = require('tailwindcss/colors')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
     "./app/**/*.{ts,tsx}",
     "./pages/**/*.{ts,tsx}",
@@ -9,9 +9,15 @@ module.exports = {
     "./utils/**/*.{ts,tsx}",
     "./posts/**/*.mdx",
     "./contentlayer.config.ts",
-  ],
-  darkMode: "class", // or 'media' or 'class'
+	],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     fontFamily: {
       lexend: ["var(--font-lexend)", "sans-serif"],
       outfit: ["var(--font-outfit)", "sans-serif"],
@@ -19,6 +25,39 @@ module.exports = {
     },
     extend: {
       colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
         'hunter-rose': {
             '50': '#fef1f6',
             '100': '#fde6ef',
@@ -79,8 +118,33 @@ module.exports = {
             '800': '#2f3740',
             '900': '#191d21',
         },
+        'hunter-purple': {
+            '50': '#f7f5ff',
+            '100': '#eae2ff',
+            '200': '#d0c4ff',
+            '300': '#a78bfa',
+            '400': '#8461f7',
+            '500': '#653eea',
+            '600': '#512bd1',
+            '700': '#421987',
+            '800': '#34125f',
+            '900': '#270f3a',
+        }
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
         under: {
           "0%": {
             width: 0,
@@ -91,15 +155,17 @@ module.exports = {
             opacity: 1,
           },
         },
-        animation: {
-          underline: "under 1s ease-in-out infinite",
-        },
       },
       backgroundImage: {
         "bg-dotted":
           "radial-gradient(circle at 50% 50%,#605e6755 0,#141318 15%)",
       },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "underline": "under 1s ease-in-out infinite",
+      },
     },
   },
-  plugins: [],
-};
+  plugins: [require("tailwindcss-animate")],
+}

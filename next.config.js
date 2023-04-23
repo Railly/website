@@ -3,11 +3,10 @@
 const { withContentlayer } = require("next-contentlayer");
 
 module.exports = withContentlayer({
-  // Append the default value with md extensions
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
   images: {
-    domains: ["api.producthunt.com"],
+    domains: ["api.producthunt.com", "img.shields.io"],
   },
   experimental: {
     appDir: true,

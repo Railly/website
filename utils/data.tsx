@@ -1,75 +1,76 @@
-import { Icon } from "icons";
+import IconLogo from "@/icons";
+import { Tech } from "@/types/enums";
 
 export const myCurrentSkills = [
   {
     tech: "Next.js",
-    icon: Icon.NextJS,
+    icon: () => <IconLogo name={Tech.NextJS} />,
   },
   {
     tech: "React",
-    icon: Icon.ReactJS,
+    icon: () => <IconLogo name={Tech.ReactJS} />,
   },
   {
     tech: "TypeScript",
-    icon: Icon.TypeScript,
+    icon: () => <IconLogo name={Tech.TypeScript} />,
   },
   {
     tech: "TailwindCSS",
-    icon: Icon.TailwindCSS,
+    icon: () => <IconLogo name={Tech.TailwindCSS} />,
   },
   {
     tech: "Node.js",
-    icon: Icon.NodeJS,
+    icon: () => <IconLogo name={Tech.NodeJS} />,
   },
   {
     tech: "Redux",
-    icon: Icon.Redux,
+    icon: () => <IconLogo name={Tech.Redux} />,
   },
   {
     tech: "Turborepo",
-    icon: Icon.Turborepo,
+    icon: () => <IconLogo name={Tech.Turborepo} />,
   },
   {
     tech: "PostgreSQL",
-    icon: Icon.PostgreSQL,
+    icon: () => <IconLogo name={Tech.PostgreSQL} />,
   },
 ];
 
 export const learningInProgress = [
   {
     tech: "Rust",
-    icon: Icon.Rust,
+    icon: () => <IconLogo name={Tech.Rust} />,
   },
   {
     tech: "Golang",
-    icon: Icon.Golang,
+    icon: () => <IconLogo name={Tech.Golang} />,
   },
   {
     tech: "MongoDB",
-    icon: Icon.MongoDB,
+    icon: () => <IconLogo name={Tech.MongoDB} />,
   },
   {
     tech: "Storybook",
-    icon: Icon.Storybook,
+    icon: () => <IconLogo name={Tech.Storybook} />,
   },
 ];
 
 export const learningSomeday = [
   {
     tech: "React Native",
-    icon: Icon.ReactJS,
+    icon: () => <IconLogo name={Tech.ReactJS} />,
   },
   {
     tech: "GraphQL",
-    icon: Icon.GraphQL,
+    icon: () => <IconLogo name={Tech.GraphQL} />,
   },
   {
     tech: "Electron",
-    icon: Icon.Electron,
+    icon: () => <IconLogo name={Tech.Electron} />,
   },
   {
     tech: "Arduino",
-    icon: Icon.Arduino,
+    icon: () => <IconLogo name={Tech.Arduino} />,
   },
 ];
 
@@ -116,4 +117,14 @@ export const WORK_EXPERIENCE = [
       "Deliver daily features based on continuous feedback received from the product owner.",
     ],
   },
+];
+
+export const links = [
+  {
+    to: "https://www.linkedin.com/in/railly-hugo",
+    external: true,
+    text: "LinkedIn",
+  },
+  { to: "https://www.github.com/Railly", external: true, text: "Github" },
+  { to: "https://www.twitter.com/RaillyHugo", external: true, text: "Twitter" },
 ];
