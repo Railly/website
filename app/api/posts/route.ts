@@ -2,7 +2,6 @@ import kv from "@vercel/kv";
 import { NextRequest, NextResponse } from "next/server";
 import { getSortByPublishAt, getViewCount } from "../../../utils/helpers";
 import axios from "axios";
-import { createCacheHelper } from "swr/_internal";
 import { IBlog } from "@/types/interfaces";
 
 export async function GET(req: NextRequest) {
