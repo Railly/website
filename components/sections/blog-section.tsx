@@ -24,9 +24,9 @@ const BlogSection = ({
         </div>
       )}
       <div className="flex flex-col mb-4">
-        {blogPosts.map((blog) => (
-          <BlogCard key={blog.slug} blog={blog} />
-        ))}
+        {blogPosts &&
+          blogPosts.length > 0 &&
+          blogPosts.map((blog) => <BlogCard key={blog.slug} blog={blog} />)}
       </div>
       {!isPage && <LinkWithArrow href="/blog">See all posts</LinkWithArrow>}
     </section>
