@@ -26,6 +26,7 @@ const ProjectSection = ({
       <div className="flex flex-col mb-4">
         {projects &&
           projects.length > 0 &&
+          typeof projects.map === "function" &&
           projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
