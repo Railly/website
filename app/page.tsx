@@ -7,15 +7,16 @@ import axios from "@/lib/axios";
 async function getBlogPosts() {
   const blogPosts = await axios
     .get("/api/posts?limit=3&sort=desc")
-    .then((res) => res.data);
+    .then((res) => res.data)
+    .catch((err: any) => console.log(err));
   return blogPosts;
 }
 
 async function getProjects() {
   const projects = await axios
     .get("/api/projects?limit=3&sort=desc")
-    .then((res) => res.data);
-
+    .then((res) => res.data)
+    .catch((err: any) => console.log(err));
   return projects;
 }
 

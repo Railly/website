@@ -3,8 +3,9 @@ import ProjectSection from "@/components/sections/project-section";
 
 async function getProjects() {
   const projects = await axios
-    .get("api/projects?sort=desc")
-    .then((res) => res.data);
+    .get("/api/projects?sort=desc")
+    .then((res) => res.data)
+    .catch((err: any) => console.log(err));
   return projects;
 }
 
