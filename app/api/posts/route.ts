@@ -1,6 +1,6 @@
 import kv from "@vercel/kv";
 import { NextRequest, NextResponse } from "next/server";
-import postsData from "../../posts.json";
+import postsData from "@/public/json/posts.json";
 import { getSortByPublishAt, getViewCount } from "../../../utils/helpers";
 
 export async function GET(req: NextRequest) {
