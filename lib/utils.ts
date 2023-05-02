@@ -15,5 +15,5 @@ export function formatDate(input: string | number): string {
 }
 
 export function absoluteUrl(path: string) {
-  return `${process.env.NEXT_PUBLIC_VERCEL_URL}${path}`;
+  return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}${path}`;
 }

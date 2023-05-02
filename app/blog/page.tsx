@@ -2,7 +2,7 @@ import BlogSection from "@/components/sections/blog-section";
 
 async function getBlogPosts() {
   const blogPosts = await fetch(
-    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts?sort=desc`,
+    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts?sort=desc`,
     {
       method: "GET",
       headers: {

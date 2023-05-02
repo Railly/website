@@ -5,7 +5,7 @@ import MainSection from "@/components/sections/main-section";
 
 async function getBlogPosts() {
   const blogPosts = await fetch(
-    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts?limit=3&sort=desc`,
+    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts?limit=3&sort=desc`,
     {
       method: "GET",
       headers: {
@@ -18,7 +18,7 @@ async function getBlogPosts() {
 
 async function getProjects() {
   const projects = await fetch(
-    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/projects?limit=3&sort=desc`,
+    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/projects?limit=3&sort=desc`,
     {
       method: "GET",
       headers: {
