@@ -17,6 +17,7 @@ async function getProjects() {
     .get("/api/projects?limit=3&sort=desc")
     .then((res) => res.data)
     .catch((err: any) => console.log(err));
+
   return projects;
 }
 
