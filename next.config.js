@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const { withContentlayer } = require("next-contentlayer");
+const withMDX = require("@next/mdx")();
 
-module.exports = withContentlayer({
+module.exports = withMDX({
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
   images: {

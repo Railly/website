@@ -83,7 +83,7 @@ export default function RootLayout({
         className={`${outfit.variable} ${lexend.variable}`}
         suppressHydrationWarning
       >
-        <body className="flex flex-col items-center w-full text-lg leading-7 dark:bg-black bg-hunter-black-50 text-zinc-800 dark:text-zinc-100 font-dm selection:bg-black/80 selection:text-white dark:selection:bg-white/90 dark:selection:text-black">
+        <body className="flex flex-col items-center w-full text-lg leading-7 dark:bg-[#1c1c1c] bg-hunter-black-50 text-zinc-800 dark:text-zinc-100 font-dm selection:bg-black/80 selection:text-white dark:selection:bg-white/90 dark:selection:text-black">
           <Layout>
             <Providers>{children}</Providers>
             <TailwindIndicator />

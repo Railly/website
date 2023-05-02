@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "title": "Libreria de Botones",
+      "summary": "Aplicación hecha con React de un botón polifuncional, que mediante props, podemos combinar comportamientos.",
+      "publishedAt": "2021-07-16",
+      "image": "button.png",
+      "tag": "Proyecto personal",
+      "slug": "button"
+    },
+    {
+      "title": "Sistema de Gestión Académica",
+      "summary": "Aplicación hecha con Next.js para el Centro de Informática de la Universidad Nacional Mayor de San Marcos",
+      "publishedAt": "2021-12-20",
+      "image": "cinfo.png",
+      "tag": "Proyecto laboral",
+      "slug": "cinfo"
+    },
+    {
+      "title": "Foody",
+      "summary": "Aplicación hecha con Next.js y Firebase para crear libros de cocina y recetas.",
+      "publishedAt": "2021-07-19",
+      "image": "foody.png",
+      "tag": "Proyecto de universidad",
+      "slug": "foody"
+    },
+    {
+      "title": "Indie Singles",
+      "summary": "Aplicación donde puedes compartir tu música como artista independiente.",
+      "publishedAt": "2021-12-20",
+      "image": "indie-singles.png",
+      "tag": "Proyecto de universidad",
+      "slug": "indie-singles"
+    },
+    {
+      "title": "Kisaragi",
+      "summary": "Aplicación donde puedes compartir tus pensamientos y publicar tus productos coleccionables.",
+      "publishedAt": "2021-07-19",
+      "image": "kisaragi.png",
+      "tag": "Proyecto de universidad",
+      "slug": "kisaragi"
+    },
+    {
+      "title": "Mi primer portafolio",
+      "summary": "Aplicación hecha con create-react-app, donde comenzó mi presencia digital.",
+      "publishedAt": "2021-07-16T17:40:00",
+      "image": "portfolio.png",
+      "tag": "Proyecto personal",
+      "slug": "portfolio"
+    }
+  ]
+}

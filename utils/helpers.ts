@@ -1,27 +1,29 @@
-import { pick } from "contentlayer/client";
-import { Project, Blog } from "../.contentlayer/generated";
+import kv from "@vercel/kv";
 
-export const pickLastNProjects = (allProjects: Project[], n: number) => {
-  return allProjects
-    .map((post) =>
-      pick(post, [
-        "title",
-        "slug",
-        "summary",
-        "publishedAt",
-        "readingTime",
-        "tag",
-      ])
-    )
-    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
-    .slice(0, n);
+type TWithPublishedAt = {
+  publishedAt: string;
 };
 
-export const pickLastNBlogPosts = (allBlogs: Blog[], n: number) => {
-  return allBlogs
-    .map((post) =>
-      pick(post, ["title", "slug", "summary", "publishedAt", "readingTime"])
-    )
-    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt))
-    .slice(0, n);
+export async function getViewCount(
+  views: { [key: string]: number } | null,
+  slug: string
+) {
+  if (!views) {
+    await kv.hset("views", {
+      [slug]: 0,
+    });
+    return 0;
+  }
+  if (views.hasOwnProperty(slug)) {
+    return views[slug];
+  }
+}
+
+export const getSortByPublishAt = (sort: string | null) => {
+  if (sort === "asc") {
+    return (a: TWithPublishedAt, b: TWithPublishedAt) =>
+      new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();
+  }
+  return (a: TWithPublishedAt, b: TWithPublishedAt) =>
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
 };

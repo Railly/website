@@ -24,23 +24,23 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <MDXProvider components={{}}>
       <ThemeProvider attribute="class">
-        <Layout>
-          <Component {...pageProps} />
-          <style jsx global>{`
-            html {
-              font-family: ${outfit.style.fontFamily};
-            }
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-              font-family: ${lexend.style.fontFamily};
-            }
-          `}</style>{" "}
-          <Analytics />
-        </Layout>
+        {/* <Layout> */}
+        <Component {...pageProps} />
+        <style jsx global>{`
+          html {
+            font-family: ${outfit.style.fontFamily};
+          }
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            font-family: ${lexend.style.fontFamily};
+          }
+        `}</style>{" "}
+        <Analytics />
+        {/* </Layout> */}
       </ThemeProvider>
     </MDXProvider>
   );
