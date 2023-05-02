@@ -2,30 +2,20 @@ import BlogSection from "@/components/sections/blog-section";
 import ProjectSection from "@/components/sections/project-section";
 import FeaturedSection from "@/components/sections/featured-section";
 import MainSection from "@/components/sections/main-section";
+import axios from "@/lib/axios";
 
 async function getBlogPosts() {
-  const blogPosts = await fetch(
-    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts?limit=3&sort=desc`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  ).then((res) => res.json());
+  const blogPosts = await axios
+    .get("/api/posts?limit=3&sort=desc")
+    .then((res) => res.data);
   return blogPosts;
 }
 
 async function getProjects() {
-  const projects = await fetch(
-    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/projects?limit=3&sort=desc`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  ).then((res) => res.json());
+  const projects = await axios
+    .get("/api/projects?limit=3&sort=desc")
+    .then((res) => res.data);
+
   return projects;
 }
 

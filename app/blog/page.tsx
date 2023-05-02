@@ -1,15 +1,10 @@
+import axios from "@/lib/axios";
 import BlogSection from "@/components/sections/blog-section";
 
 async function getBlogPosts() {
-  const blogPosts = await fetch(
-    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts?sort=desc`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  ).then((res) => res.json());
+  const blogPosts = await axios
+    .get("api/posts?sort=desc")
+    .then((res) => res.data);
   return blogPosts;
 }
 
