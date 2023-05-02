@@ -1,13 +1,13 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { tagColors } from "utils/styles";
-import type { Blog } from "contentlayer/generated";
 import { format } from "date-fns";
 import { usePostViews } from "hooks/use-get-post-views";
 import EyeIcon from "icons/Eye";
+import { IBlog } from "@/types/interfaces";
 
 interface IProps {
-  blogPost: Blog;
+  blogPost: IBlog;
 }
 
 const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
@@ -29,14 +29,14 @@ const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
           </h3>
           <p className="mb-2 text-base dark:text-white">{blogPost.summary}</p>
           <div className="flex flex-wrap gap-4 mt-2">
-            {blogPost?.tags?.map((tag, index) => (
+            {/* {blogPost?.tags?.map((tag, index) => (
               <p
                 key={`${tag}-${index}`}
                 className={`mb-2 w-max px-2 py-0.5 rounded-lg text-sm font-medium ${tagColors["Blog"]}`}
               >
                 {tag}
               </p>
-            ))}
+            ))} */}
             <span className="mb-2 text-sm place-self-end dark:text-white/70">
               {format(new Date(blogPost.publishedAt), "MMMM dd, yyyy")}
             </span>

@@ -1,12 +1,12 @@
-import type { Project } from "contentlayer/generated";
 import Image from "next/image";
 import { format } from "date-fns";
 import { tagColors } from "utils/styles";
 import Head from "next/head";
+import { IProject } from "@/types/interfaces";
 
 type ProjectLayoutProps = {
   children: JSX.Element;
-  project: Project;
+  project: IProject;
 };
 
 export default function ProjectLayout({
@@ -63,7 +63,7 @@ export default function ProjectLayout({
               {format(new Date(project.publishedAt), "MMMM dd, yyyy")}
             </span>
             {" • "}
-            {project.readingTime.text}
+            {/* {project.readingTime.text} */}
           </p>
         </section>
         <hr className="mt-6 dark:opacity-10" />

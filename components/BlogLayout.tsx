@@ -1,14 +1,14 @@
-import type { Blog } from "contentlayer/generated";
 import { format } from "date-fns";
 import Head from "next/head";
 import Image from "next/image";
 import { usePostViews } from "hooks/use-get-post-views";
 import { useEffect } from "react";
 import EyeIcon from "icons/Eye";
+import { IBlog } from "@/types/interfaces";
 
 type BlogLayoutProps = {
   children: JSX.Element;
-  blogPost: Blog;
+  blogPost: IBlog;
 };
 
 export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
@@ -65,7 +65,7 @@ export default function BlogLayout({ children, blogPost }: BlogLayoutProps) {
               </span>
             </div>
             <span className="mx-3">•</span>
-            <span>{blogPost.readingTime.text}</span>
+            {/* <span>{blogPost.readingTime.text}</span> */}
           </div>
           <div className="flex items-center gap-3 text-base">
             <Image
