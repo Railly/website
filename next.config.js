@@ -10,5 +10,6 @@ module.exports = withMDX({
   },
   experimental: {
     appDir: true,
+    typedRoutes: true,
   },
 });
