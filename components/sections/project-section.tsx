@@ -24,12 +24,9 @@ const ProjectSection = ({
         </div>
       )}
       <div className="flex flex-col mb-4">
-        {projects &&
-          projects.length > 0 &&
-          typeof projects.map === "function" &&
-          projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
+        {projects.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
+        ))}
       </div>
       {!isPage && (
         <LinkWithArrow color="green" href="/portfolio">
