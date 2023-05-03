@@ -18,7 +18,7 @@ const ProjectCard = ({ project }: React.PropsWithChildren<IBlogCardProps>) => {
       <div className="flex gap-7">
         <span className="font-mono">
           {project.publishedAt &&
-            format(new Date(project.publishedAt), "MMMM, yyyy")}
+            format(new Date(project.publishedAt), "MMM, yyyy")}
         </span>
         <span className="font-mono">
           <EyeIcon className="inline-block w-4 h-4 mr-2" />

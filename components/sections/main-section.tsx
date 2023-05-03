@@ -1,4 +1,4 @@
-import DisclaimerCard from "../cards/disclaimer-card";
+// import DisclaimerCard from "../cards/disclaimer-card";
 import ProfileCard from "../cards/profile-card";
 
 const MainSection = () => {

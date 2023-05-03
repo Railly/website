@@ -15,12 +15,14 @@ const BlogCard = ({ blog }: React.PropsWithChildren<IBlogCardProps>) => {
       href={`/blog/${blog.slug}`}
       key={blog.slug}
     >
-      <span className="font-mono font-medium">{blog.title}</span>
+      <span className="font-mono text-sm font-medium md:text-base">
+        {blog.title}
+      </span>
       <div className="flex gap-7">
-        <span className="font-mono">
-          {blog.publishedAt && format(new Date(blog.publishedAt), "MMMM, yyyy")}
+        <span className="font-mono text-sm md:text-base">
+          {blog.publishedAt && format(new Date(blog.publishedAt), "MMM, yyyy")}
         </span>
-        <span className="font-mono">
+        <span className="font-mono text-sm md:text-base">
           <EyeIcon className="inline-block w-4 h-4 mr-2" />
           {blog.views}
         </span>
