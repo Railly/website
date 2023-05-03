@@ -17,9 +17,14 @@ export async function getViewCount(
   if (views.hasOwnProperty(slug)) {
     return views[slug];
   }
+
+  views[slug] = 0;
+  await kv.hset("views", views);
+
+  return 0;
 }
 
-export const getSortByPublishAt = (sort: string | null) => {
+export const getSortByPublishAt = (sort: "asc" | "desc" | null | undefined) => {
   if (sort === "asc") {
     return (a: TWithPublishedAt, b: TWithPublishedAt) =>
       new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();

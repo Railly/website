@@ -1,16 +1,11 @@
 import axios from "@/lib/axios";
 import ProjectSection from "@/components/sections/project-section";
-
-async function getProjects() {
-  const projects = await axios
-    .get("/api/projects?sort=desc")
-    .then((res) => res.data)
-    .catch((err: any) => console.log(err));
-  return projects;
-}
+import { getProjects } from "@/lib/api/get-projects";
 
 export default async function Portfolio() {
-  const projects = await getProjects();
+  const projects = await getProjects({
+    limit: false,
+  });
 
   return <ProjectSection projects={projects} isPage />;
 }

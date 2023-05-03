@@ -1,8 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import postsData from "../../posts.json";
+import { NextResponse } from "next/server";
+import { getBlogPosts } from "../../../lib/api/get-blog-posts";
 
-export const dynamic = "force-dynamic";
-
-export async function GET(req: NextRequest) {
-  return NextResponse.json(postsData.posts);
+export async function GET() {
+  return NextResponse.json(await getBlogPosts());
 }

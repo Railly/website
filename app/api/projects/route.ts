@@ -1,8 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import projectsData from "../../projects.json";
+import { NextResponse } from "next/server";
+import { getProjects } from "../../../lib/api/get-projects";
 
-export const dynamic = "force-dynamic";
-
-export async function GET(req: NextRequest) {
-  return NextResponse.json(projectsData.projects);
+export async function GET() {
+  return NextResponse.json(await getProjects());
 }
