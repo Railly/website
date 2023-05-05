@@ -5,7 +5,7 @@ export interface IBlog {
   summary: string;
   // image: string;
   // disabled: boolean;
-  // views: number;
+  views?: number;
   tags: string[];
 }
 

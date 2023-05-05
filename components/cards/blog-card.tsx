@@ -1,4 +1,3 @@
-import FramerCard from "./framer-card";
 import Link from "next/link";
 import { format } from "date-fns";
 import { IBlog } from "@/types/interfaces";
