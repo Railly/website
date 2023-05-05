@@ -36,8 +36,11 @@
     "**/*.js",
     "**/*.tsx",
     ".contentlayer/generated",
-    ".next/types/**/*.ts"
-, "app/page.tsx"  ],
+    ".next/types/**/*.ts",
+    "app/page.tsx",
+    "next.config.mjs",
+    "lib/rehype.mjs",
+   ],
   "exclude": [
     "node_modules"
   ]

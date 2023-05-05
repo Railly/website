@@ -1,9 +1,9 @@
 "use client";
 import { useTheme } from "@wits/next-themes";
 import { useEffect, useState } from "react";
-import Link from "./Link";
+import Link from "../components/Link";
 import { motion } from "framer-motion";
-import Dropdown from "./Dropdown";
+import Dropdown from "../components/Dropdown";
 import { usePathname } from "next/navigation";
 import { links } from "@/utils/data";
 import IconLogo from "@/icons";

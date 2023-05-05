@@ -6,6 +6,7 @@ module.exports = {
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{js,ts,tsx}",
     "./icons/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx,mjs}",
     "./utils/**/*.{ts,tsx}",
     "./posts/**/*.mdx",
     "./contentlayer.config.ts",
@@ -19,9 +20,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      lexend: ["var(--font-lexend)", "sans-serif"],
       outfit: ["var(--font-outfit)", "sans-serif"],
-      mono: ["Fira Code", "monospace"],
+      mono: ["ui-monospace", "monospace"],
     },
     extend: {
       colors: {

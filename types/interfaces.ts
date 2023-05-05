@@ -3,9 +3,9 @@ export interface IBlog {
   title: string;
   publishedAt: string;
   summary: string;
-  image: string;
-  disabled: boolean;
-  views: number;
+  // image: string;
+  // disabled: boolean;
+  // views: number;
   tags: string[];
 }
 

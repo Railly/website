@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { Metadata } from "next";
-import { Outfit, Lexend } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { absoluteUrl } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Providers from "./providers";
@@ -64,13 +64,6 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const lexend = Lexend({
-  subsets: ["latin"],
-  weight: ["400", "600", "500", "700", "900"],
-  variable: "--font-lexend",
-  display: "swap",
-});
-
 export default function RootLayout({
   children,
 }: {
@@ -78,11 +71,7 @@ export default function RootLayout({
 }) {
   return (
     <ServerThemeProvider attribute="class">
-      <html
-        lang="en"
-        className={`${outfit.variable} ${lexend.variable}`}
-        suppressHydrationWarning
-      >
+      <html lang="en" className={outfit.variable} suppressHydrationWarning>
         <body className="flex flex-col items-center w-full text-lg leading-7 dark:bg-[#1c1c1c] bg-hunter-black-50 text-zinc-800 dark:text-zinc-100 font-dm selection:bg-black/80 selection:text-white dark:selection:bg-white/90 dark:selection:text-black">
           <Layout>
             <Providers>{children}</Providers>

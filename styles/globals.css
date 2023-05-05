@@ -5,10 +5,9 @@
 @layer base {
   * {
     @apply border-border;
-    @apply font-outfit;
   }
 
-  body {
+  html, body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
@@ -19,7 +18,7 @@
   h4,
   h5,
   h6 {
-    @apply font-lexend;
+    @apply font-outfit;
   }
 }
 
@@ -146,15 +145,18 @@
   .dark pre[data-theme="dark"],
   .dark div[data-rehype-pretty-code-title] {
     color-scheme: dark;
+    @apply font-mono;
   }
 
   .dark pre[data-theme="light"],
   .dark div[data-rehype-pretty-code-title][data-theme="light"] {
     display: none;
+    @apply font-mono;
   }
 
   .light pre[data-theme="dark"],
   .light div[data-rehype-pretty-code-title][data-theme="dark"] {
     display: none;
+    @apply font-mono;
   }
 }
