@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { tagColors } from "utils/styles";
 import { format } from "date-fns";
 import { usePostViews } from "hooks/use-get-post-views";
 import EyeIcon from "icons/Eye";
@@ -18,9 +17,7 @@ const ArticleCard: React.FC<IProps> = ({ blogPost }) => {
     <article
       key={blogPost.slug}
       onClick={() => router.push(`/blog/${blogPost.slug}`)}
-      className={`flex flex-col transition cursor-pointer hover:scale-[1.02] hover:-rotate-1 duration-300 shadow-md shadow-slate-600/10 rounded-2xl dark:shadow-gray-400/10 ${
-        blogPost.disabled ? "filter opacity-[0.5]  grayscale " : ""
-      }`}
+      className="flex flex-col transition cursor-pointer hover:scale-[1.02] hover:-rotate-1 duration-300 shadow-md shadow-slate-600/10 rounded-2xl dark:shadow-gray-400/10"
     >
       <div className="grid grid-cols-1 px-4 pt-4 pb-2 bg-hunter-blue-50 dark:bg-hunter-black-800 rounded-2xl">
         <div className="grid">
