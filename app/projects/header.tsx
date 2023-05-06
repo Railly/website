@@ -5,15 +5,16 @@ import { useSelectedLayoutSegments } from "next/navigation";
 import { useEffect, useRef } from "react";
 import useSWR from "swr";
 import { IProject } from "@/types/interfaces";
+import { tagColors } from "@/utils/styles";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function ProjectHeader({ projects }: { projects: IProject[] }) {
   const segments = useSelectedLayoutSegments();
   const initialPost = projects.find(
-    (blogPost) => blogPost.slug === segments[segments.length - 1]
+    (project) => project.slug === segments[segments.length - 1]
   );
-  const { data: blogPost, mutate } = useSWR(
+  const { data: project, mutate } = useSWR(
     `/api/view?id=${initialPost?.slug ?? ""}`,
     fetcher,
     {
@@ -26,11 +27,18 @@ export function ProjectHeader({ projects }: { projects: IProject[] }) {
 
   return (
     <section className="mb-6 border-b border-black/10 dark:border-white/10">
+      <p
+        className={`mb-4 px-3 py-1 w-max rounded-lg font-medium text-hunter-black-50 ${
+          tagColors[project.tag]
+        }`}
+      >
+        {project.tag}
+      </p>
       <h1 className="text-3xl font-bold text-center md:text-4xl ">
-        {blogPost.title}
+        {project.title}
       </h1>
       <p className="pb-4 mt-3 text-base text-center text-hunter-black-500 dark:text-hunter-black-300 font-dm">
-        {blogPost.summary}
+        {project.summary}
       </p>
       <div className="flex items-center gap-3 text-base">
         <Image
@@ -54,16 +62,16 @@ export function ProjectHeader({ projects }: { projects: IProject[] }) {
             </a>
           </span>
           <span className="text-[13px]">
-            {format(parseISO(blogPost.publishedAt), "MMMM dd, yyyy")} (
-            {formatDistance(parseISO(blogPost.publishedAt), new Date())} ago)
+            {format(parseISO(project.publishedAt), "MMMM dd, yyyy")} (
+            {formatDistance(parseISO(project.publishedAt), new Date())} ago)
           </span>
         </div>
       </div>
       <span className="pr-1.5">
         <Views
-          id={blogPost.id}
+          id={project.id}
           mutate={mutate}
-          defaultValue={blogPost.viewsFormatted}
+          defaultValue={project.viewsFormatted}
         />
       </span>
     </section>

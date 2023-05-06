@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import HeaderLink from "../components/links/header-link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import Icon from "@/icons";
+import Icon from "@/components/icons";
 import { Other, Scheme } from "@/types/enums";
 
 const Header = () => {

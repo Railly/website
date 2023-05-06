@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import FramerCard from "./framer-card";
-import Icon from "@/icons";
+import Icon from "@/components/icons";
 import { Tech } from "@/types/enums";
 
 const OneHunterCard = () => {

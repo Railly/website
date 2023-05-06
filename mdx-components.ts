@@ -1,23 +1,23 @@
-import { A as a } from "./app/(blog)/components/a";
-import { P as p } from "./app/(blog)/components/p";
-import { H1 as h1 } from "./app/(blog)/components/heading/h1";
-import { H2 as h2 } from "./app/(blog)/components/heading/h2";
-import { H3 as h3 } from "./app/(blog)/components/heading/h3";
-import { Ol as ol } from "./app/(blog)/components/list/ol";
-import { Ul as ul } from "./app/(blog)/components/list/ul";
-import { Li as li } from "./app/(blog)/components/list/li";
-import { Hr as hr } from "./app/(blog)/components/hr";
-import { Image } from "./app/(blog)/components/image";
-import { Blockquote as blockquote } from "./app/(blog)/components/blockquote";
+import { A as a } from "./components/mdx/a";
+import { P as p } from "./components/mdx/p";
+import { H1 as h1 } from "./components/mdx/heading/h1";
+import { H2 as h2 } from "./components/mdx/heading/h2";
+import { H3 as h3 } from "./components/mdx/heading/h3";
+import { Ol as ol } from "./components/mdx/list/ol";
+import { Ul as ul } from "./components/mdx/list/ul";
+import { Li as li } from "./components/mdx/list/li";
+import { Hr as hr } from "./components/mdx/hr";
+import { Image } from "./components/mdx/image";
+import { Blockquote as blockquote } from "./components/mdx/blockquote";
 import type { MDXComponents } from "mdx/types";
 
-// import { Tweet } from "./app/(blog)/components/tweet";
-// import { Figure } from "./app/(blog)/components/figure";
-// import { Snippet } from "./app/(blog)/components/snippet";
-// import { Caption } from "./app/(blog)/components/caption";
-// import { Callout } from "./app/(blog)/components/callout";
-// import { YouTube } from "./app/(blog)/components/youtube";
-// import { Ref, FootNotes, FootNote } from "./app/(blog)/components/footnotes";
+// import { Tweet } from "./components/mdx/tweet";
+// import { Figure } from "./components/mdx/figure";
+// import { Snippet } from "./components/mdx/snippet";
+// import { Caption } from "./components/mdx/caption";
+// import { Callout } from "./components/mdx/callout";
+// import { YouTube } from "./components/mdx/youtube";
+// import { Ref, FootNotes, FootNote } from "./components/mdx/footnotes";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {

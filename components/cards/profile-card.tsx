@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import FramerCard from "./framer-card";
-import Icon from "@/icons";
+import Icon from "@/components/icons";
 import { SocialMedia } from "@/types/enums";
 import { Button } from "../ui/button";
 import Link from "next/link";

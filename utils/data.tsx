@@ -1,4 +1,4 @@
-import Icon from "@/icons";
+import Icon from "@/components/icons";
 import { Tech } from "@/types/enums";
 
 export const myCurrentSkills = [
