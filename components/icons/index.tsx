@@ -104,7 +104,6 @@ interface IconProps {
 }
 
 const Icon = ({ name, href, className, onClick, raw }: IconProps) => {
-  console.log({ raw });
   if (raw) return renderLogo(name);
   const component = href ? (
     <a
