@@ -2,7 +2,7 @@
 "use client";
 import FramerCard from "./framer-card";
 import Icon from "@/components/icons";
-import { SocialMedia } from "@/types/enums";
+import { ESocialMedia } from "@/types/enums";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -45,14 +45,14 @@ const ProfileCard = ({ className }: { className?: string }) => {
           <span>Currently based in Lima, Perú 🇵🇪</span>
         </p>
         <div className="flex justify-center gap-2 mt-2 mb-2">
-          <Icon href="https://github.com/Railly" name={SocialMedia.Github} />
+          <Icon href="https://github.com/Railly" name={ESocialMedia.Github} />
           <Icon
             href="https://www.linkedin.com/in/railly-hugo/"
-            name={SocialMedia.LinkedIn}
+            name={ESocialMedia.LinkedIn}
           />
           <Icon
             href="https://twitter.com/raillyhugo"
-            name={SocialMedia.Twitter}
+            name={ESocialMedia.Twitter}
           />
           <Button className="group">
             <Link

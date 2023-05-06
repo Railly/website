@@ -1,76 +1,76 @@
 import Icon from "@/components/icons";
-import { Tech } from "@/types/enums";
+import { ETech } from "@/types/enums";
 
 export const myCurrentSkills = [
   {
     tech: "Next.js",
-    icon: () => <Icon name={Tech.NextJS} />,
+    icon: () => <Icon name={ETech.NextJS} raw />,
   },
   {
     tech: "React",
-    icon: () => <Icon name={Tech.ReactJS} />,
+    icon: () => <Icon name={ETech.ReactJS} raw />,
   },
   {
     tech: "TypeScript",
-    icon: () => <Icon name={Tech.TypeScript} />,
+    icon: () => <Icon name={ETech.TypeScript} raw />,
   },
   {
     tech: "TailwindCSS",
-    icon: () => <Icon name={Tech.TailwindCSS} />,
+    icon: () => <Icon name={ETech.TailwindCSS} raw />,
   },
   {
     tech: "Node.js",
-    icon: () => <Icon name={Tech.NodeJS} />,
+    icon: () => <Icon name={ETech.NodeJS} raw />,
   },
   {
     tech: "Redux",
-    icon: () => <Icon name={Tech.Redux} />,
+    icon: () => <Icon name={ETech.Redux} raw />,
   },
   {
     tech: "Turborepo",
-    icon: () => <Icon name={Tech.Turborepo} />,
+    icon: () => <Icon name={ETech.Turborepo} raw />,
   },
   {
     tech: "PostgreSQL",
-    icon: () => <Icon name={Tech.PostgreSQL} />,
+    icon: () => <Icon name={ETech.PostgreSQL} raw />,
   },
 ];
 
 export const learningInProgress = [
   {
     tech: "Rust",
-    icon: () => <Icon name={Tech.Rust} />,
+    icon: () => <Icon name={ETech.Rust} raw />,
   },
   {
     tech: "Golang",
-    icon: () => <Icon name={Tech.Golang} />,
+    icon: () => <Icon name={ETech.Golang} raw />,
   },
   {
     tech: "MongoDB",
-    icon: () => <Icon name={Tech.MongoDB} />,
+    icon: () => <Icon name={ETech.MongoDB} raw />,
   },
   {
     tech: "Storybook",
-    icon: () => <Icon name={Tech.Storybook} />,
+    icon: () => <Icon name={ETech.Storybook} raw />,
   },
 ];
 
 export const learningSomeday = [
   {
     tech: "React Native",
-    icon: () => <Icon name={Tech.ReactJS} />,
+    icon: () => <Icon name={ETech.ReactJS} raw />,
   },
   {
     tech: "GraphQL",
-    icon: () => <Icon name={Tech.GraphQL} />,
+    icon: () => <Icon name={ETech.GraphQL} raw />,
   },
   {
     tech: "Electron",
-    icon: () => <Icon name={Tech.Electron} />,
+    icon: () => <Icon name={ETech.Electron} raw />,
   },
   {
     tech: "Arduino",
-    icon: () => <Icon name={Tech.Arduino} />,
+    icon: () => <Icon name={ETech.Arduino} raw />,
   },
 ];
 

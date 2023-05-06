@@ -2,7 +2,7 @@
 import Image from "next/image";
 import FramerCard from "./framer-card";
 import Icon from "@/components/icons";
-import { Tech } from "@/types/enums";
+import { ETech } from "@/types/enums";
 
 const OneHunterCard = () => {
   return (
@@ -31,7 +31,7 @@ const OneHunterCard = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-hunter-blue-500"
             >
-              <Icon name={Tech.VSCode} />
+              <Icon name={ETech.VSCode} />
             </a>
             <a
               href="https://github.com/Railly/one-hunter-vscode/stargazers"

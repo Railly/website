@@ -1,15 +1,15 @@
-export enum SectionTypes {
+export enum ESectionTypes {
   Stack = "My stack",
   Learning = "In learning process",
   Planning = "In planning",
 }
-export enum SocialMedia {
+export enum ESocialMedia {
   Github = "github",
   Twitter = "twitter",
   LinkedIn = "linkedIn",
 }
 
-export enum Tech {
+export enum ETech {
   TypeScript = "Typescript",
   JavaScript = "Javascript",
   Python = "Python",

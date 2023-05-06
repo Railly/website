@@ -6,7 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Other, Scheme, SocialMedia, Tech } from "@/types/enums";
+import { Other, Scheme, ESocialMedia, ETech } from "@/types/enums";
 import { cn } from "@/lib/utils";
 
 const GraphQL = dynamic(() => import("./GraphQL"));
@@ -38,56 +38,56 @@ const Schedule = dynamic(() => import("./Schedule"));
 
 const renderLogo = (name: IconProps["name"]) => {
   switch (name) {
-    case Tech.GraphQL:
-      return <GraphQL />;
-    case Tech.MongoDB:
-      return <MongoDB />;
-    case Tech.NextJS:
-      return <NextJS />;
-    case Tech.NodeJS:
-      return <NodeJS />;
-    case Tech.PostgreSQL:
-      return <PostgreSQL />;
-    case Tech.ReactJS:
-      return <ReactJS />;
-    case Tech.TailwindCSS:
-      return <TailwindCSS />;
-    case Tech.TypeScript:
-      return <TypeScript />;
-    case Tech.Redux:
-      return <Redux />;
-    case Tech.Golang:
-      return <Golang />;
-    case Tech.Rust:
-      return <Rust />;
-    case Tech.Storybook:
-      return <Storybook />;
-    case Tech.Laravel:
-      return <Laravel />;
-    case Tech.VSCode:
-      return <VSCode />;
-    case Tech.Turborepo:
-      return <Turborepo />;
-    case Tech.Electron:
-      return <Electron />;
-    case Tech.Arduino:
-      return <Arduino />;
-    case SocialMedia.Github:
+    case ETech.GraphQL:
+      return <GraphQL width={24} height={24} />;
+    case ETech.MongoDB:
+      return <MongoDB width={24} height={24} />;
+    case ETech.NextJS:
+      return <NextJS width={24} height={24} />;
+    case ETech.NodeJS:
+      return <NodeJS width={24} height={24} />;
+    case ETech.PostgreSQL:
+      return <PostgreSQL width={24} height={24} />;
+    case ETech.ReactJS:
+      return <ReactJS width={24} height={24} />;
+    case ETech.TailwindCSS:
+      return <TailwindCSS width={24} height={24} />;
+    case ETech.TypeScript:
+      return <TypeScript width={24} height={24} />;
+    case ETech.Redux:
+      return <Redux width={24} height={24} />;
+    case ETech.Golang:
+      return <Golang width={24} height={24} />;
+    case ETech.Rust:
+      return <Rust width={24} height={24} />;
+    case ETech.Storybook:
+      return <Storybook width={24} height={24} />;
+    case ETech.Laravel:
+      return <Laravel width={24} height={24} />;
+    case ETech.VSCode:
+      return <VSCode width={24} height={24} />;
+    case ETech.Turborepo:
+      return <Turborepo width={24} height={24} />;
+    case ETech.Electron:
+      return <Electron width={24} height={24} />;
+    case ETech.Arduino:
+      return <Arduino width={24} height={24} />;
+    case ESocialMedia.Github:
       return <Github />;
-    case SocialMedia.Twitter:
+    case ESocialMedia.Twitter:
       return <Twitter />;
-    case SocialMedia.LinkedIn:
+    case ESocialMedia.LinkedIn:
       return <LinkedIn />;
     case Scheme.DarkMode:
-      return <DarkMode />;
+      return <DarkMode width={24} height={24} />;
     case Scheme.LightMode:
-      return <LightMode />;
+      return <LightMode width={24} height={24} />;
     case Other.OpenMenu:
-      return <OpenMenu />;
+      return <OpenMenu width={24} height={24} />;
     case Other.CloseMenu:
-      return <CloseMenu />;
+      return <CloseMenu width={24} height={24} />;
     case Other.Arrow:
-      return <Arrow />;
+      return <Arrow width={24} height={24} />;
     case Other.Schedule:
       return <Schedule />;
     default:
@@ -96,15 +96,19 @@ const renderLogo = (name: IconProps["name"]) => {
 };
 
 interface IconProps {
-  name: Tech | Scheme | SocialMedia | Other;
+  name: ETech | Scheme | ESocialMedia | Other;
   href?: string;
   className?: string;
+  raw?: boolean;
   onClick?: () => void;
 }
 
-const Icon = ({ name, href, className, onClick }: IconProps) => {
+const Icon = ({ name, href, className, onClick, raw }: IconProps) => {
+  console.log({ raw });
+  if (raw) return renderLogo(name);
   const component = href ? (
     <a
+      id={name}
       href={href}
       target="_blank"
       rel="noopener noreferrer"
