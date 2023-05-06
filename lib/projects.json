@@ -1,12 +1,12 @@
 {
   "projects": [
     {
-      "title": "Libreria de Botones",
+      "title": "Librería de Botones",
       "summary": "Aplicación hecha con React de un botón polifuncional, que mediante props, podemos combinar comportamientos.",
       "publishedAt": "2021-07-16",
       "image": "button.png",
       "tag": "Proyecto personal",
-      "slug": "button"
+      "slug": "button-library"
     },
     {
       "title": "Sistema de Gestión Académica",
@@ -46,7 +46,7 @@
       "publishedAt": "2021-07-16T17:40:00",
       "image": "portfolio.png",
       "tag": "Proyecto personal",
-      "slug": "portfolio"
+      "slug": "first-portfolio"
     }
   ]
 }

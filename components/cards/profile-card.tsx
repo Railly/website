@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import FramerCard from "./framer-card";
-import IconLogo from "@/icons";
+import Icon from "@/icons";
 import { SocialMedia } from "@/types/enums";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -45,15 +45,12 @@ const ProfileCard = ({ className }: { className?: string }) => {
           <span>Currently based in Lima, Perú 🇵🇪</span>
         </p>
         <div className="flex justify-center gap-2 mt-2 mb-2">
-          <IconLogo
-            href="https://github.com/Railly"
-            name={SocialMedia.Github}
-          />
-          <IconLogo
+          <Icon href="https://github.com/Railly" name={SocialMedia.Github} />
+          <Icon
             href="https://www.linkedin.com/in/railly-hugo/"
             name={SocialMedia.LinkedIn}
           />
-          <IconLogo
+          <Icon
             href="https://twitter.com/raillyhugo"
             name={SocialMedia.Twitter}
           />
@@ -62,8 +59,9 @@ const ProfileCard = ({ className }: { className?: string }) => {
               href="/about"
               className="flex items-center justify-center gap-2"
             >
-              <span>More about me</span>
-              <ArrowRight className="group-hover:animate-bounce" />
+              <span className="hidden md:block">More about me</span>
+              <span className="block md:hidden">About me</span>
+              <ArrowRight className="hidden md:block group-hover:animate-bounce" />
             </Link>
           </Button>
         </div>

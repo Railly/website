@@ -1,4 +1,4 @@
-interface IconLogoProps {
+interface IconProps {
   theme?: string | undefined;
 }
 const Schedule = () => (

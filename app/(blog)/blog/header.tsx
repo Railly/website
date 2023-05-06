@@ -8,7 +8,7 @@ import { IBlog } from "@/types/interfaces";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export function Header({ blogPosts }: { blogPosts: IBlog[] }) {
+export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
   const segments = useSelectedLayoutSegments();
   const initialPost = blogPosts.find(
     (blogPost) => blogPost.slug === segments[segments.length - 1]
@@ -32,7 +32,7 @@ export function Header({ blogPosts }: { blogPosts: IBlog[] }) {
       <p className="pb-4 mt-3 text-base text-center text-hunter-black-500 dark:text-hunter-black-300 font-dm">
         {blogPost.summary}
       </p>
-      <div className="flex items-center justify-center gap-3 text-base">
+      <div className="flex items-center gap-3 text-base">
         <Image
           className="rounded-full"
           src="/images/profile.png"
@@ -42,21 +42,20 @@ export function Header({ blogPosts }: { blogPosts: IBlog[] }) {
           width={55}
           height={55}
         />
-        <div className="flex flex-col items-center gap-1 font-mono">
-          <span>
+        <div className="flex flex-col gap-1 font-mono">
+          <span className="text-left">
             <a
-              href="https://twitter.com/rauchg"
-              className="hover:text-gray-800 dark:hover:text-gray-400"
+              href="https://twitter.com/raillyhugo"
+              className="text-[13px] hover:text-gray-800 dark:hover:text-gray-400"
               target="_blank"
               rel="noopener noreferrer"
             >
               @raillyhugo
             </a>
           </span>
-          <span className="text-sm font-dm">
-            {formatDistance(parseISO(blogPost.publishedAt), new Date(), {
-              addSuffix: true,
-            })}
+          <span className="text-[13px]">
+            {format(parseISO(blogPost.publishedAt), "MMMM dd, yyyy")} (
+            {formatDistance(parseISO(blogPost.publishedAt), new Date())} ago)
           </span>
         </div>
       </div>

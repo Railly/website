@@ -12,7 +12,7 @@ const DisclaimerCard = ({
   <FramerCard className={className}>
     <div className="flex flex-col gap-1">
       <h1 className="font-bold text-center text-md">Opportunity</h1>
-      <p className="mt-2 mb-4 text-sm text-center max-w-prose">
+      <p className="w-full mt-2 mb-4 text-sm text-center md:max-w-prose">
         Are you a <b>Latam</b> 🌎 aspiring tech professional or an undergraduate
         student from <b>UNMSM</b> or other universities? Let&apos;s make your
         tech journey easier and more enjoyable! 🚀

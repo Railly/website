@@ -11,7 +11,7 @@ const ProjectCard = ({ project }: React.PropsWithChildren<IBlogCardProps>) => {
   return (
     <Link
       className="flex gap-4 justify-between w-full h-full px-2 py-4 text-base border-t dark:border-white/20 hover:bg-[#efefef] border-black/20 dark:hover:bg-[#222222aa] transition-all"
-      href={`/project/${project.slug}`}
+      href={`/projects/${project.slug}`}
       key={project.slug}
     >
       <span className="font-mono text-sm font-medium md:text-base">

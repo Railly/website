@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --totalToolbarHeight: 72px;
+  --verticalContentPadding: 1.5rem;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
   html, body {
+    @apply font-outfit;
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
@@ -39,7 +45,7 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
  
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 100 0% 0%;
     --primary-foreground: 210 40% 98%;
  
     --secondary: 210 40% 96.1%;

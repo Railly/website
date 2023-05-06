@@ -1,76 +1,76 @@
-import IconLogo from "@/icons";
+import Icon from "@/icons";
 import { Tech } from "@/types/enums";
 
 export const myCurrentSkills = [
   {
     tech: "Next.js",
-    icon: () => <IconLogo name={Tech.NextJS} />,
+    icon: () => <Icon name={Tech.NextJS} />,
   },
   {
     tech: "React",
-    icon: () => <IconLogo name={Tech.ReactJS} />,
+    icon: () => <Icon name={Tech.ReactJS} />,
   },
   {
     tech: "TypeScript",
-    icon: () => <IconLogo name={Tech.TypeScript} />,
+    icon: () => <Icon name={Tech.TypeScript} />,
   },
   {
     tech: "TailwindCSS",
-    icon: () => <IconLogo name={Tech.TailwindCSS} />,
+    icon: () => <Icon name={Tech.TailwindCSS} />,
   },
   {
     tech: "Node.js",
-    icon: () => <IconLogo name={Tech.NodeJS} />,
+    icon: () => <Icon name={Tech.NodeJS} />,
   },
   {
     tech: "Redux",
-    icon: () => <IconLogo name={Tech.Redux} />,
+    icon: () => <Icon name={Tech.Redux} />,
   },
   {
     tech: "Turborepo",
-    icon: () => <IconLogo name={Tech.Turborepo} />,
+    icon: () => <Icon name={Tech.Turborepo} />,
   },
   {
     tech: "PostgreSQL",
-    icon: () => <IconLogo name={Tech.PostgreSQL} />,
+    icon: () => <Icon name={Tech.PostgreSQL} />,
   },
 ];
 
 export const learningInProgress = [
   {
     tech: "Rust",
-    icon: () => <IconLogo name={Tech.Rust} />,
+    icon: () => <Icon name={Tech.Rust} />,
   },
   {
     tech: "Golang",
-    icon: () => <IconLogo name={Tech.Golang} />,
+    icon: () => <Icon name={Tech.Golang} />,
   },
   {
     tech: "MongoDB",
-    icon: () => <IconLogo name={Tech.MongoDB} />,
+    icon: () => <Icon name={Tech.MongoDB} />,
   },
   {
     tech: "Storybook",
-    icon: () => <IconLogo name={Tech.Storybook} />,
+    icon: () => <Icon name={Tech.Storybook} />,
   },
 ];
 
 export const learningSomeday = [
   {
     tech: "React Native",
-    icon: () => <IconLogo name={Tech.ReactJS} />,
+    icon: () => <Icon name={Tech.ReactJS} />,
   },
   {
     tech: "GraphQL",
-    icon: () => <IconLogo name={Tech.GraphQL} />,
+    icon: () => <Icon name={Tech.GraphQL} />,
   },
   {
     tech: "Electron",
-    icon: () => <IconLogo name={Tech.Electron} />,
+    icon: () => <Icon name={Tech.Electron} />,
   },
   {
     tech: "Arduino",
-    icon: () => <IconLogo name={Tech.Arduino} />,
+    icon: () => <Icon name={Tech.Arduino} />,
   },
 ];
 
@@ -117,14 +117,4 @@ export const WORK_EXPERIENCE = [
       "Deliver daily features based on continuous feedback received from the product owner.",
     ],
   },
-];
-
-export const links = [
-  {
-    to: "https://www.linkedin.com/in/railly-hugo",
-    external: true,
-    text: "LinkedIn",
-  },
-  { to: "https://www.github.com/Railly", external: true, text: "Github" },
-  { to: "https://www.twitter.com/RaillyHugo", external: true, text: "Twitter" },
 ];

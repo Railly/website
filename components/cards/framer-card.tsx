@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Spotlight from "@/components/Spotlight";
+import Spotlight from "@/components/misc/spotlight";
 import { IColor } from "@/types/interfaces";
 
 interface IFramerCardProps {

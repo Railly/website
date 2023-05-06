@@ -4,8 +4,8 @@ import { Outfit } from "next/font/google";
 import { absoluteUrl } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Providers from "./providers";
-import { TailwindIndicator } from "@/components/TailwindIndicator";
-import Layout from "@/components/Layout";
+import { TailwindIndicator } from "@/components/misc/tailwind-indicator";
+import AppLayout from "@/components/layouts/app-layout";
 import { ServerThemeProvider } from "@wits/next-themes";
 
 export const metadata: Metadata = {
@@ -72,11 +72,11 @@ export default function RootLayout({
   return (
     <ServerThemeProvider attribute="class">
       <html lang="en" className={outfit.variable} suppressHydrationWarning>
-        <body className="flex flex-col items-center w-full text-lg leading-7 dark:bg-[#1c1c1c] bg-hunter-black-50 text-zinc-800 dark:text-zinc-100 font-dm selection:bg-black/80 selection:text-white dark:selection:bg-white/90 dark:selection:text-black">
-          <Layout>
+        <body className="flex flex-col items-center min-h-screen leading-7 dark:bg-[#1c1c1c] bg-hunter-black-50 text-zinc-800 dark:text-zinc-100 selection:bg-black/80 selection:text-white dark:selection:bg-white/90 dark:selection:text-black transition-all">
+          <AppLayout>
             <Providers>{children}</Providers>
             <TailwindIndicator />
-          </Layout>
+          </AppLayout>
         </body>
       </html>
     </ServerThemeProvider>

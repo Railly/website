@@ -8,7 +8,7 @@ interface IGetProjects {
 }
 
 export const getProjects = async ({
-  sort = "asc",
+  sort = "desc",
   limit = 3,
 }: IGetProjects = {}) => {
   const views = await kv.hgetall<{

@@ -23,7 +23,7 @@ export default function ProjectLayout({
         <meta property="og:image" content={project.image} />
         <meta
           property="og:url"
-          content={`https://raillyhugo.com/portfolio/${project.slug}`}
+          content={`https://raillyhugo.com/projects/${project.slug}`}
         />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Railly Hugo" />

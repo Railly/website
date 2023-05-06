@@ -1,12 +1,10 @@
 "use client";
 import { useTheme } from "@wits/next-themes";
 import { useEffect, useState } from "react";
-import Link from "../components/Link";
+import HeaderLink from "../components/links/header-link";
 import { motion } from "framer-motion";
-import Dropdown from "../components/Dropdown";
 import { usePathname } from "next/navigation";
-import { links } from "@/utils/data";
-import IconLogo from "@/icons";
+import Icon from "@/icons";
 import { Other, Scheme } from "@/types/enums";
 
 const Header = () => {
@@ -42,121 +40,104 @@ const Header = () => {
     },
   };
 
-  const menuButtonVariants = {
-    open: {
-      rotate: 180,
-    },
-    closed: {
-      rotate: 0,
-    },
-  };
-
   return (
     <>
       <motion.div
-        className="fixed z-20 w-screen menu h-2/5 bg-hunter-black-100 dark:bg-hunter-black-500"
+        className="fixed top-0 z-50 w-screen menu h-2/5 bg-hunter-black-100 dark:bg-hunter-black-800"
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
       >
-        {/* <motion.button
+        <Icon
           className="fixed menu-button left-6 top-6"
           onClick={handleCloseMenu}
-          variants={menuButtonVariants}
-          initial="closed"
-          animate={isOpen ? "open" : "closed"}
-        > */}
-        <IconLogo name={Other.CloseMenu} />
-        {/* </motion.button> */}
+          name={Other.CloseMenu}
+        />
         <ul className="flex sm:hidden flex-col items-center justify-between py-2 h-full [&>li]:w-full">
           <motion.li variants={menuVariants}>
-            <Link
+            <HeaderLink
               to="/"
               active={pathname === "/"}
               onNavigate={handleCloseMenu}
               full
             >
               Home
-            </Link>
+            </HeaderLink>
           </motion.li>
           <motion.li variants={menuVariants}>
-            <Link
+            <HeaderLink
               to="/about"
               active={pathname === "/about"}
               onNavigate={handleCloseMenu}
               full
             >
               About
-            </Link>
+            </HeaderLink>
           </motion.li>
           <motion.li variants={menuVariants}>
-            <Link
-              to="/portfolio"
-              active={pathname === "/portfolio"}
-              onNavigate={handleCloseMenu}
-              full
-            >
-              Portfolio
-            </Link>
-          </motion.li>
-          <motion.li variants={menuVariants}>
-            <Link
+            <HeaderLink
               to="/blog"
               active={pathname === "/blog"}
               onNavigate={handleCloseMenu}
               full
             >
               Blog
-            </Link>
+            </HeaderLink>
           </motion.li>
           <motion.li variants={menuVariants}>
-            <Link
+            <HeaderLink
+              to="/projects"
+              active={pathname === "/projects"}
+              onNavigate={handleCloseMenu}
+              full
+            >
+              Projects
+            </HeaderLink>
+          </motion.li>
+          <motion.li variants={menuVariants}>
+            <HeaderLink
               to="/stack"
               active={pathname === "/stack"}
               onNavigate={handleCloseMenu}
               full
             >
               Stack
-            </Link>
+            </HeaderLink>
           </motion.li>
         </ul>
       </motion.div>
-      <header className="container flex items-center justify-between w-full pt-6 pb-3 mx-auto sm:py-6 md:py-10 px-7 md:pr-10 md:pl-7">
-        {/* <motion.button
+      <header className="[--toolbarHeight:56px] [--floatingMargin:calc(var(--totalToolbarHeight)_-_var(--toolbarHeight))] [--baseActualHeight:calc(var(--toolbarHeight)+var(--floatingMargin))] md:max-w-prose fixed inset-x-0 top-4 z-40 flex items-center justify-between px-4 py-2 rounded-xl bg-hunter-black-800/5 dark:bg-hunter-black-800/30 backdrop-blur-md shadow-toolbar mx-4 md:mx-auto shadow-white/5 border border-black/10 dark:border-white/10 hover:shadow-toolbar-hover hover:shadow-white/10 transition-shadow">
+        <Icon
           className="flex menu-button md:hidden"
           onClick={handleOpenMenu}
-          variants={menuButtonVariants}
-          initial="closed"
-          animate={isOpen ? "open" : "closed"}
-        > */}
-        {/* <IconLogo name={Other.OpenMenu} /> */}
-        {/* </motion.button> */}
-        <ul className="justify-between hidden transition duration-100 rounded-lg ring-1 ring-black/20 dark:ring-white/20 hover:ring-2 hover:ring-hunter-blue-500 bg-white/10 dark:bg-hunter-black-900 backdrop-blur-sm md:flex">
+          name={Other.OpenMenu}
+        />
+        <ul className="justify-between hidden transition duration-100 bg-white rounded-lg ring-1 ring-black/20 dark:ring-white/20 hover:ring-2 hover:ring-hunter-blue-500 dark:bg-hunter-black-900 backdrop-blur-sm md:flex">
           <div className="flex items-center [&>li]:h-full">
             <li>
-              <Link start to="/" active={pathname === "/"}>
+              <HeaderLink start to="/" active={pathname === "/"}>
                 Home
-              </Link>
+              </HeaderLink>
             </li>
             <li>
-              <Link to="/about" active={pathname === "/about"}>
+              <HeaderLink to="/about" active={pathname === "/about"}>
                 About
-              </Link>
+              </HeaderLink>
             </li>
             <li>
-              <Link to="/portfolio" active={pathname === "/portfolio"}>
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link to="/blog" active={pathname === "/blog"}>
+              <HeaderLink to="/blog" active={pathname === "/blog"}>
                 Blog
-              </Link>
+              </HeaderLink>
             </li>
             <li>
-              <Link end to="/stack" active={pathname === "/stack"}>
+              <HeaderLink to="/projects" active={pathname === "/projects"}>
+                Projects
+              </HeaderLink>
+            </li>
+            <li>
+              <HeaderLink end to="/stack" active={pathname === "/stack"}>
                 Stack
-              </Link>
+              </HeaderLink>
             </li>
           </div>
         </ul>
@@ -164,22 +145,16 @@ const Header = () => {
         {mounted && (
           <>
             {theme === "light" ? (
-              <IconLogo
-                onClick={() => setTheme("dark")}
-                name={Scheme.DarkMode}
-              />
+              <Icon onClick={() => setTheme("dark")} name={Scheme.DarkMode} />
             ) : (
-              <IconLogo
-                onClick={() => setTheme("light")}
-                name={Scheme.LightMode}
-              />
+              <Icon onClick={() => setTheme("light")} name={Scheme.LightMode} />
             )}
           </>
         )}
       </header>
       <motion.div
         onClick={handleCloseMenu}
-        className="fixed top-0 z-10 w-full h-full min-h-screen transition-all duration-500 bg-hunter-black-500/40 backdrop-blur-sm"
+        className="fixed top-0 z-30 w-screen h-full min-h-screen transition-all duration-500 bg-hunter-black-800/40 backdrop-blur-sm"
         initial={{ display: "none", opacity: 0 }}
         animate={
           isOpen

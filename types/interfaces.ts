@@ -15,7 +15,7 @@ export interface IProject {
   publishedAt: string;
   summary: string;
   image: string;
-  views: number;
+  views?: number;
   tag: string;
 }
 

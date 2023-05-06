@@ -1,5 +1,4 @@
-import { Header } from "./header";
-import { useSelectedLayoutSegments } from "next/navigation";
+import { BlogHeader } from "./header";
 import { getBlogPosts } from "@/lib/api/get-blog-posts";
 
 export const revalidate = 60;
@@ -13,7 +12,7 @@ export default async function BlogLayout({
 
   return (
     <article className="mb-10 text-gray-800 dark:text-gray-300">
-      <Header blogPosts={blogPosts} />
+      <BlogHeader blogPosts={blogPosts} />
       {children}
     </article>
   );

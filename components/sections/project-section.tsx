@@ -12,8 +12,15 @@ const ProjectSection = ({
   isPage = false,
 }: React.PropsWithChildren<IProjectSectionProps>) => {
   return (
-    <section className="mt-6 md:mt-8">
-      <h2 className="mb-4 text-xl font-medium sm:text-2xl">Latest projects</h2>
+    <section className="w-full mt-4 md:mt-6">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-xl font-medium sm:text-2xl">Projects</h2>
+        {!isPage && (
+          <LinkWithArrow color="green" href="/projects">
+            See all projects
+          </LinkWithArrow>
+        )}
+      </div>
       {isPage && (
         <div className="flex justify-between w-full px-2 text-sm dark:text-white/50 text-black-50">
           <span className="font-mono font-medium">title</span>
@@ -28,11 +35,6 @@ const ProjectSection = ({
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
-      {!isPage && (
-        <LinkWithArrow color="green" href="/portfolio">
-          See all projects
-        </LinkWithArrow>
-      )}
     </section>
   );
 };

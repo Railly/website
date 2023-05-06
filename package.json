@@ -1,5 +1,5 @@
 {
-  "name": "website-2022",
+  "name": "website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,13 +22,10 @@
     "@vercel/analytics": "^0.1.11",
     "@vercel/kv": "^0.1.1",
     "@vercel/og": "^0.5.4",
-    "@vercel/postgres": "^0.1.3",
     "@wits/next-themes": "^0.2.16",
-    "atropos": "^1.0.2",
     "axios": "^1.4.0",
     "class-variance-authority": "^0.5.2",
     "clsx": "^1.2.1",
-    "contentlayer": "0.3.1",
     "date-fns": "2.29.3",
     "framer-motion": "^10.9.1",
     "lucide-react": "^0.166.0",
@@ -37,6 +34,7 @@
     "next-themes": "0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-wrap-balancer": "^0.4.1",
     "reading-time": "1.5.0",
     "rehype": "12.0.1",
     "rehype-code-titles": "1.1.0",

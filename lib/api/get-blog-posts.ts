@@ -8,7 +8,7 @@ interface IGetBlogPosts {
 }
 
 export const getBlogPosts = async ({
-  sort = "asc",
+  sort = "desc",
   limit = 3,
 }: IGetBlogPosts = {}) => {
   const views = await kv.hgetall<{
