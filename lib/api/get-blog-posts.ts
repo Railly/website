@@ -11,27 +11,32 @@ export const getBlogPosts = async ({
   sort = "desc",
   limit = 3,
 }: IGetBlogPosts = {}) => {
-  const views = await kv.hgetall<{
-    [key: string]: number;
-  }>("views");
+  try {
+    const views = await kv.hgetall<{
+      [key: string]: number;
+    }>("views");
 
-  if (!views) return postsData.posts;
+    if (!views) return postsData.posts;
 
-  const limitedPosts = limit
-    ? postsData.posts.slice(0, limit)
-    : postsData.posts;
+    const limitedPosts = limit
+      ? postsData.posts.slice(0, limit)
+      : postsData.posts;
 
-  const sorter = getSortByPublishAt(sort);
-  const sortedPosts = limitedPosts.sort(sorter);
+    const sorter = getSortByPublishAt(sort);
+    const sortedPosts = limitedPosts.sort(sorter);
 
-  const posts = await Promise.all(
-    sortedPosts.map(async (post) => {
-      const viewsCount = await getViewCount(views, post.slug);
-      return {
-        ...post,
-        views: viewsCount,
-      };
-    })
-  );
-  return posts;
+    const posts = await Promise.all(
+      sortedPosts.map(async (post) => {
+        const viewsCount = await getViewCount(views, post.slug);
+        return {
+          ...post,
+          views: viewsCount,
+        };
+      })
+    );
+    return posts;
+  } catch (err) {
+    console.error(err);
+    return postsData.posts;
+  }
 };

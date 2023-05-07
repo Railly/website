@@ -1,8 +1,6 @@
 import { BlogHeader } from "./header";
 import { getBlogPosts } from "@/lib/api/get-blog-posts";
 
-export const revalidate = 60;
-
 export default async function BlogLayout({
   children,
 }: {

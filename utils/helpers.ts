@@ -8,12 +8,7 @@ export async function getViewCount(
   views: { [key: string]: number } | null,
   slug: string
 ) {
-  if (!views) {
-    await kv.hset("views", {
-      [slug]: 0,
-    });
-    return 0;
-  }
+  if (!views) return new Error("No views found");
   if (views.hasOwnProperty(slug)) {
     return views[slug];
   }
