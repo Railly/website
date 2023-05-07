@@ -19,8 +19,8 @@ const ProfileCard = ({ className }: { className?: string }) => {
             <span className="text-xl font-bold text-center sm:text-2xl">
               <span className="animated-blue-gradient">Software Engineer</span>
               <span className="text-gray-400">{" & "}</span>
-              <span className="inline-flex gap-2 animated-yellow-gradient">
-                <span>UI Developer</span>
+              <span className="inline-flex gap-2">
+                <span className="animated-yellow-gradient">UI Developer</span>
                 <img
                   className="rounded-lg no-drag"
                   src="/images/pci-logo.png"
