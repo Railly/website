@@ -1,0 +1,58 @@
+export const metadata = {
+  title: "Foody",	
+  description: "Aplicación hecha con Next.js y Firebase para crear libros de cocina y recetas.",
+  openGraph: {
+    title: "Foody",
+    description: "Aplicación hecha con Next.js y Firebase para crear libros de cocina y recetas.",
+    image: "foody.png",
+  }
+}
+
+Foody es un proyecto que construí para **un curso de mi universidad**. Decidí crear una aplicación hecha en React que permitiera a los usuarios digitalizar sus recetas de cocina y consultarlas en cualquier momento.
+
+### Stack
+- Next.js
+- Firebase
+- Styled JSX
+
+### Enlaces
+- [Repositorio](https://github.com/Railly/next-cooking-app)
+- [Ver Sitio](https://next-cooking-app.vercel.app/)
+
+---
+
+<Image src="/images/foody.png" width={1764} height={1131} />
+
+---
+
+## Propósito del proyecto
+
+A inicios del 2021 empecé a cocinar. Anotaba en mi cuaderno cada detalle de la fase de preparación, así como la cantidad exacta de ingredientes y unas notas extra.
+
+Por ello, pensé en crear una aplicación simple y directa que permitiera crear recetas con sus respectivos ingredientes, pasos e imagen representativa.
+
+---
+
+## Explicación del Stack
+
+- **Next.js** : Elegí este framework de React, por la experiencia de desarrollo. Tanto el _fast refresh_, como todas las utilidades _fuera de la caja_ que provee ( _routing_, _styling_, _performance_ ).
+- **Firebase** : El _Backend as a Service_ de Google tiene una baja curva de aprendizaje. Este provee de base de datos, almacenamiento multimedia, autentificación de usuarios, etc.
+- **Vercel** : Muy aparte de que Vercel sea el creador de Next.js, nos brinda una plataforma de despliegue muy fácil de configurar y un pricing gratuito para proyectos de hobby.
+
+---
+
+<Image src="/images/foody-recipe.png" width={1792} height={977} />
+
+---
+
+## Problemas y Proceso Creativo
+
+Plasmar mi diseño en código fue desafiante. Descubrí **nuevas propiedades CSS** para mantener la fidelidad. Además descubrí como crear layouts, tanto de diseño como de metadatos para el SEO.
+
+Además, otra parte complicada fue lidiar con las **funciones asincrónicas**, su estado de carga y el manejo de errores. Tuve que crear un custom hook para mostar los mensajes de error en un Toast y cumplir con el principio Don't Repeat Yourself.
+
+Sin embargo, la parte más complicada fue el **Server Side Rendering** en conjunto con el **enrutamiento dinámico**. Esta parte fue fundamental, pues esta permitía el accesso a los libros y recetas de cocina.
+
+---
+
+<Image src="/images/foody-login.png" width={1792} height={977} />
