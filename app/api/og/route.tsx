@@ -4,10 +4,6 @@ import path from "path";
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
-export const config = {
-  runtime: "experimental-edge",
-};
-
 const boldFontPath = path.join(process.cwd(), "public/fonts/DMSans-Bold.ttf");
 const mediumFontPath = path.join(
   process.cwd(),
