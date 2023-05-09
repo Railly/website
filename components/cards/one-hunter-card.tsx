@@ -64,12 +64,10 @@ const OneHunterCard = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            className="border rounded-lg borde-white"
+          <img
+            className="border rounded-lg h-52 border-white/50 w-72"
             src="/svg/one-hunter-theme.svg"
             alt="One Hunter Theme"
-            width={300}
-            height={300}
           />
         </a>
       </div>

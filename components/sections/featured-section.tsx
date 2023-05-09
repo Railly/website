@@ -1,7 +1,5 @@
-import { FileCode } from "lucide-react";
-import OneHunterCard from "../cards/one-hunter-card";
-import { Button } from "../ui/button";
 import ResumeButton from "../buttons/resume-button";
+import OneHunterCard from "../cards/one-hunter-card";
 
 const FeaturedSection = () => {
   return (
