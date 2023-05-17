@@ -15,7 +15,12 @@ export function formatDate(input: string | number): string {
 }
 
 export function absoluteUrl(path: string) {
-  return process.env.NEXT_PUBLIC_VERCEL_URL?.includes("localhost")
-    ? `http://${process.env.NEXT_PUBLIC_VERCEL_URL}${path}}`
-    : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}${path}}`;
+  const vercelUrl = process.env.NEXT_PUBLIC_VERCEL_URL;
+  if (!vercelUrl) {
+    throw new Error(
+      "NEXT_PUBLIC_VERCEL_URL environment variable is not defined."
+    );
+  }
+  const protocol = vercelUrl.includes("localhost") ? "http://" : "https://";
+  return `${protocol}${vercelUrl}${path}}`;
 }
