@@ -1,6 +1,8 @@
 import { IProject } from "@/types/interfaces";
 import ProjectCard from "../cards/project-card";
 import LinkWithArrow from "../links/link-with-arrow";
+import FeaturedProjectCard from "../cards/featured-project-card";
+import OneHunterCard from "../cards/one-hunter-card";
 
 interface IProjectSectionProps {
   projects: Partial<IProject>[];
@@ -31,9 +33,12 @@ const ProjectSection = ({
         </div>
       )}
       <div className="flex flex-col mb-4">
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
+        {projects.map((project) => {
+          if (project.isFeatured) {
+            return <FeaturedProjectCard key={project.slug} project={project} />;
+          }
+          return <ProjectCard key={project.slug} project={project} />;
+        })}
       </div>
     </section>
   );

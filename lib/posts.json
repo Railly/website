@@ -29,6 +29,16 @@
         "Vite"
       ],
       "slug": "storybook-vite"
+    },
+    {
+      "title": "Spotigen: From Prompts to Instant Spotify Playlists",
+      "summary": "A look into how I built Spotigen, a Chat-GPT plugin that generates Spotify playlists based on your prompts.",
+      "publishedAt": "2023-05-17",
+      "tags": [
+        "Chat-GPT",
+        "Spotify"
+      ],
+      "slug": "spotigen-chat-gpt-plugin"
     }
   ]
 }

@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import fs from "fs/promises";
 import path from "path";
-import { ImageResponse } from "@vercel/og";
-import { NextRequest } from "next/server";
+import { ImageResponse, NextRequest } from "next/server";
 
 const boldFontPath = path.join(process.cwd(), "public/fonts/DMSans-Bold.ttf");
 const mediumFontPath = path.join(

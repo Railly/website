@@ -7,5 +7,6 @@ export default async function Blog() {
   const blogPosts = await getBlogPosts({
     limit: false,
   });
+
   return <BlogSection blogPosts={blogPosts} isPage />;
 }
