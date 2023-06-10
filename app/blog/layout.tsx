@@ -6,7 +6,9 @@ export default async function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const blogPosts = await getBlogPosts();
+  const blogPosts = await getBlogPosts({
+    limit: false,
+  });
 
   return (
     <article className="mb-10 text-gray-800 dark:text-gray-300">

@@ -1,0 +1,63 @@
+
+
+export const metadata = {
+ title: "Spotigen: From Prompts to Instant Spotify Playlists",
+  description: "A look into how I built Spotigen, a Chat-GPT plugin that generates Spotify playlists based on your prompts.",
+  openGraph: {
+    title: "Spotigen: From Prompts to Instant Spotify Playlists",
+    description: "A look into how I built Spotigen, a Chat-GPT plugin that generates Spotify playlists based on your prompts.",
+    images: [
+      {
+        url: `https://raillyhugo.com/api/og?title=${encodeURIComponent(
+          "Spotigen: From Prompts to Instant Spotify Playlists"
+        )}&date=2023-02-09`,
+        width: 1200,
+        height: 600,
+        alt: "Spotigen: From Prompts to Instant Spotify Playlists",
+      },
+    ],
+  }
+}
+
+# Introducing Spotigen
+Spotigen is a ChatGPT plugin that streamlines the process of creating Spotify playlists based on your prompts.
+With Spotigen, you no longer have to manually search for songs on Spotify after generating them with ChatGPT.
+It's a seamless integration that saves time and enhances the music discovery experience.
+
+# How It Started
+
+As an avid programmer and problem-solver, I was thrilled when I got early access to ChatGPT Plugins.
+The possibilities seemed endless, but I wanted to create something that would make a meaningful impact on someone's life.
+That's when the idea for Spotigen came to my mind.
+
+<Image src="/images/plugins-mail.png" width={1904} height={856} />
+
+My mother had been spending a significant amount of time searching for the perfect songs to accompany her social media videos.
+Even with the assistance of ChatGPT for generating song suggestions, she still had to manually search for and add the songs to her Spotify playlists.
+I saw an opportunity to automate this process and make her life easier.
+
+
+# The High Level Process
+
+After a few hours of brainstorming and coding, Spotigen was born.
+I integrated ChatGPT's capabilities with the Spotify API, allowing users to seamlessly go from prompts to instant Spotify playlists.
+The result was a user-friendly plugin that eliminated the need for manual searches and made music discovery effortless.
+
+# Screenshots 
+## Step 1: Install the Plugin
+<Image src="/images/spotigen-plugin.png" width={1904} height={856} />
+## Step 2: Enter Your Prompt
+<Image src="/images/spotigen-plugin-2.png" width={1904} height={856} />
+## Step 3: Instant Playlist
+<Image src="/images/spotigen-plugin-3.png" width={1904} height={856} />
+## Step 4: Listen to Your Playlist
+<Image src="/images/spotigen-plugin-4.png" width={1904} height={856} />
+
+# Stack
+
+Spotigen is built with FastAPI, a Python framework for building APIs and deployed on Vercel.
+
+# Links
+- [Github Repo](https://github.com/Railly/spotigen-chat-gpt-plugin)
+- [Spotigen API](https://spotigen.vercel.app/)
+- Plugin domain for installation: `spotigen.vercel.app`

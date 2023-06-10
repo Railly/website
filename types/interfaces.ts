@@ -17,6 +17,9 @@ export interface IProject {
   image: string;
   views?: number;
   tag: string;
+  repoName: string;
+  isFeatured?: boolean;
+  logoUrl?: string;
 }
 
 export interface IColor {

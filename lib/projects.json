@@ -6,7 +6,8 @@
       "publishedAt": "2021-07-16",
       "image": "button.png",
       "tag": "Proyecto personal",
-      "slug": "button-library"
+      "slug": "button-library",
+      "repoName": "button-components"
     },
     {
       "title": "Sistema de Gestión Académica",
@@ -14,7 +15,8 @@
       "publishedAt": "2021-12-20",
       "image": "cinfo.png",
       "tag": "Proyecto laboral",
-      "slug": "cinfo"
+      "slug": "cinfo",
+      "repoName": "cinfo-proyecto-front"
     },
     {
       "title": "Foody",
@@ -22,7 +24,8 @@
       "publishedAt": "2021-07-19",
       "image": "foody.png",
       "tag": "Proyecto de universidad",
-      "slug": "foody"
+      "slug": "foody",
+      "repoName": "next-cooking-app"
     },
     {
       "title": "Indie Singles",
@@ -30,7 +33,8 @@
       "publishedAt": "2021-12-20",
       "image": "indie-singles.png",
       "tag": "Proyecto de universidad",
-      "slug": "indie-singles"
+      "slug": "indie-singles",
+      "repoName": "indie-singles-front"
     },
     {
       "title": "Kisaragi",
@@ -38,7 +42,8 @@
       "publishedAt": "2021-07-19",
       "image": "kisaragi.png",
       "tag": "Proyecto de universidad",
-      "slug": "kisaragi"
+      "slug": "kisaragi",
+      "repoName": "kisaragi-front"
     },
     {
       "title": "Mi primer portafolio",
@@ -46,7 +51,52 @@
       "publishedAt": "2021-07-16T17:40:00",
       "image": "portfolio.png",
       "tag": "Proyecto personal",
-      "slug": "first-portfolio"
+      "slug": "first-portfolio",
+      "repoName": "portfolio-2021"
+    },
+    {
+      "title": "Spotigen",
+      "summary": "A ChatGPT Plugin that allows you to generate Spotify playlists 🎵 based on your prompts ✨.",
+      "publishedAt": "2023-05-17",
+      "image": "spotigen.png",
+      "tag": "Proyecto personal",
+      "slug": "spotigen",
+      "repoName": "spotigen-chat-gpt-plugin",
+      "isFeatured": true,
+      "logoUrl": "/images/spotigen-logo.png"
+    },
+    {
+      "title": "One Hunter Theme",
+      "summary": "A stylish theme inspired by Vercel Theme ▲ and One Dark Pro 🎨.",
+      "publishedAt": "2022-12-16",
+      "image": "material.png",
+      "tag": "Proyecto personal",
+      "slug": "one-hunter-theme",
+      "repoName": "one-hunter-vscode",
+      "isFeatured": true,
+      "logoUrl": "/images/one-hunter-logo.png"
+    },
+    {
+      "title": "SVG Hunter",
+      "summary": "Hunt SVGs without leaving your code editor ✨",
+      "publishedAt": "2023-02-16",
+      "image": "svg-hunter.png",
+      "tag": "Proyecto personal",
+      "slug": "svg-hunter-vscode",
+      "repoName": "svg-hunter-vscode",
+      "isFeatured": true,
+      "logoUrl": "/images/svg-hunter-logo.png"
+    },
+    {
+      "title": "Personal Website 2023",
+      "summary": "My personal website migrated to Next.js 13.",
+      "publishedAt": "2023-05-10",
+      "image": "portfolio-2023.png",
+      "tag": "Proyecto personal",
+      "slug": "website",
+      "repoName": "website",
+      "isFeatured": true,
+      "logoUrl": "/images/rh-logo.png"
     }
   ]
 }

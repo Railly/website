@@ -68,6 +68,8 @@ const OneHunterCard = () => {
             className="border rounded-lg h-52 border-white/50 w-72"
             src="/svg/one-hunter-theme.svg"
             alt="One Hunter Theme"
+            width={400}
+            height={225}
           />
         </a>
       </div>
