@@ -118,3 +118,26 @@ export const WORK_EXPERIENCE = [
     ],
   },
 ];
+
+export const MENU_ITEMS = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Blog",
+    path: "/blog",
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+  {
+    name: "Stack",
+    path: "/stack",
+  },
+];

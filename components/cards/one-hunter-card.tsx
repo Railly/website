@@ -8,7 +8,7 @@ const OneHunterCard = () => {
   return (
     <FramerCard>
       <div className="grid w-full grid-cols-1 gap-2 mb-2 md:grid-cols-2 place-items-center">
-        <div className="flex flex-col h-full gap-2 p-4">
+        <div className="flex flex-col gap-2 p-4">
           <div className="flex items-center gap-2">
             <Image
               className="border-2 rounded-full border-white/50"

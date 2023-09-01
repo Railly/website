@@ -112,7 +112,7 @@ const Icon = ({ name, href, className, onClick, raw }: IconProps) => {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "bg-hunter-black-50 hover:bg-hunter-black-100  dark:bg-hunter-black-800 dark:hover:bg-hunter-black-600 relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] hover:pb-4 duration-150 ease-out transition-all justify-center items-center",
+        "hover:bg-hunter-black-100 dark:hover:bg-hunter-black-600/30 relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] justify-center items-center border-[hsl(0_0%_20.5%)] border transition-all duration-150 ease-out",
         className
       )}
     >
@@ -122,7 +122,7 @@ const Icon = ({ name, href, className, onClick, raw }: IconProps) => {
     <TooltipTrigger
       id={name}
       className={cn(
-        "bg-hunter-black-50 hover:bg-hunter-black-100  dark:bg-hunter-black-800 dark:hover:bg-hunter-black-600 relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] hover:pb-4 duration-150 ease-out transition-all justify-center items-center",
+        "bg-hunter-black-50 hover:bg-hunter-black-100  dark:bg-hunter-black-800/30 dark:hover:bg-hunter-black-600 relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border",
         className
       )}
       onClick={onClick}

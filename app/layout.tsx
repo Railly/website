@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { Metadata } from "next";
 import { Outfit } from "next/font/google";
-import { absoluteUrl } from "@/lib/utils";
+import { absoluteUrl, cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Providers from "./providers";
 import { TailwindIndicator } from "@/components/misc/tailwind-indicator";
@@ -71,8 +71,8 @@ export default function RootLayout({
 }) {
   return (
     <ServerThemeProvider attribute="class">
-      <html lang="en" className={outfit.variable} suppressHydrationWarning>
-        <body className="flex flex-col items-center min-h-screen leading-7 dark:bg-[#1c1c1c] bg-hunter-black-50 text-zinc-800 dark:text-zinc-100 selection:bg-black/80 selection:text-white dark:selection:bg-white/90 dark:selection:text-black transition-all">
+      <html lang="en" className={cn(outfit.variable)} suppressHydrationWarning>
+        <body className={cn()}>
           <AppLayout>
             <Providers>{children}</Providers>
             <TailwindIndicator />
