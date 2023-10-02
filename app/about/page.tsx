@@ -24,10 +24,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function About() {
   return (
     <section>
+      <h1 className="text-xl font-semibold mb-4 sm:text-2xl">Brief Profile</h1>
       <AboutCard />
       <main>
         <div className="flex items-center justify-between w-full mt-6 mb-4">
-          <h1 className="text-xl font-bold">Work Experience</h1>
+          <h1 className="text-xl font-semibold sm:text-2xl">Work Experience</h1>
           <ResumeButton />
         </div>
         <WorkExperienceCard />

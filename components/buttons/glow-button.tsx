@@ -17,7 +17,7 @@ export const GlowButton: React.FC<GlowButtonProps> = ({
   isActive,
   children,
 }) => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const borderRadiusAnimation = {
     borderBottomLeftRadius: index === MENU_ITEMS.length - 1 ? 0 : 16,
     borderBottomRightRadius: index === 0 ? 0 : 16,

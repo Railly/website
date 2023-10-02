@@ -14,12 +14,15 @@ export interface IProject {
   title: string;
   publishedAt: string;
   summary: string;
+  description: string;
   image: string;
   views?: number;
   tag: string;
   repoName: string;
   isFeatured?: boolean;
+  demo: string;
   logoUrl?: string;
+  stack: string[];
 }
 
 export interface IColor {

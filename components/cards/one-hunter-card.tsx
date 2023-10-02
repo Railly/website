@@ -6,7 +6,7 @@ import { ETech } from "@/types/enums";
 
 const OneHunterCard = () => {
   return (
-    <FramerCard>
+    <div className="border border-border bg-gray-100/70 dark:bg-background/90 p-4 shadow-md shadow-foreground/5 rounded-xl">
       <div className="grid w-full grid-cols-1 gap-2 mb-2 md:grid-cols-2 place-items-center">
         <div className="flex flex-col gap-2 p-4">
           <div className="flex items-center gap-2">
@@ -73,7 +73,7 @@ const OneHunterCard = () => {
           />
         </a>
       </div>
-    </FramerCard>
+    </div>
   );
 };
 

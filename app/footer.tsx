@@ -2,7 +2,7 @@ import FooterLink from "@/components/links/footer-link";
 
 export default function Footer() {
   return (
-    <footer className="container w-full mx-auto text-sm">
+    <footer className="container md:max-w-[46.5rem] w-[calc(100%-2rem)] mx-auto text-sm">
       <section className="grid grid-cols-2 gap-4 p-4 pb-10 border-t dark:border-white/20 border-black/10 sm:pb-20 md:grid-cols-3 sm:grid-cols-2 place-items-center">
         <FooterLink to="/">Home</FooterLink>
         <FooterLink to="https://www.linkedin.com/in/railly-hugo" external>

@@ -9,11 +9,11 @@ import { Other, Scheme } from "@/types/enums";
 import { useState, useEffect } from "react";
 import { useTheme } from "@wits/next-themes";
 
-interface SideMenuProps extends React.PropsWithChildren {
+interface TopBarProps extends React.PropsWithChildren {
   onClickMenu?: () => void;
 }
 
-export const SideMenu: React.FC<SideMenuProps> = ({ onClickMenu }) => {
+export const TopBar: React.FC<TopBarProps> = ({ onClickMenu }) => {
   const pathname = usePathname();
   const router = useRouter();
   const { theme, setTheme } = useTheme();
@@ -24,8 +24,9 @@ export const SideMenu: React.FC<SideMenuProps> = ({ onClickMenu }) => {
     <LayoutGroup>
       <header
         className={cn(
-          "w-full flex justify-center",
-          "[--toolbarHeight:56px] [--floatingMargin:calc(var(--totalToolbarHeight)_-_var(--toolbarHeight))] [--baseActualHeight:calc(var(--toolbarHeight)+var(--floatingMargin))] md:max-w-prose fixed inset-x-0 top-4 z-40 flex items-center justify-between rounded-xl mx-auto"
+          "flex mx-4",
+          "[--toolbarHeight:56px] [--floatingMargin:calc(var(--totalToolbarHeight)_-_var(--toolbarHeight))] [--baseActualHeight:calc(var(--toolbarHeight)+var(--floatingMargin))] md:max-w-prose fixed inset-x-0 top-4 z-40 flex items-center justify-between rounded-xl mx-auto",
+          "w-[calc(100%-2rem)]"
         )}
       >
         <div className="bg-gray-100/70 dark:bg-background/90 backdrop-blur-sm w-full border border-border rounded-[16px]">
@@ -39,7 +40,7 @@ export const SideMenu: React.FC<SideMenuProps> = ({ onClickMenu }) => {
               onClick={onClickMenu}
               name={Other.OpenMenu}
             />
-            <div className="flex text-muted-foreground">
+            <div className="hidden sm:flex text-muted-foreground">
               {MENU_ITEMS.map((item, index) => (
                 <GlowButton
                   index={index}

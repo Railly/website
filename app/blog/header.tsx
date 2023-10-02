@@ -26,7 +26,7 @@ export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
 
   return (
     <section className="pb-3 mb-3 border-b border-black/10 dark:border-white/10">
-      <h1 className="text-3xl font-bold text-center md:text-4xl ">
+      <h1 className="text-3xl font-semibold text-center md:text-4xl ">
         {blogPost.title}
       </h1>
       <p className="pb-4 mt-3 text-base text-center text-hunter-black-500 dark:text-hunter-black-300 font-dm">

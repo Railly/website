@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Kanit } from "next/font/google";
 import { absoluteUrl, cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Providers from "./providers";
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   manifest: `${siteConfig.url}/favicon/site.webmanifest`,
 };
 
-const outfit = Outfit({
+const outfit = Kanit({
   subsets: ["latin"],
-  weight: ["400", "600", "500", "700", "900"],
+  weight: ["400", "600", "500", "700"],
   variable: "--font-outfit",
   display: "swap",
 });
@@ -71,8 +71,15 @@ export default function RootLayout({
 }) {
   return (
     <ServerThemeProvider attribute="class">
-      <html lang="en" className={cn(outfit.variable)} suppressHydrationWarning>
-        <body className={cn()}>
+      <html
+        lang="en"
+        className={cn(
+          outfit.variable,
+          "selection:bg-foreground selection:text-background"
+        )}
+        suppressHydrationWarning
+      >
+        <body className={cn("px-4 py-2")}>
           <AppLayout>
             <Providers>{children}</Providers>
             <TailwindIndicator />

@@ -35,6 +35,13 @@ const Github = dynamic(() => import("./Github"));
 const Twitter = dynamic(() => import("./Twitter"));
 const LinkedIn = dynamic(() => import("./Linkedin"));
 const Schedule = dynamic(() => import("./Schedule"));
+const Play = dynamic(() => import("./Play"));
+const Supabase = dynamic(() => import("./Supabase"));
+const Firebase = dynamic(() => import("./Firebase"));
+const JavaScript = dynamic(() => import("./JavaScript"));
+const Python = dynamic(() => import("./Python"));
+const OpenAI = dynamic(() => import("./OpenAI"));
+const FastAPI = dynamic(() => import("./FastAPI"));
 
 const renderLogo = (name: IconProps["name"]) => {
   switch (name) {
@@ -72,6 +79,18 @@ const renderLogo = (name: IconProps["name"]) => {
       return <Electron width={24} height={24} />;
     case ETech.Arduino:
       return <Arduino width={24} height={24} />;
+    case ETech.Supabase:
+      return <Supabase width={24} height={24} />;
+    case ETech.Firebase:
+      return <Firebase width={24} height={24} />;
+    case ETech.JavaScript:
+      return <JavaScript width={24} height={24} />;
+    case ETech.Python:
+      return <Python width={24} height={24} />;
+    case ETech.OpenAI:
+      return <OpenAI width={24} height={24} />;
+    case ETech.FastAPI:
+      return <FastAPI width={24} height={24} />;
     case ESocialMedia.Github:
       return <Github />;
     case ESocialMedia.Twitter:
@@ -90,6 +109,8 @@ const renderLogo = (name: IconProps["name"]) => {
       return <Arrow width={24} height={24} />;
     case Other.Schedule:
       return <Schedule />;
+    case Other.Play:
+      return <Play width={24} height={24} />;
     default:
       return <div />;
   }
@@ -101,9 +122,10 @@ interface IconProps {
   className?: string;
   raw?: boolean;
   onClick?: () => void;
+  children?: React.ReactNode;
 }
 
-const Icon = ({ name, href, className, onClick, raw }: IconProps) => {
+const ButtonIcon = ({ name, href, className, onClick, raw, children }: IconProps) => {
   if (raw) return renderLogo(name);
   const component = href ? (
     <a
@@ -112,33 +134,28 @@ const Icon = ({ name, href, className, onClick, raw }: IconProps) => {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "hover:bg-hunter-black-100 dark:hover:bg-hunter-black-600/30 relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] justify-center items-center border-[hsl(0_0%_20.5%)] border transition-all duration-150 ease-out",
+        "bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-full h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border",
         className
       )}
     >
       {renderLogo(name)}
+      {children}
     </a>
   ) : (
-    <TooltipTrigger
+    <button
       id={name}
       className={cn(
-        "bg-hunter-black-50 hover:bg-hunter-black-100  dark:bg-hunter-black-800/30 dark:hover:bg-hunter-black-600 relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border",
+        "bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border",
         className
       )}
       onClick={onClick}
     >
       {renderLogo(name)}
-    </TooltipTrigger>
+      {children}
+    </button>
   );
 
-  return (
-    <TooltipProvider>
-      <Tooltip>
-        {component}
-        <TooltipContent>{name}</TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  );
+  return <>{component}</>;
 };
 
-export default Icon;
+export default ButtonIcon;

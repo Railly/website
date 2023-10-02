@@ -4,8 +4,9 @@
 
 @layer base {
   :root {
+    --foreground-contrast: 0 0% 0%;
     --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+    --foreground: 220 33% 19%;
  
     --muted: 210 40% 96.1%;
     --muted-foreground: 0 0% 51%;
@@ -19,7 +20,7 @@
     --border: 0 0% 69%;
     --input: 214.3 31.8% 91.4%;
  
-    --primary: 100 0% 0%;
+    --primary: 220 33% 19%;
     --primary-foreground: 210 40% 98%;
  
     --secondary: 210 40% 96.1%;
@@ -39,14 +40,16 @@
     --totalToolbarHeight: 72px;
     --verticalContentPadding: 1.5rem;
     --bg-gradient: radial-gradient(50% 66.67% at 50% 33.33,blue, red);
+    --profile-shadow: 0 0 5px hsla(0, 0%, 9%, 0.3), 0 0 10px hsla(0, 0%, 9%, 0.3);
   }
  
   .dark {
+    --foreground-contrast: 0 0% 100%;
     --background: 0 0% 9%;
-    --foreground: 213 31% 91%;
+    --foreground: 210 8% 83%;
  
     --muted: 223 47% 11%;
-    --muted-foreground: 0 0% 39%;
+    --muted-foreground: 0 0% 45%;
  
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
@@ -63,7 +66,7 @@
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
  
-    --accent: 216 34% 17%;
+    --accent: 180, 2%, 11%;
     --accent-foreground: 210 40% 98%;
  
     --destructive: 0 63% 31%;
@@ -73,6 +76,7 @@
  
     --radius: 0.5rem;
     --bg-gradient: radial-gradient(50% 66.67% at 50% 33.33,blue, red);
+    --profile-shadow: 0 0 5px hsla(0, 0%, 83%, 0.3), 0 0 10px hsla(215, 20.2%, 65.1%, 0.3);
   }
 
   * {
@@ -82,11 +86,12 @@
   html, body {
     @apply font-outfit;
     @apply !text-foreground;
-  background-image: var(--bg-gradient);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: var(--bg-gradient);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-behavior: smooth;
   }
 
   h1,
@@ -94,8 +99,15 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  strong,
+  b {
     @apply font-outfit;
+    @apply !text-foreground-contrast
+  }
+
+  b {
+    @apply font-semibold;
   }
 }
 
@@ -127,6 +139,12 @@
     left: var(--cursor-x, 0);
   }
 
+  .profile {
+    box-shadow: var(--profile-shadow);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+
   @keyframes continuous-gradient {
     0%, 100% {
       background-position: 0% 50%;
@@ -151,6 +169,16 @@
     background-size: 200% 100%;
     animation: continuous-gradient 4s ease infinite;
   }
+
+
+  .animated-gray-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r;
+    @apply dark:from-gray-400 dark:to-gray-500;
+    @apply from-gray-500 to-gray-700;
+    background-size: 200% 100%;
+    animation: continuous-gradient 4s ease infinite;
+  }
+
   .dark pre[data-theme="dark"],
   .dark div[data-rehype-pretty-code-title] {
     color-scheme: dark;

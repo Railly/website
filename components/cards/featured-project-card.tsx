@@ -1,69 +1,115 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import { format } from "date-fns";
-import { IProject } from "@/types/interfaces";
-import { EyeIcon, StarIcon } from "lucide-react";
 import { useImmutableRequest } from "@/hooks/use-request";
 import { cn } from "@/lib/utils";
+import { ESocialMedia, ETech, Other } from "@/types/enums";
+import { useTheme } from "@wits/next-themes";
+import { StarIcon } from "lucide-react";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import Icon from "../icons";
 
-interface IBlogCardProps {
-  project: Partial<IProject>;
-}
+type ProjectCardProps = {
+  title: string;
+  description: string;
+  summary: string;
+  linkDemo?: string;
+  linkRepository?: string;
+  logoUrl: string;
+  className?: string;
+  stack?: string[];
+  repoName?: string;
+  children?: React.ReactNode;
+};
 
-const FeaturedProjectCard = ({
-  project,
-}: React.PropsWithChildren<IBlogCardProps>) => {
+const FeaturedProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  description,
+  summary,
+  linkDemo,
+  logoUrl,
+  linkRepository,
+  repoName,
+  stack,
+  className,
+}) => {
+  const { theme } = useTheme()
+  const [bgStyle, setBgStyle] = useState<string>("linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))");
   const { data: repo } = useImmutableRequest<{
     success?: boolean;
     stars?: string;
-  }>(`/api/stars/${project?.repoName}`);
+  }>(`/api/stars/${repoName}`)
+
+  useEffect(() => {
+    console.log({ theme })
+    if (theme === "dark") {
+      setBgStyle(`linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${logoUrl})`);
+    } else {
+      setBgStyle(`linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(${logoUrl})`);
+    }
+  }, [theme]);
+
+
   return (
-    <Link
-      className={cn(
-        "flex gap-4 justify-between w-full h-full p-4 text-base border-t dark:border-white/20 hover:bg-hunter-yellow-300/30 border-black/20 group dark:hover:bg-hunter-yellow-300/20 transition-all",
-        project?.isFeatured && "border-b dark:border-white/20",
-        project?.isFeatured &&
-          "bg-hunter-yellow-300/10 dark:bg-hunter-yellow-200/10"
-      )}
-      href={`https://github.com/Railly/${project?.repoName}`}
-      key={project?.slug}
-    >
-      <div className="flex gap-4">
-        <figure className="flex items-center">
-          <Image
-            src={project.logoUrl || "/images/unknown-logo.png"}
-            alt={project.title || "Unknown Logo"}
-            width={40}
-            height={40}
-            className="transition-transform rounded-lg ring-hunter-yellow-400 dark:ring-hunter-yellow-500 group-hover:ring-2 group-hover:scale-110"
-          />
-        </figure>
-        <div className="flex flex-col justify-start gap-2 text-left">
-          <div className="flex justify-start gap-2 font-mono">
-            <span className="font-mono text-sm font-bold md:text-base">
-              {project.title}
-            </span>
-            <span className="flex items-center gap-1 px-2 transition-colors border border-transparent bg-zinc-300 dark:bg-hunter-black-700 rounded-3xl group-hover:border-black/70 dark:group-hover:border-white/70">
-              <StarIcon className="inline-block w-4 h-4 transition-colors group-hover:fill-hunter-yellow-400 dark:group-hover:fill-hunter-yellow-500 dark:group-hover:stroke-hunter-yellow-500" />
-              <span>{repo?.stars || 0}</span>
+    <section className={cn("flex rounded-xl border border-border bg-gray-100/70 dark:bg-background/90 shadow-md shadow-foreground/5 overflow-hidden relative w-full transition-all", className)}>
+      <div className="relative p-[calc(1.5rem-1px)] rounded-lg bg-center bg-no-repeat bg-cover w-full blur-xl h-full" style={{
+        backgroundImage: bgStyle
+      }} />
+      <article className="absolute flex flex-col justify-between inset-0 p-4" >
+        <header className="flex flex-col justify-center gap-2">
+          <div className="flex font-semibold gap-2 justify-between items-center text-xl">
+            <h1 className="flex gap-2 items-center">
+              <Image
+                src={logoUrl || "/images/unknown-logo.png"}
+                alt={title}
+                width={40}
+                height={40}
+                className="transition-transform rounded-lg ring-hunter-yellow-400 dark:ring-hunter-yellow-500 group-hover:ring-2 group-hover:scale-110"
+              />
+              {title}
+            </h1>
+            <span className="font-normal border border-dashed border-border flex w-1/3 justify-center rounded-sm text-gray-400 text-sm py-1">{description}</span>
+            <span className="flex items-center gap-1 px-2 transition-colors border-border border border-dashed rounded-sm">
+              <StarIcon className="inline-block w-4 h-4 fill-amber-400 stroke-amber-400" />
+              <span className="text-[14px]">{repo?.stars || 0}</span>
             </span>
           </div>
-          <span className="max-w-[40ch]">{project.summary}</span>
-        </div>
-      </div>
-      <div className="flex gap-7">
-        <span className="flex items-center font-mono text-sm text-center md:text-base">
-          {project.publishedAt &&
-            format(new Date(project.publishedAt), "MMM, yyyy")}
-        </span>
-        <span className="inline-flex flex-col justify-center gap-2 font-mono text-center sm:flex-row sm:items-center">
-          <EyeIcon className="inline-block w-4 h-4" />
-          {/* {project.views} */}
-          {"-"}
-        </span>
-      </div>
-    </Link>
+          <div className="flex gap-6">
+            <div>
+              <span className="font-normal flex rounded-sm text-gray-400 text-sm mt-1">Description</span>
+              <p className="text-normal self-start w-full">{summary}</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="font-normal flex rounded-sm text-gray-400 text-sm mt-1">Stack</span>
+              <div className="flex gap-2">
+                {
+                  stack?.map((tech: string) => (
+                    <Icon name={ETech[tech as keyof typeof ETech]} key={tech} />
+                  ))
+                }
+              </div>
+            </div>
+            <div className="flex flex-col justify-between items-center w-full gap-10 mt-5">
+              <div className="flex sm:flex-col w-full gap-6 sm:gap-2">
+                {linkDemo && (
+                  <Icon
+                    href={linkDemo}
+                    name={Other.Play}>
+                    Demo
+                  </Icon>
+                )}
+                {linkRepository && (
+                  <Icon
+                    href={linkRepository}
+                    name={ESocialMedia.Github}>
+                    Repo
+                  </Icon>
+                )}
+              </div>
+            </div>
+          </div>
+        </header>
+      </article>
+    </section>
   );
 };
 

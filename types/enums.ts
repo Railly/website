@@ -46,6 +46,9 @@ export enum ETech {
   Electron = "Electron",
   Arduino = "Arduino",
   Golang = "Golang",
+  Firebase = "Firebase",
+  OpenAI = "OpenAI",
+  FastAPI = "FastAPI",
 }
 
 export enum Scheme {
@@ -58,4 +61,5 @@ export enum Other {
   CloseMenu = "closeMenu",
   Arrow = "arrow",
   Schedule = "schedule",
+  Play = "play",
 }

@@ -6,7 +6,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
-      <main className="relative col-[2] min-w-0 pt-[calc(var(--totalToolbarHeight)_+_var(--verticalContentPadding)_+_0.25rem)] pb-[var(--verticalContentPadding)] md:max-w-prose mx-auto">
+      <main className="relative col-[2] min-w-0 pt-[calc(var(--totalToolbarHeight)_+_var(--verticalContentPadding)_-_0.5rem)] pb-[var(--verticalContentPadding)] md:max-w-prose mx-auto">
         {children}
       </main>
       <Footer />
