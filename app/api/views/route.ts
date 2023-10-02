@@ -28,10 +28,10 @@ export async function GET(req: NextRequest) {
     views = await kv.hget("views", id);
   }
 
-  const allData: Array<IBlog | IProject> =
+  const allData: any[] =
     type === "blog" ? blogPostsData.posts : projectsData.projects;
 
-  const data = allData.find((item) => item.slug === id);
+  const data = allData.find((item:any) => item.slug === id);
 
   if (data) {
     data.views = views ? Number(views) : 0;
