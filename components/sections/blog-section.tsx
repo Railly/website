@@ -17,16 +17,7 @@ const BlogSection = ({
         <h2 className="text-xl font-medium sm:text-2xl">Blog</h2>
         {!isPage && <LinkWithArrow href="/blog">See all posts</LinkWithArrow>}
       </div>
-      {isPage && (
-        <div className="flex justify-between w-full px-2 text-sm dark:text-white/50 text-black-50">
-          <span className="font-mono font-medium">title</span>
-          <div className="flex gap-7">
-            <span className="font-mono">date</span>
-            <span className="font-mono">views</span>
-          </div>
-        </div>
-      )}
-      <div className="flex flex-col mb-4">
+      <div className="flex flex-col gap-4 mb-4">
         {blogPosts.map((blog) => (
           <BlogCard key={blog.slug} blog={blog} />
         ))}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { IBlog } from "@/types/interfaces";
 import { EyeIcon } from "lucide-react";
+import NoisyCard from "./noisy-card";
 
 interface IBlogCardProps {
   blog: Partial<IBlog>;
@@ -9,24 +10,22 @@ interface IBlogCardProps {
 
 const BlogCard = ({ blog }: React.PropsWithChildren<IBlogCardProps>) => {
   return (
-    <Link
-      className="flex gap-4 justify-between w-full h-full px-2 py-4 text-base border-t dark:border-white/20 hover:bg-[#efefef] border-black/20 dark:hover:bg-[#222222aa] transition-all"
-      href={`/blog/${blog.slug}`}
-      key={blog.slug}
-    >
-      <span className="font-mono text-sm font-medium md:text-base">
-        {blog.title}
-      </span>
-      <div className="flex gap-7">
-        <span className="font-mono text-sm text-center md:text-base">
-          {blog.publishedAt && format(new Date(blog.publishedAt), "MMM, yyyy")}
+    <NoisyCard className="group hover:shadow-md border border-border hover:border-foreground/50 dark:hover:shadow-foreground/5 dark:hover:border-foreground/30 transition-all">
+      <Link href={`/blog/${blog.slug}`} key={blog.slug} className="flex flex-col justify-between w-full h-full p-2 transition-all transform">
+        <span className="font-mono text-sm font-semibold text-foreground transition-colors group-hover:text-secondary-foreground md:text-base">
+          {blog.title}
         </span>
-        <span className="inline-flex flex-col justify-center gap-2 font-mono text-center sm:flex-row sm:items-center">
-          <EyeIcon className="inline-block w-4 h-4" />
-          {blog.views}
-        </span>
-      </div>
-    </Link>
+        <div className="flex items-center justify-between mt-4">
+          <span className="font-mono text-sm text-muted-foreground transition-colors group-hover:text-foreground">
+            {blog.publishedAt && format(new Date(blog.publishedAt), "MMM, yyyy")}
+          </span>
+          <span className="flex items-center gap-2 font-mono text-muted-foreground transition-colors group-hover:text-foreground">
+            <EyeIcon className="w-4 h-4 transition-colors group-hover:text-secondary-foreground" />
+            {blog.views}
+          </span>
+        </div>
+      </Link>
+    </NoisyCard>
   );
 };
 

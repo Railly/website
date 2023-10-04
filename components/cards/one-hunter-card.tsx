@@ -1,14 +1,16 @@
+"use client"
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-import FramerCard from "./framer-card";
 import Icon from "@/components/icons";
 import { ETech } from "@/types/enums";
 import NoisyCard from "./noisy-card";
 
 const OneHunterCard = () => {
   return (
-    <NoisyCard>
-      <div className="grid w-full grid-cols-1 gap-2 mb-2 md:grid-cols-2 place-items-center">
+    <NoisyCard className="cursor-pointer group hover:shadow-md border border-border hover:border-foreground/50 dark:hover:shadow-foreground/5 dark:hover:border-foreground/30 transition-all">
+      <div
+        onClick={() => window.open("https://marketplace.visualstudio.com/items?itemName=RaillyHugo.one-hunter", "_blank")}
+        className="grid w-full grid-cols-1 gap-2 mb-2 md:grid-cols-2 place-items-center">
         <div className="flex flex-col gap-2 p-4">
           <div className="flex items-center gap-2">
             <Image

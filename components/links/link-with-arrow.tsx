@@ -6,7 +6,7 @@ const colorClassNames = {
   default:
     "text-hunter-blue-700 dark:text-hunter-blue-300 hover:text-hunter-blue-500 dark:hover:text-hunter-blue-400",
   green:
-    "text-hunter-green-600 dark:text-hunter-green-300 hover:text-hunter-green-500 dark:hover:text-hunter-green-400",
+    "text-hunter-yellow-600 dark:text-hunter-yellow-200 hover:text-hunter-yellow-500 dark:hover:text-hunter-yellow-300",
 };
 
 interface ILinkWithArrowProps {
