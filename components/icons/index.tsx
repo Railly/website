@@ -1,11 +1,6 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { Other, Scheme, ESocialMedia, ETech } from "@/types/enums";
 import { cn } from "@/lib/utils";
 
