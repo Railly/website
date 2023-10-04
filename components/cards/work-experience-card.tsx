@@ -1,10 +1,11 @@
 "use client";
 import { WORK_EXPERIENCE } from "@/utils/data";
 import WorkExperienceSection from "../sections/work-experience-section";
+import NoisyCard from "./noisy-card";
 
 const WorkExperienceCard = () => {
   return (
-    <div className="border border-border bg-gray-100/70 dark:bg-background/90 p-4 shadow-md shadow-foreground/5 rounded-xl">
+    <NoisyCard>
       <ol className="relative ml-3 border-l border-border">
         {WORK_EXPERIENCE.map((workExperience, index) => (
           <li key={workExperience.id} className="mb-10 ml-6">
@@ -19,7 +20,7 @@ const WorkExperienceCard = () => {
           </li>
         ))}
       </ol>
-    </div>
+    </NoisyCard>
   );
 };
 

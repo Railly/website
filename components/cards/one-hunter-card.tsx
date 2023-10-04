@@ -3,15 +3,16 @@ import Image from "next/image";
 import FramerCard from "./framer-card";
 import Icon from "@/components/icons";
 import { ETech } from "@/types/enums";
+import NoisyCard from "./noisy-card";
 
 const OneHunterCard = () => {
   return (
-    <div className="border border-border bg-gray-100/70 dark:bg-background/90 p-4 shadow-md shadow-foreground/5 rounded-xl">
+    <NoisyCard>
       <div className="grid w-full grid-cols-1 gap-2 mb-2 md:grid-cols-2 place-items-center">
         <div className="flex flex-col gap-2 p-4">
           <div className="flex items-center gap-2">
             <Image
-              className="border-2 rounded-full border-white/50"
+              className="border-2 rounded-full border-white/50 no-drag"
               src="/images/one-hunter-logo.png"
               alt="One Hunter Theme Logo"
               width={45}
@@ -39,6 +40,7 @@ const OneHunterCard = () => {
               rel="noopener noreferrer"
             >
               <img
+                className="no-drag"
                 src="https://img.shields.io/github/stars/Railly/one-hunter-vscode?colorA=363a4f&colorB=f9c35a&style=for-the-badge"
                 alt="GitHub stars"
                 width={104}
@@ -51,6 +53,7 @@ const OneHunterCard = () => {
               rel="noopener noreferrer"
             >
               <img
+                className="no-drag"
                 src="https://img.shields.io/visual-studio-marketplace/azure-devops/installs/total/RaillyHugo.one-hunter?colorA=363a4f&colorB=5BDfff&style=for-the-badge"
                 alt="Visual Studio Marketplace Installs"
                 width={137}
@@ -65,7 +68,7 @@ const OneHunterCard = () => {
           rel="noopener noreferrer"
         >
           <img
-            className="border rounded-lg h-52 border-white/50 w-72"
+            className="border no-drag rounded-lg h-52 border-white/50 w-72"
             src="/svg/one-hunter-theme.svg"
             alt="One Hunter Theme"
             width={400}
@@ -73,7 +76,7 @@ const OneHunterCard = () => {
           />
         </a>
       </div>
-    </div>
+    </NoisyCard>
   );
 };
 

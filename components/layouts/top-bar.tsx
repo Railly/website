@@ -10,10 +10,10 @@ import { useState, useEffect } from "react";
 import { useTheme } from "@wits/next-themes";
 
 interface TopBarProps extends React.PropsWithChildren {
-  onClickMenu?: () => void;
+  triggerComponent?: React.ReactNode;
 }
 
-export const TopBar: React.FC<TopBarProps> = ({ onClickMenu }) => {
+export const TopBar: React.FC<TopBarProps> = ({ triggerComponent }) => {
   const pathname = usePathname();
   const router = useRouter();
   const { theme, setTheme } = useTheme();
@@ -35,11 +35,6 @@ export const TopBar: React.FC<TopBarProps> = ({ onClickMenu }) => {
             className="relative top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-muted-foreground to-transparent"
           />
           <div className="flex justify-between overflow-hidden p-2 relative z-2 w-full min-w-0 rounded-xl">
-            <Icon
-              className="flex menu-button md:hidden"
-              onClick={onClickMenu}
-              name={Other.OpenMenu}
-            />
             <div className="hidden sm:flex text-muted-foreground">
               {MENU_ITEMS.map((item, index) => (
                 <GlowButton
@@ -67,6 +62,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onClickMenu }) => {
                 )}
               </>
             )}
+            {triggerComponent}
           </div>
         </div>
       </header>

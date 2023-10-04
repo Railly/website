@@ -6,6 +6,7 @@ import { StarIcon } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Icon from "../icons";
+import NoisyCard from "./noisy-card";
 
 type ProjectCardProps = {
   title: string;
@@ -37,11 +38,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   }>(`/api/stars/${repoName}`)
 
   return (
-    <section className={cn("flex rounded-xl border border-border bg-gray-100/70 dark:bg-background/90 shadow-md shadow-foreground/5 overflow-hidden relative w-full transition-all", className)}>
+    <NoisyCard className={cn(className, "overflow-hidden")}>
       <div className={cn("relative p-[calc(1.5rem-1px)] rounded-lg bg-center bg-no-repeat bg-cover w-full blur-xl h-full",
       )} style={{
         backgroundImage: `url("${logoUrl}")`
       }} />
+      <svg className="absolute inset-0 z-10 rounded-xl pointer-events-none opacity-70 mix-blend-soft-light" width="100%" height="100%">
+        <filter id="noise">
+          <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch">
+          </feTurbulence>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noise)"></rect>
+      </svg>
       <article className={cn("absolute flex flex-col justify-between inset-0 p-4 bg-background/90 dark:bg-background/70",
         {
           "dark:bg-background/90": title === "Spotigen"
@@ -55,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 alt={title}
                 width={40}
                 height={40}
-                className="transition-transform rounded-lg ring-hunter-yellow-400 dark:ring-hunter-yellow-500 group-hover:ring-2 group-hover:scale-110"
+                className="transition-transform no-drag rounded-lg ring-hunter-yellow-400 dark:ring-hunter-yellow-500 group-hover:ring-2 group-hover:scale-110"
               />
               {title}
             </h1>
@@ -105,7 +113,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
       </article>
-    </section >
+    </NoisyCard>
   );
 };
 

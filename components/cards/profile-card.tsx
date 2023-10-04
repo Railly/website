@@ -5,12 +5,13 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import RHProfileImage from "../images/rh-profile-image";
+import NoisyCard from "./noisy-card";
 
 const ProfileCard = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-[1.5fr,1fr] w-full gap-4">
       <div className="flex flex-col justify-center gap-4">
-        <div className="border border-border bg-gray-100/70 dark:bg-background/90 p-4 shadow-md shadow-foreground/5 rounded-xl">
+        <NoisyCard>
           <h1 className="text-2xl md:text-3xl font-medium tracking-wide justify-center md:justify-start flex gap-2">
             <span>Railly Hugo</span>
             <span>{`~`}</span>
@@ -35,8 +36,8 @@ const ProfileCard = () => {
               22y/o ~ Lima, Perú 🇵🇪
             </span>
           </p>
-        </div>
-        <div className="border border-border bg-gray-100/70 dark:bg-background/90 px-4 pb-4 pt-2 shadow-md shadow-foreground/5 rounded-xl">
+        </NoisyCard>
+        <NoisyCard>
           <p className="text-base flex text-center md:text-left flex-col gap-2">
             <span className="before:content-['>'] before:font-bold before:text-2xl before:mr-2 before:text-gray-400 before:font-mono">
               Detail-oriented, design-driven, passionate about making things
@@ -47,10 +48,10 @@ const ProfileCard = () => {
               coding; I&apos;m crafting experiences.
             </span>
           </p>
-        </div>
-      </div>
+        </NoisyCard>
+      </div >
 
-      <div className="flex flex-col gap-4 items-center justify-center border border-border bg-gray-100/70 dark:bg-background/90 p-4 shadow-md shadow-foreground/5 rounded-xl">
+      <NoisyCard>
         <div className="flex md:flex-col items-center justify-center gap-5">
           <RHProfileImage size={120} />
           <div className="flex flex-col gap-3">
@@ -80,8 +81,8 @@ const ProfileCard = () => {
             </Button>
           </div>
         </div>
-      </div>
-    </section>
+      </NoisyCard>
+    </section >
   );
 };
 

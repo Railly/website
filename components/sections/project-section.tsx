@@ -42,7 +42,6 @@ const ProjectSection = ({
             if (project.isFeatured) {
               return (
                 <ProjectCard
-                  // className="row-span-2 sm:row-span-1"
                   className="row-span-2 col-span-2 sm:col-span-1"
                   key={project.title}
                   title={project.title as string}

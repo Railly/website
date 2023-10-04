@@ -8,6 +8,16 @@ import { useState } from "react";
 import HeaderLink from "../components/links/header-link";
 import { TopBar } from "@/components/layouts/top-bar";
 import { Drawer } from "vaul";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogOverlay,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,42 +56,43 @@ const Header = () => {
 
 
   return (
-    <>
-      <TopBar onClickMenu={handleOpenMenu} />
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="fixed flex items-center inset-x-0 top-0 bg-background/10 dark:bg-background/60 backdrop-blur-md z-50 overflow-y-auto"
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={menuVariants}
-            onClick={handleCloseMenu}
-          >
-            <div className="flex flex-col w-full bg-background/90 backdrop-blur-md border border-border shadow-md shadow-foreground/5 rounded-xl mx-6 p-2">
-              {MENU_ITEMS.map((item, index) => (
-                <HeaderLink
-                  key={index}
-                  to={item.path}
-                  active={pathname === item.path}
-                  onNavigate={handleCloseMenu}
-                  full
-                  className="h-14"
-                >
-                  {item.name}
-                </HeaderLink>
-              ))}
-            </div>
+    <Dialog open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
+      <TopBar
+        triggerComponent={
+          <DialogTrigger>
             <Icon
-              className="fixed menu-button left-6 top-6"
-              onClick={handleCloseMenu}
-              name={Other.CloseMenu}
+              className="flex menu-button md:hidden"
+              name={Other.OpenMenu}
             />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+          </DialogTrigger>
+        }
+      />
+      <DialogContent
+        className="flex items-center bg-transparent border-none shadow-none"
+        onClick={handleCloseMenu}
+      >
+        <div className="flex flex-col w-full bg-background/90 backdrop-blur-md border border-border shadow-md shadow-foreground/5 rounded-xl mx-6 p-4">
+          {MENU_ITEMS.map((item, index) => (
+            <HeaderLink
+              key={index}
+              to={item.path}
+              active={pathname === item.path}
+              onNavigate={handleCloseMenu}
+              full
+              className="h-14"
+            >
+              {item.name}
+            </HeaderLink>
+          ))}
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 };
+
+{/* <AnimatePresence>
+        {isOpen && (
+        )}
+      </AnimatePresence> */}
 
 export default Header;
