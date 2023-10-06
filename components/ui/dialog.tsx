@@ -9,6 +9,8 @@ const Dialog = DialogPrimitive.Root
 
 const DialogTrigger = DialogPrimitive.Trigger
 
+const DialogClose = DialogPrimitive.Close
+
 const DialogPortal = DialogPrimitive.Portal
 
 const DialogOverlay = React.forwardRef<
@@ -111,4 +113,5 @@ export {
   DialogFooter,
   DialogTitle,
   DialogDescription,
+  DialogClose
 }
