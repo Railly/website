@@ -16,7 +16,8 @@ const NoisyCard = ({
           </feTurbulence>
         </filter>
         <rect width="100%" height="100%" filter="url(#noise)">
-        </rect></svg>
+        </rect>
+      </svg>
       {children}
     </div>
   );

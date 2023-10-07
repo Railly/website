@@ -23,8 +23,7 @@ const RHProfileImage: React.FC<IProps> = ({
 }) => {
   return (
     <div
-      className={`flex justify-center  rounded-full from-zinc-200 to-zinc-400 dark:from-zinc-500/80 dark:to-zinc-800/80 bg-gradient-to-b w-max ${getClassNames(size).parent
-        }`}
+      className={`flex justify-center  rounded-full from-zinc-200 to-zinc-400 dark:from-zinc-500/80 dark:to-zinc-800/80 bg-gradient-to-b w-max ${getClassNames(size).parent}`}
     >
       <Image
         className="rounded-full no-drag profile w-[5.75rem] h-[5.75rem] md:w-28 md:h-28"

@@ -12,7 +12,7 @@ const ProfileCard = () => {
     <section className="grid grid-cols-1 md:grid-cols-[1.5fr,1fr] w-full gap-4">
       <div className="flex flex-col justify-center gap-4">
         <NoisyCard>
-          <h1 className="text-2xl md:text-3xl font-medium tracking-wide justify-center md:justify-start flex gap-2">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-wide justify-center md:justify-start flex gap-2">
             <span>Railly Hugo</span>
             <span>{`~`}</span>
             <span className="animated-gray-gradient">Hunter</span>
@@ -51,35 +51,33 @@ const ProfileCard = () => {
         </NoisyCard>
       </div >
 
-      <NoisyCard>
-        <div className="flex md:flex-col items-center justify-center gap-5">
-          <RHProfileImage size={120} />
-          <div className="flex flex-col gap-3">
-            <div className="flex justify-between gap-3">
-              <Icon
-                href="https://github.com/Railly"
-                name={ESocialMedia.Github}
-              />
-              <Icon
-                href="https://www.linkedin.com/in/railly-hugo/"
-                name={ESocialMedia.LinkedIn}
-              />
-              <Icon
-                href="https://twitter.com/raillyhugo"
-                name={ESocialMedia.Twitter}
-              />
-            </div>
-            <Button className="group">
-              <Link
-                href="/about"
-                className="flex items-center justify-center gap-2"
-              >
-                <span className="hidden md:block">More about me</span>
-                <span className="block md:hidden">About me</span>
-                <ArrowRight className="hidden md:block group-hover:animate-bounce" />
-              </Link>
-            </Button>
+      <NoisyCard className="flex md:flex-col items-center justify-center gap-5">
+        <RHProfileImage size={120} />
+        <div className="flex flex-col gap-3">
+          <div className="flex justify-between gap-3">
+            <Icon
+              href="https://github.com/Railly"
+              name={ESocialMedia.Github}
+            />
+            <Icon
+              href="https://www.linkedin.com/in/railly-hugo/"
+              name={ESocialMedia.LinkedIn}
+            />
+            <Icon
+              href="https://twitter.com/raillyhugo"
+              name={ESocialMedia.Twitter}
+            />
           </div>
+          <Button className="group">
+            <Link
+              href="/about"
+              className="flex items-center justify-center gap-2"
+            >
+              <span className="hidden md:block">More about me</span>
+              <span className="block md:hidden">About me</span>
+              <ArrowRight className="hidden md:block group-hover:animate-bounce" />
+            </Link>
+          </Button>
         </div>
       </NoisyCard>
     </section >

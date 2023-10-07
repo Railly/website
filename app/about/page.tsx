@@ -27,7 +27,7 @@ export default async function About() {
       <h1 className="text-xl font-semibold mb-4 sm:text-2xl">Brief Profile</h1>
       <AboutCard />
       <main>
-        <div className="flex items-center justify-between w-full mt-6 mb-4">
+        <div className="flex items-center justify-between w-full my-6">
           <h1 className="text-xl font-semibold sm:text-2xl">Work Experience</h1>
           <ResumeButton />
         </div>

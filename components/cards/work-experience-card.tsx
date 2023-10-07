@@ -5,7 +5,7 @@ import NoisyCard from "./noisy-card";
 
 const WorkExperienceCard = () => {
   return (
-    <NoisyCard>
+    <NoisyCard className="">
       <ol className="relative ml-3 border-l border-border">
         {WORK_EXPERIENCE.map((workExperience, index) => (
           <li key={workExperience.id} className="mb-10 ml-6">

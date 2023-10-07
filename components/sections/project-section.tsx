@@ -18,7 +18,7 @@ const ProjectSection = ({
   return (
     <section className="w-full mt-4 md:mt-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-medium sm:text-2xl">Projects</h2>
+        <h2 className="text-xl font-semibold sm:text-2xl">Projects</h2>
         {!isPage && (
           <LinkWithArrow color="green" href="/projects">
             See all projects
@@ -28,7 +28,7 @@ const ProjectSection = ({
       <div className={cn("grid grid-cols-1 sm:grid-cols-2 gap-y-4  sm:gap-4 mb-4"
         , {
           "grid-rows-[repeat(7,minmax(auto,170px))] sm:grid-rows-[repeat(7,minmax(auto,195px))] md:grid-rows-[repeat(4,minmax(auto,195px))]": limit === 3,
-          "grid-rows-[repeat(23,minmax(auto,170px))] sm:grid-rows-[repeat(23,minmax(auto,195px))] md:grid-rows-[repeat(12,minmax(auto,195px))]": limit !== 3,
+          "grid-rows-[repeat(25,minmax(auto,170px))] sm:grid-rows-[repeat(25,minmax(auto,195px))] md:grid-rows-[repeat(13,minmax(auto,210px))]": limit !== 3,
         }
       )}>
         <CrafterCard />

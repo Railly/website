@@ -1,7 +1,7 @@
 "use client";
 import { MENU_ITEMS } from "@/utils/data";
 import { LayoutGroup } from "framer-motion";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSelectedLayoutSegment } from "next/navigation";
 import { GlowButton } from "../buttons/glow-button";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -15,7 +15,7 @@ interface TopBarProps extends React.PropsWithChildren {
 }
 
 export const TopBar: React.FC<TopBarProps> = () => {
-  const pathname = usePathname();
+  const segment = useSelectedLayoutSegment();
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
@@ -23,6 +23,7 @@ export const TopBar: React.FC<TopBarProps> = () => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
 
   return (
     <>
@@ -45,7 +46,7 @@ export const TopBar: React.FC<TopBarProps> = () => {
                   <GlowButton
                     index={index}
                     onClick={() => router.push(item.path)}
-                    isActive={pathname === item.path}
+                    isActive={segment === item.segment}
                     key={index}
                   >
                     {item.name}
@@ -83,7 +84,7 @@ export const TopBar: React.FC<TopBarProps> = () => {
                       <HeaderLink
                         key={index}
                         to={item.path}
-                        active={pathname === item.path}
+                        active={segment === item.segment}
                         full
                         className="h-14"
                       >

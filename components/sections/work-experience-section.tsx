@@ -51,7 +51,7 @@ const WorkExperience: React.FC<IProps> = ({
         />
       </span>
       <div className="flex flex-col gap-2 mb-2 sm:mb-1 sm:items-center sm:flex-row">
-        <h3 className="flex items-center text-lg font-medium text-zinc-900 dark:text-white">
+        <h3 className="flex items-center text-lg font-semibold text-zinc-900 dark:text-white">
           {position}
           {isLatest && (
             <span className="bg-hunter-green-100 shadow-lg shadow-hunter-green-400/20 text-green-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-hunter-green-200 dark:text-hunter-green-800 ml-3">
@@ -60,7 +60,7 @@ const WorkExperience: React.FC<IProps> = ({
           )}
         </h3>
         <span className="hidden sm:block">·</span>
-        <h4 className="flex items-center text-base font-medium text-hunter-black-500 dark:text-hunter-black-300">
+        <h4 className="flex items-center text-sm font-medium text-hunter-black-500 dark:text-hunter-black-300">
           @{company.name}
           <img
             src={company.image_url}
@@ -74,7 +74,7 @@ const WorkExperience: React.FC<IProps> = ({
       </time>
       <ul className="mb-4 text-base font-normal">
         {responsibilities.map((responsibility, index) => (
-          <li key={index} className="mb-2 ml-6 list-disc">
+          <li key={index} className="mb-3 ml-6 list-disc leading-7">
             {responsibility}
           </li>
         ))}

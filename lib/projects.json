@@ -173,6 +173,22 @@
         "TypeScript",
         "Supabase"
       ]
+    },
+    {
+      "title": "Shadcn Customizer",
+      "summary": "Customize every CSS variable from your shadcn/ui theme, copy the CSS file and paste it into your project.",
+      "publishedAt": "2023-08-07",
+      "tag": "Personal Project",
+      "slug": "shadcn-ui-customizer",
+      "logoUrl": "/images/shadcn-customizer-logo.png",
+      "repoName": "shadcn-ui-customizer",
+      "demo": "https://shadcn-ui-customizer.vercel.app",
+      "description": "Theme Customizer",
+      "stack": [
+        "NextJS",
+        "TailwindCSS",
+        "TypeScript"
+      ]
     }
   ]
 }

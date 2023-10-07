@@ -60,19 +60,120 @@ export const learningSomeday = [
     tech: "React Native",
     icon: () => <Icon name={ETech.ReactJS} raw />,
   },
-  {
-    tech: "GraphQL",
-    icon: () => <Icon name={ETech.GraphQL} raw />,
-  },
-  {
-    tech: "Electron",
-    icon: () => <Icon name={ETech.Electron} raw />,
-  },
-  {
-    tech: "Arduino",
-    icon: () => <Icon name={ETech.Arduino} raw />,
-  },
+  // {
+  //   tech: "GraphQL",
+  //   icon: () => <Icon name={ETech.GraphQL} raw />,
+  // },
+  // {
+  //   tech: "Electron",
+  //   icon: () => <Icon name={ETech.Electron} raw />,
+  // },
+  // {
+  //   tech: "Arduino",
+  //   icon: () => <Icon name={ETech.Arduino} raw />,
+  // },
 ];
+
+export const EXPERTISE_LEVELS = {
+  "beginner": 1,
+  "intermediate": 2,
+  "advanced": 3,
+  "expert": 4,
+};
+
+export interface ITech {
+  tech: string;
+  icon: () => JSX.Element;
+  expertise: keyof typeof EXPERTISE_LEVELS;
+}
+
+export const languages: ITech[] = [
+  { tech: "JavaScript", icon: () => <Icon name={ETech.JavaScript} raw />, expertise: "advanced" },
+  { tech: "TypeScript", icon: () => <Icon name={ETech.TypeScript} raw />, expertise: "advanced" },
+  { tech: "Python", icon: () => <Icon name={ETech.Python} raw />, expertise: "intermediate" },
+  { tech: "C++", icon: () => <Icon name={ETech.CPlusPlus} raw />, expertise: "intermediate" },
+  { tech: "Golang", icon: () => <Icon name={ETech.Golang} raw />, expertise: "beginner" },
+  { tech: "Rust", icon: () => <Icon name={ETech.Rust} raw />, expertise: "beginner" },
+];
+
+export const frontendDevelopment: ITech[] = [
+  { tech: "Next.js", icon: () => <Icon name={ETech.NextJS} raw />, expertise: "advanced" },
+  { tech: "React", icon: () => <Icon name={ETech.ReactJS} raw />, expertise: "expert" },
+  { tech: "Astro", icon: () => <Icon name={ETech.Astro} raw />, expertise: "beginner" },
+  { tech: "TailwindCSS", icon: () => <Icon name={ETech.TailwindCSS} raw />, expertise: "advanced" },
+  { tech: "Redux", icon: () => <Icon name={ETech.Redux} raw />, expertise: "advanced" },
+  { tech: "React Native", icon: () => <Icon name={ETech.ReactJS} raw />, expertise: "beginner" },
+  { tech: "Framer Motion", icon: () => <Icon name={ETech.FramerMotion} raw />, expertise: "intermediate" },
+  { tech: "Styled Components", icon: () => <Icon name={ETech.StyledComponents} raw />, expertise: "advanced" },
+  { tech: "Bootstrap", icon: () => <Icon name={ETech.Bootstrap} raw />, expertise: "advanced" },
+  { tech: "SaSS", icon: () => <Icon name={ETech.SaSS} raw />, expertise: "advanced" },
+  { tech: "StoryBook", icon: () => <Icon name={ETech.Storybook} raw />, expertise: "beginner" },
+];
+
+export const backendDevelopment: ITech[] = [
+  { tech: "Node.js", icon: () => <Icon name={ETech.NodeJS} raw />, expertise: "advanced" },
+  { tech: "Express.js", icon: () => <Icon name={ETech.ExpressJS} raw />, expertise: "advanced" },
+  { tech: "NestJS", icon: () => <Icon name={ETech.NestJS} raw />, expertise: "beginner" },
+  { tech: "Hono", icon: () => <Icon name={ETech.Hono} raw />, expertise: "beginner" },
+  { tech: "FastAPI", icon: () => <Icon name={ETech.FastAPI} raw />, expertise: "beginner" },
+];
+
+export const databasesAndOrm: ITech[] = [
+  { tech: "PostgreSQL", icon: () => <Icon name={ETech.PostgreSQL} raw />, expertise: "advanced" },
+  { tech: "Sequelize", icon: () => <Icon name={ETech.Sequelize} raw />, expertise: "intermediate" },
+  { tech: "Prisma", icon: () => <Icon name={ETech.Prisma} raw />, expertise: "beginner" },
+  { tech: "Supabase", icon: () => <Icon name={ETech.Supabase} raw />, expertise: "intermediate" },
+  { tech: "Firebase", icon: () => <Icon name={ETech.Firebase} raw />, expertise: "intermediate" },
+  { tech: "MongoDB", icon: () => <Icon name={ETech.MongoDB} raw />, expertise: "beginner" },
+];
+
+export const testingAndQA: ITech[] = [
+  { tech: "Playwright", icon: () => <Icon name={ETech.Playwright} raw />, expertise: "intermediate" },
+  { tech: "Jest", icon: () => <Icon name={ETech.Jest} raw />, expertise: "advanced" },
+  { tech: "React Testing Library", icon: () => <Icon name={ETech.ReactTestingLibrary} raw />, expertise: "advanced" },
+  { tech: "Swagger", icon: () => <Icon name={ETech.Swagger} raw />, expertise: "beginner" },
+];
+
+export const cloudAndDevOps: ITech[] = [
+  { tech: "AWS", icon: () => <Icon name={ETech.AWS} raw />, expertise: "beginner" },
+  { tech: "Azure", icon: () => <Icon name={ETech.Azure} raw />, expertise: "beginner" }
+];
+
+export const devTools: ITech[] = [
+  { tech: "OpenAI", icon: () => <Icon name={ETech.OpenAI} raw />, expertise: "beginner" },
+  { tech: "GitHub Copilot", icon: () => <Icon name={ETech.GitHubCopilot} raw />, expertise: "advanced" },
+  { tech: "Figma", icon: () => <Icon name={ETech.Figma} raw />, expertise: "advanced" },
+  { tech: "VSCode", icon: () => <Icon name={ETech.VSCode} raw />, expertise: "advanced" },
+  { tech: "Git", icon: () => <Icon name={ETech.Git} raw />, expertise: "advanced" },
+  { tech: "Github", icon: () => <Icon name={ETech.Github} raw />, expertise: "advanced" },
+  { tech: "Gitlab", icon: () => <Icon name={ETech.Gitlab} raw />, expertise: "advanced" },
+  { tech: "Vercel", icon: () => <Icon name={ETech.Vercel} raw />, expertise: "advanced" },
+  { tech: "Vite", icon: () => <Icon name={ETech.Vite} raw />, expertise: "advanced" },
+  { tech: "Vim", icon: () => <Icon name={ETech.Vim} raw />, expertise: "advanced" },
+  { tech: "Turborepo", icon: () => <Icon name={ETech.Turborepo} raw />, expertise: "advanced" },
+  { tech: "Docker", icon: () => <Icon name={ETech.Docker} raw />, expertise: "advanced" },
+  { tech: "NPM", icon: () => <Icon name={ETech.Npm} raw />, expertise: "advanced" },
+  { tech: "PNMP", icon: () => <Icon name={ETech.Pnpm} raw />, expertise: "advanced" },
+];
+
+export const productivityTools: ITech[] = [
+  { tech: "Excalidraw", icon: () => <Icon name={ETech.Excalidraw} raw />, expertise: "advanced" },
+  { tech: "Notion", icon: () => <Icon name={ETech.Notion} raw />, expertise: "advanced" },
+  { tech: "Linear", icon: () => <Icon name={ETech.Linear} raw />, expertise: "advanced" },
+  { tech: "PowerShell", icon: () => <Icon name={ETech.PowerShell} raw />, expertise: "advanced" },
+  { tech: "Slack", icon: () => <Icon name={ETech.Slack} raw />, expertise: "advanced" },
+  { tech: "Zoom", icon: () => <Icon name={ETech.Zoom} raw />, expertise: "advanced" },
+  { tech: "Discord", icon: () => <Icon name={ETech.Discord} raw />, expertise: "advanced" },
+  { tech: "Google Suite", icon: () => <Icon name={ETech.GoogleSuite} raw />, expertise: "advanced" },
+  { tech: "Windows", icon: () => <Icon name={ETech.Windows} raw />, expertise: "advanced" },
+  { tech: "Thunder Client", icon: () => <Icon name={ETech.ThunderClient} raw />, expertise: "advanced" },
+  { tech: "Windows Terminal", icon: () => <Icon name={ETech.WindowsTerminal} raw />, expertise: "advanced" },
+  { tech: "Obsidian", icon: () => <Icon name={ETech.Obsidian} raw />, expertise: "advanced" },
+  { tech: "ChatGPT", icon: () => <Icon name={ETech.ChatGPT} raw />, expertise: "advanced" },
+  { tech: "Cron", icon: () => <Icon name={ETech.Cron} raw />, expertise: "advanced" },
+];
+
+
 
 export const WORK_EXPERIENCE = [
   {
@@ -157,21 +258,26 @@ export const MENU_ITEMS = [
   {
     name: "Home",
     path: "/",
+    segment: null,
   },
   {
     name: "About",
     path: "/about",
+    segment: "about",
   },
   {
     name: "Blog",
     path: "/blog",
+    segment: "blog",
   },
   {
     name: "Projects",
     path: "/projects",
+    segment: "projects",
   },
   {
     name: "Stack",
     path: "/stack",
+    segment: "stack",
   },
 ];

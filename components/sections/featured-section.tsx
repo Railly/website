@@ -5,7 +5,7 @@ const FeaturedSection = () => {
   return (
     <section className="mt-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-medium sm:text-2xl">Featured Project</h2>
+        <h2 className="text-xl font-semibold sm:text-2xl">Featured Project</h2>
         <ResumeButton />
       </div>
       <OneHunterCard />

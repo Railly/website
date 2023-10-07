@@ -20,7 +20,7 @@ const OneHunterCard = () => {
               width={45}
               height={45}
             />
-            <h3 className="text-lg font-medium sm:text-xl ">
+            <h3 className="text-lg font-semibold sm:text-xl ">
               One Hunter Theme
             </h3>
           </div>

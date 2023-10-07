@@ -2,7 +2,7 @@
 import { useImmutableRequest } from "@/hooks/use-request";
 import { cn } from "@/lib/utils";
 import { ESocialMedia, ETech, Other } from "@/types/enums";
-import { StarIcon } from "lucide-react";
+import { BanIcon, BotIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Icon from "../icons";
@@ -76,14 +76,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               )
             }
           </div>
-          <span className="font-normal border border-dashed border-border flex justify-center rounded-sm text-gray-400 text-sm py-1">{description}</span>
-          <div className="flex flex-col h-[8rem] sm:h-[11.5rem] justify-between">
-            <div>
-              <span className="font-normal flex rounded-sm text-gray-400 text-sm mt-1">Description</span>
+          <span className="font-normal border border-dashed border-border flex justify-center my-2 rounded-sm text-gray-400 text-sm py-1">{description}</span>
+          <div className="flex flex-col gap-2 h-[8rem] sm:h-[10rem] justify-between">
+            <div className="flex flex-col gap-1">
+              <span className="font-normal flex rounded-sm text-gray-400 text-sm">Description</span>
               <p className="text-normal self-start w-full">{summary}</p>
             </div>
-            <div className="flex flex-col gap-2">
-              <span className="font-normal flex rounded-sm text-gray-400 text-sm mt-1">Stack</span>
+            <div className="flex flex-col gap-1">
+              <span className="font-normal flex rounded-sm text-gray-400 text-sm">Stack</span>
               <div className="flex flex-wrap gap-2">
                 {
                   stack?.map((tech: string) => (
@@ -96,12 +96,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </header>
         <div className="flex flex-col justify-between items-center w-full gap-10 mt-5">
           <div className="flex sm:flex-col w-full gap-6 sm:gap-2">
-            {linkDemo && (
+            {linkDemo ? (
               <Icon
                 href={linkDemo}
                 name={Other.Play}>
                 Demo
               </Icon>
+            ) : (
+              <span className="border-dashed border border-border rounded-sm flex justify-center items-center gap-2 h-[40px]">
+                <BanIcon className="stroke-gray-400" />
+                <span className="font-semibold text-gray-400 text-[14px]">
+                  No Demo
+                </span>
+              </span>
             )}
             {linkRepository && (
               <Icon
