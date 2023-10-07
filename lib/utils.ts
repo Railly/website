@@ -22,5 +22,5 @@ export function absoluteUrl(path: string) {
     );
   }
   const protocol = vercelUrl.includes("localhost") ? "http://" : "https://";
-  return `${protocol}${vercelUrl}${path}}`;
+  return `${protocol}${vercelUrl}${path}`;
 }
