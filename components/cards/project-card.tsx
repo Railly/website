@@ -1,11 +1,10 @@
-"use client";
-import { useImmutableRequest } from "@/hooks/use-request";
 import { cn } from "@/lib/utils";
 import { ESocialMedia, ETech, Other } from "@/types/enums";
-import { BanIcon, BotIcon, StarIcon } from "lucide-react";
+import { BanIcon } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Icon from "../icons";
+import { RepoStars } from "../misc/repo-stars";
 import NoisyCard from "./noisy-card";
 
 type ProjectCardProps = {
@@ -32,10 +31,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   stack,
   className,
 }) => {
-  const { data: repo } = useImmutableRequest<{
-    success?: boolean;
-    stars?: string;
-  }>(`/api/stars/${repoName}`)
 
   return (
     <NoisyCard className={cn(className, "overflow-hidden")}>
@@ -56,7 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         }
       )} >
         <header className="flex flex-col justify-center sm:gap-2">
-          <div className="flex items-center justify-between">
+          <div className="relative flex items-center justify-between">
             <h1 className="flex font-semibold gap-2 items-center text-xl">
               <Image
                 src={logoUrl || "/images/unknown-logo.png"}
@@ -67,14 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               />
               {title}
             </h1>
-            {
-              repo?.stars && Number(repo?.stars) > 0 && (
-                <span className="flex py-1 items-center gap-1 px-2 transition-colors border-border border border-dashed rounded-sm">
-                  <StarIcon className="inline-block w-4 h-4 fill-amber-400 stroke-amber-400" />
-                  <span className="font-semibold text-[14px]">{repo?.stars || 0}</span>
-                </span>
-              )
-            }
+            <RepoStars repoName={repoName} />
           </div>
           <span className="font-normal border border-dashed border-border flex justify-center my-2 rounded-sm text-gray-400 text-sm py-1">{description}</span>
           <div className="flex flex-col gap-2 h-[8rem] sm:h-[10rem] justify-between">
