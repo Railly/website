@@ -102,7 +102,7 @@
   h2,
   h3 {
     @apply !font-inter;
-    /* @apply !text-foreground-contrast; */
+    @apply !text-foreground-contrast;
   }
 
   b, strong {
