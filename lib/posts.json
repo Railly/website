@@ -3,6 +3,7 @@
     {
       "title": "OG Image Generation: From JSX to Image",
       "summary": "What are OG images, and how to generate them dynamically with @vercel/og.",
+      "color": "#F7DF1E",
       "publishedAt": "2022-10-16",
       "tags": [
         "Next.js",
@@ -13,6 +14,7 @@
     {
       "title": "How I Built a Popular VSCode Theme From Scratch",
       "summary": "A story of how I built One Hunter Theme from scratch and how I got 3,000+ downloads in 3 months.",
+      "color": "#DF09FE",
       "publishedAt": "2023-02-09",
       "tags": [
         "VSCode",
@@ -23,6 +25,7 @@
     {
       "title": "How To Setup Storybook with Vite + Example",
       "summary": "An overview of how I set up Storybook in a Vite project, all challenges I faced, and the solutions I found.",
+      "color": "#FF4785",
       "publishedAt": "2022-08-03",
       "tags": [
         "Storybook",
@@ -33,6 +36,7 @@
     {
       "title": "Spotigen: From Prompts to Instant Spotify Playlists",
       "summary": "A look into how I built Spotigen, a Chat-GPT plugin that generates Spotify playlists based on your prompts.",
+      "color": "#27C77F",
       "publishedAt": "2023-05-17",
       "tags": [
         "Chat-GPT",

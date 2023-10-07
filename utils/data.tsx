@@ -155,7 +155,7 @@ export const devTools: ITech[] = [
   { tech: "Turborepo", icon: () => <Icon name={ETech.Turborepo} raw />, expertise: "advanced" },
   { tech: "Docker", icon: () => <Icon name={ETech.Docker} raw />, expertise: "advanced" },
   { tech: "NPM", icon: () => <Icon name={ETech.Npm} raw />, expertise: "advanced" },
-  { tech: "PNMP", icon: () => <Icon name={ETech.Pnpm} raw />, expertise: "advanced" },
+  { tech: "PNPM", icon: () => <Icon name={ETech.Pnpm} raw />, expertise: "advanced" },
 ];
 
 export const productivityTools: ITech[] = [

@@ -3,6 +3,7 @@ export interface IBlog {
   title: string;
   publishedAt: string;
   summary: string;
+  color: string;
   // image: string;
   // disabled: boolean;
   views?: number;
