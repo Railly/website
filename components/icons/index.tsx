@@ -62,6 +62,9 @@ import ThunderClient from './ThunderClient';
 import WindowsTerminal from './WindowsTerminal';
 import Obsidian from './Obsidian';
 import Cron from './Cron';
+import MongoDB from "./MongoDB";
+import LinkedIn from "./Linkedin";
+import Twitter from "./Twitter";
 
 const renderLogo = (name: IconProps["name"]) => {
   switch (name) {
@@ -113,6 +116,8 @@ const renderLogo = (name: IconProps["name"]) => {
       return <PostgreSQL width={24} height={24} />;
     case ETech.Sequelize:
       return <Sequelize />;
+    case ETech.MongoDB:
+      return <MongoDB />;
     case ETech.Prisma:
       return <Prisma />;
     case ETech.Supabase:
@@ -187,6 +192,12 @@ const renderLogo = (name: IconProps["name"]) => {
       return <OpenAI width={24} height={24} />;
     case ETech.Cron:
       return <Cron />;
+    case ESocialMedia.Github:
+      return <Github width={24} height={24} />;
+    case ESocialMedia.LinkedIn:
+      return <LinkedIn />;
+    case ESocialMedia.Twitter:
+      return <Twitter />;
     default:
       return <div />;
   }

@@ -6,8 +6,8 @@ const AboutCard = () => {
   return (
     <NoisyCard className="grid w-full gap-4 grid-cols-1 md:grid-cols-[2.5fr,1fr] items-center place-items-center">
       <div className="flex flex-col gap-1">
-        <span className="text-2xl font-semibold animated-gray-gradient text-center md:text-left">
-          Railly Hugo
+        <span className="text-2xl font-semibold text-center md:text-left">
+          Who am I?
         </span>
         <p className="text-normal text-center md:text-left">
           <span className="font-semibold animated-yellow-gradient">

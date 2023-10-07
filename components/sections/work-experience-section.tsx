@@ -28,11 +28,11 @@ const WorkExperience: React.FC<IProps> = ({
         className={cn(
           "absolute flex items-center justify-center w-6 h-6 ml-3 rounded-full -left-6 ring-8",
           {
-            "bg-hunter-green-100 dark:bg-hunter-green-900 ring-hunter-green-900/30":
+            "bg-hunter-green-100 dark:bg-hunter-green-900 ring-hunter-green-200/80 dark:ring-hunter-green-900/30":
               isLatest,
           },
           {
-            "bg-hunter-blue-100 dark:bg-hunter-blue-900 ring-hunter-blue-900/30":
+            "bg-hunter-blue-100 dark:bg-hunter-blue-900 ring-hunter-blue-200/80 dark:ring-hunter-blue-900/30":
               !isLatest,
           }
         )}

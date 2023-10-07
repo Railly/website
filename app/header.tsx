@@ -9,6 +9,7 @@ import { Dialog, DialogClose, DialogContent, DialogTrigger } from "@/components/
 import { MenuIcon, MoonIcon, SunIcon } from "lucide-react";
 import { GlowButton } from "@/components/buttons/glow-button";
 import HeaderLink from "@/components/links/header-link";
+import RHLogo from "@/components/icons/RHLogo";
 
 const Header = () => {
   const segment = useSelectedLayoutSegment();
@@ -36,7 +37,7 @@ const Header = () => {
               aria-hidden="true"
               className="relative top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-muted-foreground to-transparent"
             />
-            <div className="flex justify-between overflow-hidden p-2 relative z-2 w-full min-w-0 rounded-xl">
+            <div className="flex justify-between items-center overflow-hidden p-2 relative z-2 w-full min-w-0 rounded-xl">
               <div className="hidden sm:flex text-muted-foreground">
                 {MENU_ITEMS.map((item, index) => (
                   <GlowButton
@@ -49,6 +50,13 @@ const Header = () => {
                   </GlowButton>
                 ))}
               </div>
+              <RHLogo
+                className="flex sm:hidden cursor-pointer"
+                onClick={
+                  () => router.push("/")
+                }
+                size={36}
+              />
               {isMounted && (
                 <>
                   {theme === "light" ? (
@@ -64,6 +72,7 @@ const Header = () => {
                   )}
                 </>
               )}
+
 
               <Dialog>
                 <DialogTrigger

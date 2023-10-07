@@ -17,6 +17,12 @@ const NoisyCard = ({
         </filter>
         <rect width="100%" height="100%" filter="url(#noise)">
         </rect>
+        <defs>
+          <linearGradient id="myGradient" x1="128" y1="5.21659" x2="128" y2="476.551" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C5C5C5" />
+            <stop offset="1" stop-color="#383839" />
+          </linearGradient>
+        </defs>
       </svg>
       {children}
     </div>

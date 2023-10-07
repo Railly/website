@@ -1,6 +1,5 @@
-import StackSection from "@/components/sections/stack-section";
 import TechSection from "@/components/sections/tech-section";
-import { ESectionTypes } from "@/types/enums";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   languages,
   frontendDevelopment,
@@ -10,28 +9,80 @@ import {
   cloudAndDevOps,
   devTools,
   productivityTools,
-  learningInProgress,
-  learningSomeday,
-  myCurrentSkills,
+  getTechsByExpertise,
+  ITech,
 } from "@/utils/data";
 
-export default async function Stack() {
+const techSections = {
+  "programming-languages": {
+    title: "Programming Languages",
+    data: languages,
+  },
+  "frontend-development": {
+    title: "Frontend",
+    data: frontendDevelopment,
+  },
+  "backend-development": {
+    title: "Backend",
+    data: backendDevelopment,
+  },
+  "databases-orm": {
+    title: "Databases & ORM",
+    data: databasesAndOrm,
+  },
+  "testing-qa": {
+    title: "Testing & QA",
+    data: testingAndQA,
+  },
+  "cloud-devops": {
+    title: "Cloud & DevOps",
+    data: cloudAndDevOps,
+  },
+  "dev-tools": {
+    title: "Dev Tools",
+    data: devTools,
+  },
+  "productivity-tools": {
+    title: "Productivity Tools",
+    data: productivityTools,
+  },
+  "expert": {
+    title: "Expert",
+    data: getTechsByExpertise("expert"),
+  },
+  "advanced": {
+    title: "Advanced",
+    data: getTechsByExpertise("advanced"),
+  },
+  "intermediate": {
+    title: "Intermediate",
+    data: getTechsByExpertise("intermediate"),
+  },
+  "beginner": {
+    title: "Beginner",
+    data: getTechsByExpertise("beginner"),
+  },
+  "aspiring": {
+    title: "Aspiring",
+    data: getTechsByExpertise("aspiring"),
+  },
+} as const;
+
+export default function Stack() {
   return (
-    <>
-      {/* <StackSection skills={myCurrentSkills} title={ESectionTypes.Stack} />
-      <StackSection
-        skills={learningInProgress}
-        title={ESectionTypes.Learning}
-      />
-      <StackSection skills={learningSomeday} title={ESectionTypes.Planning} /> */}
-      <TechSection title="Languages" techArray={languages} />
-      <TechSection title="Frontend Development" techArray={frontendDevelopment} />
-      <TechSection title="Backend Development" techArray={backendDevelopment} />
-      <TechSection title="Databases & ORM" techArray={databasesAndOrm} />
-      <TechSection title="Testing & QA" techArray={testingAndQA} />
-      <TechSection title="Cloud & DevOps" techArray={cloudAndDevOps} />
-      <TechSection title="Dev Tools" techArray={devTools} />
-      <TechSection title="Productivity Tools" techArray={productivityTools} />
-    </>
+    <div className="flex flex-col gap-4 min-h-max">
+      <Tabs className="flex flex-col gap-2" defaultValue="programming-languages">
+        <TabsList>
+          {Object.keys(techSections).map((key) => (
+            <TabsTrigger key={key} value={key}>{techSections[key as keyof typeof techSections].title}</TabsTrigger>
+          ))}
+        </TabsList>
+        {Object.entries(techSections).map(([key, value]) => (
+          <TabsContent key={key} value={key}>
+            <TechSection title={value.title} techArray={value.data} />
+          </TabsContent>
+        ))}
+      </Tabs>
+    </div>
   );
 }

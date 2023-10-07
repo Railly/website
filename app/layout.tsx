@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import { absoluteUrl, cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Providers from "./providers";
@@ -57,19 +57,13 @@ export const metadata: Metadata = {
   manifest: `${siteConfig.url}/favicon/site.webmanifest`,
 };
 
-const kanit = Inter({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "600", "500", "700"],
-  variable: "--font-kanit",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "600", "500", "700"],
-  variable: "--font-playfair-display",
-  display: "swap",
-});
 
 export default function RootLayout({
   children,
@@ -81,8 +75,7 @@ export default function RootLayout({
       <html
         lang="en"
         className={cn(
-          playfairDisplay.variable,
-          kanit.variable,
+          inter.variable,
           "selection:bg-foreground selection:text-background"
         )}
         suppressHydrationWarning

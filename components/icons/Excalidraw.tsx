@@ -8,7 +8,7 @@ const Excalidraw = ({
     preserveAspectRatio="xMidYMid meet">
 
     <g transform="translate(0.000000,269.000000) scale(0.100000,-0.100000)"
-      fill="#000000" stroke="none">
+      fill="currentColor" stroke="none">
       <path
         d="M393 2643 c-74 -59 -188 -159 -278 -245 l-71 -67 13 -88 c7 -48 20
 -142 28 -208 9 -66 18 -128 21 -137 4 -12 0 -18 -11 -18 -19 0 -20 5 32 -160

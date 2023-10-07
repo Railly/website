@@ -75,6 +75,8 @@ export const learningSomeday = [
 ];
 
 export const EXPERTISE_LEVELS = {
+  "template": -1,
+  "aspiring": 0,
   "beginner": 1,
   "intermediate": 2,
   "advanced": 3,
@@ -88,55 +90,55 @@ export interface ITech {
 }
 
 export const languages: ITech[] = [
-  { tech: "JavaScript", icon: () => <Icon name={ETech.JavaScript} raw />, expertise: "advanced" },
-  { tech: "TypeScript", icon: () => <Icon name={ETech.TypeScript} raw />, expertise: "advanced" },
-  { tech: "Python", icon: () => <Icon name={ETech.Python} raw />, expertise: "intermediate" },
+  { tech: "JavaScript", icon: () => <Icon name={ETech.JavaScript} raw />, expertise: "expert" },
+  { tech: "TypeScript", icon: () => <Icon name={ETech.TypeScript} raw />, expertise: "expert" },
   { tech: "C++", icon: () => <Icon name={ETech.CPlusPlus} raw />, expertise: "intermediate" },
+  { tech: "Python", icon: () => <Icon name={ETech.Python} raw />, expertise: "beginner" },
   { tech: "Golang", icon: () => <Icon name={ETech.Golang} raw />, expertise: "beginner" },
-  { tech: "Rust", icon: () => <Icon name={ETech.Rust} raw />, expertise: "beginner" },
+  { tech: "Rust", icon: () => <Icon name={ETech.Rust} raw />, expertise: "aspiring" },
 ];
 
 export const frontendDevelopment: ITech[] = [
-  { tech: "Next.js", icon: () => <Icon name={ETech.NextJS} raw />, expertise: "advanced" },
+  { tech: "Next.js", icon: () => <Icon name={ETech.NextJS} raw />, expertise: "expert" },
   { tech: "React", icon: () => <Icon name={ETech.ReactJS} raw />, expertise: "expert" },
   { tech: "Astro", icon: () => <Icon name={ETech.Astro} raw />, expertise: "beginner" },
-  { tech: "TailwindCSS", icon: () => <Icon name={ETech.TailwindCSS} raw />, expertise: "advanced" },
+  { tech: "TailwindCSS", icon: () => <Icon name={ETech.TailwindCSS} raw />, expertise: "expert" },
   { tech: "Redux", icon: () => <Icon name={ETech.Redux} raw />, expertise: "advanced" },
   { tech: "React Native", icon: () => <Icon name={ETech.ReactJS} raw />, expertise: "beginner" },
   { tech: "Framer Motion", icon: () => <Icon name={ETech.FramerMotion} raw />, expertise: "intermediate" },
   { tech: "Styled Components", icon: () => <Icon name={ETech.StyledComponents} raw />, expertise: "advanced" },
-  { tech: "Bootstrap", icon: () => <Icon name={ETech.Bootstrap} raw />, expertise: "advanced" },
-  { tech: "SaSS", icon: () => <Icon name={ETech.SaSS} raw />, expertise: "advanced" },
-  { tech: "StoryBook", icon: () => <Icon name={ETech.Storybook} raw />, expertise: "beginner" },
+  { tech: "Bootstrap", icon: () => <Icon name={ETech.Bootstrap} raw />, expertise: "intermediate" },
+  { tech: "SaSS", icon: () => <Icon name={ETech.SaSS} raw />, expertise: "beginner" },
+  { tech: "StoryBook", icon: () => <Icon name={ETech.Storybook} raw />, expertise: "advanced" },
 ];
 
 export const backendDevelopment: ITech[] = [
   { tech: "Node.js", icon: () => <Icon name={ETech.NodeJS} raw />, expertise: "advanced" },
   { tech: "Express.js", icon: () => <Icon name={ETech.ExpressJS} raw />, expertise: "advanced" },
-  { tech: "NestJS", icon: () => <Icon name={ETech.NestJS} raw />, expertise: "beginner" },
-  { tech: "Hono", icon: () => <Icon name={ETech.Hono} raw />, expertise: "beginner" },
+  { tech: "NestJS", icon: () => <Icon name={ETech.NestJS} raw />, expertise: "aspiring" },
   { tech: "FastAPI", icon: () => <Icon name={ETech.FastAPI} raw />, expertise: "beginner" },
+  { tech: "Hono", icon: () => <Icon name={ETech.Hono} raw />, expertise: "aspiring" },
 ];
 
 export const databasesAndOrm: ITech[] = [
-  { tech: "PostgreSQL", icon: () => <Icon name={ETech.PostgreSQL} raw />, expertise: "advanced" },
+  { tech: "PostgreSQL", icon: () => <Icon name={ETech.PostgreSQL} raw />, expertise: "intermediate" },
   { tech: "Sequelize", icon: () => <Icon name={ETech.Sequelize} raw />, expertise: "intermediate" },
   { tech: "Prisma", icon: () => <Icon name={ETech.Prisma} raw />, expertise: "beginner" },
-  { tech: "Supabase", icon: () => <Icon name={ETech.Supabase} raw />, expertise: "intermediate" },
+  { tech: "Supabase", icon: () => <Icon name={ETech.Supabase} raw />, expertise: "advanced" },
   { tech: "Firebase", icon: () => <Icon name={ETech.Firebase} raw />, expertise: "intermediate" },
-  { tech: "MongoDB", icon: () => <Icon name={ETech.MongoDB} raw />, expertise: "beginner" },
+  { tech: "MongoDB", icon: () => <Icon name={ETech.MongoDB} raw />, expertise: "aspiring" },
 ];
 
 export const testingAndQA: ITech[] = [
-  { tech: "Playwright", icon: () => <Icon name={ETech.Playwright} raw />, expertise: "intermediate" },
-  { tech: "Jest", icon: () => <Icon name={ETech.Jest} raw />, expertise: "advanced" },
-  { tech: "React Testing Library", icon: () => <Icon name={ETech.ReactTestingLibrary} raw />, expertise: "advanced" },
-  { tech: "Swagger", icon: () => <Icon name={ETech.Swagger} raw />, expertise: "beginner" },
+  { tech: "Playwright", icon: () => <Icon name={ETech.Playwright} raw />, expertise: "expert" },
+  { tech: "Jest", icon: () => <Icon name={ETech.Jest} raw />, expertise: "intermediate" },
+  { tech: "React Testing Library", icon: () => <Icon name={ETech.ReactTestingLibrary} raw />, expertise: "intermediate" },
+  { tech: "Swagger", icon: () => <Icon name={ETech.Swagger} raw />, expertise: "intermediate" },
 ];
 
 export const cloudAndDevOps: ITech[] = [
-  { tech: "AWS", icon: () => <Icon name={ETech.AWS} raw />, expertise: "beginner" },
-  { tech: "Azure", icon: () => <Icon name={ETech.Azure} raw />, expertise: "beginner" }
+  { tech: "AWS", icon: () => <Icon name={ETech.AWS} raw />, expertise: "aspiring" },
+  { tech: "Azure", icon: () => <Icon name={ETech.Azure} raw />, expertise: "aspiring" }
 ];
 
 export const devTools: ITech[] = [
@@ -172,6 +174,19 @@ export const productivityTools: ITech[] = [
   { tech: "ChatGPT", icon: () => <Icon name={ETech.ChatGPT} raw />, expertise: "advanced" },
   { tech: "Cron", icon: () => <Icon name={ETech.Cron} raw />, expertise: "advanced" },
 ];
+
+export const getTechsByExpertise = (expertise: keyof typeof EXPERTISE_LEVELS) => {
+  const techs = [
+    ...languages,
+    ...frontendDevelopment,
+    ...backendDevelopment,
+    ...databasesAndOrm,
+    ...testingAndQA,
+    ...cloudAndDevOps,
+  ];
+
+  return techs.filter(tech => tech.expertise === expertise);
+}
 
 
 
@@ -222,7 +237,7 @@ export const WORK_EXPERIENCE = [
       name: "CINFO UNMSM",
       location: "Lima, PE",
       industry: "Educational Technology - B2C",
-      image_url: "/images/cinfo-logo.png",
+      image_url: "/svg/cinfo-logo.svg",
     },
     workType: "Remote",
     startDate: "June 2021",
@@ -240,7 +255,7 @@ export const WORK_EXPERIENCE = [
       name: "Central Library ‘Pedro Zulen’",
       location: "Lima, PE",
       industry: "Educational Institution",
-      image_url: "/images/library-logo.png", // replace with the actual image URL
+      image_url: "/images/unmsm-logo.png",
     },
     workType: "Remote",
     startDate: "June 2021",

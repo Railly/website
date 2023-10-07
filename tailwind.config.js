@@ -21,8 +21,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      kanit: ["var(--font-kanit)", "sans-serif"],
-      playfair: ["var(--font-playfair)", "serif"],
+      inter: ["var(--font-inter)", "sans-serif"],
       mono: ["ui-monospace", "monospace"],
     },
     extend: {

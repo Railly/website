@@ -18,7 +18,7 @@ const getClassNames = (size: number) => {
 };
 
 const RHProfileImage: React.FC<IProps> = ({
-  src = "/images/profile-2023.jpg",
+  src = "/images/profile-2023.png",
   size = 150,
 }) => {
   return (
@@ -29,10 +29,11 @@ const RHProfileImage: React.FC<IProps> = ({
         className="rounded-full no-drag profile w-[5.75rem] h-[5.75rem] md:w-28 md:h-28"
         src={src}
         alt="A profile photo of Railly Hugo"
-        blurDataURL="/images/profile-2023.jpg"
+        blurDataURL="/images/profile-2023.png"
         placeholder="blur"
         width={size}
         height={size}
+        quality={100}
       />
     </div>
   );

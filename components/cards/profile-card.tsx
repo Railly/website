@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import RHProfileImage from "../images/rh-profile-image";
 import NoisyCard from "./noisy-card";
+import Image from "next/image";
 
 const ProfileCard = () => {
   return (
@@ -18,7 +19,7 @@ const ProfileCard = () => {
             <span className="animated-gray-gradient">Hunter</span>
           </h1>
           <p className="flex flex-col">
-            <span className="text-lg md:text-xl font-semibold text-center md:text-left tracking-wide">
+            <span className="text-lg md:text-xl font-bold text-center md:text-left tracking-wide">
               <span className="animated-blue-gradient">Software Engineer</span>
               <span className="text-gray-400">{" & "}</span>
               <span className="inline-flex gap-2">
@@ -51,7 +52,14 @@ const ProfileCard = () => {
         </NoisyCard>
       </div >
 
-      <NoisyCard className="flex md:flex-col items-center justify-center gap-5">
+      <NoisyCard className="relative flex md:flex-col items-center justify-center gap-5">
+        <Image
+          src="/svg/rh-logo-dark.svg"
+          alt="RH Logo"
+          width={36}
+          height={36}
+          className="hidden absolute top-2 right-3 sm:flex"
+        />
         <RHProfileImage size={120} />
         <div className="flex flex-col gap-3">
           <div className="flex justify-between gap-3">

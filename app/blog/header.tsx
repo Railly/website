@@ -28,7 +28,7 @@ export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
   return (
     <>
       <NoisyCard className="mb-6 gap-3 flex flex-col">
-        <h1 className="text-3xl font-semibold text-center md:text-4xl font-playfair tracking-[-1.92px] !leading-10">
+        <h1 className="text-3xl font-bold text-center md:text-4xl tracking-[-1.92px] !leading-10 !text-foreground-contrast">
           {blogPost.title}
         </h1>
         <p className="mt-3 text-base text-center text-foreground/80">
@@ -37,10 +37,11 @@ export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
         <div className="flex items-center gap-3 text-base">
           <Image
             className="rounded-full"
-            src="/images/profile-2023.jpg"
+            src="/images/profile-2023.png"
             alt="A profile photo of Railly Hugo"
-            blurDataURL="/images/profile.png"
+            blurDataURL="/images/profile-2023.png"
             placeholder="blur"
+            quality={100}
             width={55}
             height={55}
           />

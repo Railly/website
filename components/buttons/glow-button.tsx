@@ -37,7 +37,8 @@ export const GlowButton: React.FC<GlowButtonProps> = ({
             ? "rgba(255, 255, 255, 0.57) 1px 1px 12px"
             : "none"
           : "none",
-        color: isActive ? "hsl(var(--foreground))" : "inherit",
+        color: isActive ? "hsl(var(--foreground-contrast))" : "inherit",
+        fontWeight: isActive ? 600 : 500,
         backgroundColor: isActive
           ? theme === "light"
             ? "hsl(var(--background))"
