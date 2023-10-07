@@ -1,4 +1,4 @@
-const Github = () => {
+const Github = (props: any) => {
   return (
     <svg
       width="20"

@@ -8,11 +8,13 @@ export default async function ProjectLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const projects = await getProjects();
+  const projects = await getProjects({
+    limit: false,
+  });
 
   return (
     <article className="mb-10 text-gray-800 dark:text-gray-300">
-      <ProjectHeader projects={projects} />
+      <ProjectHeader projects={projects as any} />
       {children}
     </article>
   );

@@ -1,102 +1,194 @@
 {
   "projects": [
     {
-      "title": "Librería de Botones",
-      "summary": "Aplicación hecha con React de un botón polifuncional, que mediante props, podemos combinar comportamientos.",
+      "title": "Button Library",
+      "summary": "React app with a multi-functional button, behavior combinations via props, adaptable for various projects.",
       "publishedAt": "2021-07-16",
       "image": "button.png",
-      "tag": "Proyecto personal",
+      "tag": "Personal Project",
       "slug": "button-library",
-      "repoName": "button-components"
+      "repoName": "button-components",
+      "demo": "https://button-components-drab.vercel.app",
+      "description": "React Buttons",
+      "stack": [
+        "ReactJS"
+      ]
     },
     {
-      "title": "Sistema de Gestión Académica",
-      "summary": "Aplicación hecha con Next.js para el Centro de Informática de la Universidad Nacional Mayor de San Marcos",
+      "title": "Academic System",
+      "summary": "Next.js app for Computer Center at Universidad Nacional Mayor de San Marcos, managing academic resources.",
       "publishedAt": "2021-12-20",
       "image": "cinfo.png",
-      "tag": "Proyecto laboral",
+      "tag": "Work Project",
       "slug": "cinfo",
-      "repoName": "cinfo-proyecto-front"
+      "repoName": "cinfo-project-front",
+      "description": "Management System",
+      "stack": [
+        "NextJS",
+        "TailwindCSS",
+        "ReactJS",
+        "JavaScript"
+      ]
     },
     {
       "title": "Foody",
-      "summary": "Aplicación hecha con Next.js y Firebase para crear libros de cocina y recetas.",
+      "summary": "Next.js and Firebase app for creating, sharing cookbooks and recipes, manage your culinary creations.",
       "publishedAt": "2021-07-19",
       "image": "foody.png",
-      "tag": "Proyecto de universidad",
+      "tag": "University Project",
       "slug": "foody",
-      "repoName": "next-cooking-app"
+      "repoName": "next-cooking-app",
+      "demo": "https://next-cooking-app.vercel.app",
+      "description": "Cookbook App",
+      "stack": [
+        "NextJS",
+        "Firebase"
+      ]
     },
     {
       "title": "Indie Singles",
-      "summary": "Aplicación donde puedes compartir tu música como artista independiente.",
+      "summary": "Platform for sharing music as an independent artist, discover and connect with other musicians.",
       "publishedAt": "2021-12-20",
       "image": "indie-singles.png",
-      "tag": "Proyecto de universidad",
+      "tag": "University Project",
       "slug": "indie-singles",
-      "repoName": "indie-singles-front"
+      "repoName": "indie-singles-front",
+      "description": "Music Sharing",
+      "stack": [
+        "NextJS",
+        "TailwindCSS",
+        "ReactJS",
+        "JavaScript"
+      ]
     },
     {
       "title": "Kisaragi",
-      "summary": "Aplicación donde puedes compartir tus pensamientos y publicar tus productos coleccionables.",
+      "summary": "Platform to share thoughts, publish collectible products, and connect with like-minded individuals.",
       "publishedAt": "2021-07-19",
       "image": "kisaragi.png",
-      "tag": "Proyecto de universidad",
+      "tag": "University Project",
       "slug": "kisaragi",
-      "repoName": "kisaragi-front"
+      "repoName": "kisaragi-front",
+      "description": "Social Media",
+      "stack": [
+        "NextJS",
+        "TailwindCSS"
+      ]
     },
     {
-      "title": "Mi primer portafolio",
-      "summary": "Aplicación hecha con create-react-app, donde comenzó mi presencia digital.",
+      "title": "My First Portfolio",
+      "summary": "Create-react-app for showcasing digital presence, the starting point of my professional online journey.",
       "publishedAt": "2021-07-16T17:40:00",
       "image": "portfolio.png",
-      "tag": "Proyecto personal",
+      "tag": "Personal Project",
       "slug": "first-portfolio",
-      "repoName": "portfolio-2021"
+      "repoName": "portfolio-2021",
+      "demo": "https://portfolio-rh-2021.vercel.app",
+      "description": "First Portfolio",
+      "stack": [
+        "ReactJS",
+        "JavaScript"
+      ]
     },
     {
       "title": "Spotigen",
-      "summary": "A ChatGPT Plugin that allows you to generate Spotify playlists 🎵 based on your prompts ✨.",
+      "summary": "ChatGPT Plugin allowing Spotify playlist generation based on your prompts, designed for easy use.",
       "publishedAt": "2023-05-17",
       "image": "spotigen.png",
-      "tag": "Proyecto personal",
+      "tag": "Personal Project",
       "slug": "spotigen",
       "repoName": "spotigen-chat-gpt-plugin",
-      "isFeatured": true,
-      "logoUrl": "/images/spotigen-logo.png"
+      "logoUrl": "/images/spotigen-logo.png",
+      "demo": "https://spotigen.vercel.app/",
+      "description": "Playlist Gen",
+      "stack": [
+        "OpenAI",
+        "Python",
+        "FastAPI"
+      ]
     },
     {
       "title": "One Hunter Theme",
       "summary": "A stylish theme inspired by Vercel Theme ▲ and One Dark Pro 🎨.",
       "publishedAt": "2022-12-16",
       "image": "material.png",
-      "tag": "Proyecto personal",
+      "tag": "Personal Project",
       "slug": "one-hunter-theme",
       "repoName": "one-hunter-vscode",
       "isFeatured": true,
-      "logoUrl": "/images/one-hunter-logo.png"
+      "logoUrl": "/images/oht.png",
+      "demo": "https://marketplace.visualstudio.com/items?itemName=RaillyHugo.one-hunter",
+      "description": "VSCode Theme",
+      "stack": [
+        "VSCode",
+        "TypeScript"
+      ]
     },
     {
       "title": "SVG Hunter",
-      "summary": "Hunt SVGs without leaving your code editor ✨",
+      "summary": "Hunt SVGs without leaving your code editor, integrated search and edit functionalities.",
       "publishedAt": "2023-02-16",
       "image": "svg-hunter.png",
-      "tag": "Proyecto personal",
+      "tag": "Personal Project",
       "slug": "svg-hunter-vscode",
       "repoName": "svg-hunter-vscode",
-      "isFeatured": true,
-      "logoUrl": "/images/svg-hunter-logo.png"
+      "logoUrl": "/images/svg-hunter-logo.png",
+      "demo": "https://marketplace.visualstudio.com/items?itemName=RaillyHugo.svg-hunter",
+      "description": "SVG Editor",
+      "stack": [
+        "VSCode",
+        "TypeScript"
+      ]
     },
     {
-      "title": "Personal Website 2023",
-      "summary": "My personal website migrated to Next.js 13.",
+      "title": "Website 2023",
+      "summary": "Personal website migrated to Next.js 13 showcasing professional and personal projects, blog included.",
       "publishedAt": "2023-05-10",
       "image": "portfolio-2023.png",
-      "tag": "Proyecto personal",
+      "tag": "Personal Project",
       "slug": "website",
       "repoName": "website",
-      "isFeatured": true,
-      "logoUrl": "/images/rh-logo.png"
+      "logoUrl": "/images/rh-logo.png",
+      "demo": "https://www.raillyhugo.com",
+      "description": "Personal Site",
+      "stack": [
+        "NextJS",
+        "TailwindCSS",
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Memora Date",
+      "summary": "Simple reminder app offering one-time and recurring alerts, contact importing. Email notifications included.",
+      "publishedAt": "2023-08-31",
+      "tag": "Personal Project",
+      "slug": "memora-date",
+      "logoUrl": "/images/memora.png",
+      "repoName": "memora-date",
+      "demo": "https://memora-date.vercel.app",
+      "description": "Reminder App",
+      "stack": [
+        "NextJS",
+        "TailwindCSS",
+        "TypeScript",
+        "Supabase"
+      ]
+    },
+    {
+      "title": "Shadcn Customizer",
+      "summary": "Customize every CSS variable from your shadcn/ui theme, copy the CSS file and paste it into your project.",
+      "publishedAt": "2023-08-07",
+      "tag": "Personal Project",
+      "slug": "shadcn-ui-customizer",
+      "logoUrl": "/images/shadcn-customizer-logo.png",
+      "repoName": "shadcn-ui-customizer",
+      "demo": "https://shadcn-ui-customizer.vercel.app",
+      "description": "Theme Customizer",
+      "stack": [
+        "NextJS",
+        "TailwindCSS",
+        "TypeScript"
+      ]
     }
   ]
 }

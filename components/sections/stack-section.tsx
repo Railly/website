@@ -1,5 +1,4 @@
 import { ESectionTypes } from "@/types/enums";
-import FramerCard from "../cards/framer-card";
 
 export type StackSectionProps = {
   title: ESectionTypes;
@@ -11,11 +10,9 @@ export type StackSectionProps = {
 
 const StackSection = ({ title, skills }: StackSectionProps) => {
   return (
-    <section className="mt-8">
-      <div className="flex items-center mb-4">
-        <h1 className="text-xl font-semibold sm:text-2xl">{title}</h1>
-      </div>
-      <ul className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+    <section className="mt-10">
+      <h1 className="mb-6 text-2xl font-bold sm:text-3xl">{title}</h1>
+      <ul className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {skills.map((skill) => (
           <li key={skill.tech}>
             <TechCard tech={skill.tech} icon={skill.icon} />
@@ -33,17 +30,12 @@ interface TechCardProps {
 
 const TechCard = ({ tech, icon: Icon }: TechCardProps) => {
   return (
-    <FramerCard className="p-1">
-      <div className="flex items-center gap-2 px-2 py-1 font-medium transition rounded-lg">
+    <div className="p-2 transition transform rounded-lg hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800">
+      <div className="flex items-center gap-2 font-medium">
         <Icon className="w-8 h-8" />
-        <span
-          title={tech}
-          className="max-w-full overflow-hidden select-none whitespace-nowrap text-ellipsis"
-        >
-          {tech}
-        </span>
+        <span className="max-w-full overflow-hidden select-none whitespace-nowrap text-ellipsis">{tech}</span>
       </div>
-    </FramerCard>
+    </div>
   );
 };
 

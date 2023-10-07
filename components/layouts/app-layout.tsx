@@ -1,17 +1,15 @@
-import { ReactNode } from "react";
-import Header from "@/app/header";
 import Footer from "@/app/footer";
+import Header from "@/app/header";
+import { ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
-      <div className="w-full px-4 md:p-0 md:max-w-prose">
-        <main className="pt-[calc(var(--totalToolbarHeight)_+_var(--verticalContentPadding)_+_0.25rem)] pb-[var(--verticalContentPadding)]">
-          {children}
-        </main>
-        <Footer />
-      </div>
+      <main className="relative col-[2] min-w-0 pt-[calc(var(--totalToolbarHeight)_+_var(--verticalContentPadding)_-_0.5rem)] pb-[var(--verticalContentPadding)] md:max-w-prose mx-auto">
+        {children}
+      </main>
+      <Footer />
     </>
   );
 };

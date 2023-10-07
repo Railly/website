@@ -18,10 +18,9 @@ const FramerCard = ({
     <Spotlight color={color}>
       <motion.div
         className={cn(
-          "flex flex-col-reverse items-center p-4 border rounded-lg sm:flex-row h-full",
+          "flex flex-col-reverse items-center p-4 border rounded-lg sm:flex-row",
           className
         )}
-        whileTap={{ scale: 0.97 }}
       >
         {children}
       </motion.div>

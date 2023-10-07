@@ -8,8 +8,7 @@ import { useTheme } from "@wits/next-themes";
 import { IColor } from "@/types/interfaces";
 
 const colorClassNames: IColor = {
-  default:
-    "bg-[#efefefcc] dark:bg-[#222222aa] border-black/20 dark:border-white/20",
+  default: "bg-foreground/5 border-black/20 dark:border-white/20",
   blue: "bg-hunter-blue-100/30 border-hunter-blue-700 dark:border-hunter-blue-500/40 dark:bg-hunter-blue-900/30",
   rose: "bg-rose-100/30 border-hunter-rose-700 dark:border-hunter-rose-500/40 dark:bga-hunter-rose-900/30",
   teal: "bg-hunter-green-100/30 border-hunter-green-500/40 dark:bg-hunter-green-900/30",
@@ -35,7 +34,7 @@ const Spotlight = ({
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative h-full"
+      className="relative"
     >
       <AnimatePresence>
         {isHovered && (
@@ -43,17 +42,13 @@ const Spotlight = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            layoutId="spotlight"
             className="absolute inset-0 z-0 overflow-hidden bg-fixed"
-            style={{
-              background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, ${spotlightColor} -5%,transparent 10%,transparent) fixed`,
-            }}
           />
         )}
       </AnimatePresence>
       <div
         className={cn(
-          "relative z-10 h-full border",
+          "relative z-10 rounded-lg",
           colorClassNames[color],
           className
         )}

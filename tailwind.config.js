@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -20,7 +21,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      outfit: ["var(--font-outfit)", "sans-serif"],
+      inter: ["var(--font-inter)", "sans-serif"],
       mono: ["ui-monospace", "monospace"],
     },
     extend: {
@@ -30,6 +31,7 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "foreground-contrast": "hsl(var(--foreground-contrast))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

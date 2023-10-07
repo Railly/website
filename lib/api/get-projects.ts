@@ -4,13 +4,10 @@ import { getSortByPublishAt, getViewCount } from "../../utils/helpers";
 
 interface IGetProjects {
   sort?: "asc" | "desc" | null;
-  limit?: number | false | null;
+  limit: number | false | null;
 }
 
-export const getProjects = async ({
-  sort = "desc",
-  limit = 3,
-}: IGetProjects = {}) => {
+export const getProjects = async (props: IGetProjects) => {
   try {
     const views = await kv.hgetall<{
       [key: string]: number;
@@ -18,11 +15,11 @@ export const getProjects = async ({
 
     if (!views) return projectsData.projects;
 
-    const sorter = getSortByPublishAt(sort);
+    const sorter = getSortByPublishAt(props.sort ?? "desc");
     const sortedProjects = projectsData.projects.sort(sorter);
 
-    const limitedProjects = limit
-      ? sortedProjects.slice(0, limit)
+    const limitedProjects = props.limit
+      ? sortedProjects.slice(0, props.limit)
       : sortedProjects;
 
     const projects = await Promise.all(

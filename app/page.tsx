@@ -5,16 +5,20 @@ import MainSection from "@/components/sections/main-section";
 import { getBlogPosts } from "@/lib/api/get-blog-posts";
 import { getProjects } from "@/lib/api/get-projects";
 
+const LIMIT = 3;
+
 export default async function Home() {
   const blogPosts = await getBlogPosts();
-  const projects = await getProjects();
+  const projects = await getProjects({
+    limit: LIMIT,
+  });
 
   return (
     <>
       <MainSection />
       <FeaturedSection />
       <BlogSection blogPosts={blogPosts} />
-      <ProjectSection projects={projects} />
+      <ProjectSection projects={projects} limit={LIMIT} />
     </>
   );
 }

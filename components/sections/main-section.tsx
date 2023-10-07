@@ -1,5 +1,8 @@
 // import DisclaimerCard from "../cards/disclaimer-card";
+"use client";
+import { motion } from "framer-motion";
 import ProfileCard from "../cards/profile-card";
+import Image from "next/image";
 
 const MainSection = () => {
   return (

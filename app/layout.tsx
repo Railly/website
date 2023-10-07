@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { Metadata } from "next";
-import { Outfit } from "next/font/google";
-import { absoluteUrl } from "@/lib/utils";
+import { Inter } from "next/font/google";
+import { absoluteUrl, cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Providers from "./providers";
 import { TailwindIndicator } from "@/components/misc/tailwind-indicator";
@@ -57,12 +57,13 @@ export const metadata: Metadata = {
   manifest: `${siteConfig.url}/favicon/site.webmanifest`,
 };
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600", "500", "700", "900"],
-  variable: "--font-outfit",
+  weight: ["400", "600", "500", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
+
 
 export default function RootLayout({
   children,
@@ -71,8 +72,15 @@ export default function RootLayout({
 }) {
   return (
     <ServerThemeProvider attribute="class">
-      <html lang="en" className={outfit.variable} suppressHydrationWarning>
-        <body className="flex flex-col items-center min-h-screen leading-7 dark:bg-[#1c1c1c] bg-hunter-black-50 text-zinc-800 dark:text-zinc-100 selection:bg-black/80 selection:text-white dark:selection:bg-white/90 dark:selection:text-black transition-all">
+      <html
+        lang="en"
+        className={cn(
+          inter.variable,
+          "selection:bg-foreground selection:text-background"
+        )}
+        suppressHydrationWarning
+      >
+        <body className={cn("px-4 py-2")}>
           <AppLayout>
             <Providers>{children}</Providers>
             <TailwindIndicator />
