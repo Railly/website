@@ -1,19 +1,21 @@
+export const title = "OG Image Generation: From JSX to Image";
+export const description = "What are OG images, and how to generate them dynamically with @vercel/og.";
+
 export const metadata = {
-  title: "OG Image Generation: From JSX to Image",
-  description: "What are OG images, and how to generate them dynamically with @vercel/og.",
+  title,
+  description,
   openGraph: {
-    title: "OG Image Generation: From JSX to Image",
-    description: "What are OG images, and how to generate them dynamically with @vercel/og.",
-    images: [
-      {
-        url: "https://raillyhugo.com/api/og?title=OG%20Image%20Generation%3A%20From%20JSX%20to%20Image&date=2022-10-16",
-        width: 2233,
-        height: 1112,
-        alt: "OG Image Example",
-      },
-    ],
+    title,
+    description,
+    images: [{
+      url: "https://raillyhugo.com/api/og?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&date=" + encodeURIComponent("2022-10-16") + "&color=" + encodeURIComponent("#F7DF1E"),
+      width: 1200,
+      height: 600,
+      alt: "OG Image Generation"
+    }]
   }
 }
+
 
 # Open Graph Image
 

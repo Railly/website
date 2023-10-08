@@ -7,12 +7,12 @@ const BASE_URL =
 
 export const siteConfig: SiteConfig = {
   name: "Railly Hugo",
-  description:
-    "Hi, welcome to my digital space. Here I share my side projects, tutorials & what I learn over time. I am looking to grow my career in tech 🚀",
+  description: "Software Engineer and UI Developer from Lima. Dive into my projects, tutorials, and digital explorations. Always learning, always crafting.",
   url: BASE_URL,
   ogImage: `${BASE_URL}/images/og.png`,
   links: {
     twitter: "https://twitter.com/raillyhugo",
     github: "https://github.com/Railly/website",
+    linkedin: "https://linkedin.com/in/railly-hugo",
   },
 };

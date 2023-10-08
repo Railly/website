@@ -18,15 +18,17 @@ export const getBlogPosts = async ({
 
     if (!views) return postsData.posts;
 
-    const limitedPosts = limit
-      ? postsData.posts.slice(0, limit)
-      : postsData.posts;
-
     const sorter = getSortByPublishAt(sort);
-    const sortedPosts = limitedPosts.sort(sorter);
+
+    const sortedPosts = postsData.posts.sort(sorter);
+
+    const limitedPosts = limit
+      ? sortedPosts.slice(0, limit)
+      : sortedPosts;
+
 
     const posts = await Promise.all(
-      sortedPosts.map(async (post) => {
+      limitedPosts.map(async (post) => {
         const viewsCount = await getViewCount(views, post.slug);
         return {
           ...post,

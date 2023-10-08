@@ -41,10 +41,9 @@ const getLengthToFill = (techArray: Array<ITech>) => {
   return 4 - remainder;
 };
 
-
 const TechSection: React.FC<ITechSectionProps> = ({ title, techArray }) => (
-  <section className="flex flex-col gap-2">
-    <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+  <section className="flex flex-col gap-2 mt-2">
+    <h2 className="text-2xl font-semibold mb-2">{title}</h2>
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
       {techArray.sort((a, b) => EXPERTISE_LEVELS[b.expertise] - EXPERTISE_LEVELS[a.expertise]).map(tech => (
         <NoisyCard

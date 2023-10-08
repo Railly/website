@@ -1,23 +1,21 @@
-
+export const title = "Spotigen: From Prompts to Instant Spotify Playlists";
+export const description = "A look into how I built Spotigen, a Chat-GPT plugin that generates Spotify playlists based on your prompts.";
 
 export const metadata = {
- title: "Spotigen: From Prompts to Instant Spotify Playlists",
-  description: "A look into how I built Spotigen, a Chat-GPT plugin that generates Spotify playlists based on your prompts.",
+  title,
+  description,
   openGraph: {
-    title: "Spotigen: From Prompts to Instant Spotify Playlists",
-    description: "A look into how I built Spotigen, a Chat-GPT plugin that generates Spotify playlists based on your prompts.",
-    images: [
-      {
-        url: `https://raillyhugo.com/api/og?title=${encodeURIComponent(
-          "Spotigen: From Prompts to Instant Spotify Playlists"
-        )}&date=2023-02-09`,
-        width: 1200,
-        height: 600,
-        alt: "Spotigen: From Prompts to Instant Spotify Playlists",
-      },
-    ],
+    title,
+    description,
+    images: [{
+      url: "https://raillyhugo.com/api/og?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&date=" + encodeURIComponent("2023-05-17") + "&color=" + encodeURIComponent("#27C77F"),
+      width: 1200,
+      height: 600,
+      alt: "Spotigen Chat-GPT Plugin"
+    }]
   }
 }
+
 
 # Introducing Spotigen
 Spotigen is a ChatGPT plugin that streamlines the process of creating Spotify playlists based on your prompts.

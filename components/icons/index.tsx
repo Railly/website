@@ -65,6 +65,8 @@ import Cron from './Cron';
 import MongoDB from "./MongoDB";
 import LinkedIn from "./Linkedin";
 import Twitter from "./Twitter";
+import PlayIcon from "./Play";
+import Schedule from "./Schedule";
 
 const renderLogo = (name: IconProps["name"]) => {
   switch (name) {
@@ -198,6 +200,10 @@ const renderLogo = (name: IconProps["name"]) => {
       return <LinkedIn />;
     case ESocialMedia.Twitter:
       return <Twitter />;
+    case Other.Play:
+      return <PlayIcon />
+    case Other.Schedule:
+      return <Schedule />;
     default:
       return <div />;
   }

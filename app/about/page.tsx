@@ -1,24 +1,21 @@
-import { format } from "date-fns";
-import { Metadata } from "next";
 import ResumeButton from "@/components/buttons/resume-button";
 import AboutCard from "@/components/cards/about-card";
 import WorkExperienceCard from "@/components/cards/work-experience-card";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const date = format(new Date(), "MMMM dd, y");
-  return {
-    title: "About",
-    description:
-      "Frontend Developer and student of Software Engineering at Faculty of Systems Engineering and Informatics of San Marcos University in Lima, Peru. Planning to study a MS in Computer Science in the future.",
-    openGraph: {
-      siteName: "Railly Hugo - About",
-      images: [
-        {
-          url: `https://raillyhugo.com/api/og?title=Railly Hugo - About&date=${date}`,
-        },
-      ],
-    },
-  };
+export const metadata = {
+  title: "About",
+  description: "Master's student in Artificial Intelligence, seasoned UI Developer, and Software Engineer specialized in React, Next.js and TypeScript.",
+  openGraph: {
+    siteName: "Railly Hugo | About",
+    description: "Master's student in Artificial Intelligence, seasoned UI Developer, and Software Engineer specialized in React, Next.js and TypeScript.",
+    images: [
+      {
+        url: `https://raillyhugo.com/api/og?title=${encodeURIComponent(
+          "Railly Hugo | About"
+        )}&color=${encodeURIComponent("B8B8B8")}`,
+      },
+    ],
+  },
 }
 
 export default async function About() {

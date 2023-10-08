@@ -2,6 +2,21 @@ import TechSection from "@/components/sections/tech-section";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { techSections } from "@/utils/data";
 
+export const metadata = {
+  title: "Stack",
+  description: "A list of technologies I use to build the web.",
+  openGraph: {
+    siteName: "Railly Hugo | Stack",
+    description: "A list of technologies I use to build the web.",
+    images: [
+      {
+        url: `https://raillyhugo.com/api/og?title=${encodeURIComponent(
+          "Railly Hugo | Stack"
+        )}&color=${encodeURIComponent("B8B8B8")}`,
+      },
+    ],
+  },
+}
 
 export default function Stack() {
   return (

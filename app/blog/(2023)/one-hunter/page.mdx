@@ -1,17 +1,18 @@
+export const title = "How I Built a Popular VSCode Theme From Scratch";
+export const description = "A story of how I built One Hunter Theme from scratch and how I got 3,000+ downloads in 3 months.";
+
 export const metadata = {
-  title: "How I Built a Popular VSCode Theme From Scratch",
-  description: "A story of how I built One Hunter Theme from scratch and how I got 3,000+ downloads in 3 months.",
+  title,
+  description,
   openGraph: {
-    title: "How I Built a Popular VSCode Theme From Scratch",
-    description: "A story of how I built One Hunter Theme from scratch and how I got 3,000+ downloads in 3 months.",
-    images: [
-      {
-        url: "https://raillyhugo.com/api/og?title=How%20I%20Built%20a%20Popular%20VSCode%20Theme%20From%20Scratch&description=A%20story%20of%20how%20I%20built%20One%20Hunter%20Theme%20from%20scratch%20and%20how%20I%20got%203%2C000%2B%20downloads%20in%203%20months.&width=1200&height=630&alt=One%20Hunter%20Theme&date=2023-02-09",
-        width: 1200,
-        height: 600,
-        alt: "One Hunter Theme",
-      },
-    ],
+    title,
+    description,
+    images: [{
+      url: "https://raillyhugo.com/api/og?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&date=" + encodeURIComponent("Feb 9, 2023") + "&color=" + encodeURIComponent("DF09FE"),
+      width: 1200,
+      height: 600,
+      alt: "One Hunter Theme"
+    }]
   }
 }
 

@@ -6,7 +6,6 @@ import { useEffect, useRef } from "react";
 import useSWR from "swr";
 import { IBlog } from "@/types/interfaces";
 import NoisyCard from "@/components/cards/noisy-card";
-import { cn } from "@/lib/utils";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -25,10 +24,6 @@ export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
   );
 
   if (initialPost == null) return <></>;
-
-  const colorClassName = blogPost.color != null ? `bg-[${blogPost.color}]` : "";
-
-  console.log(colorClassName);
 
   return (
     <NoisyCard

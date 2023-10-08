@@ -9,6 +9,9 @@ const LIMIT = 3;
 
 export default async function Home() {
   const blogPosts = await getBlogPosts();
+  console.log({
+    blogPosts
+  })
   const projects = await getProjects({
     limit: LIMIT,
   });

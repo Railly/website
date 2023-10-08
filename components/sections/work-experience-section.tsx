@@ -12,6 +12,7 @@ interface IProps {
   endDate: string;
   responsibilities: string[];
   isLatest?: boolean;
+  withoutSeparator?: boolean;
 }
 
 const WorkExperience: React.FC<IProps> = ({
@@ -21,12 +22,14 @@ const WorkExperience: React.FC<IProps> = ({
   endDate,
   responsibilities,
   isLatest,
+  withoutSeparator,
 }) => {
   return (
-    <div className="">
+    <li className="relative mb-10 ml-6">
+      <div className="separator absolute h-full w-px -left-6 top-8 bg-border" />
       <span
         className={cn(
-          "absolute flex items-center justify-center w-6 h-6 ml-3 rounded-full -left-6 ring-8",
+          "absolute flex items-center justify-center w-6 h-6 ml-3 rounded-full -left-12 ring-8",
           {
             "bg-hunter-green-100 dark:bg-hunter-green-900 ring-hunter-green-200/80 dark:ring-hunter-green-900/30":
               isLatest,
@@ -79,7 +82,7 @@ const WorkExperience: React.FC<IProps> = ({
           </li>
         ))}
       </ul>
-    </div>
+    </li>
   );
 };
 

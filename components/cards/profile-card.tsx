@@ -58,7 +58,7 @@ const ProfileCard = () => {
           alt="RH Logo"
           width={36}
           height={36}
-          className="hidden absolute top-2 right-3 sm:flex"
+          className="no-drag hidden absolute top-2 right-3 sm:flex"
         />
         <RHProfileImage size={120} />
         <div className="flex flex-col gap-3">

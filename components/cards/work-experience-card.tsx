@@ -6,18 +6,17 @@ import NoisyCard from "./noisy-card";
 const WorkExperienceCard = () => {
   return (
     <NoisyCard className="">
-      <ol className="relative ml-3 border-l border-border">
+      <ol className="ml-3 [&>li:last-child>.separator]:!hidden">
         {WORK_EXPERIENCE.map((workExperience, index) => (
-          <li key={workExperience.id} className="mb-10 ml-6">
-            <WorkExperienceSection
-              position={workExperience.position}
-              company={workExperience.company}
-              startDate={workExperience.startDate}
-              endDate={workExperience.endDate}
-              responsibilities={workExperience.responsibilities}
-              isLatest={index === 0}
-            />
-          </li>
+          <WorkExperienceSection
+            key={workExperience.id}
+            position={workExperience.position}
+            company={workExperience.company}
+            startDate={workExperience.startDate}
+            endDate={workExperience.endDate}
+            responsibilities={workExperience.responsibilities}
+            isLatest={index === 0}
+          />
         ))}
       </ol>
     </NoisyCard>
