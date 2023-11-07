@@ -20,7 +20,6 @@ export async function GET(req: NextRequest) {
 
   const bold = await boldFont;
   const medium = await mediumFont;
-  console.log({ color })
 
   return new ImageResponse(
     (

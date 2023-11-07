@@ -43,6 +43,17 @@
         "Spotify"
       ],
       "slug": "spotigen-chat-gpt-plugin"
+    },
+    {
+      "title": "How To Setup Python + Jupyter Notebook + VS Code on Windows",
+      "summary": "A complete guide on how to setup Python, Jupyter Notebook, and VS Code on Windows.",
+      "color": "#F7DF1E",
+      "publishedAt": "2023-11-06T22:00:00.000-05:00",
+      "tags": [
+        "Python",
+        "Environment"
+      ],
+      "slug": "how-to-setup-python-environment"
     }
   ]
 }

@@ -143,7 +143,7 @@ export function Blockquote(
           <span>{getFlavorIcon(colorName)}</span>
         </div>
       )}
-      <div className="flex-grow text-[15px] leading-7">{childrenToEval}</div>
+      <div className="flex-grow [&>p]:!text-base :leading-7">{childrenToEval}</div>
     </blockquote>
   );
 }
