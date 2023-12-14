@@ -4,10 +4,10 @@ import WorkExperienceCard from "@/components/cards/work-experience-card";
 
 export const metadata = {
   title: "About",
-  description: "Master's student in Artificial Intelligence, seasoned UI Developer, and Software Engineer specialized in React, Next.js and TypeScript.",
+  description: "Master's student in Artificial Intelligence, experienced UI Developer, and Software Engineer specialized in React, Next.js and TypeScript.",
   openGraph: {
     siteName: "Railly Hugo | About",
-    description: "Master's student in Artificial Intelligence, seasoned UI Developer, and Software Engineer specialized in React, Next.js and TypeScript.",
+    description: "Master's student in Artificial Intelligence, experienced UI Developer, and Software Engineer specialized in React, Next.js and TypeScript.",
     images: [
       {
         url: `https://raillyhugo.com/api/og?title=${encodeURIComponent(

@@ -5,7 +5,7 @@ export function Image({ ...props }: { src: string; alt: string }) {
   return (
     <NoisyCard className="flex flex-col my-8 gap-2 p-2">
       <NextImage
-        className="rounded-lg border border-border"
+        className="rounded-lg border border-border m-0"
         blurDataURL={props.src}
         placeholder="blur"
         {...props}

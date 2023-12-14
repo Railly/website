@@ -131,7 +131,7 @@ export function Blockquote(
 
   return (
     <blockquote
-      className={`flex flex-col gap-2 p-4 my-10 shadow-md text-sm border border-l-8 rounded-md bg-zinc-100 dark:bg-zinc-800 ${colors}`}
+      className={`flex flex-col gap-2 p-4 my-10 shadow-md text-sm border border-l-8 rounded-md ${colors}`}
     >
       {hasFlavor && (
         <div

@@ -12,7 +12,7 @@ const BlogSection = ({
   isPage = false,
 }: React.PropsWithChildren<IBlogSectionProps>) => {
   return (
-    <section className="w-full mt-4 md:mt-6">
+    <section className="w-full mt-4 md:mt-6 not-prose">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-semibold sm:text-2xl">Blog</h2>
         {!isPage && <LinkWithArrow href="/blog">See all posts</LinkWithArrow>}

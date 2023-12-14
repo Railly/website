@@ -13,7 +13,7 @@ const AboutCard = () => {
           <span className="font-semibold animated-yellow-gradient">
             Master&apos;s student
           </span>{" "}
-          in <b>Artificial Intelligence</b>, seasoned <b>UI Developer</b>, and{" "}
+          in <b>Artificial Intelligence</b>, experienced <b>UI Developer</b>, and{" "}
           <b>Software Engineer</b> specialized in{" "}
           <span className="font-semibold animated-blue-gradient">
             React, Next.js and TypeScript

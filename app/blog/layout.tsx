@@ -11,7 +11,7 @@ export default async function BlogLayout({
   });
 
   return (
-    <article className="mb-10 text-gray-800 dark:text-gray-300">
+    <article className="mb-10 prose prose-neutral dark:prose-invert">
       <BlogHeader blogPosts={blogPosts} />
       {children}
     </article>

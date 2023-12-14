@@ -1,0 +1,258 @@
+export const title = "AI Series: Understanding Noise Reduction and Intensity Adjustment";
+export const description = "A guide to understanding noise reduction and contrast adjustment in image processing.";
+
+export const metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [{
+      url: "https://raillyhugo.com/api/og?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&date=" + encodeURIComponent("Nov 6, 2023") + "&color=" + encodeURIComponent("DF09FE"),
+      width: 1200,
+      height: 600,
+      alt: "One Hunter Theme"
+    }]
+  }
+}
+
+## What you will learn
+
+1. How to introduce **salt-and-pepper** noise into images.
+2. How to apply the **median filter** to eliminate noise + our own method.
+3. How to adjust the contrast of an image using the **histogram equalization** technique + our own method.
+4. How to **measure the performance** of our methods.
+
+
+## Exploring Salt-and-Pepper Noise
+
+### What is Salt-and-Pepper Noise?
+
+Salt-and-pepper noise is a specific type of noise commonly encountered in digital images.
+It's characterized by sudden disturbances in the image's brightness, resulting in **random black and white pixels**.
+This type of noise can significantly degrade the quality of an image, making it a primary target for noise reduction techniques in image processing.
+
+### Generating Salt-and-Pepper Noise
+
+This technique involves randomly altering certain pixels in an image to become either completely **white** (salt) or completely **black** (pepper). The process is based on probability, represented in the following scheme: 
+
+```mathematica
+0                     prob / 2                     1 - prob / 2                 1
+|-----------------------|-------------------------------|-----------------------|
+      Pepper (Black)                  Neutral                    Salt (White)
+
+```
+
+Given a random value:
+
+1. If it falls between  `0` and `prob / 2`, the pixel turns into pepper (black).
+2. Pixels that fall into the intermediate (neutral) range remain unchanged.
+3. If it falls between **`1 - prob / 2`** and **`1`**, the pixel turns into salt (white).
+
+This method allows us to simulate the effect of noise on images in a controlled manner, which is essential for the subsequent phases of our experiment.
+
+<Image src="/images/noise.jpg" width={1904} height={856} alt="Figure 1. Salt-and-pepper noise" />
+
+## Noise Reduction Techniques
+
+### The Median Filter Method
+
+The median filter is a well-established technique in image processing, renowned for its effectiveness in reducing salt-and-pepper noise.
+Unlike mean filters, which often blur an image, median filters preserve edges while removing noise, making them particularly useful in maintaining the structural integrity of an image.
+
+#### How Median Filters Work
+
+1. **Kernel Size Selection:** First, choose a kernel size (typically an odd number like 3x3, 5x5, etc.). The kernel size determines the area around each pixel to consider for filtering.
+2. **Pixel-by-Pixel Analysis:** The filter moves across the image, analyzing each pixel.
+3. **Neighborhood Examination:** For each pixel, it examines the intensity values of neighboring pixels within the kernel.
+4. **Median Calculation:** The median of these values is computed and replaces the original pixel value.
+
+#### OpenCV Implementation
+
+```python showLineNumbers title="median_filter_cv.py"
+import cv2 as cv
+
+def median_filter_cv(img, kernel_size):
+    return cv.medianBlur(img, kernel_size)
+```
+
+This function utilizes OpenCV's medianBlur method, offering a fast and efficient way to apply median filtering with a chosen kernel size.
+
+### Our Custom Noise Reduction Method
+
+In addition to the median filter, we have developed a custom noise reduction method called the Variable Intensity Filter.
+This method is tailored to identify pixels with a significant difference from their neighbors and adjust their intensity accordingly.
+
+#### Variable Intensity Filter: Implementation
+
+```python showLineNumbers title="median_filter_custom.py"
+import numpy as np
+
+def variable_intensity_filter(img, threshold=150, weight=0.1):
+    # Create a copy of the image to avoid modifying the original
+    filtered_img = np.copy(img)
+
+    # Iterate over each pixel in the image
+    for i in range(1, img.shape[0] - 1):
+        for j in range(1, img.shape[1] - 1):
+            for k in range(img.shape[2]):  # Iterate over each color channel (RGB)
+                # Calculate the average of neighboring pixels in the same channel
+                neighbors_avg = np.mean([
+                    img[i-1, j, k], img[i+1, j, k], img[i, j-1, k], img[i, j+1, k]
+                ])
+
+                # Calculate the difference between the current pixel and the neighbors' average
+                diff = abs(int(img[i, j, k]) - int(neighbors_avg))
+
+                # Adjust the pixel intensity if the difference exceeds the threshold
+                if diff > threshold:
+                    filtered_img[i, j, k] = int(img[i, j, k] * weight + neighbors_avg * (1 - weight))
+
+    return filtered_img
+```
+
+### Comparative Advantages
+
+Our custom method offers several advantages:
+
+- It targets only those pixels that significantly differ from their neighbors, preserving the image's overall integrity.
+- The adjustable threshold and weight parameters provide flexibility, allowing fine-tuning based on specific image characteristics.
+- This approach is particularly effective in images where noise is not uniformly distributed or is concentrated in specific areas.
+
+<Image src="/images/comparative-noise-2.png" width={1904} height={1200} alt="Figure 2. Comparative between original image, andd our custom method" />
+
+
+## Contrast Adjustment Techniques
+
+### Histogram Equalization Method
+
+Histogram equalization is a widely used technique in image processing for improving contrast.
+It works by effectively spreading out the most frequent intensity values in an image, resulting in a more uniform distribution.
+By redistributing the brightness, histogram equalization can significantly enhance the global contrast, making the features more distinguishable.
+
+#### OpenCV Implementation
+
+```python showLineNumbers title="histogram_equalization.py"
+import cv2 as cv
+
+def histogram_equalization_cv(gray_image):
+    return cv.equalizeHist(gray_image)
+```
+
+### Our Custom Contrast Adjustment Method
+
+Alongside standard techniques, we have developed a custom method for contrast adjustment.
+This method, named `adjust_contrast_weighted_local`, focuses on locally adjusting the contrast based on a weighted scheme that considers both global and local mean intensities.
+This approach allows for a more nuanced and detailed enhancement of image contrast, especially in images with varying lighting conditions.
+
+#### Weighted Local Filter: Implementation
+
+```python showLineNumbers title="adjust_contrast_weighted_local.py"
+def adjust_contrast_weighted_local(image, factor, grid_size):
+    img_float = image.astype(float)
+    global_mean = np.mean(img_float)
+    img_contrast = np.zeros_like(img_float)
+
+    for i in range(0, image.shape[0], grid_size):
+        for j in range(0, image.shape[1], grid_size):
+            grid = img_float[i:i+grid_size, j:j+grid_size]
+            local_mean = np.mean(grid)
+            global_influence = global_mean / local_mean if local_mean != 0 else 1
+
+            grid_contrast = local_mean + (grid - local_mean) * factor * global_influence
+            img_contrast[i:i+grid_size, j:j+grid_size] = grid_contrast
+
+    img_contrast = np.clip(img_contrast, 0, 255)
+    return img_contrast.astype(np.uint8)
+```
+
+### Comparative Advantages
+
+Our custom method offers several advantages:
+
+- This technique provides a more localized contrast enhancement, making it suitable for images with uneven lighting or exposure.
+- The use of weighted factors based on local and global means allows more natural-looking results.
+- It's particularly effective in bringing out details in both shadows and highlights.
+
+
+<Image src="/images/contrast-comparative.jpg" width={1904} height={864} alt="Figure 3. Comparative between original image, histogram equalization, and our custom method" />
+
+
+## Measuring Performance
+
+### Metrics for Noise Reduction
+To quantify the effectiveness of our noise reduction techniques, we employ the Mean Squared Error (MSE).
+This metric measures the average squared difference between the original image and the processed image.
+A lower MSE value indicates a noise reduction technique that more closely approximates the original image, implying better performance.
+
+```python showLineNumbers title="mse.py"
+def mse(imageA, imageB):
+    return np.mean((imageA - imageB) ** 2)
+```
+
+#### Comparative Analysis
+
+Using this function, we've calculated the MSE for images processed with both OpenCV and our manual filtering method. 
+The results are as follows:
+
+| Method |Execution Time| MSE | Best MSE |
+| --- | --- | --- | --- |
+| OpenCV Filtered 1 | 15ms | 23.66 | ❌ |
+| Manual Filtered 1 | 5.5s | 10.03 | ✅ |
+| OpenCV Filtered 2 | 15ms | 30.60 | ❌ |
+| Manual Filtered 2 | 7.5s | 11.11 | ✅ |
+
+
+<Image src="/images/noise-comparative.jpg" width={1904} height={1200} alt="Figure 4. Comparative between median filter, and our custom method" />
+
+
+### Metrics for Contrast Adjustment
+
+For assessing improvements in contrast, we visualize the changes in the histogram.
+Histograms provide a visual representation of the distribution of pixel intensities in an image, and are an insightful way to observe contrast adjustments.
+
+We utilize the following code to plot histograms in Python:
+
+```python showLineNumbers title="plot_histogram.py"
+import matplotlib.pyplot as plt
+
+def plot_histogram(image, title, color):
+    plt.hist(image.ravel(), 256, [0, 256], color=color)
+    plt.title(title)
+    plt.xlabel('Pixel Intensities')
+    plt.ylabel('Number of Pixels')
+```
+
+### Comparative Analysis
+
+- Histogram equalization and our custom method both improve contrast visibly.
+- Histograms from equalization show a broader distribution of pixel intensities.
+- Our method yields more balanced enhancement, evident in the histograms.
+- See below for before-and-after images and histograms for both methods.
+
+#### Histogram Comparison
+
+<Image src="/images/histogram-comparative.jpg" width={1600} height={1200} alt="Figure 5. Comparing histograms" />
+
+
+## Conclusion
+
+In summary, this series has explored noise reduction and contrast enhancement in image processing.
+We've delved into techniques like median filtering and histogram equalization, as well as introduced custom methods that provide localized enhancements and maintain natural image characteristics.
+These advancements are vital in fields ranging from medical imaging to digital photography, where clarity and detail are essential.
+
+## References
+
+- [OpenCV Documentation](https://docs.opencv.org/master/d4/d13/tutorial_py_filtering.html)
+- [Putra, R. D., Purboyo, T. W., & Prasasti, A. L. (2017). *A Review of Image Enhancement Methods*. International Journal of Applied Engineering Research, 12(23), 13596-13603.](https://www.researchgate.net/publication/335420759_A_Review_of_Image_Enhancement_Methods)
+- [Ačkar, H., Almisreb, A. A., & Saleh, M. A. (2019). *A Review on Image Enhancement Techniques*. Southeast Europe Journal of Soft Computing, 8(1).](https://www.researchgate.net/publication/332704852_A_Review_on_Image_Enhancement_Techniques)
+- [Prabhavi Jayanetti. (2020, October 16). *Remove Salt and Pepper Noise with Median Filtering*. Analytics Vidhya.](https://medium.com/analytics-vidhya/remove-salt-and-pepper-noise-with-median-filtering-b739614fe9db)
+- [Szeliski, R. (2010). *Computer Vision: Algorithms and Applications*. Springer.](http://szeliski.org/Book/)
+- [Ortega Muñoz, J. F., & Rivera Valencia, C. E. (2015). *Aplicación de un filtro adaptativo para minimizar el ruido en una imagen*. Universidad del Cauca, Facultad de Ingeniería Electrónica y Telecomunicaciones, Departamento de Telecomunicaciones, Grupo de Investigación y Desarrollo Nuevas Tecnologías en Telecomunicaciones-GNTT.](http://repositorio.unicauca.edu.co:8080/xmlui/bitstream/handle/123456789/1505/APLICACI%C3%93N%20DE%20UN%20FILTRO%20ADAPTATIVO%20PARA%20MINIMIZAR%20EL%20RUIDO%20EN%20UNA%20IMAGEN.pdf?sequence=1)
+
+
+
+
+
+
+

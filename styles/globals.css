@@ -84,7 +84,6 @@
   }
 
   html, body {
-    @apply font-inter;
     @apply !text-foreground;
     background-image: var(--bg-gradient);
     background-repeat: no-repeat;
@@ -101,12 +100,10 @@
   h1,
   h2,
   h3 {
-    @apply !font-inter;
     @apply !text-foreground-contrast;
   }
 
   b, strong {
-    @apply !font-inter;
     @apply !font-semibold;
     @apply !text-foreground-contrast;
   }

@@ -6,11 +6,13 @@ import { useEffect, useRef } from "react";
 import useSWR from "swr";
 import { IBlog } from "@/types/interfaces";
 import NoisyCard from "@/components/cards/noisy-card";
+import { useTheme } from "@wits/next-themes";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
   const segments = useSelectedLayoutSegments();
+  const { theme } = useTheme()
   const initialPost = blogPosts.find(
     (blogPost) => blogPost.slug === segments[segments.length - 1]
   );
@@ -23,22 +25,24 @@ export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
     }
   );
 
+  const backgroundColor = theme === "dark" ? blogPost?.color + "cc" : blogPost?.color + "55";
+
   if (initialPost == null) return <></>;
 
   return (
     <NoisyCard
       style={{
-        backgroundColor: blogPost.color,
+        backgroundColor
       }}
       className="mb-6 gap-3 flex flex-col"
     >
-      <h1 className="text-3xl font-bold text-center md:text-4xl tracking-[-1.92px] !leading-10 !text-foreground-contrast">
+      <h1 className="text-3xl !mb-2 font-bold text-center md:text-4xl tracking-[-1.2px] !leading-10 !text-foreground-contrast">
         {blogPost.title}
       </h1>
-      <p className="mt-3 text-base text-center text-foreground/80">
+      <p className="m-0 text-base text-center text-foreground/80">
         {blogPost.summary}
       </p>
-      <div className="flex items-center gap-3 text-base">
+      <div className="flex items-center gap-3 text-base h-20">
         <Image
           className="rounded-full"
           src="/images/profile-2023.png"
@@ -67,7 +71,7 @@ export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
             </span>
           </div>
         </div>
-        <span className="pr-1.5 w-full flex justify-end items-center">
+        <span className="pr-1.5 flex justify-end items-center">
           <Views
             id={blogPost.slug}
             mutate={mutate}
@@ -105,5 +109,5 @@ function Views({
     }
   });
 
-  return <>{views != null ? <span>{views} views</span> : null}</>;
+  return <>{views != null ? <span className="w-[7ch]">{views} views</span> : null}</>;
 }

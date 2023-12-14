@@ -8,7 +8,7 @@ export const metadata = {
     title,
     description,
     images: [{
-      url: "https://raillyhugo.com/api/og?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&date=" + encodeURIComponent("2022-10-16") + "&color=" + encodeURIComponent("#F7DF1E"),
+      url: "https://raillyhugo.com/api/og?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&date=" + encodeURIComponent("2022-10-16") + "&color=" + encodeURIComponent("F7DF1E"),
       width: 1200,
       height: 600,
       alt: "OG Image Generation"
@@ -17,20 +17,20 @@ export const metadata = {
 }
 
 
-# Open Graph Image
+## Open Graph Image
 
 An Open Graph (OG) image is the **preview image for social networks**.
 It means that these websites will consume the URL you provide in your HTML meta tags to generate a preview.
 
 The OG image is probably the most essential OG meta tag because it is the first impression people will have of your website. That said, the more impactful your OG image is, the more engaging it will be.
 
-# Problem
+## Problem
 
 Creating custom OG images is costly, and I only want to focus on writing my content.
 
 Ironically, automating OG image generation is costly too😅. Since you need to host a function somewhere and create a Chrome instance for taking a screenshot.
 
-# Solution: @vercel/og
+## Solution: @vercel/og
 
 I will quote [Shu](https://twitter.com/shuding_), who is currently part of Vercel's Engineering Team, and who developed this clever idea. I will refer to [this Twitter thread](https://twitter.com/shuding_/status/1579607964549513217), while I work on my `embedded tweet` feature.
 
@@ -45,7 +45,7 @@ Then, he defines a handy approach:
 
 There was a lot of effort involved in designing this solution, is not as simple as it seems. So I encourage reading the thread to learn the magic behind the scenes.
 
-# Installation & Demo
+## Installation & Demo
 
 First we need to install `@vercel/og` package
 
@@ -117,17 +117,17 @@ export default function ImageHandler() {
 }
 ```
 
-> Since we are running this code at the edge, we have no access to our local files (but still being accessible via fetch), nor to the tailwind.config.js file.
+> Since we are running this code at the edge, we have no access to our local files (but still being accessible via fetch), nor to the `tailwind.config.js` file.
 > So we are actually using TailwindCSS default configuration.
 
-# My Custom OG Image
+## My Custom OG Image
 
 As I've implemented this feature in my blog, I will explain to you how I use it to generate my OG images.
 
 1. Create a `og.tsx` file in `pages/api` folder.
 2. Layout OG omponent with TailwindCSS.
 3. Load local [custom fonts](https://vercel.com/docs/concepts/functions/edge-functions/og-image-examples#using-a-custom-font) via fetch
-4. Add [linear gradient generator](https://github.com/Railly/website-2022/blob/main/pages/api/og.tsx#L29) function
+4. Add [linear gradient generator](https://github.com/Railly/website/blob/main/app/api/og/route.tsx) function
 5. Consume OG image in meta tags
 
 ```tsx showLineNumbers {5} title="pages/blog/[slug].tsx"
@@ -141,13 +141,13 @@ As I've implemented this feature in my blog, I will explain to you how I use it 
 </Head>
 ```
 
-# Final Result
+## Final Result
 
 Full source code: [Github Repository](https://github.com/Railly/website-2022/blob/main/pages/api/og.tsx)
 
 <Image src="/images/og-image-example.png" width={2233} height={1112} />
 
-# Conclusions
+## Conclusions
 
 - **@vercel/og** is an engine that allows you to generate OG images dynamically on the fly with Next.js.
 - If you are not using Next.js you can use [Satori](https://github.com/vercel/satori) for **HTML / CSS ➜ SVG** conversion, and another library for **SVG ➜ PNG** conversion like [svg2png-wasm](https://github.com/ssssota/svg2png-wasm).

@@ -8,7 +8,7 @@ import { Ul as ul } from "./components/mdx/list/ul";
 import { Li as li } from "./components/mdx/list/li";
 import { Hr as hr } from "./components/mdx/hr";
 import { Image } from "./components/mdx/image";
-import { Blockquote as blockquote } from "./components/mdx/blockquote";
+// import { Blockquote as blockquote } from "./components/mdx/blockquote";
 import type { MDXComponents } from "mdx/types";
 
 // import { Tweet } from "./components/mdx/tweet";
@@ -25,7 +25,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Image: Image,
     a,
     hr,
-    blockquote,
+    // blockquote,
     h1,
     h2,
     h3,

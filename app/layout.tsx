@@ -1,12 +1,13 @@
 import "../styles/globals.css";
 import { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { absoluteUrl, cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Providers from "./providers";
 import { TailwindIndicator } from "@/components/misc/tailwind-indicator";
 import AppLayout from "@/components/layouts/app-layout";
 import { ServerThemeProvider } from "@wits/next-themes";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
   title: {
@@ -57,14 +58,6 @@ export const metadata: Metadata = {
   manifest: `${siteConfig.url}/favicon/site.webmanifest`,
 };
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "600", "500", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-
 export default function RootLayout({
   children,
 }: {
@@ -75,7 +68,7 @@ export default function RootLayout({
       <html
         lang="en"
         className={cn(
-          inter.variable,
+          GeistSans.variable, GeistMono.variable,
           "selection:bg-foreground selection:text-background"
         )}
         suppressHydrationWarning

@@ -21,8 +21,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      inter: ["var(--font-inter)", "sans-serif"],
-      mono: ["ui-monospace", "monospace"],
+      sans: ['var(--font-geist-sans)'],
+      mono: ['var(--font-geist-mono)'],
     },
     extend: {
       colors: {
@@ -173,5 +173,8 @@ module.exports = {
       }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/typography'),
+  ],
 };

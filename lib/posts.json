@@ -54,6 +54,18 @@
         "Environment"
       ],
       "slug": "how-to-setup-python-environment"
+    },
+    {
+      "title": "AI Series: Understanding Noise Reduction and Contrast Adjustment",
+      "summary": "A guide to understanding noise reduction and contrast adjustment in image processing.",
+      "color": "#27C77F",
+      "publishedAt": "2023-12-13T22:00:00.000-05:00",
+      "tags": [
+        "Python",
+        "OpenCV",
+        "Image Processing"
+      ],
+      "slug": "noise-contrast"
     }
   ]
 }
