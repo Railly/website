@@ -9,12 +9,12 @@ const AboutCard = () => {
         <span className="text-2xl font-semibold text-center md:text-left">
           Who am I?
         </span>
-        <p className="text-normal text-center md:text-left">
+        <p className="text-center text-normal md:text-left">
           <span className="font-semibold animated-yellow-gradient">
             Master&apos;s student
           </span>{" "}
-          in <b>Artificial Intelligence</b>, experienced <b>UI Developer</b>, and{" "}
-          <b>Software Engineer</b> specialized in{" "}
+          in <b>Artificial Intelligence</b>, experienced <b>Web UI Developer</b>
+          , and <b>Software Engineer</b> specialized in{" "}
           <span className="font-semibold animated-blue-gradient">
             React, Next.js and TypeScript
           </span>
