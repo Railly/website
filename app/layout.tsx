@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { absoluteUrl, cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import Providers from "./providers";
@@ -23,10 +23,6 @@ export const metadata: Metadata = {
     },
   ],
   creator: "Railly Hugo",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -58,6 +54,13 @@ export const metadata: Metadata = {
   manifest: `${siteConfig.url}/favicon/site.webmanifest`,
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -68,7 +71,8 @@ export default function RootLayout({
       <html
         lang="en"
         className={cn(
-          GeistSans.variable, GeistMono.variable,
+          GeistSans.variable,
+          GeistMono.variable,
           "selection:bg-foreground selection:text-background"
         )}
         suppressHydrationWarning

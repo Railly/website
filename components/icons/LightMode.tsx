@@ -3,11 +3,11 @@ const LightMode = (props: any) => (
     <style jsx>{`
       path {
         fill: hsl(var(--foreground));
-        fill-opacity: 0.6;
+        fillopacity: 0.6;
       }
       rect {
         fill: #dabe42;
-        fill-opacity: 0.6;
+        fillopacity: 0.6;
       }
     `}</style>
     <rect x="7" y="7" rx="8" ry="8" width="10" height="10" />

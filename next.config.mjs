@@ -2,7 +2,10 @@
 import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
 import withMDX from "@next/mdx";
-import { rehypePrettyCodeOptions, rehypePrettyCodeClasses } from "./lib/rehype.mjs";
+import {
+  rehypePrettyCodeOptions,
+  rehypePrettyCodeClasses,
+} from "./lib/rehype.mjs";
 
 const mdxConfig = {
   options: {
@@ -18,11 +21,20 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
   images: {
-    domains: ["api.producthunt.com", "img.shields.io"],
-  },
-  experimental: {
-    appDir: true,
-    mdxRs: false,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.producthunt.com",
+        port: "",
+        pathname: "/",
+      },
+      {
+        protocol: "https",
+        hostname: "img.shields.io",
+        port: "",
+        pathname: "/",
+      },
+    ],
   },
 };
 

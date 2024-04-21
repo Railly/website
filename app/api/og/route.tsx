@@ -33,15 +33,25 @@ export async function GET(req: NextRequest) {
         <div tw="absolute w-full h-full flex inset-0 pointer-events-none opacity-30 mix-blend-soft-light">
           <svg width="100%" height="120%">
             <filter id="noise">
-              <feTurbulence type="fractalNoise" baseFrequency="6.0" numOctaves="8" stitchTiles="stitch">
-              </feTurbulence>
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="6.0"
+                numOctaves="8"
+                stitchTiles="stitch"
+              ></feTurbulence>
             </filter>
-            <rect width="100%" height="100%" filter="url(#noise)">
-            </rect>
+            <rect width="100%" height="100%" filter="url(#noise)"></rect>
             <defs>
-              <linearGradient id="myGradient" x1="128" y1="5.21659" x2="128" y2="476.551" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#C5C5C5" />
-                <stop offset="1" stop-color="#383839" />
+              <linearGradient
+                id="myGradient"
+                x1="128"
+                y1="5.21659"
+                x2="128"
+                y2="476.551"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#C5C5C5" />
+                <stop offset="1" stopColor="#383839" />
               </linearGradient>
             </defs>
           </svg>
