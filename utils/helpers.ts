@@ -27,3 +27,32 @@ export const getSortByPublishAt = (sort: "asc" | "desc" | null | undefined) => {
   return (a: TWithPublishedAt, b: TWithPublishedAt) =>
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
 };
+
+export const getAsciiArt = () => {
+  const asciiArt = `
+##############################
+##############################
+############@@@@@@############
+#########@@@@#S###@@@@########
+######@@@@#?+,:##%+%#@@@@#####
+#####@@#S;:**.:##?..:###@#####
+#####@@#?.;@%.:##%..;###@#####
+#####@@#?.:+,,?##S??%###@#####
+#####@@#?.+S;.:##%..:###@#####
+#####@@#S:*@*.:##?..;###@#####
+######@@@@##?,:##%+%S@@@@#####
+#########@@@@#S###@@@@########
+############@@@@@@############
+##############################
+##############################
+`;
+
+  const name = "Railly Hugo";
+
+  return [
+    `%c${asciiArt}\n%c${name}\n%cSoftware Engineer - RaillyHugo.com`,
+    "color: #66cc66; font-size: 14px; font-family: monospace;",
+    "color: #ffcc66; font-size: 16px; font-weight: bold;",
+    "color: #ff6666; font-size: 12px;",
+  ];
+};

@@ -5,7 +5,12 @@ import { useRouter, useSelectedLayoutSegment } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { useTheme } from "@wits/next-themes";
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { MenuIcon, MoonIcon, SunIcon } from "lucide-react";
 import { GlowButton } from "@/components/buttons/glow-button";
 import HeaderLink from "@/components/links/header-link";
@@ -21,15 +26,13 @@ const Header = () => {
     setIsMounted(true);
   }, []);
 
-
   return (
     <>
       <LayoutGroup>
         <header
           className={cn(
             "flex mx-4",
-            "[--toolbarHeight:56px] [--floatingMargin:calc(var(--totalToolbarHeight)_-_var(--toolbarHeight))] [--baseActualHeight:calc(var(--toolbarHeight)+var(--floatingMargin))] md:max-w-prose fixed inset-x-0 top-4 z-40 flex items-center justify-between rounded-xl mx-auto",
-            "w-[calc(100%-2rem)]"
+            "[--toolbarHeight:56px] [--floatingMargin:calc(var(--totalToolbarHeight)_-_var(--toolbarHeight))] [--baseActualHeight:calc(var(--toolbarHeight)+var(--floatingMargin))] md:max-w-[63ch] fixed inset-x-0 top-4 z-40 flex items-center justify-between rounded-xl md:mx-auto"
           )}
         >
           <div className="bg-gray-100/70 dark:bg-background/90 backdrop-blur-sm w-full border border-border rounded-[16px]">
@@ -52,38 +55,39 @@ const Header = () => {
               </div>
               <RHLogo
                 className="flex sm:hidden cursor-pointer"
-                onClick={
-                  () => router.push("/")
-                }
+                onClick={() => router.push("/")}
                 size={36}
               />
               {isMounted && (
                 <>
                   {theme === "light" ? (
                     <MoonIcon
-                      className={cn("bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border select-none stroke-current")}
+                      className={cn(
+                        "bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border select-none stroke-current"
+                      )}
                       onClick={() => setTheme("dark")}
                     />
                   ) : (
                     <SunIcon
-                      className={cn("bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border select-noe stroke-current")}
+                      className={cn(
+                        "bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border select-noe stroke-current"
+                      )}
                       onClick={() => setTheme("light")}
                     />
                   )}
                 </>
               )}
 
-
               <Dialog>
                 <DialogTrigger
-                  className={cn("sm:hidden bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-border border select-none")}
+                  className={cn(
+                    "sm:hidden bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-border border select-none"
+                  )}
                   asChild
                 >
                   <MenuIcon />
                 </DialogTrigger>
-                <DialogContent
-                  className="flex items-center bg-transparent border-none shadow-none"
-                >
+                <DialogContent className="flex items-center bg-transparent border-none shadow-none">
                   <div className="flex flex-col w-full bg-background/90 backdrop-blur-md border border-border shadow-md shadow-foreground/5 rounded-xl mx-6 p-4">
                     {MENU_ITEMS.map((item, index) => (
                       <HeaderLink
@@ -96,8 +100,7 @@ const Header = () => {
                         {item.name}
                       </HeaderLink>
                     ))}
-                    <DialogClose>
-                    </DialogClose>
+                    <DialogClose></DialogClose>
                   </div>
                 </DialogContent>
               </Dialog>
@@ -108,6 +111,5 @@ const Header = () => {
     </>
   );
 };
-
 
 export default Header;

@@ -12,7 +12,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
   const segments = useSelectedLayoutSegments();
-  const { theme } = useTheme()
+  const { theme } = useTheme();
   const initialPost = blogPosts.find(
     (blogPost) => blogPost.slug === segments[segments.length - 1]
   );
@@ -25,14 +25,15 @@ export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
     }
   );
 
-  const backgroundColor = theme === "dark" ? blogPost?.color + "cc" : blogPost?.color + "55";
+  const borderColor =
+    theme === "dark" ? blogPost?.color + "cc" : blogPost?.color + "55";
 
   if (initialPost == null) return <></>;
 
   return (
     <NoisyCard
       style={{
-        backgroundColor
+        borderColor,
       }}
       className="mb-6 gap-3 flex flex-col"
     >
@@ -79,7 +80,7 @@ export function BlogHeader({ blogPosts }: { blogPosts: IBlog[] }) {
           />
         </span>
       </div>
-    </ NoisyCard >
+    </NoisyCard>
   );
 }
 
@@ -109,5 +110,7 @@ function Views({
     }
   });
 
-  return <>{views != null ? <span className="w-[7ch]">{views} views</span> : null}</>;
+  return (
+    <>{views != null ? <span className="w-[7ch]">{views} views</span> : null}</>
+  );
 }

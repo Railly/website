@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Icon from "@/components/icons";
 import { ESocialMedia } from "@/types/enums";
@@ -42,12 +43,12 @@ const ProfileCard = () => {
         </NoisyCard>
         <NoisyCard>
           <p className="flex flex-col gap-2 text-base text-center md:text-left">
-            <span className="before:content-['>'] before:font-bold before:text-2xl before:mr-2 before:text-gray-400 before:font-mono">
+            <span className="before:content-['>'] before:font-bold before:text-2xl before:mr-2 before:text-orange-400 before:font-mono">
               Detail-oriented, design-driven, passionate about making things
               work.
             </span>
-            <span className="before:content-['>'] before:font-bold before:text-2xl before:mr-2 before:text-gray-400 before:font-mono">
-              With over 2 years in frontend development, I&apos;m not just
+            <span className="before:content-['>'] before:font-bold before:text-2xl before:mr-2 before:text-orange-400 before:font-mono">
+              With over 3 years in frontend development, I&apos;m not just
               coding; I&apos;m crafting experiences.
             </span>
           </p>

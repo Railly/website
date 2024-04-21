@@ -44,6 +44,7 @@ export enum ETech {
   Supabase = "Supabase",
   Firebase = "Firebase",
   MongoDB = "MongoDB",
+  DrizzleORM = "Drizzle ORM",
 
   // Testing and QA
   Playwright = "Playwright",
@@ -57,6 +58,7 @@ export enum ETech {
 
   // Development Tools
   OpenAI = "OpenAI",
+  Anthropic = "Anthropic",
   VSCode = "VSCode",
   Git = "Git",
   Github = "Github",
@@ -87,6 +89,7 @@ export enum ETech {
   WindowsTerminal = "Windows Terminal",
   Obsidian = "Obsidian",
   ChatGPT = "Chat GPT",
+  Claude3 = "Claude 3",
   Cron = "Cron",
 }
 

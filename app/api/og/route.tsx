@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import fs from "fs/promises";
 import path from "path";
-import { ImageResponse, NextRequest } from "next/server";
+import { NextRequest } from "next/server";
+import { ImageResponse } from "next/og";
 
 const boldFontPath = path.join(process.cwd(), "public/fonts/Inter-Bold.ttf");
 const mediumFontPath = path.join(

@@ -10,9 +10,7 @@
       "repoName": "button-components",
       "demo": "https://button-components-drab.vercel.app",
       "description": "React Buttons",
-      "stack": [
-        "ReactJS"
-      ]
+      "stack": ["ReactJS"]
     },
     {
       "title": "Academic System",
@@ -23,12 +21,7 @@
       "slug": "cinfo",
       "repoName": "cinfo-project-front",
       "description": "Management System",
-      "stack": [
-        "NextJS",
-        "TailwindCSS",
-        "ReactJS",
-        "JavaScript"
-      ]
+      "stack": ["NextJS", "TailwindCSS", "ReactJS", "JavaScript"]
     },
     {
       "title": "Foody",
@@ -40,10 +33,7 @@
       "repoName": "next-cooking-app",
       "demo": "https://next-cooking-app.vercel.app",
       "description": "Cookbook App",
-      "stack": [
-        "NextJS",
-        "Firebase"
-      ]
+      "stack": ["NextJS", "Firebase"]
     },
     {
       "title": "Indie Singles",
@@ -54,12 +44,7 @@
       "slug": "indie-singles",
       "repoName": "indie-singles-front",
       "description": "Music Sharing",
-      "stack": [
-        "NextJS",
-        "TailwindCSS",
-        "ReactJS",
-        "JavaScript"
-      ]
+      "stack": ["NextJS", "TailwindCSS", "ReactJS", "JavaScript"]
     },
     {
       "title": "Kisaragi",
@@ -70,10 +55,7 @@
       "slug": "kisaragi",
       "repoName": "kisaragi-front",
       "description": "Social Media",
-      "stack": [
-        "NextJS",
-        "TailwindCSS"
-      ]
+      "stack": ["NextJS", "TailwindCSS"]
     },
     {
       "title": "My First Portfolio",
@@ -85,10 +67,7 @@
       "repoName": "portfolio-2021",
       "demo": "https://portfolio-rh-2021.vercel.app",
       "description": "First Portfolio",
-      "stack": [
-        "ReactJS",
-        "JavaScript"
-      ]
+      "stack": ["ReactJS", "JavaScript"]
     },
     {
       "title": "Spotigen",
@@ -101,11 +80,7 @@
       "logoUrl": "/images/spotigen-logo.png",
       "demo": "https://spotigen.vercel.app/",
       "description": "Playlist Gen",
-      "stack": [
-        "OpenAI",
-        "Python",
-        "FastAPI"
-      ]
+      "stack": ["OpenAI", "Python", "FastAPI"]
     },
     {
       "title": "One Hunter Theme",
@@ -119,10 +94,7 @@
       "logoUrl": "/images/oht.png",
       "demo": "https://marketplace.visualstudio.com/items?itemName=RaillyHugo.one-hunter",
       "description": "VSCode Theme",
-      "stack": [
-        "VSCode",
-        "TypeScript"
-      ]
+      "stack": ["VSCode", "TypeScript"]
     },
     {
       "title": "SVG Hunter",
@@ -135,10 +107,7 @@
       "logoUrl": "/images/svg-hunter-logo.png",
       "demo": "https://marketplace.visualstudio.com/items?itemName=RaillyHugo.svg-hunter",
       "description": "SVG Editor",
-      "stack": [
-        "VSCode",
-        "TypeScript"
-      ]
+      "stack": ["VSCode", "TypeScript"]
     },
     {
       "title": "Website 2023",
@@ -151,11 +120,7 @@
       "logoUrl": "/images/rh-logo.png",
       "demo": "https://www.raillyhugo.com",
       "description": "Personal Site",
-      "stack": [
-        "NextJS",
-        "TailwindCSS",
-        "TypeScript"
-      ]
+      "stack": ["NextJS", "TailwindCSS", "TypeScript"]
     },
     {
       "title": "Memora Date",
@@ -167,28 +132,41 @@
       "repoName": "memora-date",
       "demo": "https://memora-date.vercel.app",
       "description": "Reminder App",
-      "stack": [
-        "NextJS",
-        "TailwindCSS",
-        "TypeScript",
-        "Supabase"
-      ]
+      "stack": ["NextJS", "TailwindCSS", "TypeScript", "Supabase"]
     },
     {
       "title": "Shadcn Customizer",
       "summary": "Customize every CSS variable from your shadcn/ui theme, copy the CSS file and paste it into your project.",
-      "publishedAt": "2023-08-07",
+      "publishedAt": "2024-04-13",
       "tag": "Personal Project",
       "slug": "shadcn-ui-customizer",
       "logoUrl": "/images/shadcn-customizer-logo.png",
       "repoName": "shadcn-ui-customizer",
       "demo": "https://shadcn-ui-customizer.vercel.app",
       "description": "Theme Customizer",
-      "stack": [
-        "NextJS",
-        "TailwindCSS",
-        "TypeScript"
-      ]
+      "stack": ["NextJS", "TailwindCSS", "TypeScript"]
+    },
+    {
+      "title": "Obsidian Simple Flashcards",
+      "summary": "Display interactive flashcards to formulate knowledge 🧠",
+      "publishedAt": "2024-04-20",
+      "tag": "Personal Project",
+      "slug": "obsidian-simple-flashcards",
+      "logoUrl": "/images/simple-flashcards-logo.png",
+      "repoName": "obsidian-simple-flashcards",
+      "description": "Obsidian Plugin",
+      "stack": ["TypeScript", "Obsidian"]
+    },
+    {
+      "title": "Tinte",
+      "summary": "An opinionated multi-platform color theme generator",
+      "publishedAt": "2023-11-20",
+      "tag": "Personal Project",
+      "slug": "tinte",
+      "logoUrl": "/images/tinte-logo.png",
+      "repoName": "tinte",
+      "description": "Color Theme Generator",
+      "stack": ["TypeScript"]
     }
   ]
 }

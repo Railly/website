@@ -9,7 +9,7 @@ const AboutCard = () => {
         <span className="text-2xl font-semibold text-center md:text-left">
           Who am I?
         </span>
-        <p className="text-center text-normal md:text-left">
+        <p className="text-center text-normal md:text-left before:content-['>'] before:font-bold before:text-2xl before:mr-2 before:text-orange-400 before:font-mono">
           <span className="font-semibold animated-yellow-gradient">
             Master&apos;s student
           </span>{" "}

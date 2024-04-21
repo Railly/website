@@ -25,12 +25,17 @@ const ProjectSection = ({
           </LinkWithArrow>
         )}
       </div>
-      <div className={cn("grid grid-cols-1 sm:grid-cols-2 gap-y-4  sm:gap-4 mb-4"
-        , {
-          "grid-rows-[repeat(7,minmax(auto,170px))] sm:grid-rows-[repeat(7,minmax(auto,195px))] md:grid-rows-[repeat(4,minmax(auto,210px))]": limit === 3,
-          "grid-rows-[repeat(25,minmax(auto,170px))] sm:grid-rows-[repeat(25,minmax(auto,195px))] md:grid-rows-[repeat(13,minmax(auto,210px))]": limit !== 3,
-        }
-      )}>
+      <div
+        className={cn(
+          "grid grid-cols-1 sm:grid-cols-2 gap-y-4  sm:gap-4 mb-4",
+          {
+            "grid-rows-[repeat(7,minmax(auto,170px))] sm:grid-rows-[repeat(7,minmax(auto,195px))] md:grid-rows-[repeat(4,minmax(auto,210px))]":
+              limit === 3,
+            "grid-rows-[repeat(29,minmax(auto,170px))] sm:grid-rows-[repeat(29,minmax(auto,195px))] md:grid-rows-[repeat(15,minmax(auto,210px))]":
+              limit !== 3,
+          }
+        )}
+      >
         <CrafterCard />
         {projects
           .sort((a, b) => {
@@ -52,8 +57,7 @@ const ProjectSection = ({
                   repoName={project.repoName as string}
                   linkDemo={project.demo}
                   stack={project.stack as string[]}
-                >
-                </ProjectCard>
+                ></ProjectCard>
               );
             }
             return (
@@ -68,11 +72,9 @@ const ProjectSection = ({
                 repoName={project.repoName as string}
                 linkDemo={project.demo}
                 stack={project.stack as string[]}
-              >
-              </ProjectCard>
-            )
-          })
-        }
+              ></ProjectCard>
+            );
+          })}
       </div>
     </section>
   );

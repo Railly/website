@@ -1,72 +1,74 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
 import { Other, Scheme, ESocialMedia, ETech } from "@/types/enums";
 import { cn } from "@/lib/utils";
 
-import JavaScript from './JavaScript';
-import TypeScript from './TypeScript';
-import Python from './Python';
-import CPlusPlus from './CPlusPlus';
-import Golang from './Golang';
-import Rust from './Rust';
-import NextJS from './NextJS';
-import ReactJS from './ReactJS';
-import Astro from './Astro';
-import TailwindCSS from './TailwindCSS';
-import Redux from './Redux';
-import FramerMotion from './FramerMotion';
-import StyledComponents from './StyledComponents';
-import Bootstrap from './Bootstrap';
-import SaSS from './SaSS';
-import Storybook from './Storybook';
-import NodeJS from './NodeJS';
-import ExpressJS from './ExpressJS';
-import NestJS from './NestJS';
-import Hono from './Hono';
-import FastAPI from './FastAPI';
-import PostgreSQL from './PostgreSQL';
-import Sequelize from './Sequelize';
-import Prisma from './Prisma';
-import Supabase from './Supabase';
-import Firebase from './Firebase';
-import Playwright from './Playwright';
-import Jest from './Jest';
-import ReactTestingLibrary from './ReactTestingLibrary';
-import Swagger from './Swagger';
-import AWS from './AWS';
-import Azure from './Azure';
-import OpenAI from './OpenAI';
-import GitHubCopilot from './GitHubCopilot';
-import Figma from './Figma';
-import VSCode from './VSCode';
-import Git from './Git';
-import Github from './Github';
-import Gitlab from './Gitlab';
-import Vercel from './Vercel';
-import Vite from './Vite';
-import Vim from './Vim';
-import Turborepo from './Turborepo';
-import Docker from './Docker';
-import Npm from './Npm';
-import Pnpm from './Pnpm';
-import Excalidraw from './Excalidraw';
-import Notion from './Notion';
-import Linear from './Linear';
-import { PowerShell } from './PowerShell';
-import Slack from './Slack';
-import Zoom from './Zoom';
-import Discord from './Discord';
-import GoogleSuite from './GoogleSuite';
-import Windows from './Windows';
-import ThunderClient from './ThunderClient';
-import WindowsTerminal from './WindowsTerminal';
-import Obsidian from './Obsidian';
-import Cron from './Cron';
+import JavaScript from "./JavaScript";
+import TypeScript from "./TypeScript";
+import Python from "./Python";
+import CPlusPlus from "./CPlusPlus";
+import Golang from "./Golang";
+import Rust from "./Rust";
+import NextJS from "./NextJS";
+import ReactJS from "./ReactJS";
+import Astro from "./Astro";
+import TailwindCSS from "./TailwindCSS";
+import Redux from "./Redux";
+import FramerMotion from "./FramerMotion";
+import StyledComponents from "./StyledComponents";
+import Bootstrap from "./Bootstrap";
+import SaSS from "./SaSS";
+import Storybook from "./Storybook";
+import NodeJS from "./NodeJS";
+import ExpressJS from "./ExpressJS";
+import NestJS from "./NestJS";
+import Hono from "./Hono";
+import FastAPI from "./FastAPI";
+import PostgreSQL from "./PostgreSQL";
+import Sequelize from "./Sequelize";
+import Prisma from "./Prisma";
+import Supabase from "./Supabase";
+import Firebase from "./Firebase";
+import Playwright from "./Playwright";
+import Jest from "./Jest";
+import ReactTestingLibrary from "./ReactTestingLibrary";
+import Swagger from "./Swagger";
+import AWS from "./AWS";
+import Azure from "./Azure";
+import OpenAI from "./OpenAI";
+import GitHubCopilot from "./GitHubCopilot";
+import Figma from "./Figma";
+import VSCode from "./VSCode";
+import Git from "./Git";
+import Github from "./Github";
+import Gitlab from "./Gitlab";
+import Vercel from "./Vercel";
+import Vite from "./Vite";
+import Vim from "./Vim";
+import Turborepo from "./Turborepo";
+import Docker from "./Docker";
+import Npm from "./Npm";
+import Pnpm from "./Pnpm";
+import Excalidraw from "./Excalidraw";
+import Notion from "./Notion";
+import Linear from "./Linear";
+import { PowerShell } from "./PowerShell";
+import Slack from "./Slack";
+import Zoom from "./Zoom";
+import Discord from "./Discord";
+import GoogleSuite from "./GoogleSuite";
+import Windows from "./Windows";
+import ThunderClient from "./ThunderClient";
+import WindowsTerminal from "./WindowsTerminal";
+import Obsidian from "./Obsidian";
+import Cron from "./Cron";
 import MongoDB from "./MongoDB";
 import LinkedIn from "./Linkedin";
 import Twitter from "./Twitter";
 import PlayIcon from "./Play";
 import Schedule from "./Schedule";
+import Anthropic from "./Anthropic";
 
 const renderLogo = (name: IconProps["name"]) => {
   switch (name) {
@@ -87,7 +89,7 @@ const renderLogo = (name: IconProps["name"]) => {
     case ETech.ReactJS:
       return <ReactJS width={24} height={24} />;
     case ETech.Astro:
-      return <Astro />
+      return <Astro />;
     case ETech.TailwindCSS:
       return <TailwindCSS width={24} height={24} />;
     case ETech.Redux:
@@ -126,6 +128,15 @@ const renderLogo = (name: IconProps["name"]) => {
       return <Supabase width={24} height={24} />;
     case ETech.Firebase:
       return <Firebase width={24} height={24} />;
+    case ETech.DrizzleORM:
+      return (
+        <img
+          src="/images/drizzle-logo.png"
+          alt="Drizzle ORM logo"
+          width={24}
+          height={24}
+        />
+      );
     case ETech.Playwright:
       return <Playwright />;
     case ETech.Jest:
@@ -140,6 +151,8 @@ const renderLogo = (name: IconProps["name"]) => {
       return <Azure />;
     case ETech.OpenAI:
       return <OpenAI />;
+    case ETech.Anthropic:
+      return <Anthropic />;
     case ETech.GitHubCopilot:
       return <GitHubCopilot />;
     case ETech.Figma:
@@ -179,7 +192,7 @@ const renderLogo = (name: IconProps["name"]) => {
     case ETech.Zoom:
       return <Zoom />;
     case ETech.Discord:
-      return <Discord />
+      return <Discord />;
     case ETech.GoogleSuite:
       return <GoogleSuite />;
     case ETech.Windows:
@@ -201,7 +214,7 @@ const renderLogo = (name: IconProps["name"]) => {
     case ESocialMedia.Twitter:
       return <Twitter />;
     case Other.Play:
-      return <PlayIcon />
+      return <PlayIcon />;
     case Other.Schedule:
       return <Schedule />;
     default:
@@ -218,7 +231,14 @@ interface IconProps {
   children?: React.ReactNode;
 }
 
-const ButtonIcon = ({ name, href, className, onClick, raw, children }: IconProps) => {
+const ButtonIcon = ({
+  name,
+  href,
+  className,
+  onClick,
+  raw,
+  children,
+}: IconProps) => {
   if (raw) return renderLogo(name);
   const component = href ? (
     <a

@@ -12,11 +12,11 @@ const NoisyCard = ({
 }: React.PropsWithChildren<INoisyCardProps>) => {
   return (
     <div
-      style={style}
       className={cn(
-        "relative border border-border from-gray-50/80 to-gray-50/50 bg-gradient-to-b dark:from-background/90 dark:to-background p-4 shadow-md shadow-foreground/5 rounded-xl overflow-hidden",
+        "relative border border-border from-gray-50/40 to-gray-50/10 bg-gradient-to-b dark:from-black/50 dark:to-black/40 p-4 shadow-md shadow-foreground/5 rounded-xl overflow-hidden",
         className
       )}
+      style={style}
     >
       <div className="absolute inset-0 rounded-xl pointer-events-none opacity-70 mix-blend-soft-light">
         <svg width="100%" height="100%">

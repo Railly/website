@@ -215,6 +215,11 @@ export const databasesAndOrm: ITech[] = [
     expertise: "intermediate",
   },
   {
+    tech: "Drizzle ORM",
+    icon: () => <Icon name={ETech.DrizzleORM} raw />,
+    expertise: "advanced",
+  },
+  {
     tech: "Sequelize",
     icon: () => <Icon name={ETech.Sequelize} raw />,
     expertise: "intermediate",
@@ -282,6 +287,11 @@ export const devTools: ITech[] = [
     tech: "OpenAI",
     icon: () => <Icon name={ETech.OpenAI} raw />,
     expertise: "beginner",
+  },
+  {
+    tech: "Anthropic",
+    icon: () => <Icon name={ETech.Anthropic} raw />,
+    expertise: "advanced",
   },
   {
     tech: "GitHub Copilot",
@@ -414,6 +424,11 @@ export const productivityTools: ITech[] = [
   {
     tech: "ChatGPT",
     icon: () => <Icon name={ETech.ChatGPT} raw />,
+    expertise: "advanced",
+  },
+  {
+    tech: "Claude 3",
+    icon: () => <Icon name={ETech.Anthropic} raw />,
     expertise: "advanced",
   },
   {

@@ -73,7 +73,7 @@ export default function RootLayout({
         className={cn(
           GeistSans.variable,
           GeistMono.variable,
-          "selection:bg-foreground selection:text-background"
+          "selection:bg-[#FF5839] selection:text-background"
         )}
         suppressHydrationWarning
       >

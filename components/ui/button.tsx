@@ -5,15 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none",
+  "group relative m-1 inline-flex cursor-pointer items-center  justify-center overflow-hidden rounded-lg border-b-2 border-l-2 border-r-2 px-4 py-1 text-white shadow-lg transition duration-100 ease-in-out active:translate-y-0.5 active:shadow-none transition-all duration-300",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default:
+          "bg-gradient-to-tr rborder-orange-700 from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 active:border-orange-600",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive from-destructive to-destructive/90 active:border-destructive/90 to text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-border bg-background hover:bg-accent hover:text-accent-foreground",
+          "text-foreground !border border-border bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -35,7 +36,7 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-  VariantProps<typeof buttonVariants> {
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 

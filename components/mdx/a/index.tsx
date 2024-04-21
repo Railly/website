@@ -6,14 +6,18 @@ export function A(props: React.ComponentPropsWithoutRef<"a">) {
 
   if (isInternalLink) {
     return (
-      <Link href={href} {...props}>
+      <Link
+        className="font-medium hover:underline transition text-orange-600 hover:underline-offset-4 hover:text-orange-500"
+        href={href}
+        {...props}
+      >
         {props.children}
       </Link>
     );
   }
   return (
     <a
-      className="font-medium underline transition text-hunter-blue-700 dark:text-hunter-blue-500 underline-offset-2 dark:hover:text-hunter-blue-400 hover:text-hunter-blue-600"
+      className="font-medium [text-decoration:none] hover:underline transition text-orange-600 hover:underline-offset-4 hover:text-orange-500"
       target="_blank"
       rel="noopener noreferrer"
       {...props}

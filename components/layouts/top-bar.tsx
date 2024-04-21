@@ -1,18 +1,26 @@
 "use client";
 import { MENU_ITEMS } from "@/utils/data";
 import { LayoutGroup } from "framer-motion";
-import { usePathname, useRouter, useSelectedLayoutSegment } from "next/navigation";
+import {
+  usePathname,
+  useRouter,
+  useSelectedLayoutSegment,
+} from "next/navigation";
 import { GlowButton } from "../buttons/glow-button";
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { useTheme } from "@wits/next-themes";
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from "../ui/dialog";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTrigger,
+} from "../ui/dialog";
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import HeaderLink from "../links/header-link";
 
-interface TopBarProps extends React.PropsWithChildren {
-}
+interface TopBarProps extends React.PropsWithChildren {}
 
 export const TopBar: React.FC<TopBarProps> = () => {
   const segment = useSelectedLayoutSegment();
@@ -23,7 +31,6 @@ export const TopBar: React.FC<TopBarProps> = () => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
 
   return (
     <>
@@ -57,12 +64,16 @@ export const TopBar: React.FC<TopBarProps> = () => {
                 <>
                   {theme === "light" ? (
                     <MoonIcon
-                      className={cn("bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border select-none stroke-current")}
+                      className={cn(
+                        "bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border select-none stroke-current"
+                      )}
                       onClick={() => setTheme("dark")}
                     />
                   ) : (
                     <SunIcon
-                      className={cn("bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border select-noe stroke-current")}
+                      className={cn(
+                        "bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-[hsl(0_0%_20.5%)] border select-noe stroke-current"
+                      )}
                       onClick={() => setTheme("light")}
                     />
                   )}
@@ -71,14 +82,14 @@ export const TopBar: React.FC<TopBarProps> = () => {
 
               <Dialog>
                 <DialogTrigger
-                  className={cn("sm:hidden bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-border border select-none")}
+                  className={cn(
+                    "sm:hidden bg-hunter-black-50 gap-2 hover:bg-hunter-black-100  dark:bg-background dark:hover:bg-[#202121] relative z-10 cursor-pointer rounded-lg w-10 h-10 flex shadow-lg p-[6px] duration-150 ease-out transition-all justify-center items-center border-border border select-none"
+                  )}
                   asChild
                 >
                   <MenuIcon />
                 </DialogTrigger>
-                <DialogContent
-                  className="flex items-center bg-transparent border-none shadow-none"
-                >
+                <DialogContent className="flex items-center bg-transparent border-none shadow-none">
                   <div className="flex flex-col w-full bg-background/90 backdrop-blur-md border border-border shadow-md shadow-foreground/5 rounded-xl mx-6 p-4">
                     {MENU_ITEMS.map((item, index) => (
                       <HeaderLink
@@ -91,8 +102,7 @@ export const TopBar: React.FC<TopBarProps> = () => {
                         {item.name}
                       </HeaderLink>
                     ))}
-                    <DialogClose>
-                    </DialogClose>
+                    <DialogClose></DialogClose>
                   </div>
                 </DialogContent>
               </Dialog>

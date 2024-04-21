@@ -32,11 +32,7 @@ export const GlowButton: React.FC<GlowButtonProps> = ({
         ...borderRadiusAnimation,
       }}
       animate={{
-        textShadow: isActive
-          ? theme === "dark"
-            ? "rgba(255, 255, 255, 0.57) 1px 1px 12px"
-            : "none"
-          : "none",
+        textShadow: isActive ? "rgba(255, 88, 57, 0.57) 1px 1px 12px" : "none",
         color: isActive ? "hsl(var(--foreground-contrast))" : "inherit",
         fontWeight: isActive ? 600 : 500,
         backgroundColor: isActive
@@ -57,7 +53,7 @@ export const GlowButton: React.FC<GlowButtonProps> = ({
           <motion.div
             layoutId="glow"
             initial={false}
-            className="absolute z-20 w-full h-5 pointer-events-none rounded-xl bg-black dark:bg-white blur-[7px]"
+            className="absolute z-20 w-full h-5 pointer-events-none rounded-xl bg-[#FF5839] blur-[7px]"
             style={{
               scale: 2,
               rotate: 1e-5,
