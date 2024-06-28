@@ -8,6 +8,7 @@ import AppLayout from "@/components/layouts/app-layout";
 import { ServerThemeProvider } from "@wits/next-themes";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import CounterscaleScript from "@/components/scripts/counterscale-script";
 
 export const metadata: Metadata = {
   title: {
@@ -79,7 +80,10 @@ export default function RootLayout({
       >
         <body className={cn("px-4 py-2")}>
           <AppLayout>
-            <Providers>{children}</Providers>
+            <Providers>
+              {children}
+              <CounterscaleScript />
+            </Providers>
             <TailwindIndicator />
           </AppLayout>
         </body>
