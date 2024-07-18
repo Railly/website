@@ -1,0 +1,118 @@
+---
+
+export const title =
+  "Building Tinte: My Journey in Creating a VS Code Theme Generator";
+export const description =
+  "A detailed account of my experience developing Tinte, a VS Code theme generator, from inspiration to execution.";
+
+export const metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [
+      {
+        url:
+          "https://raillyhugo.com/api/og?title=" +
+          encodeURIComponent(title) +
+          "&description=" +
+          encodeURIComponent(description) +
+          "&date=" +
+          encodeURIComponent("2024-07-17") +
+          "&color=" +
+          encodeURIComponent("27C77F"),
+        width: 1200,
+        height: 600,
+        alt: "Tinte VS Code Theme Generator",
+      },
+    ],
+  },
+};
+
+## Introducing Tinte
+
+Tinte is an innovative web application for creating and customizing VS Code themes with real-time previews and comprehensive color token adjustments. It features AI-assisted theme generation, saving, exporting, a theme gallery, and sharing capabilities.
+
+## The Inspiration
+
+Like many developers, I spent countless hours tweaking my VS Code setup. I found myself constantly switching between themes, never quite finding the perfect balance of aesthetics and readability. That's when it hit me: why not create a tool that allows developers to generate their own themes easily?
+
+## The Tech Stack
+
+For Tinte, I chose a modern, robust tech stack:
+
+1. **Next.js**: For its powerful server-side rendering capabilities and excellent developer experience.
+2. **Prisma**: As an efficient ORM for handling database operations.
+3. **Xata**: A serverless database platform that offered the scalability I needed.
+4. **Clerk**: For seamless user authentication and management.
+5. **Inngest**: To handle background jobs and ensure smooth data synchronization.
+
+This stack, which I affectionately call the PXCI stack, provided the perfect foundation for Tinte.
+
+## The Development Process
+
+### 1. Setting Up the Backend
+
+I started by setting up my Prisma schema. This involved creating models for Themes, ThemePalettes, TokenColors, and Users. The challenge was to design a schema that could accommodate both the complexity of VS Code themes and the flexibility users would need.
+
+### 2. User Authentication
+
+Implementing user authentication with Clerk was surprisingly straightforward. However, I needed to ensure that user data was properly synced between Clerk and my database. This is where Inngest came in handy:
+
+```typescript
+export const syncUser = inngest.createFunction(
+  { id: "sync-user-from-clerk" },
+  { event: "clerk/user.created" },
+  async ({ event, step }) => {
+    const user = event.data;
+    const { id: clerk_id, username } = user;
+
+    await step.run("Sync user to database", async () => {
+      await prisma.users.create({
+        data: {
+          clerk_id,
+          username,
+          xata_id: `rec_${clerk_id}`,
+        },
+      });
+    });
+
+    return { result: "User synced successfully" };
+  }
+);
+```
+
+This function ensures that every time a user is created in Clerk, their data is synced to our database.
+
+### 3. Theme Generation Logic
+
+The core of Tinte is its theme generation logic. This involved creating a robust system for managing color palettes and token colors. I implemented functions to handle the conversion between different color formats and to generate VS Code-compatible theme files.
+
+### 4. User Interface
+
+For the UI, I focused on creating an intuitive, real-time preview system. Users can see their theme changes instantly, making the theme creation process both fun and efficient.
+
+## Challenges and Learnings
+
+One of the biggest challenges was handling the complexity of VS Code themes. There are numerous token types to consider, and ensuring that all of them work harmoniously took considerable effort.
+
+I also learned the importance of efficient state management, especially when dealing with real-time updates. This led me to optimize my use of React hooks and implement debouncing for color updates.
+
+## The Influence of One Hunter Theme
+
+During the development of Tinte, I often found inspiration in my own VS Code theme, One Hunter. This theme helped me understand the nuances of color balancing and the significance of visual coherence. It provided a practical example and a benchmark for the themes I aimed to help others create. My experience with One Hunter underscored the importance of a well-designed theme in enhancing the coding experience, further fueling my drive to develop Tinte.
+
+## Future Plans
+
+Tinte is just the beginning. I plan to add features like:
+
+1. Community sharing of themes
+2. AI-assisted theme generation
+3. Support for other IDEs and text editors
+
+## Conclusion
+
+Creating Tinte has been an incredible journey. It's taught me a lot about color theory, user experience design, and the intricacies of VS Code extensions. More importantly, it's reinforced my belief in the power of customization in development environments.
+
+I hope Tinte helps developers around the world create their perfect coding sanctuary. Happy theming!`

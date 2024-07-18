@@ -5,10 +5,7 @@
       "summary": "What are OG images, and how to generate them dynamically with @vercel/og.",
       "color": "#F7DF1E",
       "publishedAt": "2022-10-16",
-      "tags": [
-        "Next.js",
-        "Images"
-      ],
+      "tags": ["Next.js", "Images"],
       "slug": "og-image"
     },
     {
@@ -16,10 +13,7 @@
       "summary": "A story of how I built One Hunter Theme from scratch and how I got 3,000+ downloads in 3 months.",
       "color": "#DF09FE",
       "publishedAt": "2023-02-09",
-      "tags": [
-        "VSCode",
-        "Theme"
-      ],
+      "tags": ["VSCode", "Theme"],
       "slug": "one-hunter"
     },
     {
@@ -27,10 +21,7 @@
       "summary": "An overview of how I set up Storybook in a Vite project, all challenges I faced, and the solutions I found.",
       "color": "#FF4785",
       "publishedAt": "2022-08-03",
-      "tags": [
-        "Storybook",
-        "Vite"
-      ],
+      "tags": ["Storybook", "Vite"],
       "slug": "storybook-vite"
     },
     {
@@ -38,10 +29,7 @@
       "summary": "A look into how I built Spotigen, a Chat-GPT plugin that generates Spotify playlists based on your prompts.",
       "color": "#27C77F",
       "publishedAt": "2023-05-17",
-      "tags": [
-        "Chat-GPT",
-        "Spotify"
-      ],
+      "tags": ["Chat-GPT", "Spotify"],
       "slug": "spotigen-chat-gpt-plugin"
     },
     {
@@ -49,10 +37,7 @@
       "summary": "A complete guide on how to setup Python, Jupyter Notebook, and VS Code on Windows.",
       "color": "#F7DF1E",
       "publishedAt": "2023-11-06T22:00:00.000-05:00",
-      "tags": [
-        "Python",
-        "Environment"
-      ],
+      "tags": ["Python", "Environment"],
       "slug": "how-to-setup-python-environment"
     },
     {
@@ -60,12 +45,16 @@
       "summary": "A guide to understanding noise reduction and contrast adjustment in image processing.",
       "color": "#27C77F",
       "publishedAt": "2023-12-13T22:00:00.000-05:00",
-      "tags": [
-        "Python",
-        "OpenCV",
-        "Image Processing"
-      ],
+      "tags": ["Python", "OpenCV", "Image Processing"],
       "slug": "noise-contrast"
+    },
+    {
+      "title": "Building Tinte: My Journey in Creating a VS Code Theme Generator",
+      "summary": "A detailed account of my experience developing Tinte, a VS Code theme generator, from inspiration to execution.",
+      "color": "#27C77F",
+      "publishedAt": "2024-07-17T22:00:00.000-05:00",
+      "tags": ["VSCode", "Theme"],
+      "slug": "tinte"
     }
   ]
 }
