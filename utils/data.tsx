@@ -521,7 +521,13 @@ export const WORK_EXPERIENCE = [
     workType: "Remote",
     startDate: "February 2024",
     endDate: "Present",
-    responsibilities: ["Stay tuned for updates!"],
+    responsibilities: [
+      "Planned, designed, developed end-to-end solutions using React, TypeScript, TailwindCSS, GraphQL and Ruby on Rails at a fast pace to meet stakeholders' needs.",
+      "Developed a full-stack feature to keep the Support Center Team updated on new ServiceNow incidents, problems, and tasks, increasing my visibility and contributions within the team.",
+      "Proposed and implemented a fully-featured TanStack Table as an alternative to the unavailable ag-grid enterprise version, enhancing user experience across the codebase with responsive design and card conversion using pure CSS.",
+      "Discussed and proposed proactively the creation of new experiences to maintain our user base informed about new deployment changes.",
+      "Authored wikis for newly developed components, providing usage examples of increasing complexity to facilitate understanding and adoption.",
+    ],
   },
   {
     id: 2,
