@@ -5,7 +5,7 @@ const ResumeButton: React.FC = () => {
   return (
     <Button className="group" variant="outline">
       <a
-        href="/pdf/Railly-Hugo-CV-2024-Q3-ENG.pdf"
+        href="/pdf/Railly-Hugo-CV-2024-Q4-ENG.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center gap-2"

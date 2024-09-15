@@ -142,7 +142,7 @@
       "slug": "shadcn-ui-customizer",
       "logoUrl": "/images/shadcn-customizer-logo.png",
       "repoName": "shadcn-ui-customizer",
-      "demo": "https://shadcn-ui-customizer.vercel.app",
+      "demo": "https://customizer.railly.dev",
       "description": "Theme Customizer",
       "stack": ["NextJS", "TailwindCSS", "TypeScript"]
     },
@@ -159,14 +159,15 @@
     },
     {
       "title": "Tinte",
-      "summary": "An opinionated multi-platform color theme generator",
-      "publishedAt": "2023-11-20",
+      "summary": "An opinionated VS Code Theme Generator 🎨",
+      "publishedAt": "2024-07-20",
       "tag": "Personal Project",
       "slug": "tinte",
       "logoUrl": "/images/tinte-logo.png",
       "repoName": "tinte",
+      "demo": "https://tinte.railly.dev",
       "description": "Color Theme Generator",
-      "stack": ["TypeScript"]
+      "stack": ["NextJS", "TailwindCSS", "OpenAI", "Vercel"]
     }
   ]
 }
